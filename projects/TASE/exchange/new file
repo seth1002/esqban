@@ -1,0 +1,8 @@
+http://www.bankisrael.gov.il/yazig/yazeng.htm
+
+
+Simply export data from excel as TXT or CSV. Than use MySQL command 
+LOAD DATA INFILE 'path/file.txt' INTO TABLE your_table; 
+
+
+

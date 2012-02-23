@@ -1,0 +1,56 @@
+SELECT * FROM companies c inner join prices p on p.symbol = c.symbol order by c.subsector, c.name asc
+
+SELECT c.subsector, SUM(change_)  FROM companies c inner join prices p on p.symbol = c.symbol where p.date_ = DATE(NOW()) group by c.subsector
+
+SELECT c.name, c.symbol, p.price, p.high, p.low FROM companies c inner join prices p on p.symbol = c.symbol order by c.symbol asc
+
+select c.name, c.symbol, p.price, p.change_ FROM companies c inner join prices p on p.symbol = c.symbol where p.date_ = DATE(NOW())
+
+select c.name, c.symbol, p.date_, p.price, p.change_ FROM companies c inner join prices p on p.symbol = c.symbol group by c.symbol, p.date_
+
+
+
+update
+prices as p inner join companies as c
+on p.symbol = c.symbol
+set p.company_id = c.id
+
+
+
+SELECT c.*, (select count(*) from tase.prices where symbol=c.symbol) as num FROM tase.companies c LIMIT 0,1000
+
+
+
+select c.sector, sum(p.price)/count(*) from companies c inner join prices p on c.symbol = p.symbol and p.date_ = '2011-05-20' group by c.sector
+
+
+
+
+
+
+select c.sector, p.date_, sum(p.price) from prices p inner join companies c on c.symbol = p.symbol group by c.sector, p.date_
+
+
+
+select c.subsector, p.date_, sum(p.price) from prices p inner join companies c on c.symbol = p.symbol group by c.subsector, p.date_
+
+
+SELECT * FROM portfolio_status where date_ = DATE(NOW())
+SELECT * FROM portfolio_status where date_ = DATE(NOW())-1
+
+
+
+SELECT p.price FROM prices p inner join companies c on p.symbol=c.symbol where c.category='fund' LIMIT 0,1000
+
+
+SELECT p.price FROM prices p inner join companies c on p.symbol=c.symbol where c.category='fund' order by p.price desc LIMIT 1
+
+
+
+SELECT * FROM portfolio_status where date_ = DATE(NOW())-2
+SELECT sum(diff) FROM portfolio_status where date_ = DATE(NOW())-2
+
+
+
+
+

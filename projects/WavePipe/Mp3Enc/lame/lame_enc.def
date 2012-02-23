@@ -1,0 +1,9 @@
+LIBRARY     LAME_ENC.DLL
+
+EXPORTS
+    beCloseStream                  @4   ; beCloseStream
+    beDeinitStream                 @3   ; beDeinitStream
+    beEncodeChunk                  @2   ; beEncodeChunk
+    beInitStream                   @1   ; beInitStream
+    beVersion                      @5   ; beVersion
+    beWriteVBRHeader               @6   ; beWriteVBRHeader

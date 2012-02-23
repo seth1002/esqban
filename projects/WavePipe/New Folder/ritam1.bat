@@ -1,0 +1,1 @@
+type RITAM1.WAV | .\echo\Debug\echo.exe | .\waveout\Debug\WaveOut.exe

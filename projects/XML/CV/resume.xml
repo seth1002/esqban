@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="resume.xsl"?>
+<Resume>
+	<FirstName>Filip</FirstName>
+	<LastName>Pavlovic</LastName>
+	<BirthDate>22. august 1974.</BirthDate>
+	<BirthPlace>Belgrade, Yugoslavia</BirthPlace>
+	<Citizenship>Serbian, Israeli</Citizenship>
+	<Address>Krunska 27, 11000 Belgrade, Serbia and Montenegro</Address>
+	<Telephone>+381 11 3233244</Telephone>
+	<Email>esqban@yahoo.com</Email>
+
+	<Languages>
+		<Language name="Serbian">native</Language>
+		<Language name="English">Proficient (4 years in elementary, 4 in high school, active usage)</Language>
+		<Language name="French">Spoken (8 years in elementary, 4 in high school)</Language>
+		<Language name="Italian">Basic</Language>
+		<Language name="Hebrew">Very basic</Language>
+	</Languages>
+	
+	<Experience>
+		<Organization name="Omega Group" fromDate="11/1996" toDate="2/1998">
+			<Location>Belgrade, Yugoslavia</Location>
+			<Post name="Technician">
+				<Responsibilities>
+					<Responsibility>Building and implementing electronic security and surveillance systems</Responsibility>
+				</Responsibilities>
+			</Post>
+		</Organization>
+		<Organization name="Informatika AD" fromDate="7/1999" toDate="6/2000">
+			<Location>Belgrade, Yugoslavia</Location>
+			<Post name="Programmer">
+				<Responsibilities>
+					<Responsibility>Client side SmartCard application using Microsoft CryptoAPI, GemPlus API and MFC (applying digital signatures using smartcards)</Responsibility>
+					<Responsibility>Server side application using Rainbow API for the Rainbow Fortezza cryptographic hardware and MFC</Responsibility>
+					<Responsibility>SQL database administration utility using ODBC and MFC</Responsibility>
+				</Responsibilities>
+			</Post>
+		</Organization>
+		<Organization name="Data-Mall Ltd." fromDate="6/2000" toDate="11/2002">
+			<Location>Netanya, Israel</Location>
+			<Post name="Senior software developer, Team manager">
+				<Responsibilities>
+					<Responsibility>Team manager responsible for the client side application (DXI, data extractor/injector) and accompanying ActiveX controls, design and implementation using VB, ADO, XML, XSLT and SOAP</Responsibility>
+					<Responsibility>Microsoft SQL Server 2000 database organization, implementation and administration (server side)</Responsibility>
+					<Responsibility>Server side business logic components, design and implementation using VB, COM+, XML, ADO and SOAP</Responsibility>
+				</Responsibilities>
+			</Post>
+		</Organization>
+		<Organization name="Omega Group" fromDate="3/2004" toDate="7/2004">
+			<Location>Belgrade, Yugoslavia</Location>
+			<Post name="Software developer - by contract">
+				<Responsibilities>
+					<Responsibility>Developed a complete solution for interfacing an old T.M.R. Industries POS system to a fiscal printer for a large chain of supermarkets - C market. The solution included working with serial port, parsing input data formatted for the serial printer and restructuring them into commands recognised by the fiscal printer listening on second serial port.</Responsibility>
+				</Responsibilities>
+			</Post>
+		</Organization>
+		<Organization name="" fromDate="" toDate="">
+			<Location></Location>
+			<Post name="">
+				<Responsibilities>
+					<Responsibility></Responsibility>
+				</Responsibilities>
+			</Post>
+		</Organization>
+	</Experience>
+	
+	<Education>
+		<Schools>
+			<School date="1990" name="OOS Vladislav Ribnikar, elementary school" 	place="Belgrade, Yugoslavia"/>
+			<School date="1994" name="Zemunska gimnazija, high school" 		place="Belgrade, Yugoslavia"/>
+			<School date="1995" name="Belgrade University, Technologies (one year)"	place="Belgrade, Yugoslavia"/>
+			<School date="1999" name="Belgrade University, Astrophysics (one year)"	place="Belgrade, Yugoslavia"/>
+		</Schools>
+		<Courses>
+			<Course date="1996" name="C Programming language"		where="Vinca institute, Authorized Borland Training Centre"></Course>
+			<Course date="1997" name="C++ Programming language"		where="Vinca institute, Authorized Borland Training Centre"></Course>
+			<Course date="2000" name="Microsoft SQL Server 7.0, creating and implementing" 	where="Informatika AD, Authorized Microsoft Training Centre"></Course>
+			<Course date="2000" name="Microsoft Visual Basic 6 fundamentals" 		where="Informatika AD, Authorized Microsoft Training Centre"></Course>
+		</Courses>
+	</Education>
+	
+	<Skills>
+		<ProgrammingLanguages>
+			<Skill name="C/C++"		years="7+"/>
+			<Skill name="VB"		years="3+"/>
+			<Skill name="SQL"		years="4+"/>
+			<Skill name="Java"		years="1+"/>
+			<Skill name="C#"		years="-1"/>
+			<Skill name="x86 Assembly"	years="-1"/>
+		</ProgrammingLanguages>
+		<Technologies>
+			<Skill name="MFC"		years="5+"/>
+			<Skill name="Win32 API"		years="5+"/>
+			<Skill name="XML"		years="3+"/>
+			<Skill name="SOAP"		years="2+"/>
+			<Skill name="CryptoAPI"		years="1+"/>
+			<Skill name=" DirectX"		years="2+"/>
+			<Skill name="OpenGL"		years="-1"/>
+		</Technologies>
+		<Languages>
+		</Languages>
+	</Skills>
+	
+	<Objectives>
+	</Objectives>
+</Resume>

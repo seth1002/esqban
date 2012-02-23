@@ -1,0 +1,59 @@
+# - Scrapy settings for tase project
+
+#import tase
+
+BOT_NAME = 'tase'
+BOT_VERSION = '1.0'
+
+SPIDER_MODULES = ['tase.spiders']
+NEWSPIDER_MODULE = 'tase.spiders'
+DEFAULT_ITEM_CLASS = 'scrapy.item.Item'
+#USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
+USER_AGENT = 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8'
+
+
+#CONCURRENT_ITEMS = 1 #Default: 100
+#CONCURRENT_REQUESTS_PER_SPIDER = 1 #Default: 8
+#CONCURRENT_SPIDERS = 1 #Default: 8
+#DOWNLOAD_TIMEOUT = 360
+
+MEMUSAGE_ENABLED = True
+MEMUSAGE_LIMIT_MB = 1500
+
+DOWNLOAD_DELAY = 1
+RANDOMIZE_DOWNLOAD_DELAY = True
+
+#LOG_FILE = 'scrapy.log'
+LOG_STDOUT = True
+#LOG_LEVEL = 'WARNING'
+
+DATABASE_SCHEMA = 'tase'
+DATABASE_USER = 'sqba'
+DATABASE_PASSWORD = '12345'
+
+PROCESS_HISTORY = True
+HISTORY_PERIOD = 2 # 1 month
+#HISTORY_PERIOD = 7	# 5 Years
+PROCESS_NEWS = True
+PROCESS_NEWS_CONTENT = True
+PROCESS_NEWS_HISTORY = True
+PROCESS_FINANCIAL_STATEMENTS = True
+
+# for the database
+CATEGORY_COMP = 'company'
+CATEGORY_BOND = 'bond'
+CATEGORY_FUND = 'fund'
+
+ITEM_PIPELINES = (
+	'tase.pipelines.SessionPipeline',
+	'tase.pipelines.MultiplierPipeline',
+	'tase.pipelines.MarketDataPipeline',
+#	'tase.pipelines.PageRankPipeline',
+#	'tase.pipelines.KeywordPipeline',
+	'tase.pipelines.FinancialStatementsPipeline',
+	'tase.pipelines.NewsPipeline',
+	'tase.pipelines.WeatherPipeline',
+	'tase.pipelines.MySQLStorePipeline',
+)
+
+

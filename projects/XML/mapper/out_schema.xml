@@ -1,0 +1,95 @@
+<Schema name="BL_NLFR_REPORT" b:BizTalkServerEditorTool_Version="1.0" b:root_reference="BL_NLFR_REPORT" b:standard="XML" xmlns="urn:schemas-microsoft-com:xml-data" xmlns:b="urn:schemas-microsoft-com:BizTalkServer" xmlns:d="urn:schemas-microsoft-com:datatypes" xmlns:dm="urn:schemas-data-mall-com">
+	<b:SelectionFields/>
+	<ElementType name="PAYING_CUST_NO" content="textOnly" model="closed">
+		<b:FieldInfo/>
+		<dm:CatalogInfo dm:category="1"/></ElementType><ElementType name="LIST_G_TERM_CODE" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="G_TERM_CODE" maxOccurs="1" minOccurs="0"/>
+	</ElementType><ElementType name="LIST_G_PAYING_CUST_NO" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="G_PAYING_CUST_NO" maxOccurs="1" minOccurs="0"/>
+	</ElementType><ElementType name="LIST_G_LINE" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="G_LINE" maxOccurs="1" minOccurs="0"/>
+	</ElementType><ElementType name="LIST_G_ATAR" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="G_ATAR" maxOccurs="1" minOccurs="0"/>
+	</ElementType><ElementType name="LINE_ID" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="INVOICE_YEAR" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="INVOICE_NO" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="DOLAR_PRICE" content="textOnly" model="closed"><b:RecordInfo/><dm:CatalogInfo/></ElementType><ElementType name="G_TERM_CODE" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="CURRENCY_CODE" maxOccurs="1" minOccurs="0"/>
+		<element type="CF_SHIRUT" maxOccurs="1" minOccurs="0"/>
+		<element type="CF_SHEKEL_PRICE" maxOccurs="1" minOccurs="0"/>
+		<element type="DOLAR_PRICE" maxOccurs="1" minOccurs="0"/></ElementType><ElementType name="REASON" content="textOnly" model="closed"><b:RecordInfo/><dm:CatalogInfo/></ElementType><ElementType name="TOT_AMOU" content="textOnly" model="closed"><b:RecordInfo/><dm:CatalogInfo/></ElementType><ElementType name="G_INVOICE" content="eltOnly" model="closed"><b:RecordInfo/><dm:CatalogInfo/><element type="REASON" maxOccurs="1" minOccurs="0"/><element type="TOT_AMOU" maxOccurs="1" minOccurs="0"/></ElementType><ElementType name="CF_SHEKEL_HANAHA" content="textOnly" model="closed"><b:RecordInfo/><dm:CatalogInfo/></ElementType><ElementType name="SUM_TOTAL_PRICE_HANAHA_D" content="textOnly" model="closed"><b:RecordInfo/><dm:CatalogInfo/></ElementType><ElementType xmlns="" name="ACHUZ" content="textOnly" model="closed"><b:RecordInfo/><dm:CatalogInfo/></ElementType><ElementType name="HANAHOT" content="eltOnly" model="closed"><b:RecordInfo/><dm:CatalogInfo/><element type="CF_SHEKEL_HANAHA" maxOccurs="1" minOccurs="0"/><element type="SUM_TOTAL_PRICE_HANAHA_D" maxOccurs="1" minOccurs="0"/><element xmlns="" type="ACHUZ" maxOccurs="1" minOccurs="0"/></ElementType><ElementType name="G_PAYING_CUST_NO" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="PAYING_CUST_NO" maxOccurs="1" minOccurs="0"/>
+		<element type="CUST_NO" maxOccurs="1" minOccurs="0"/>
+		<element type="INVOICE_NO" maxOccurs="1" minOccurs="0"/>
+		<element type="INVOICE_YEAR" maxOccurs="1" minOccurs="0"/>
+		<element type="LIST_G_ATAR" maxOccurs="*" minOccurs="0"/>
+		<element type="CP_CONTACTS" maxOccurs="1" minOccurs="0"/>
+		<element type="CP_KTOVET_POB" maxOccurs="1" minOccurs="0"/>
+		<element type="CP_CITY_ZIP" maxOccurs="1" minOccurs="0"/>
+		<element type="CP_ADDRESS_NAME" maxOccurs="1" minOccurs="0"/>
+		<element type="CS_CLIENT_SHUM" maxOccurs="1" minOccurs="0"/>
+		<element type="CS_CLIENT_HANAHA" maxOccurs="1" minOccurs="0"/>
+		<element type="CF_AFTER_HANAHA_CLIENT" maxOccurs="1" minOccurs="0"/>
+		<element type="G_INVOICE" maxOccurs="*" minOccurs="0"/><element type="HANAHOT" maxOccurs="*" minOccurs="0"/></ElementType><ElementType name="G_LINE" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="LINE_ID" maxOccurs="1" minOccurs="0"/>
+		<element type="LIST_G_TERM_CODE" maxOccurs="*" minOccurs="0"/>
+		<element type="CF_KAV" maxOccurs="1" minOccurs="0"/>
+		<element type="CP_LINE_TYPE" maxOccurs="1" minOccurs="0"/>
+		<element type="CP_DESTINATION" maxOccurs="1" minOccurs="0"/>
+		<element type="CP_PORT_SPEED" maxOccurs="1" minOccurs="0"/>
+		<element type="CP_ORIGIN" maxOccurs="1" minOccurs="0"/>
+	</ElementType><ElementType name="G_ATAR" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="LIST_G_LINE" maxOccurs="*" minOccurs="0"/>
+		<element type="CF_ATAR" maxOccurs="1" minOccurs="0"/>
+		<element type="CP_AFTER_HANAHA_ATAR" maxOccurs="1" minOccurs="0"/>
+	</ElementType><ElementType name="CUST_NO" content="textOnly" model="closed">
+		<b:FieldInfo/>
+		<dm:CatalogInfo dm:category="2"/></ElementType><ElementType name="CURRENCY_CODE" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CS_CLIENT_SHUM" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CS_CLIENT_HANAHA" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_PORT_SPEED" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_ORIGIN" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_LINE_TYPE" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_KTOVET_POB" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_DESTINATION" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_CONTACTS" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_CITY_ZIP" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_AFTER_HANAHA_ATAR" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CP_ADDRESS_NAME" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CF_SHIRUT" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CF_SHEKEL_PRICE" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CF_KAV" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CF_ATAR" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="CF_AFTER_HANAHA_CLIENT" content="textOnly" model="closed">
+		<b:FieldInfo/>
+	</ElementType><ElementType name="BL_NLFR_REPORT" content="eltOnly" model="closed">
+		<b:RecordInfo/>
+		<element type="LIST_G_PAYING_CUST_NO" maxOccurs="1" minOccurs="0"/>
+	</ElementType></Schema>

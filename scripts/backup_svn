@@ -1,0 +1,8 @@
+#! /bin/sh
+
+PATH_TO_REPOS=/home/sqba/svn/repos
+PATH_TO_MIRROR=svn
+
+svnadmin hotcopy $PATH_TO_REPOS $PATH_TO_MIRROR
+
+

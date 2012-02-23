@@ -1,0 +1,3 @@
+Napraviti CPipe klasu koja ce da zameni OS pipe (|)
+Pretvoriti u Win32 aplikaciju sa prozorom
+Dodati FFT prikaz bafera

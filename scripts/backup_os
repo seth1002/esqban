@@ -1,0 +1,25 @@
+#! /bin/sh
+
+SRC=/dev/sda1
+DST=sda1.img.gz
+
+if mkdir tmp; then
+	if mount -t ext3 $SRC tmp; then
+		echo Phase 1: Fill empty space with zeros
+		dd if=/dev/zero of=tmp/delete.me bs=10M
+		rm tmp/delete.me
+		umount tmp
+
+		echo Phase 2: Backup
+		dd if=$SRC conv=sync,noerror bs=10M | gzip -c > $DST
+		chown $USER $DST
+
+		echo Phase 3: Backup disk information
+		fdisk -l /dev/sda > sda_fdisk.info
+		chown $USER sda_fdisk.info
+	fi
+	rmdir tmp
+fi
+
+#gunzip -c sda1.img.gz | dd of=/dev/sda1 conv=sync,noerror
+

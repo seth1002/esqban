@@ -1,0 +1,2547 @@
+<?xml version="1.0"?>
+<mapsource name="DataMall" version="1" xrange="100" yrange="420">
+	<srctree>
+		<Schema name="MasterData" b:root_reference="MasterData" xmlns="urn:schemas-microsoft-com:xml-data" xmlns:d="urn:schemas-microsoft-com:datatypes" xmlns:b="urn:schemas-microsoft-com:BizTalkServer" xmlns:dm="urn:schemas-data-mall-com" b:standard="XML">
+			<dm:DMProviderInfo>
+				<File1 xmlns="">
+					<Name xmlns="">C:\1Marina\Technion\out001.acc</Name>
+					<dm:DMProviderInfo>
+						<FileDB xmlns="">
+							<FileName xmlns="">C:\1Marina\Technion\out001.acc</FileName>
+							<ColumnType xmlns="">FixedWidth</ColumnType>
+							<StartFromLine xmlns="">1</StartFromLine>
+							<AdditionalActions xmlns="">
+								<FileName xmlns="">C:\1Marina\Technion\out001.acc</FileName>
+								<ActionBefore xmlns=""/>
+								<ActionAfter xmlns=""/>
+							</AdditionalActions>
+							<ProcessingInfo xmlns="">
+								<CharacterSet xmlns="">2255</CharacterSet>
+								<CharacterConversions xmlns=""/>
+								<LineBreak xmlns="">LF</LineBreak>
+							</ProcessingInfo>
+							<Columns xmlns="">
+								<Column xmlns="">
+									<Name xmlns="">RecType</Name>
+									<Length xmlns="">3</Length>
+									<StartPos xmlns="">1</StartPos>
+									<EndPos xmlns="">3</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Account</Name>
+									<Length xmlns="">7</Length>
+									<StartPos xmlns="">4</StartPos>
+									<EndPos xmlns="">10</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BudgetType</Name>
+									<Length xmlns="">1</Length>
+									<StartPos xmlns="">11</StartPos>
+									<EndPos xmlns="">11</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Year</Name>
+									<Length xmlns="">4</Length>
+									<StartPos xmlns="">12</StartPos>
+									<EndPos xmlns="">15</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">CurTypeE</Name>
+									<Length xmlns="">8</Length>
+									<StartPos xmlns="">16</StartPos>
+									<EndPos xmlns="">23</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">CurTypeH</Name>
+									<Length xmlns="">8</Length>
+									<StartPos xmlns="">24</StartPos>
+									<EndPos xmlns="">31</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ExpNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">32</StartPos>
+									<EndPos xmlns="">46</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ExpAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">47</StartPos>
+									<EndPos xmlns="">61</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IncExpNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">62</StartPos>
+									<EndPos xmlns="">76</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IncExpAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">77</StartPos>
+									<EndPos xmlns="">91</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonBalNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">92</StartPos>
+									<EndPos xmlns="">106</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonBalAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">107</StartPos>
+									<EndPos xmlns="">121</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">122</StartPos>
+									<EndPos xmlns="">136</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">137</StartPos>
+									<EndPos xmlns="">151</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">TotalBudgetNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">152</StartPos>
+									<EndPos xmlns="">166</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">TotalBudgetAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">167</StartPos>
+									<EndPos xmlns="">181</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalBudgetNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">182</StartPos>
+									<EndPos xmlns="">196</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalBudgetAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">197</StartPos>
+									<EndPos xmlns="">211</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonitNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">212</StartPos>
+									<EndPos xmlns="">226</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonitAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">227</StartPos>
+									<EndPos xmlns="">241</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">TakbulNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">242</StartPos>
+									<EndPos xmlns="">256</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">TakbulAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">257</StartPos>
+									<EndPos xmlns="">271</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+							</Columns>
+						</FileDB>
+						<ChunkSize xmlns="">1024</ChunkSize>
+					</dm:DMProviderInfo>
+				</File1>
+				<File2 xmlns="">
+					<Name xmlns="">C:\1Marina\Technion\out002.acc</Name>
+					<dm:DMProviderInfo>
+						<FileDB xmlns="">
+							<FileName xmlns="">C:\1Marina\Technion\out002.acc</FileName>
+							<ColumnType xmlns="">FixedWidth</ColumnType>
+							<StartFromLine xmlns="">1</StartFromLine>
+							<AdditionalActions xmlns="">
+								<FileName xmlns="">C:\1Marina\Technion\out002.acc</FileName>
+								<ActionBefore xmlns=""/>
+								<ActionAfter xmlns=""/>
+							</AdditionalActions>
+							<ProcessingInfo xmlns="">
+								<CharacterSet xmlns="">2255</CharacterSet>
+								<CharacterConversions xmlns=""/>
+								<LineBreak xmlns="">LF</LineBreak>
+							</ProcessingInfo>
+							<Columns xmlns="">
+								<Column xmlns="">
+									<Name xmlns="">RecType</Name>
+									<Length xmlns="">3</Length>
+									<StartPos xmlns="">1</StartPos>
+									<EndPos xmlns="">3</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Account</Name>
+									<Length xmlns="">7</Length>
+									<StartPos xmlns="">4</StartPos>
+									<EndPos xmlns="">10</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ExpIncType</Name>
+									<Length xmlns="">1</Length>
+									<StartPos xmlns="">11</StartPos>
+									<EndPos xmlns="">11</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Year</Name>
+									<Length xmlns="">4</Length>
+									<StartPos xmlns="">12</StartPos>
+									<EndPos xmlns="">15</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ExpIncGroup</Name>
+									<Length xmlns="">2</Length>
+									<StartPos xmlns="">16</StartPos>
+									<EndPos xmlns="">17</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">GrpNameH</Name>
+									<Length xmlns="">25</Length>
+									<StartPos xmlns="">18</StartPos>
+									<EndPos xmlns="">42</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">GrpNameE</Name>
+									<Length xmlns="">25</Length>
+									<StartPos xmlns="">43</StartPos>
+									<EndPos xmlns="">67</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IncExpNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">68</StartPos>
+									<EndPos xmlns="">82</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IncExpAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">83</StartPos>
+									<EndPos xmlns="">97</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">98</StartPos>
+									<EndPos xmlns="">112</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">113</StartPos>
+									<EndPos xmlns="">127</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">TotalBudgetNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">128</StartPos>
+									<EndPos xmlns="">142</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">TotalBudgetAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">143</StartPos>
+									<EndPos xmlns="">157</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalBudgetNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">158</StartPos>
+									<EndPos xmlns="">172</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalBudgetAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">173</StartPos>
+									<EndPos xmlns="">187</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+							</Columns>
+						</FileDB>
+						<ChunkSize xmlns="">1024</ChunkSize>
+					</dm:DMProviderInfo>
+				</File2>
+				<File3 xmlns="">
+					<Name xmlns="">C:\1Marina\Technion\out003.acc</Name>
+					<dm:DMProviderInfo>
+						<FileDB xmlns="">
+							<FileName xmlns="">C:\1Marina\Technion\out003.acc</FileName>
+							<ColumnType xmlns="">FixedWidth</ColumnType>
+							<StartFromLine xmlns="">1</StartFromLine>
+							<AdditionalActions xmlns="">
+								<FileName xmlns="">C:\1Marina\Technion\out003.acc</FileName>
+								<ActionBefore xmlns=""/>
+								<ActionAfter xmlns=""/>
+							</AdditionalActions>
+							<ProcessingInfo xmlns="">
+								<CharacterSet xmlns="">2255</CharacterSet>
+								<CharacterConversions xmlns=""/>
+								<LineBreak xmlns="">LF</LineBreak>
+							</ProcessingInfo>
+							<Columns xmlns="">
+								<Column xmlns="">
+									<Name xmlns="">RecType</Name>
+									<Length xmlns="">3</Length>
+									<StartPos xmlns="">1</StartPos>
+									<EndPos xmlns="">3</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Account</Name>
+									<Length xmlns="">7</Length>
+									<StartPos xmlns="">4</StartPos>
+									<EndPos xmlns="">10</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Year</Name>
+									<Length xmlns="">4</Length>
+									<StartPos xmlns="">11</StartPos>
+									<EndPos xmlns="">14</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ExpIncGroup</Name>
+									<Length xmlns="">2</Length>
+									<StartPos xmlns="">15</StartPos>
+									<EndPos xmlns="">16</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HovaZhut</Name>
+									<Length xmlns="">1</Length>
+									<StartPos xmlns="">17</StartPos>
+									<EndPos xmlns="">17</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">UpdateDate</Name>
+									<Length xmlns="">8</Length>
+									<StartPos xmlns="">18</StartPos>
+									<EndPos xmlns="">25</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ValueDate</Name>
+									<Length xmlns="">8</Length>
+									<StartPos xmlns="">26</StartPos>
+									<EndPos xmlns="">33</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IncExpNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">34</StartPos>
+									<EndPos xmlns="">48</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IncExpAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">49</StartPos>
+									<EndPos xmlns="">63</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">AsmahtaA</Name>
+									<Length xmlns="">2</Length>
+									<StartPos xmlns="">64</StartPos>
+									<EndPos xmlns="">65</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">AsmahtaTypeA</Name>
+									<Length xmlns="">6</Length>
+									<StartPos xmlns="">66</StartPos>
+									<EndPos xmlns="">71</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">AsmahtaB</Name>
+									<Length xmlns="">2</Length>
+									<StartPos xmlns="">72</StartPos>
+									<EndPos xmlns="">73</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">AsmahtaTypeB</Name>
+									<Length xmlns="">6</Length>
+									<StartPos xmlns="">74</StartPos>
+									<EndPos xmlns="">79</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">AccountCross</Name>
+									<Length xmlns="">9</Length>
+									<StartPos xmlns="">80</StartPos>
+									<EndPos xmlns="">88</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Remarks</Name>
+									<Length xmlns="">25</Length>
+									<StartPos xmlns="">89</StartPos>
+									<EndPos xmlns="">113</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+							</Columns>
+						</FileDB>
+						<ChunkSize xmlns="">1024</ChunkSize>
+					</dm:DMProviderInfo>
+				</File3>
+				<File4 xmlns="">
+					<Name xmlns="">C:\1Marina\Technion\out004.acc</Name>
+					<dm:DMProviderInfo>
+						<FileDB xmlns="">
+							<FileName xmlns="">C:\1Marina\Technion\out004.acc</FileName>
+							<ColumnType xmlns="">FixedWidth</ColumnType>
+							<StartFromLine xmlns="">1</StartFromLine>
+							<AdditionalActions xmlns="">
+								<FileName xmlns="">C:\1Marina\Technion\out004.acc</FileName>
+								<ActionBefore xmlns=""/>
+								<ActionAfter xmlns=""/>
+							</AdditionalActions>
+							<ProcessingInfo xmlns="">
+								<CharacterSet xmlns="">2255</CharacterSet>
+								<CharacterConversions xmlns=""/>
+								<LineBreak xmlns="">LF</LineBreak>
+							</ProcessingInfo>
+							<Columns xmlns="">
+								<Column xmlns="">
+									<Name xmlns="">RecType</Name>
+									<Length xmlns="">3</Length>
+									<StartPos xmlns="">1</StartPos>
+									<EndPos xmlns="">3</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Account</Name>
+									<Length xmlns="">7</Length>
+									<StartPos xmlns="">4</StartPos>
+									<EndPos xmlns="">10</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Year</Name>
+									<Length xmlns="">4</Length>
+									<StartPos xmlns="">11</StartPos>
+									<EndPos xmlns="">14</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ExpIncGroup</Name>
+									<Length xmlns="">2</Length>
+									<StartPos xmlns="">15</StartPos>
+									<EndPos xmlns="">16</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IthaevutNo</Name>
+									<Length xmlns="">6</Length>
+									<StartPos xmlns="">17</StartPos>
+									<EndPos xmlns="">22</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IthCurH</Name>
+									<Length xmlns="">8</Length>
+									<StartPos xmlns="">23</StartPos>
+									<EndPos xmlns="">30</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IthCurE</Name>
+									<Length xmlns="">8</Length>
+									<StartPos xmlns="">31</StartPos>
+									<EndPos xmlns="">38</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">39</StartPos>
+									<EndPos xmlns="">53</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">54</StartPos>
+									<EndPos xmlns="">68</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">BalIth</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">69</StartPos>
+									<EndPos xmlns="">82</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">IthDescH</Name>
+									<Length xmlns="">25</Length>
+									<StartPos xmlns="">84</StartPos>
+									<EndPos xmlns="">108</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+							</Columns>
+						</FileDB>
+						<ChunkSize xmlns="">1024</ChunkSize>
+					</dm:DMProviderInfo>
+				</File4>
+				<File5 xmlns="">
+					<Name xmlns="">C:\1Marina\Technion\out005.acc</Name>
+					<dm:DMProviderInfo>
+						<FileDB xmlns="">
+							<FileName xmlns="">C:\1Marina\Technion\out005.acc</FileName>
+							<ColumnType xmlns="">FixedWidth</ColumnType>
+							<StartFromLine xmlns="">1</StartFromLine>
+							<AdditionalActions xmlns="">
+								<FileName xmlns="">C:\1Marina\Technion\out005.acc</FileName>
+								<ActionBefore xmlns=""/>
+								<ActionAfter xmlns=""/>
+							</AdditionalActions>
+							<ProcessingInfo xmlns="">
+								<CharacterSet xmlns="">2255</CharacterSet>
+								<CharacterConversions xmlns=""/>
+								<LineBreak xmlns="">LF</LineBreak>
+							</ProcessingInfo>
+							<Columns xmlns="">
+								<Column xmlns="">
+									<Name xmlns="">RecType</Name>
+									<Length xmlns="">3</Length>
+									<StartPos xmlns="">1</StartPos>
+									<EndPos xmlns="">3</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Account</Name>
+									<Length xmlns="">7</Length>
+									<StartPos xmlns="">4</StartPos>
+									<EndPos xmlns="">10</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Year</Name>
+									<Length xmlns="">4</Length>
+									<StartPos xmlns="">11</StartPos>
+									<EndPos xmlns="">14</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonitNo</Name>
+									<Length xmlns="">7</Length>
+									<StartPos xmlns="">15</StartPos>
+									<EndPos xmlns="">21</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonitNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">22</StartPos>
+									<EndPos xmlns="">36</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonitAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">37</StartPos>
+									<EndPos xmlns="">51</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">TakbulNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">52</StartPos>
+									<EndPos xmlns="">66</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">TakbulAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">67</StartPos>
+									<EndPos xmlns="">81</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonitBalNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">82</StartPos>
+									<EndPos xmlns="">96</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">HeshbonitBalAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">97</StartPos>
+									<EndPos xmlns="">111</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+							</Columns>
+						</FileDB>
+						<ChunkSize xmlns="">1024</ChunkSize>
+					</dm:DMProviderInfo>
+				</File5>
+				<File6 xmlns="">
+					<Name xmlns="">C:\1Marina\Technion\out006.acc</Name>
+					<dm:DMProviderInfo>
+						<FileDB xmlns="">
+							<FileName xmlns="">C:\1Marina\Technion\out006.acc</FileName>
+							<ColumnType xmlns="">FixedWidth</ColumnType>
+							<StartFromLine xmlns="">1</StartFromLine>
+							<AdditionalActions xmlns="">
+								<FileName xmlns="">C:\1Marina\Technion\out006.acc</FileName>
+								<ActionBefore xmlns=""/>
+								<ActionAfter xmlns=""/>
+							</AdditionalActions>
+							<ProcessingInfo xmlns="">
+								<CharacterSet xmlns="">2255</CharacterSet>
+								<CharacterConversions xmlns=""/>
+								<LineBreak xmlns="">LF</LineBreak>
+							</ProcessingInfo>
+							<Columns xmlns="">
+								<Column xmlns="">
+									<Name xmlns="">RecType</Name>
+									<Length xmlns="">3</Length>
+									<StartPos xmlns="">1</StartPos>
+									<EndPos xmlns="">3</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Account</Name>
+									<Length xmlns="">7</Length>
+									<StartPos xmlns="">4</StartPos>
+									<EndPos xmlns="">10</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">MetaemCode</Name>
+									<Length xmlns="">3</Length>
+									<StartPos xmlns="">11</StartPos>
+									<EndPos xmlns="">13</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">MetaemDescH</Name>
+									<Length xmlns="">20</Length>
+									<StartPos xmlns="">14</StartPos>
+									<EndPos xmlns="">33</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">MetaemDescE</Name>
+									<Length xmlns="">20</Length>
+									<StartPos xmlns="">34</StartPos>
+									<EndPos xmlns="">53</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">Phone</Name>
+									<Length xmlns="">8</Length>
+									<StartPos xmlns="">54</StartPos>
+									<EndPos xmlns="">61</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">EMail</Name>
+									<Length xmlns="">50</Length>
+									<StartPos xmlns="">62</StartPos>
+									<EndPos xmlns="">111</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ResearchSubjectE</Name>
+									<Length xmlns="">50</Length>
+									<StartPos xmlns="">112</StartPos>
+									<EndPos xmlns="">161</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">ResearchSubjectH</Name>
+									<Length xmlns="">50</Length>
+									<StartPos xmlns="">162</StartPos>
+									<EndPos xmlns="">211</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">InvLast</Name>
+									<Length xmlns="">7</Length>
+									<StartPos xmlns="">212</StartPos>
+									<EndPos xmlns="">218</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">InvLastNameH</Name>
+									<Length xmlns="">20</Length>
+									<StartPos xmlns="">219</StartPos>
+									<EndPos xmlns="">238</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">InvLastNameE</Name>
+									<Length xmlns="">25</Length>
+									<StartPos xmlns="">239</StartPos>
+									<EndPos xmlns="">263</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">InvSumAcc</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">264</StartPos>
+									<EndPos xmlns="">278</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+								<Column xmlns="">
+									<Name xmlns="">InvSumNis</Name>
+									<Length xmlns="">15</Length>
+									<StartPos xmlns="">279</StartPos>
+									<EndPos xmlns="">293</EndPos>
+									<Reversed xmlns="">False</Reversed>
+								</Column>
+							</Columns>
+						</FileDB>
+						<ChunkSize xmlns="">1024</ChunkSize>
+					</dm:DMProviderInfo>
+				</File6>
+				<ChunkSize xmlns="">3500</ChunkSize>
+			</dm:DMProviderInfo>
+			<b:SelectionFields/>
+			<ElementType xmlns="" name="TotalIncomes" content="empty" model="closed">
+				<b:RecordInfo tag_name="TotalIncomes"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="Year" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Year_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Year"/>
+				<AttributeType xmlns="" name="ValueDate" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ValueDate"/>
+				<AttributeType xmlns="" name="UpdateDate" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="UpdateDate"/>
+				<AttributeType xmlns="" name="IncNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="SumNis"/>
+				<AttributeType xmlns="" name="IncAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="SumAcc"/>
+				<AttributeType xmlns="" name="Remarks" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Remarks"/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="HovaZhut" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HovaZhut"/>
+				<AttributeType xmlns="" name="ExpIncGroup" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncGroup"/>
+				<AttributeType xmlns="" name="AsmahtaTypeB" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AsmahtaTypeB"/>
+				<AttributeType xmlns="" name="AsmahtaTypeA" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AsmahtaTypeA"/>
+				<AttributeType xmlns="" name="AsmahtaB" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AsmahtaB"/>
+				<AttributeType xmlns="" name="AsmahtaA" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AsmahtaA"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@"/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+				<AttributeType xmlns="" name="AccountCross" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AccountCross"/>
+			</ElementType>
+			<ElementType xmlns="" name="TotalExpenses" content="empty" model="closed">
+				<b:RecordInfo tag_name="TotalExpenses"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="Year" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Year_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Year"/>
+				<AttributeType xmlns="" name="ValueDate" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ValueDate"/>
+				<AttributeType xmlns="" name="UpdateDate" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="UpdateDate"/>
+				<AttributeType xmlns="" name="ExpNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpNis"/>
+				<AttributeType xmlns="" name="ExpAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpAcc"/>
+				<AttributeType xmlns="" name="Remarks" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Remarks"/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="HovaZhut" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HovaZhut"/>
+				<AttributeType xmlns="" name="ExpIncGroup" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncGroup"/>
+				<AttributeType xmlns="" name="AsmahtaTypeB" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AsmahtaTypeB"/>
+				<AttributeType xmlns="" name="AsmahtaTypeA" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AsmahtaTypeA"/>
+				<AttributeType xmlns="" name="AsmahtaB" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AsmahtaB"/>
+				<AttributeType xmlns="" name="AsmahtaA" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AsmahtaA"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Account_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+				<AttributeType xmlns="" name="AccountCross" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="AccountCross"/>
+			</ElementType>
+			<ElementType xmlns="" name="TotalBudget" content="empty" model="closed">
+				<b:RecordInfo tag_name="TotalBudget"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="Year" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Year_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Year"/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="ExpIncType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncType"/>
+				<AttributeType xmlns="" name="ExpIncGroup" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncGroup"/>
+				<AttributeType xmlns="" name="GrpNameH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="GrpNameH"/>
+				<AttributeType xmlns="" name="GrpNameE" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="GrpNameE"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Account_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+				<AttributeType xmlns="" name="TotalBudgetNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="TotalBudgetNis"/>
+				<AttributeType xmlns="" name="TotalBudgetAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="TotalBudgetAcc"/>
+				<AttributeType xmlns="" name="BalBudgetNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalBudgetNis"/>
+				<AttributeType xmlns="" name="BalBudgetAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalBudgetAcc"/>
+			</ElementType>
+			<ElementType xmlns="" name="TotalBal" content="empty" model="closed">
+				<b:RecordInfo tag_name="TotalBal"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="Year" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Year_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Year"/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="IthaevutNo" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="IthaevutNo"/>
+				<AttributeType xmlns="" name="IthDescH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="IthDescH"/>
+				<AttributeType xmlns="" name="IthCurH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="IthCurH"/>
+				<AttributeType xmlns="" name="IthCurE" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="IthCurE"/>
+				<AttributeType xmlns="" name="ExpIncGroup" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncGroup"/>
+				<AttributeType xmlns="" name="BalNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalNis"/>
+				<AttributeType xmlns="" name="BalIth" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalIth"/>
+				<AttributeType xmlns="" name="BalAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalAcc"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Account_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+			</ElementType>
+			<ElementType xmlns="" name="MasterData" content="empty" model="closed">
+				<b:RecordInfo tag_name="MasterData"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="Year" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Year"/>
+				<AttributeType xmlns="" name="TotalBudgetNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="TotalBudgetNis"/>
+				<AttributeType xmlns="" name="TotalBudgetAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="TotalBudgetAcc"/>
+				<AttributeType xmlns="" name="TakbulNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="TakbulNis"/>
+				<AttributeType xmlns="" name="TakbulAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="TakbulAcc"/>
+				<AttributeType xmlns="" name="IncNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="IncNis"/>
+				<AttributeType xmlns="" name="IncAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="IncAcc"/>
+				<AttributeType xmlns="" name="HeshbonitNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonitNis"/>
+				<AttributeType xmlns="" name="HeshbonitAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonitAcc"/>
+				<AttributeType xmlns="" name="HeshbonBalNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonBalNis"/>
+				<AttributeType xmlns="" name="HeshbonBalAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonBalAcc"/>
+				<AttributeType xmlns="" name="ExpNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpNis"/>
+				<AttributeType xmlns="" name="ExpAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpAcc"/>
+				<AttributeType xmlns="" name="CurTypeH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="CurTypeH"/>
+				<AttributeType xmlns="" name="CurTypeE" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="CurTypeE"/>
+				<AttributeType xmlns="" name="BudgetType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BudgetType"/>
+				<AttributeType xmlns="" name="BalNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalNis"/>
+				<AttributeType xmlns="" name="BalBudgetNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalBudgetNis"/>
+				<AttributeType xmlns="" name="BalBudgetAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalBudgetAcc"/>
+				<AttributeType xmlns="" name="BalAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalAcc"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+				<element xmlns="" type="Expenses" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="Incomes" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TotalBudget" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="HeshbTakbul" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="File006" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="Incomes" content="empty" model="closed">
+				<b:RecordInfo tag_name="Incomes"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="Year" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Year"/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="GrpNameH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="GrpNameH"/>
+				<AttributeType xmlns="" name="GrpNameE" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="GrpNameE"/>
+				<AttributeType xmlns="" name="ExpIncType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncType"/>
+				<AttributeType xmlns="" name="ExpIncGroup" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncGroup"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+				<AttributeType xmlns="" name="IncNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="IncNis"/>
+				<AttributeType xmlns="" name="IncAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="IncAcc"/>
+				<element xmlns="" type="TotalIncomes" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="HeshbTakbul" content="empty" model="closed">
+				<b:RecordInfo tag_name="HeshbTakbul"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="Year" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Year_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Year"/>
+				<AttributeType xmlns="" name="TakbulNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="TakbulNis"/>
+				<AttributeType xmlns="" name="TakbulAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="TakbulAcc"/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="HeshbonitNo" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonitNo"/>
+				<AttributeType xmlns="" name="HeshbonitNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonitNis"/>
+				<AttributeType xmlns="" name="HeshbonitBalNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonitBalNis"/>
+				<AttributeType xmlns="" name="HeshbonitBalAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonitBalAcc"/>
+				<AttributeType xmlns="" name="HeshbonitAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="HeshbonitAcc"/>
+				<AttributeType xmlns="" name="ExpIncGroup" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncGroup"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link="MasterData@Account_1"/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+			</ElementType>
+			<ElementType xmlns="" name="File006" content="empty" model="closed">
+				<b:RecordInfo tag_name="File006"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+				<AttributeType xmlns="" name="MetaemCode" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="MetaemCode"/>
+				<AttributeType xmlns="" name="MetaemDescH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="MetaemDescH"/>
+				<AttributeType xmlns="" name="MetaemDescE" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="MetaemDescE"/>
+				<AttributeType xmlns="" name="Phone" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Phone"/>
+				<AttributeType xmlns="" name="EMail" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="EMail"/>
+				<AttributeType xmlns="" name="ResearchSubjectE" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ResearchSubjectE"/>
+				<AttributeType xmlns="" name="ResearchSubjectH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ResearchSubjectH"/>
+				<AttributeType xmlns="" name="InvLast" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="InvLast"/>
+				<AttributeType xmlns="" name="InvLastNameH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="InvLastNameH"/>
+				<AttributeType xmlns="" name="InvLastNameE" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="InvLastNameE"/>
+				<AttributeType xmlns="" name="InvSumAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="InvSumAcc"/>
+				<AttributeType xmlns="" name="InvSumNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="InvSumNis"/>
+			</ElementType>
+			<ElementType xmlns="" name="Expenses" content="empty" model="closed">
+				<b:RecordInfo tag_name="Expenses"/>
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+				<AttributeType xmlns="" name="Year" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Year"/>
+				<AttributeType xmlns="" name="RecType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="RecType"/>
+				<AttributeType xmlns="" name="ExpNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpNis"/>
+				<AttributeType xmlns="" name="ExpIncType" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncType"/>
+				<AttributeType xmlns="" name="ExpIncGroup" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpIncGroup"/>
+				<AttributeType xmlns="" name="GrpNameH" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="GrpNameH"/>
+				<AttributeType xmlns="" name="GrpNameE" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="GrpNameE"/>
+				<AttributeType xmlns="" name="ExpAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="ExpAcc"/>
+				<AttributeType xmlns="" name="BalNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalNis"/>
+				<AttributeType xmlns="" name="BalAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalAcc"/>
+				<AttributeType xmlns="" name="BalBudgetNis" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalBudgetNis"/>
+				<AttributeType xmlns="" name="BalBudgetAcc" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="BalBudgetAcc"/>
+				<AttributeType xmlns="" name="Account" d:type="string">
+					<b:FieldInfo/>
+					<description xmlns=""/>
+					<dm:DMProviderInfo link=""/>
+				</AttributeType>
+				<attribute xmlns="" type="Account"/>
+				<element xmlns="" type="TotalExpenses" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TotalBal" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+		</Schema>
+	</srctree>
+	<Values>
+		<TestValues/>
+		<ConstantValues/>
+	</Values>
+	<sinktree>
+		<Schema name="TechnionData" b:BizTalkServerEditorTool_Version="1.0" b:root_reference="TechnionData" b:standard="XML" xmlns="urn:schemas-microsoft-com:xml-data" xmlns:b="urn:schemas-microsoft-com:BizTalkServer" xmlns:d="urn:schemas-microsoft-com:datatypes" xmlns:dm="urn:schemas-data-mall-com">
+			<b:SelectionFields/>
+			<ElementType xmlns="" name="Year" content="textOnly" model="closed" d:type="number">
+				<b:RecordInfo/>
+				<dm:CatalogInfo dm:category="2"/>
+			</ElementType>
+			<ElementType xmlns="" name="TotalGroupBgtCurrNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TotalGroupBgtCirrAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TotalBgtNis001" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TotalBgtCurrAcc001" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="TotalBgtCurrAcc001"/>
+			</ElementType>
+			<ElementType xmlns="" name="TkSumNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TkSumAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="Tikzuv" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TechnionData" content="eltOnly">
+				<b:RecordInfo/>
+				<element xmlns="" type="File001" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="File006" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="InvLast" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ResSubjectH" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="SponsorInvoicesTakbulim" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="SpnInvNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="SpnInvAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="SpnTakbulimNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="SpnTakbulimAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="SpnDetailes005" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="SpnTakbulimNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="SpnTakbulimAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="SpnInvNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="SpnInvAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="SpnDetailes005" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="InvoiceNo" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvSumNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvSumAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TkSumNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TkSumAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvItraNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvItraAcc" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="ReserchCoordCod" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ReserchCoordDescH" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ReserchCoordDescE" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="Phone" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="PirutIncomess_003" content="eltOnly" model="closed">
+				<b:RecordInfo tag_name="PirutIncomess_003"/>
+				<element xmlns="" type="IncDebCrd" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncUpdated" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncValueDate" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncSumNis003" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncSumAcc003" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncAsmachtaA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncSugA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncAsmachtaB" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncSugB" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncCrossAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncDetails" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="PirutExpenses_003" content="eltOnly" model="closed">
+				<b:RecordInfo tag_name="PirutExpenses_003"/>
+				<element xmlns="" type="ExpDebCrd" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpUpdated" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpValueDate" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpSumNis003" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpSumAcc003" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpAsmachtaA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpSugA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpAsmachtaB" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpSugB" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpCrossAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpDetails" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="Email" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ResSubjectE" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ItraGroupBgtNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ItraGroupBgtAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ItraBgtNis001" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ItraBgtAcc001" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="Ithaevut002" content="eltOnly" model="closed">
+				<b:RecordInfo tag_name="Ithaevut002"/>
+				<element xmlns="" type="Ithaev004" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="IthaevGroup" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthGroupDescH" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthGroupDescE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthNis002" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthCurrAcc002" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="IthaevGroup" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="Ithaev004" content="eltOnly" model="closed">
+				<b:RecordInfo tag_name="Ithaev004"/>
+				<element xmlns="" type="IthNo" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthCurrH" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthCurrE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthBalanceNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthBalanceCurrAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthBalanceCurrInv" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthDescH" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="IthNo" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IthNis002" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IthGroupDescH" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IthGroupDescE" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IthDescH" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IthCurrH" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IthCurrH"/>
+			</ElementType>
+			<ElementType xmlns="" name="IthCurrE" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IthCurrE"/>
+			</ElementType>
+			<ElementType xmlns="" name="IthCurrAcc002" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IthCurNis" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IthCurNis"/>
+			</ElementType>
+			<ElementType xmlns="" name="IthCurAcc" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IthCurAcc"/>
+			</ElementType>
+			<ElementType xmlns="" name="IthBalanceNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IthBalanceCurrInv" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IthBalanceCurrAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="InvoiceNo" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="InvSumNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="InvSumAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="InvItraNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="InvItraAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="Incomes002" content="eltOnly" model="closed">
+				<b:RecordInfo tag_name="Incomes002"/>
+				<element xmlns="" type="IncGroup" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncGroupDescH" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncGroupDescE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncNis002" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncAcc002" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="PirutIncomess_003" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="Incomes001" content="eltOnly" model="closed">
+				<b:RecordInfo tag_name="Incomes001"/>
+				<element xmlns="" type="Incomes002" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="IncCurNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IncCurAcc" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncValueDate" content="textOnly" model="closed" d:type="date">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="IncUpdated" content="textOnly" model="closed" d:type="date">
+				<b:RecordInfo tag_name="IncUpdated"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncSumNis003" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncSumNis003"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncSumAcc003" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncSumAcc003"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncSugB" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncSugB"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncSugA" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncSugA"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncNis002" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncNis002"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncGroupDescH" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncGroupDescH"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncGroupDescE" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncGroupDescE"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncGroup" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncGroup"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncDetails" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncDetails"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncDebCrd" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncDebCrd"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncCurNis" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncCurNis"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncCurAcc" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncCurAcc"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncCrossAcc" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncCrossAcc"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncAsmachtaB" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncAsmachtaB"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncAsmachtaA" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncAsmachtaA"/>
+			</ElementType>
+			<ElementType xmlns="" name="IncAcc002" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="IncAcc002"/>
+			</ElementType>
+			<ElementType xmlns="" name="GroupBgtDescH" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="GroupBgtDescE" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="GroupBgt" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="InvLastNameH" content="textOnly" model="closed">
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="InvLastNameE" content="textOnly" model="closed">
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="File006" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="ReserchCoordCod" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ReserchCoordDescH" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ReserchCoordDescE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="Phone" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="Email" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ResSubjectE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ResSubjectH" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvLast" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvLastNameH" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvLastNameE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvSumAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="InvSumNis" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="File001" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="Account" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="Year" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="Tikzuv" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CurNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CurAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="Expences001" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="Incomes001" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="AccBalance001" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="BalanceIthaevut001" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="Budget001" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="SponsorInvoicesTakbulim" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="Expenses-002" content="eltOnly" model="closed">
+				<b:RecordInfo tag_name="Expenses-002"/>
+				<element xmlns="" type="ExpGroup" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpGroupDescH" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpGroupDescE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpNis002" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpAcc002" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="PirutExpenses_003" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="Expences001" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="Expenses-002" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="ExpCurNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ExpCurAcc" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpValueDate" content="textOnly" model="closed" d:type="date">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpUpdated" content="textOnly" model="closed" d:type="date">
+				<b:RecordInfo tag_name="ExpUpdated"/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpSumNis003" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="ExpSumNis003"/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpSumAcc003" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="ExpSumAcc003"/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpSugB" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpSugA" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpNis002" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="ExpNis002"/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpGroupDescH" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="ExpGroupDescH"/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpGroupDescE" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpGroup" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="ExpGroup"/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpDetails" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpDebCrd" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="ExpDebCrd"/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpCurNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpCurAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpCrossAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpAsmachtaB" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpAsmachtaA" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ExpAcc002" content="textOnly" model="closed">
+				<b:RecordInfo tag_name="ExpAcc002"/>
+			</ElementType>
+			<ElementType xmlns="" name="DetailesBgt002" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="GroupBgt" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="GroupBgtDescH" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="GroupBgtDescE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TotalGroupBgtCurrNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TotalGroupBgtCirrAcc" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ItraGroupBgtNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ItraGroupBgtAcc" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="CurNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CurAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="Budget001" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="TotalBgtNis001" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TotalBgtCurrAcc001" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ItraBgtNis001" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ItraBgtAcc001" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="DetailesBgt002" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="BalanceIthaevut001" content="eltOnly" model="closed">
+				<b:RecordInfo tag_name="BalanceIthaevut001"/>
+				<element xmlns="" type="Ithaevut002" maxOccurs="*" minOccurs="0"/>
+				<element xmlns="" type="IthCurNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="IthCurAcc" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="Account" content="textOnly" model="closed" d:type="number">
+				<b:RecordInfo tag_name="Account"/>
+				<dm:CatalogInfo dm:category="1"/>
+			</ElementType>
+			<ElementType xmlns="" name="AccBalanceNis" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="AccBalanceCurAcc" content="textOnly" model="closed">
+				<b:RecordInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="AccBalance001" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="AccBalanceNis" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="AccBalanceCurAcc" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+		</Schema>
+	</sinktree>
+	<links>
+		<link linkid="1" linkfrom="/MasterData@CurTypeE" linkto="/TechnionData/File001/CurAcc"/>
+		<link linkid="2" linkfrom="/MasterData@TakbulNis" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnTakbulimNis"/>
+		<link linkid="3" linkfrom="/MasterData@TakbulAcc" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnTakbulimAcc"/>
+		<link linkid="4" linkfrom="/MasterData@HeshbonitNis" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnInvNis"/>
+		<link linkid="5" linkfrom="/MasterData@HeshbonitAcc" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnInvAcc"/>
+		<link linkid="6" linkfrom="/MasterData@Account" linkto="/TechnionData/File001/Account"/>
+		<link linkid="7" linkfrom="/MasterData@Year" linkto="/TechnionData/File001/Year"/>
+		<link linkid="8" linkfrom="/MasterData/HeshbTakbul" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnDetailes005"/>
+		<link linkid="9" linkfrom="/MasterData/HeshbTakbul@HeshbonitNo" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnDetailes005/InvoiceNo"/>
+		<link linkid="10" linkfrom="/MasterData/HeshbTakbul@TakbulNis" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnDetailes005/TkSumNis"/>
+		<link linkid="11" linkfrom="/MasterData/HeshbTakbul@TakbulAcc" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnDetailes005/TkSumAcc"/>
+		<link linkid="12" linkfrom="/MasterData/HeshbTakbul@HeshbonitBalNis" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnDetailes005/InvItraNis"/>
+		<link linkid="13" linkfrom="/MasterData/HeshbTakbul@HeshbonitBalAcc" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnDetailes005/InvItraAcc"/>
+		<link linkid="14" linkfrom="/MasterData/HeshbTakbul@HeshbonitNis" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnDetailes005/InvSumNis"/>
+		<link linkid="15" linkfrom="/MasterData/HeshbTakbul@HeshbonitAcc" linkto="/TechnionData/File001/SponsorInvoicesTakbulim/SpnDetailes005/InvSumAcc"/>
+		<link linkid="16" linkfrom="/MasterData/File006@MetaemCode" linkto="/TechnionData/File006/ReserchCoordCod"/>
+		<link linkid="17" linkfrom="/MasterData/File006@MetaemDescH" linkto="/TechnionData/File006/ReserchCoordDescH"/>
+		<link linkid="18" linkfrom="/MasterData/File006@MetaemDescE" linkto="/TechnionData/File006/ReserchCoordDescE"/>
+		<link linkid="19" linkfrom="/MasterData/File006@Phone" linkto="/TechnionData/File006/Phone"/>
+		<link linkid="20" linkfrom="/MasterData/File006@EMail" linkto="/TechnionData/File006/Email"/>
+		<link linkid="21" linkfrom="/MasterData/File006@ResearchSubjectE" linkto="/TechnionData/File006/ResSubjectE"/>
+		<link linkid="22" linkfrom="/MasterData/File006@ResearchSubjectH" linkto="/TechnionData/File006/ResSubjectH"/>
+		<link linkid="23" linkfrom="/MasterData/File006@InvLast" linkto="/TechnionData/File006/InvLast"/>
+		<link linkid="24" linkfrom="/MasterData/File006@InvLastNameH" linkto="/TechnionData/File006/InvLastNameH"/>
+		<link linkid="25" linkfrom="/MasterData/File006@InvLastNameE" linkto="/TechnionData/File006/InvLastNameE"/>
+		<link linkid="26" linkfrom="/MasterData/File006@InvSumAcc" linkto="/TechnionData/File006/InvSumAcc"/>
+		<link linkid="27" linkfrom="/MasterData/File006@InvSumNis" linkto="/TechnionData/File006/InvSumNis"/>
+		<link linkid="28" linkfrom="/MasterData@ExpNis" linkto="/TechnionData/File001/Expences001/ExpCurNis"/>
+		<link linkid="29" linkfrom="/MasterData@ExpAcc" linkto="/TechnionData/File001/Expences001/ExpCurAcc"/>
+		<link linkid="30" linkfrom="/MasterData/Expenses" linkto="/TechnionData/File001/Expences001/Expenses-002"/>
+		<link linkid="31" linkfrom="/MasterData/Expenses@ExpIncGroup" linkto="/TechnionData/File001/Expences001/Expenses-002/ExpGroup"/>
+		<link linkid="32" linkfrom="/MasterData/Expenses@GrpNameH" linkto="/TechnionData/File001/Expences001/Expenses-002/ExpGroupDescH"/>
+		<link linkid="33" linkfrom="/MasterData/Expenses@GrpNameE" linkto="/TechnionData/File001/Expences001/Expenses-002/ExpGroupDescE"/>
+		<link linkid="34" linkfrom="/MasterData/Expenses@ExpNis" linkto="/TechnionData/File001/Expences001/Expenses-002/ExpNis002"/>
+		<link linkid="35" linkfrom="/MasterData/Expenses@ExpAcc" linkto="/TechnionData/File001/Expences001/Expenses-002/ExpAcc002"/>
+		<link linkid="36" linkfrom="/MasterData/Expenses/TotalExpenses" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003"/>
+		<link linkid="37" linkfrom="/MasterData/Expenses/TotalExpenses@AsmahtaTypeA" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpSugA"/>
+		<link linkid="38" linkfrom="/MasterData/Expenses/TotalExpenses@AsmahtaTypeB" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpSugB"/>
+		<link linkid="39" linkfrom="/MasterData/Expenses/TotalExpenses@AsmahtaA" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpAsmachtaA"/>
+		<link linkid="40" linkfrom="/MasterData/Expenses/TotalExpenses@AccountCross" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpCrossAcc"/>
+		<link linkid="41" linkfrom="/MasterData/Expenses/TotalExpenses@Remarks" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpDetails"/>
+		<link linkid="42" linkfrom="/MasterData/Expenses/TotalExpenses@ExpAcc" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpSumAcc003"/>
+		<link linkid="43" linkfrom="/MasterData/Expenses/TotalExpenses@AsmahtaB" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpAsmachtaB"/>
+		<link linkid="44" linkfrom="/MasterData/Expenses/TotalExpenses@ExpNis" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpSumNis003"/>
+		<link linkid="45" linkfrom="/MasterData@IncNis" linkto="/TechnionData/File001/Incomes001/IncCurNis"/>
+		<link linkid="46" linkfrom="/MasterData@IncAcc" linkto="/TechnionData/File001/Incomes001/IncCurAcc"/>
+		<link linkid="47" linkfrom="/MasterData/Incomes" linkto="/TechnionData/File001/Incomes001/Incomes002"/>
+		<link linkid="48" linkfrom="/MasterData/Incomes@IncNis" linkto="/TechnionData/File001/Incomes001/Incomes002/IncNis002"/>
+		<link linkid="49" linkfrom="/MasterData/Incomes@IncAcc" linkto="/TechnionData/File001/Incomes001/Incomes002/IncAcc002"/>
+		<link linkid="50" linkfrom="/MasterData/Incomes@GrpNameH" linkto="/TechnionData/File001/Incomes001/Incomes002/IncGroupDescH"/>
+		<link linkid="51" linkfrom="/MasterData/Incomes@GrpNameE" linkto="/TechnionData/File001/Incomes001/Incomes002/IncGroupDescE"/>
+		<link linkid="52" linkfrom="/MasterData/Incomes/TotalIncomes" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003"/>
+		<link linkid="53" linkfrom="/MasterData/Incomes/TotalIncomes@AsmahtaTypeA" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncSugA"/>
+		<link linkid="54" linkfrom="/MasterData/Incomes/TotalIncomes@AsmahtaTypeB" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncSugB"/>
+		<link linkid="55" linkfrom="/MasterData/Incomes/TotalIncomes@SumNis" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncSumNis003"/>
+		<link linkid="56" linkfrom="/MasterData/Incomes/TotalIncomes@SumAcc" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncSumAcc003"/>
+		<link linkid="57" linkfrom="/MasterData/Incomes/TotalIncomes@AsmahtaA" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncAsmachtaA"/>
+		<link linkid="58" linkfrom="/MasterData/Incomes/TotalIncomes@AsmahtaB" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncAsmachtaB"/>
+		<link linkid="59" linkfrom="/MasterData/Incomes/TotalIncomes@AccountCross" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncCrossAcc"/>
+		<link linkid="60" linkfrom="/MasterData/Incomes/TotalIncomes@Remarks" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncDetails"/>
+		<link linkid="61" linkfrom="/MasterData/Incomes@ExpIncGroup" linkto="/TechnionData/File001/Incomes001/Incomes002/IncGroup"/>
+		<link linkid="62" linkfrom="/MasterData/Expenses" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002"/>
+		<link linkid="63" linkfrom="/MasterData/Expenses@BalNis" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/IthNis002"/>
+		<link linkid="64" linkfrom="/MasterData/Expenses@BalAcc" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/IthCurrAcc002"/>
+		<link linkid="65" linkfrom="/MasterData/Expenses@ExpIncGroup" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/IthaevGroup"/>
+		<link linkid="66" linkfrom="/MasterData/Expenses@GrpNameH" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/IthGroupDescH"/>
+		<link linkid="67" linkfrom="/MasterData/Expenses@GrpNameE" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/IthGroupDescE"/>
+		<link linkid="68" linkfrom="/MasterData/Expenses/TotalBal@IthCurH" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/Ithaev004/IthCurrH"/>
+		<link linkid="69" linkfrom="/MasterData/Expenses/TotalBal@IthaevutNo" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/Ithaev004/IthNo"/>
+		<link linkid="70" linkfrom="/MasterData/Expenses/TotalBal@BalIth" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/Ithaev004/IthBalanceCurrInv"/>
+		<link linkid="71" linkfrom="/MasterData/Expenses/TotalBal@BalNis" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/Ithaev004/IthBalanceNis"/>
+		<link linkid="72" linkfrom="/MasterData/Expenses/TotalBal@IthCurE" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/Ithaev004/IthCurrE"/>
+		<link linkid="73" linkfrom="/MasterData/Expenses/TotalBal@BalAcc" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/Ithaev004/IthBalanceCurrAcc"/>
+		<link linkid="74" linkfrom="/MasterData/Expenses/TotalBal@IthDescH" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/Ithaev004/IthDescH"/>
+		<link linkid="75" linkfrom="/MasterData/Expenses/TotalBal" linkto="/TechnionData/File001/BalanceIthaevut001/Ithaevut002/Ithaev004"/>
+		<link linkid="76" linkfrom="/MasterData@HeshbonBalNis" linkto="/TechnionData/File001/AccBalance001/AccBalanceNis"/>
+		<link linkid="77" linkfrom="/MasterData@HeshbonBalAcc" linkto="/TechnionData/File001/AccBalance001/AccBalanceCurAcc"/>
+		<link linkid="78" linkfrom="/MasterData@BalAcc" linkto="/TechnionData/File001/BalanceIthaevut001/IthCurAcc"/>
+		<link linkid="79" linkfrom="/MasterData@TotalBudgetNis" linkto="/TechnionData/File001/Budget001/TotalBgtNis001"/>
+		<link linkid="80" linkfrom="/MasterData@TotalBudgetAcc" linkto="/TechnionData/File001/Budget001/TotalBgtCurrAcc001"/>
+		<link linkid="81" linkfrom="/MasterData@BalBudgetNis" linkto="/TechnionData/File001/Budget001/ItraBgtNis001"/>
+		<link linkid="82" linkfrom="/MasterData@BalBudgetAcc" linkto="/TechnionData/File001/Budget001/ItraBgtAcc001"/>
+		<link linkid="83" linkfrom="/MasterData/TotalBudget" linkto="/TechnionData/File001/Budget001/DetailesBgt002"/>
+		<link linkid="84" linkfrom="/MasterData/TotalBudget@ExpIncGroup" linkto="/TechnionData/File001/Budget001/DetailesBgt002/GroupBgt"/>
+		<link linkid="85" linkfrom="/MasterData/TotalBudget@TotalBudgetNis" linkto="/TechnionData/File001/Budget001/DetailesBgt002/TotalGroupBgtCurrNis"/>
+		<link linkid="86" linkfrom="/MasterData/TotalBudget@TotalBudgetAcc" linkto="/TechnionData/File001/Budget001/DetailesBgt002/TotalGroupBgtCirrAcc"/>
+		<link linkid="87" linkfrom="/MasterData/TotalBudget@BalBudgetNis" linkto="/TechnionData/File001/Budget001/DetailesBgt002/ItraGroupBgtNis"/>
+		<link linkid="88" linkfrom="/MasterData/TotalBudget@BalBudgetAcc" linkto="/TechnionData/File001/Budget001/DetailesBgt002/ItraGroupBgtAcc"/>
+		<link linkid="89" linkfrom="/MasterData/TotalBudget@GrpNameH" linkto="/TechnionData/File001/Budget001/DetailesBgt002/GroupBgtDescH"/>
+		<link linkid="90" linkfrom="/MasterData/TotalBudget@GrpNameE" linkto="/TechnionData/File001/Budget001/DetailesBgt002/GroupBgtDescE"/>
+		<link linkid="91" linkfrom="/MasterData@BalNis" linkto="/TechnionData/File001/BalanceIthaevut001/IthCurNis"/>
+		<link linkid="92" linkfrom="/MasterData@CurTypeH" linkto="/TechnionData/File001/CurNis"/>
+		<link linkid="93" linkfrom="/MasterData@BudgetType" linkto="/TechnionData/File001/Tikzuv"/>
+		<link linkid="94" linkfrom="/MasterData/Incomes/TotalIncomes@HovaZhut" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncDebCrd"/>
+		<link linkid="95" linkfrom="/MasterData/Expenses/TotalExpenses@UpdateDate" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpUpdated"/>
+		<link linkid="96" linkfrom="/MasterData/Expenses/TotalExpenses@HovaZhut" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpDebCrd"/>
+		<link linkid="97" linkfrom="/MasterData/Incomes/TotalIncomes@UpdateDate" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncUpdated"/>
+		<link linkid="98" linkfrom="/MasterData/Expenses/TotalExpenses@ValueDate" linkto="/TechnionData/File001/Expences001/Expenses-002/PirutExpenses_003/ExpValueDate"/>
+		<link linkid="99" linkfrom="/MasterData/Incomes/TotalIncomes@ValueDate" linkto="/TechnionData/File001/Incomes001/Incomes002/PirutIncomess_003/IncValueDate"/>
+		<link linkid="100" linkfrom="/MasterData" linkto="/TechnionData"/>
+	</links>
+	<functions></functions>
+	<CompiledXSL>
+		<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:var="urn:var" xmlns:user="urn:user" version="1.0">
+			<xsl:output method="xml" indent="yes" omit-xml-declaration="yes"/>
+			<xsl:template match="/">
+				<xsl:apply-templates select="ServiceData/MasterData"/>
+			</xsl:template>
+			<xsl:template match="ServiceData/MasterData">
+				<TechnionData>
+					<!--Connection from Source Node "MasterData" to Destination Node "TechnionData"-->
+					<xsl:value-of select="./text()"/>
+					<File001>
+						<Account>
+							<!--Connection from Source Node "@Account" to Destination Node "Account"-->
+							<xsl:value-of select="@Account"/>
+						</Account>
+						<Year>
+							<!--Connection from Source Node "@Year" to Destination Node "Year"-->
+							<xsl:value-of select="@Year"/>
+						</Year>
+						<Tikzuv>
+							<!--Connection from Source Node "@BudgetType" to Destination Node "Tikzuv"-->
+							<xsl:value-of select="@BudgetType"/>
+						</Tikzuv>
+						<CurNis>
+							<!--Connection from Source Node "@CurTypeH" to Destination Node "CurNis"-->
+							<xsl:value-of select="@CurTypeH"/>
+						</CurNis>
+						<CurAcc>
+							<!--Connection from Source Node "@CurTypeE" to Destination Node "CurAcc"-->
+							<xsl:value-of select="@CurTypeE"/>
+						</CurAcc>
+						<Expences001>
+							<xsl:for-each select="Expenses">
+								<Expenses-002>
+									<!--Connection from Source Node "Expenses" to Destination Node "Expenses-002"-->
+									<xsl:value-of select="./text()"/>
+									<ExpGroup>
+										<!--Connection from Source Node "@ExpIncGroup" to Destination Node "ExpGroup"-->
+										<xsl:value-of select="ancestor::*[1]/@ExpIncGroup"/>
+									</ExpGroup>
+									<ExpGroupDescH>
+										<!--Connection from Source Node "@GrpNameH" to Destination Node "ExpGroupDescH"-->
+										<xsl:value-of select="ancestor::*[1]/@GrpNameH"/>
+									</ExpGroupDescH>
+									<ExpGroupDescE>
+										<!--Connection from Source Node "@GrpNameE" to Destination Node "ExpGroupDescE"-->
+										<xsl:value-of select="ancestor::*[1]/@GrpNameE"/>
+									</ExpGroupDescE>
+									<ExpNis002>
+										<!--Connection from Source Node "@ExpNis" to Destination Node "ExpNis002"-->
+										<xsl:value-of select="ancestor::*[1]/@ExpNis"/>
+									</ExpNis002>
+									<ExpAcc002>
+										<!--Connection from Source Node "@ExpAcc" to Destination Node "ExpAcc002"-->
+										<xsl:value-of select="ancestor::*[1]/@ExpAcc"/>
+									</ExpAcc002>
+									<xsl:for-each select="TotalExpenses">
+										<PirutExpenses_003>
+											<!--Connection from Source Node "TotalExpenses" to Destination Node "PirutExpenses_003"-->
+											<xsl:value-of select="./text()"/>
+											<ExpDebCrd>
+												<!--Connection from Source Node "@HovaZhut" to Destination Node "ExpDebCrd"-->
+												<xsl:value-of select="ancestor::*[1]/@HovaZhut"/>
+											</ExpDebCrd>
+											<ExpUpdated>
+												<!--Connection from Source Node "@UpdateDate" to Destination Node "ExpUpdated"-->
+												<xsl:value-of select="ancestor::*[1]/@UpdateDate"/>
+											</ExpUpdated>
+											<ExpValueDate>
+												<!--Connection from Source Node "@ValueDate" to Destination Node "ExpValueDate"-->
+												<xsl:value-of select="ancestor::*[1]/@ValueDate"/>
+											</ExpValueDate>
+											<ExpSumNis003>
+												<!--Connection from Source Node "@ExpNis" to Destination Node "ExpSumNis003"-->
+												<xsl:value-of select="ancestor::*[1]/@ExpNis"/>
+											</ExpSumNis003>
+											<ExpSumAcc003>
+												<!--Connection from Source Node "@ExpAcc" to Destination Node "ExpSumAcc003"-->
+												<xsl:value-of select="ancestor::*[1]/@ExpAcc"/>
+											</ExpSumAcc003>
+											<ExpAsmachtaA>
+												<!--Connection from Source Node "@AsmahtaA" to Destination Node "ExpAsmachtaA"-->
+												<xsl:value-of select="ancestor::*[1]/@AsmahtaA"/>
+											</ExpAsmachtaA>
+											<ExpSugA>
+												<!--Connection from Source Node "@AsmahtaTypeA" to Destination Node "ExpSugA"-->
+												<xsl:value-of select="ancestor::*[1]/@AsmahtaTypeA"/>
+											</ExpSugA>
+											<ExpAsmachtaB>
+												<!--Connection from Source Node "@AsmahtaB" to Destination Node "ExpAsmachtaB"-->
+												<xsl:value-of select="ancestor::*[1]/@AsmahtaB"/>
+											</ExpAsmachtaB>
+											<ExpSugB>
+												<!--Connection from Source Node "@AsmahtaTypeB" to Destination Node "ExpSugB"-->
+												<xsl:value-of select="ancestor::*[1]/@AsmahtaTypeB"/>
+											</ExpSugB>
+											<ExpCrossAcc>
+												<!--Connection from Source Node "@AccountCross" to Destination Node "ExpCrossAcc"-->
+												<xsl:value-of select="ancestor::*[1]/@AccountCross"/>
+											</ExpCrossAcc>
+											<ExpDetails>
+												<!--Connection from Source Node "@Remarks" to Destination Node "ExpDetails"-->
+												<xsl:value-of select="ancestor::*[1]/@Remarks"/>
+											</ExpDetails>
+										</PirutExpenses_003>
+									</xsl:for-each>
+								</Expenses-002>
+							</xsl:for-each>
+							<ExpCurNis>
+								<!--Connection from Source Node "@ExpNis" to Destination Node "ExpCurNis"-->
+								<xsl:value-of select="@ExpNis"/>
+							</ExpCurNis>
+							<ExpCurAcc>
+								<!--Connection from Source Node "@ExpAcc" to Destination Node "ExpCurAcc"-->
+								<xsl:value-of select="@ExpAcc"/>
+							</ExpCurAcc>
+						</Expences001>
+						<Incomes001>
+							<xsl:for-each select="Incomes">
+								<Incomes002>
+									<!--Connection from Source Node "Incomes" to Destination Node "Incomes002"-->
+									<xsl:value-of select="./text()"/>
+									<IncGroup>
+										<!--Connection from Source Node "@ExpIncGroup" to Destination Node "IncGroup"-->
+										<xsl:value-of select="ancestor::*[1]/@ExpIncGroup"/>
+									</IncGroup>
+									<IncGroupDescH>
+										<!--Connection from Source Node "@GrpNameH" to Destination Node "IncGroupDescH"-->
+										<xsl:value-of select="ancestor::*[1]/@GrpNameH"/>
+									</IncGroupDescH>
+									<IncGroupDescE>
+										<!--Connection from Source Node "@GrpNameE" to Destination Node "IncGroupDescE"-->
+										<xsl:value-of select="ancestor::*[1]/@GrpNameE"/>
+									</IncGroupDescE>
+									<IncNis002>
+										<!--Connection from Source Node "@IncNis" to Destination Node "IncNis002"-->
+										<xsl:value-of select="ancestor::*[1]/@IncNis"/>
+									</IncNis002>
+									<IncAcc002>
+										<!--Connection from Source Node "@IncAcc" to Destination Node "IncAcc002"-->
+										<xsl:value-of select="ancestor::*[1]/@IncAcc"/>
+									</IncAcc002>
+									<xsl:for-each select="TotalIncomes">
+										<PirutIncomess_003>
+											<!--Connection from Source Node "TotalIncomes" to Destination Node "PirutIncomess_003"-->
+											<xsl:value-of select="./text()"/>
+											<IncDebCrd>
+												<!--Connection from Source Node "@HovaZhut" to Destination Node "IncDebCrd"-->
+												<xsl:value-of select="ancestor::*[1]/@HovaZhut"/>
+											</IncDebCrd>
+											<IncUpdated>
+												<!--Connection from Source Node "@UpdateDate" to Destination Node "IncUpdated"-->
+												<xsl:value-of select="ancestor::*[1]/@UpdateDate"/>
+											</IncUpdated>
+											<IncValueDate>
+												<!--Connection from Source Node "@ValueDate" to Destination Node "IncValueDate"-->
+												<xsl:value-of select="ancestor::*[1]/@ValueDate"/>
+											</IncValueDate>
+											<IncSumNis003>
+												<!--Connection from Source Node "@SumNis" to Destination Node "IncSumNis003"-->
+												<xsl:value-of select="ancestor::*[1]/@SumNis"/>
+											</IncSumNis003>
+											<IncSumAcc003>
+												<!--Connection from Source Node "@SumAcc" to Destination Node "IncSumAcc003"-->
+												<xsl:value-of select="ancestor::*[1]/@SumAcc"/>
+											</IncSumAcc003>
+											<IncAsmachtaA>
+												<!--Connection from Source Node "@AsmahtaA" to Destination Node "IncAsmachtaA"-->
+												<xsl:value-of select="ancestor::*[1]/@AsmahtaA"/>
+											</IncAsmachtaA>
+											<IncSugA>
+												<!--Connection from Source Node "@AsmahtaTypeA" to Destination Node "IncSugA"-->
+												<xsl:value-of select="ancestor::*[1]/@AsmahtaTypeA"/>
+											</IncSugA>
+											<IncAsmachtaB>
+												<!--Connection from Source Node "@AsmahtaB" to Destination Node "IncAsmachtaB"-->
+												<xsl:value-of select="ancestor::*[1]/@AsmahtaB"/>
+											</IncAsmachtaB>
+											<IncSugB>
+												<!--Connection from Source Node "@AsmahtaTypeB" to Destination Node "IncSugB"-->
+												<xsl:value-of select="ancestor::*[1]/@AsmahtaTypeB"/>
+											</IncSugB>
+											<IncCrossAcc>
+												<!--Connection from Source Node "@AccountCross" to Destination Node "IncCrossAcc"-->
+												<xsl:value-of select="ancestor::*[1]/@AccountCross"/>
+											</IncCrossAcc>
+											<IncDetails>
+												<!--Connection from Source Node "@Remarks" to Destination Node "IncDetails"-->
+												<xsl:value-of select="ancestor::*[1]/@Remarks"/>
+											</IncDetails>
+										</PirutIncomess_003>
+									</xsl:for-each>
+								</Incomes002>
+							</xsl:for-each>
+							<IncCurNis>
+								<!--Connection from Source Node "@IncNis" to Destination Node "IncCurNis"-->
+								<xsl:value-of select="@IncNis"/>
+							</IncCurNis>
+							<IncCurAcc>
+								<!--Connection from Source Node "@IncAcc" to Destination Node "IncCurAcc"-->
+								<xsl:value-of select="@IncAcc"/>
+							</IncCurAcc>
+						</Incomes001>
+						<AccBalance001>
+							<AccBalanceNis>
+								<!--Connection from Source Node "@HeshbonBalNis" to Destination Node "AccBalanceNis"-->
+								<xsl:value-of select="@HeshbonBalNis"/>
+							</AccBalanceNis>
+							<AccBalanceCurAcc>
+								<!--Connection from Source Node "@HeshbonBalAcc" to Destination Node "AccBalanceCurAcc"-->
+								<xsl:value-of select="@HeshbonBalAcc"/>
+							</AccBalanceCurAcc>
+						</AccBalance001>
+						<BalanceIthaevut001>
+							<xsl:for-each select="Expenses">
+								<Ithaevut002>
+									<!--Connection from Source Node "Expenses" to Destination Node "Ithaevut002"-->
+									<xsl:value-of select="./text()"/>
+									<xsl:for-each select="TotalBal">
+										<Ithaev004>
+											<!--Connection from Source Node "TotalBal" to Destination Node "Ithaev004"-->
+											<xsl:value-of select="./text()"/>
+											<IthNo>
+												<!--Connection from Source Node "@IthaevutNo" to Destination Node "IthNo"-->
+												<xsl:value-of select="ancestor::*[1]/@IthaevutNo"/>
+											</IthNo>
+											<IthCurrH>
+												<!--Connection from Source Node "@IthCurH" to Destination Node "IthCurrH"-->
+												<xsl:value-of select="ancestor::*[1]/@IthCurH"/>
+											</IthCurrH>
+											<IthCurrE>
+												<!--Connection from Source Node "@IthCurE" to Destination Node "IthCurrE"-->
+												<xsl:value-of select="ancestor::*[1]/@IthCurE"/>
+											</IthCurrE>
+											<IthBalanceNis>
+												<!--Connection from Source Node "@BalNis" to Destination Node "IthBalanceNis"-->
+												<xsl:value-of select="ancestor::*[1]/@BalNis"/>
+											</IthBalanceNis>
+											<IthBalanceCurrAcc>
+												<!--Connection from Source Node "@BalAcc" to Destination Node "IthBalanceCurrAcc"-->
+												<xsl:value-of select="ancestor::*[1]/@BalAcc"/>
+											</IthBalanceCurrAcc>
+											<IthBalanceCurrInv>
+												<!--Connection from Source Node "@BalIth" to Destination Node "IthBalanceCurrInv"-->
+												<xsl:value-of select="ancestor::*[1]/@BalIth"/>
+											</IthBalanceCurrInv>
+											<IthDescH>
+												<!--Connection from Source Node "@IthDescH" to Destination Node "IthDescH"-->
+												<xsl:value-of select="ancestor::*[1]/@IthDescH"/>
+											</IthDescH>
+										</Ithaev004>
+									</xsl:for-each>
+									<IthaevGroup>
+										<!--Connection from Source Node "@ExpIncGroup" to Destination Node "IthaevGroup"-->
+										<xsl:value-of select="ancestor::*[1]/@ExpIncGroup"/>
+									</IthaevGroup>
+									<IthGroupDescH>
+										<!--Connection from Source Node "@GrpNameH" to Destination Node "IthGroupDescH"-->
+										<xsl:value-of select="ancestor::*[1]/@GrpNameH"/>
+									</IthGroupDescH>
+									<IthGroupDescE>
+										<!--Connection from Source Node "@GrpNameE" to Destination Node "IthGroupDescE"-->
+										<xsl:value-of select="ancestor::*[1]/@GrpNameE"/>
+									</IthGroupDescE>
+									<IthNis002>
+										<!--Connection from Source Node "@BalNis" to Destination Node "IthNis002"-->
+										<xsl:value-of select="ancestor::*[1]/@BalNis"/>
+									</IthNis002>
+									<IthCurrAcc002>
+										<!--Connection from Source Node "@BalAcc" to Destination Node "IthCurrAcc002"-->
+										<xsl:value-of select="ancestor::*[1]/@BalAcc"/>
+									</IthCurrAcc002>
+								</Ithaevut002>
+							</xsl:for-each>
+							<IthCurNis>
+								<!--Connection from Source Node "@BalNis" to Destination Node "IthCurNis"-->
+								<xsl:value-of select="@BalNis"/>
+							</IthCurNis>
+							<IthCurAcc>
+								<!--Connection from Source Node "@BalAcc" to Destination Node "IthCurAcc"-->
+								<xsl:value-of select="@BalAcc"/>
+							</IthCurAcc>
+						</BalanceIthaevut001>
+						<Budget001>
+							<TotalBgtNis001>
+								<!--Connection from Source Node "@TotalBudgetNis" to Destination Node "TotalBgtNis001"-->
+								<xsl:value-of select="@TotalBudgetNis"/>
+							</TotalBgtNis001>
+							<TotalBgtCurrAcc001>
+								<!--Connection from Source Node "@TotalBudgetAcc" to Destination Node "TotalBgtCurrAcc001"-->
+								<xsl:value-of select="@TotalBudgetAcc"/>
+							</TotalBgtCurrAcc001>
+							<ItraBgtNis001>
+								<!--Connection from Source Node "@BalBudgetNis" to Destination Node "ItraBgtNis001"-->
+								<xsl:value-of select="@BalBudgetNis"/>
+							</ItraBgtNis001>
+							<ItraBgtAcc001>
+								<!--Connection from Source Node "@BalBudgetAcc" to Destination Node "ItraBgtAcc001"-->
+								<xsl:value-of select="@BalBudgetAcc"/>
+							</ItraBgtAcc001>
+							<xsl:for-each select="TotalBudget">
+								<DetailesBgt002>
+									<!--Connection from Source Node "TotalBudget" to Destination Node "DetailesBgt002"-->
+									<xsl:value-of select="./text()"/>
+									<GroupBgt>
+										<!--Connection from Source Node "@ExpIncGroup" to Destination Node "GroupBgt"-->
+										<xsl:value-of select="ancestor::*[1]/@ExpIncGroup"/>
+									</GroupBgt>
+									<GroupBgtDescH>
+										<!--Connection from Source Node "@GrpNameH" to Destination Node "GroupBgtDescH"-->
+										<xsl:value-of select="ancestor::*[1]/@GrpNameH"/>
+									</GroupBgtDescH>
+									<GroupBgtDescE>
+										<!--Connection from Source Node "@GrpNameE" to Destination Node "GroupBgtDescE"-->
+										<xsl:value-of select="ancestor::*[1]/@GrpNameE"/>
+									</GroupBgtDescE>
+									<TotalGroupBgtCurrNis>
+										<!--Connection from Source Node "@TotalBudgetNis" to Destination Node "TotalGroupBgtCurrNis"-->
+										<xsl:value-of select="ancestor::*[1]/@TotalBudgetNis"/>
+									</TotalGroupBgtCurrNis>
+									<TotalGroupBgtCirrAcc>
+										<!--Connection from Source Node "@TotalBudgetAcc" to Destination Node "TotalGroupBgtCirrAcc"-->
+										<xsl:value-of select="ancestor::*[1]/@TotalBudgetAcc"/>
+									</TotalGroupBgtCirrAcc>
+									<ItraGroupBgtNis>
+										<!--Connection from Source Node "@BalBudgetNis" to Destination Node "ItraGroupBgtNis"-->
+										<xsl:value-of select="ancestor::*[1]/@BalBudgetNis"/>
+									</ItraGroupBgtNis>
+									<ItraGroupBgtAcc>
+										<!--Connection from Source Node "@BalBudgetAcc" to Destination Node "ItraGroupBgtAcc"-->
+										<xsl:value-of select="ancestor::*[1]/@BalBudgetAcc"/>
+									</ItraGroupBgtAcc>
+								</DetailesBgt002>
+							</xsl:for-each>
+						</Budget001>
+						<SponsorInvoicesTakbulim>
+							<SpnInvNis>
+								<!--Connection from Source Node "@HeshbonitNis" to Destination Node "SpnInvNis"-->
+								<xsl:value-of select="@HeshbonitNis"/>
+							</SpnInvNis>
+							<SpnInvAcc>
+								<!--Connection from Source Node "@HeshbonitAcc" to Destination Node "SpnInvAcc"-->
+								<xsl:value-of select="@HeshbonitAcc"/>
+							</SpnInvAcc>
+							<SpnTakbulimNis>
+								<!--Connection from Source Node "@TakbulNis" to Destination Node "SpnTakbulimNis"-->
+								<xsl:value-of select="@TakbulNis"/>
+							</SpnTakbulimNis>
+							<SpnTakbulimAcc>
+								<!--Connection from Source Node "@TakbulAcc" to Destination Node "SpnTakbulimAcc"-->
+								<xsl:value-of select="@TakbulAcc"/>
+							</SpnTakbulimAcc>
+							<xsl:for-each select="HeshbTakbul">
+								<SpnDetailes005>
+									<!--Connection from Source Node "HeshbTakbul" to Destination Node "SpnDetailes005"-->
+									<xsl:value-of select="./text()"/>
+									<InvoiceNo>
+										<!--Connection from Source Node "@HeshbonitNo" to Destination Node "InvoiceNo"-->
+										<xsl:value-of select="ancestor::*[1]/@HeshbonitNo"/>
+									</InvoiceNo>
+									<InvSumNis>
+										<!--Connection from Source Node "@HeshbonitNis" to Destination Node "InvSumNis"-->
+										<xsl:value-of select="ancestor::*[1]/@HeshbonitNis"/>
+									</InvSumNis>
+									<InvSumAcc>
+										<!--Connection from Source Node "@HeshbonitAcc" to Destination Node "InvSumAcc"-->
+										<xsl:value-of select="ancestor::*[1]/@HeshbonitAcc"/>
+									</InvSumAcc>
+									<TkSumNis>
+										<!--Connection from Source Node "@TakbulNis" to Destination Node "TkSumNis"-->
+										<xsl:value-of select="ancestor::*[1]/@TakbulNis"/>
+									</TkSumNis>
+									<TkSumAcc>
+										<!--Connection from Source Node "@TakbulAcc" to Destination Node "TkSumAcc"-->
+										<xsl:value-of select="ancestor::*[1]/@TakbulAcc"/>
+									</TkSumAcc>
+									<InvItraNis>
+										<!--Connection from Source Node "@HeshbonitBalNis" to Destination Node "InvItraNis"-->
+										<xsl:value-of select="ancestor::*[1]/@HeshbonitBalNis"/>
+									</InvItraNis>
+									<InvItraAcc>
+										<!--Connection from Source Node "@HeshbonitBalAcc" to Destination Node "InvItraAcc"-->
+										<xsl:value-of select="ancestor::*[1]/@HeshbonitBalAcc"/>
+									</InvItraAcc>
+								</SpnDetailes005>
+							</xsl:for-each>
+						</SponsorInvoicesTakbulim>
+					</File001>
+					<File006>
+						<xsl:for-each select="File006">
+							<ReserchCoordCod>
+								<!--Connection from Source Node "@MetaemCode" to Destination Node "ReserchCoordCod"-->
+								<xsl:value-of select="@MetaemCode"/>
+							</ReserchCoordCod>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<ReserchCoordDescH>
+								<!--Connection from Source Node "@MetaemDescH" to Destination Node "ReserchCoordDescH"-->
+								<xsl:value-of select="@MetaemDescH"/>
+							</ReserchCoordDescH>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<ReserchCoordDescE>
+								<!--Connection from Source Node "@MetaemDescE" to Destination Node "ReserchCoordDescE"-->
+								<xsl:value-of select="@MetaemDescE"/>
+							</ReserchCoordDescE>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<Phone>
+								<!--Connection from Source Node "@Phone" to Destination Node "Phone"-->
+								<xsl:value-of select="@Phone"/>
+							</Phone>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<Email>
+								<!--Connection from Source Node "@EMail" to Destination Node "Email"-->
+								<xsl:value-of select="@EMail"/>
+							</Email>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<ResSubjectE>
+								<!--Connection from Source Node "@ResearchSubjectE" to Destination Node "ResSubjectE"-->
+								<xsl:value-of select="@ResearchSubjectE"/>
+							</ResSubjectE>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<ResSubjectH>
+								<!--Connection from Source Node "@ResearchSubjectH" to Destination Node "ResSubjectH"-->
+								<xsl:value-of select="@ResearchSubjectH"/>
+							</ResSubjectH>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<InvLast>
+								<!--Connection from Source Node "@InvLast" to Destination Node "InvLast"-->
+								<xsl:value-of select="@InvLast"/>
+							</InvLast>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<InvLastNameH>
+								<!--Connection from Source Node "@InvLastNameH" to Destination Node "InvLastNameH"-->
+								<xsl:value-of select="@InvLastNameH"/>
+							</InvLastNameH>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<InvLastNameE>
+								<!--Connection from Source Node "@InvLastNameE" to Destination Node "InvLastNameE"-->
+								<xsl:value-of select="@InvLastNameE"/>
+							</InvLastNameE>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<InvSumAcc>
+								<!--Connection from Source Node "@InvSumAcc" to Destination Node "InvSumAcc"-->
+								<xsl:value-of select="@InvSumAcc"/>
+							</InvSumAcc>
+						</xsl:for-each>
+						<xsl:for-each select="File006">
+							<InvSumNis>
+								<!--Connection from Source Node "@InvSumNis" to Destination Node "InvSumNis"-->
+								<xsl:value-of select="@InvSumNis"/>
+							</InvSumNis>
+						</xsl:for-each>
+					</File006>
+				</TechnionData>
+			</xsl:template>
+			<msxsl:script language="VBScript" implements-prefix="user">
+				<![CDATA[]]>
+			</msxsl:script>
+		</xsl:stylesheet>
+	</CompiledXSL>
+</mapsource>

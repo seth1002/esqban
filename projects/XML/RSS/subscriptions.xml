@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="subscriptions.xsl"?>
+<feeds>
+   <item>
+      <feedid>63230794488978</feedid>
+      <title>http://www.newsisfree.com/</title>
+      <description></description>
+      <feedtype>localfeed</feedtype>
+      <archivesize>0</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl></htmlurl>
+      <image></image>
+      <read>0</read>
+      <unreadcount>0</unreadcount>
+      <updateperiod>0</updateperiod>
+      <LastModified></LastModified>
+      <link></link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230844904459</feedid>
+      <title>ScienceDaily Headlines</title>
+      <description>Daily headlines about discoveries in the physical and life sciences, health and medicine, the environment, and technology, from the world's leading universities and research centers.</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.sciencedaily.com/</htmlurl>
+      <image>http://www.sciencedaily.com/images/logo.gif</image>
+      <read>0</read>
+      <unreadcount>47</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Wed, 22 Sep 2004 12:04:25 GMT</LastModified>
+      <link>http://www.sciencedaily.com/newsfeed.xml</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230844971516</feedid>
+      <title>Slashdot</title>
+      <description>News for nerds, stuff that matters</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://slashdot.org/</htmlurl>
+      <image>http://images.slashdot.org/topics/topicslashdot.gif</image>
+      <read>0</read>
+      <unreadcount>25</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Thu, 23 Sep 2004 01:13:04 GMT</LastModified>
+      <link>slashdot.org/slashdot.rdf</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845074173</feedid>
+      <title>Wired News</title>
+      <description>Technology, and the way we do business, is changing the world we know. Wired News is a technology - and business-oriented news service feeding an intelligent, discerning audience. What role does technology play in the day-to-day living of your life? Wired News tells you. How has evolving technology changed the face of the international business world? Wired News puts you in the picture.</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.wired.com/</htmlurl>
+      <image>http://static.wired.com/news/images/netcenterb.gif</image>
+      <read>0</read>
+      <unreadcount>20</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Thu, 23 Sep 2004 01:01:19 GMT</LastModified>
+      <link>http://www.wired.com/news/feeds/rss2/0,2610,,00.xml</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845133148</feedid>
+      <title>Linux Journal</title>
+      <description>
+   Linux Journal focuses specifically on Linux and other open-source OSes, allowing the content to be a highly specialized source of information for open-source enthusiasts.
+  </description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.linuxjournal.com</htmlurl>
+      <image>http://www.linuxjournal.com/images/logo_tiny.png</image>
+      <read>0</read>
+      <unreadcount>12</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Wed, 22 Sep 2004 23:53:03 GMT</LastModified>
+      <link>http://www3.linuxjournal.com/news.rss</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845155380</feedid>
+      <title>Perl.com</title>
+      <description>
+	O'Reilly Network's source for Perl developer news and information.
+    </description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.perl.com/</htmlurl>
+      <image></image>
+      <read>0</read>
+      <unreadcount>16</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified></LastModified>
+      <link>http://www.perl.com/pace/perlnews.rdf</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845167628</feedid>
+      <title>SourceForge.net</title>
+      <description>SourceForge.net Project News Highlights</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://sourceforge.net</htmlurl>
+      <image></image>
+      <read>0</read>
+      <unreadcount>17</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified></LastModified>
+      <link>http://sourceforge.net/export/rss_sfnews.php</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845178183</feedid>
+      <title>The Register</title>
+      <description>Biting the hand that feeds IT</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.theregister.co.uk/</htmlurl>
+      <image>http://www.theregister.co.uk/Design/graphics/Reg_default/The_Register_RSS.png</image>
+      <read>0</read>
+      <unreadcount>44</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Wed, 22 Sep 2004 21:39:43 GMT</LastModified>
+      <link>http://www.theregister.co.uk/tonys/slashdot.rdf</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845189239</feedid>
+      <title>Slashdot: Developers</title>
+      <description>News for nerds, stuff that matters</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://developers.slashdot.org/</htmlurl>
+      <image>http://images.slashdot.org/topics/topicslashdot.gif</image>
+      <read>0</read>
+      <unreadcount>20</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Wed, 22 Sep 2004 21:13:18 GMT</LastModified>
+      <link>http://slashdot.org/developers.rdf</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845205222</feedid>
+      <title>ThinkGeek: What s New</title>
+      <description>Stuff for Smart Masses</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.thinkgeek.com/?cpg=wnrdf</htmlurl>
+      <image></image>
+      <read>0</read>
+      <unreadcount>36</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified></LastModified>
+      <link>http://www.thinkgeek.com/thinkgeek.rdf</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845224039</feedid>
+      <title>freshmeat.net - Software</title>
+      <description>freshmeat.net maintains the Web's largest index of Unix and cross-platform open source software. Thousands of applications are meticulously cataloged in the freshmeat.net database, and links to new code are added daily.</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://software.freshmeat.net/</htmlurl>
+      <image>http://images.freshmeat.net/button.gif</image>
+      <read>0</read>
+      <unreadcount>8</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Wed, 05 May 2004 17:50:04 GMT</LastModified>
+      <link>http://www.freshmeat.net/backend/fm-releases-software.rdf</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845234404</feedid>
+      <title>xmlhack</title>
+      <description>Developer news from the XML community</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.xmlhack.com</htmlurl>
+      <image>http://www.xmlhack.com/images/mynetscape88.gif</image>
+      <read>0</read>
+      <unreadcount>1</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified></LastModified>
+      <link>http://www.xmlhack.com/rsscat.php</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845381365</feedid>
+      <title>CNET News.com - Personal Technology</title>
+      <description>Tech News First</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://news.com.com/</htmlurl>
+      <image>http://i.i.com.com/cnwk.1d/i/ne/gr/prtnr/rss_logo.gif</image>
+      <read>0</read>
+      <unreadcount>6</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified></LastModified>
+      <link>http://rss.com.com/2547-1040-0-5.xml</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845463734</feedid>
+      <title>internetnews.com</title>
+      <description>New InternetNews Site</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.internetnews.com</htmlurl>
+      <image></image>
+      <read>0</read>
+      <unreadcount>10</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Thu, 23 Sep 2004 01:33:00 GMT</LastModified>
+      <link>http://headlines.internet.com/internetnews/top-news/news.rss</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230845915633</feedid>
+      <title>XML.com</title>
+      <description>
+	XML.com features a rich mix of information and services for the XML community.
+    </description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://www.xml.com/</htmlurl>
+      <image>http://www.xml.com/universal/images/xml_tiny.gif</image>
+      <read>0</read>
+      <unreadcount>18</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified></LastModified>
+      <link>http://www.xml.com/cs/xml/query/q/19</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63230963411165</feedid>
+      <title>java.sun.com</title>
+      <description>java.sun.com is the premier source of information about the Java platform.</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://java.sun.com/</htmlurl>
+      <image>http://java.sun.com/images/v4_java_logo.gif</image>
+      <read>0</read>
+      <unreadcount>19</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified></LastModified>
+      <link>http://servlet.java.sun.com/syndication/rss_java_highlights-PARTNER-20.xml</link>
+      <username></username>
+      <password></password>
+   </item>
+   <item>
+      <feedid>63231593458440</feedid>
+      <title>Packet Storm Security</title>
+      <description>50 Most Recent Entries</description>
+      <feedtype>http</feedtype>
+      <archivesize>8888</archivesize>
+      <alwaysshowlink>0</alwaysshowlink>
+      <htmlurl>http://packetstormsecurity.org/</htmlurl>
+      <image></image>
+      <read>0</read>
+      <unreadcount>39</unreadcount>
+      <updateperiod>14</updateperiod>
+      <LastModified>Wed, 22 Sep 2004 17:17:26 GMT</LastModified>
+      <link>http://www.packetstormsecurity.org/whatsnew50.xml</link>
+      <username></username>
+      <password></password>
+   </item></feeds>

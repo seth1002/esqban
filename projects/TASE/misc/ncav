@@ -1,0 +1,52 @@
+select
+f.symbol,
+f.period,
+((f.current_assets-f.current_liabilities)/(c.market_cap/c.closing_price)) as NCAV
+from financial_statements f
+inner join company_prices c on c.symbol=f.symbol
+where c.date_ = (select date_ from last_thursday)
+
+
+
+http://www.grahaminvestor.com/articles/how-to/finding-undervalued-stocks-the-grahams-number-technique/
+
+
+market cap = shares outstanding * share price
+shares outstanding = market cap / share price
+
+
+current assets - current liabilities
+------------------------------------
+            market cap
+          -------------
+          closing price
+
+TEVA
+market cap = 153230184000
+closing price = 163.00
+current assets = 41953012
+current liabilities = 30928685
+
+
+
+CREATE OR REPLACE
+VIEW ncav
+AS select
+f.symbol,
+ROUND((c.closing_price/100),2) as price,
+ROUND(((f.current_assets-f.current_liabilities)/(c.market_cap/(c.closing_price/100))),2) as NCAV,
+ROUND((100-(((f.current_assets-f.current_liabilities)/(c.market_cap/(c.closing_price/100)))/(c.closing_price/100))*100),2) as value
+from financial_statements f
+inner join company_prices c on c.symbol=f.symbol
+where c.date_ = (select date_ from last_thursday)
+and f.period='March 2011';
+
+
+
+price / NCAV = x / 100
+
+
+
+SELECT *, (ncav*100/price) as '%' FROM ncav where ncav*100/price > 67
+
+

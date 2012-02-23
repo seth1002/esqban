@@ -1,0 +1,4 @@
+#! /bin/sh
+
+tf-tool --acquire && tf-tool --verify
+

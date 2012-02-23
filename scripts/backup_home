@@ -1,0 +1,14 @@
+#! /bin/sh
+
+SRC=/home/$USER
+#DST=/mnt/maxtor/backups/
+DST=sqba@zen:/mnt/maxtor/backups/
+
+#sudo mount -t ext3 /dev/sdb1 /mnt/maxtor/
+#rsync -avhr --delete $SRC $DST
+
+#rsync -avhrz --progress --stats --delete -e ssh $SRC sqba@zen:/mnt/maxtor/backups/
+
+rsync --verbose --progress --stats --compress --recursive --times --perms --links --delete \
+	--exclude "*bak" --exclude "*~" --rsh /usr/bin/ssh $SRC $DST
+

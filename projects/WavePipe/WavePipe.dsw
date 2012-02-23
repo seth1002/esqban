@@ -1,0 +1,549 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "BCastRcv"=.\BCastRcv\BCastRcv.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/BCastRcv", WVCAAAAA
+    .\bcastrcv
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BCastSend"=.\BCastSend\BCastSend.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/BCastSend", PVCAAAAA
+    .\bcastsend
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Delay"=.\Delay\Delay.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/Delay", WQCAAAAA
+    .\delay
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Distortion"=.\Distortion\Distortion.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/Distortion", RFEAAAAA
+    .\distortion
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Echo"=.\Echo\Echo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/Echo", YQCAAAAA
+    .\echo
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Mp3Encoder"=.\Mp3Enc\Mp3Encoder.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/Mp3Encoder", RWCAAAAA
+    .\mp3enc
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MultiTap"=.\MultiTap\MultiTap.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/MultiTap", ERCAAAAA
+    .\multitap
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "NoiseGate"=.\NoiseGate\NoiseGate.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/NoiseGate", FRCAAAAA
+    .\noisegate
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Pitch"=.\Pitch\Pitch.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/Pitch", ZQCAAAAA
+    .\pitch
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "PitchShift"=.\PitchShift\PitchShift.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/PitchShift", HBDAAAAA
+    .\pitchshift
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "RLowPass"=.\RLowPass\RLowPass.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/RLowPass", HRCAAAAA
+    .\rlowpass
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Reverb"=.\Reverb\Reverb.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/Reverb", GRCAAAAA
+    .\reverb
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TCPRecv"=.\TCPRecv\TCPRecv.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/TCPRecv", RXCAAAAA
+    .\tcprecv
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TCPSend"=.\TCPSend\TCPSend.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/TCPSend", AYCAAAAA
+    .\tcpsend
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "VoiceRem"=.\VoiceRem\VoiceRem.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/VoiceRem", ARCAAAAA
+    .\voicerem
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "WaveIn"=.\WaveIn\WaveIn.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/WaveIn", BRCAAAAA
+    .\wavein
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "WaveOut"=.\WaveOut\WaveOut.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/WaveOut", CRCAAAAA
+    .\waveout
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "bitmap"=.\bitmap\bitmap.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/bitmap", PYCAAAAA
+    .\bitmap
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "buffer"=.\buffer\buffer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/buffer", GXCAAAAA
+    .\buffer
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "buffview"=.\buffview\buffview.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/buffview", NADAAAAA
+    .\buffview
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "dxview"=.\dxview\dxview.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/dxview", HADAAAAA
+    .\dxview
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "fftview"=.\fftview\fftview.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/fftview", OBDAAAAA
+    .\fftview
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "glfftview"=.\glfftview\glfftview.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/glfftview", VBDAAAAA
+    .\glfftview
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "glview"=.\glview\glview.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/glview", JYCAAAAA
+    .\glview
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "in_bcast"=.\winamp\IN_BCAST.DSP - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/IN_BCAST", MXCAAAAA
+    .\winamp
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "inverse"=.\inverse\inverse.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/inverse", VYCAAAAA
+    .\inverse
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "mp3"=.\mp3file\Mp32src1\mp3.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/Floopy!/src/SoundSrc/Mp3File/Mp32src1", NWDAAAAA
+    .\mp3file\mp32src1
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "mp3file"=.\mp3file\mp3file.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/mp3file", LCDAAAAA
+    .\mp3file
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "null"=.\null\null.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/null", FCDAAAAA
+    .\null
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "stretch"=.\stretch\stretch.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/stretch", RCDAAAAA
+    .\stretch
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "svg"=.\svg\svg.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/svg", BADAAAAA
+    .\svg
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "tonegen"=.\tonegen\tonegen.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/tonegen", BBDAAAAA
+    .\tonegen
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "wavfile"=.\wavfile\wavfile.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe/wavfile", VADAAAAA
+    .\wavfile
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/sqba/WavePipe", BLAAAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

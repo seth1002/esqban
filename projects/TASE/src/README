@@ -1,0 +1,27 @@
+1. create database
+    $ mysql -uroot
+    mysql> create database tase;
+2. create table
+    $ mysql -uroot tase < db/mysql.sql
+3. start crawling
+    $ ./scrapy-ctl.py crawl tase.co.il
+
+DB credentials are hardcoded in `tase/pipelines.py`
+
+
+Running:
+date > 0log.txt
+date > scrapy.log
+#mysql -uroot tase < db/mysql.sql
+./scrapy-ctl.py crawl tase.co.il
+#scrapy crawl tase.co.il --set FEED_URI=items.json --set FEED_FORMAT=json
+#scrapy crawl tase.co.il
+
+
+
+Plotting:
+symbol='ADO'
+python plot.py "$symbol"
+cat plot-load.conf | gnuplot
+
+

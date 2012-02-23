@@ -1,0 +1,11 @@
+#! /bin/sh
+
+echo "Username:"
+read username
+
+echo "Password:"
+read password
+
+./gmail-backup.sh backup ../email $username@gmail.com $password
+
+

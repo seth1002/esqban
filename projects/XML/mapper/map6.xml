@@ -1,0 +1,791 @@
+<?xml version="1.0"?>
+<mapsource name="DataMall" version="1" xrange="100" yrange="420">
+	<srctree>
+		<Schema name="BL_NLFR_REPORT" b:BizTalkServerEditorTool_Version="1.0" b:root_reference="BL_NLFR_REPORT" b:standard="XML" xmlns="urn:schemas-microsoft-com:xml-data" xmlns:b="urn:schemas-microsoft-com:BizTalkServer" xmlns:d="urn:schemas-microsoft-com:datatypes" xmlns:dm="urn:schemas-data-mall-com">
+			<b:SelectionFields/>
+			<ElementType xmlns="" name="TOT_AMOU" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TOTAL_PRICE_BEFOR_HANACHA" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TOTAL_INVOICE_PRICE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TERM_CODE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="SUM_TOTAL_PRICE_HANACHA" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="REASON" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="PAYING_CUST_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="PAYING_CLIENT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ORD" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_TERM_CODE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_TERM_CODE" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_PAYING_CUST_NO" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_PAYING_CUST_NO" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_LINE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_LINE" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_INVOICE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_INVOICE" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_HANAHOT" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_HANAHOT" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_HANAHA_LINE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_HANAHA_ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_ATAR" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_ATAR" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LINE_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="LINE_ID" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="INV_YEAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="INV_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="INVOICE_YEAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="INVOICE_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="G_TERM_CODE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="TERM_CODE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CURRENCY_CODE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TOTAL_PRICE_BEFOR_HANACHA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TOTAL_INVOICE_PRICE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_SHIRUT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_SHEKEL_PRICE" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_PAYING_CUST_NO" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="PAYING_CUST_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CUST_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="INVOICE_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="INVOICE_YEAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_HANAHOT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_INVOICE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_MAIN_CUST_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_CONTACT_PERSON" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_CONTACTS" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_CURRENCY_XML" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_KTOVET_POB" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_ADDRESS_SEQ_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_CITY_ZIP" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_ADDRESS_NAME" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CS_CLIENT_SHUM" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CS_CLIENT_HANAHA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CS_COUNTER_ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_AFTER_HANAHA_CLIENT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_MONTH_XML" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_LINE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="LINE_ID" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_TERM_CODE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_HANAHA_LINE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_KAV" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_LINE_DIRECTION" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_LINE_TYPE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_DESTINATION" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_PORT_SPEED" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_ORIGIN" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_INVOICE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="REASON" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TOT_AMOU" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ORD" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LINE_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="INV_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="INV_YEAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ASMACHTA_NO" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_HANAHOT" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="ADIFUT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="ACHUZ_HANACHA_BLLING" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="PAYING_CLIENT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="SUM_TOTAL_PRICE_HANACHA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CURR_CLIENT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_SHEKEL_HANACHA_CLIENT" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_ATAR" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_LINE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_HANAHA_ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CS_SHERUT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CS_HANACHA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CS_HANAHA_ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_SACH_ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_AFTER_HANAHA_ATAR" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="CUST_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CURR_CLIENT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CURRENCY_CODE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CS_SHERUT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CS_HANAHA_ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CS_HANACHA" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CS_COUNTER_ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CS_CLIENT_SHUM" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CS_CLIENT_HANAHA" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_PORT_SPEED" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_ORIGIN" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_MONTH_XML" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_LINE_TYPE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_LINE_DIRECTION" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_KTOVET_POB" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_DESTINATION" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_CURRENCY_XML" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_CONTACT_PERSON" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_CONTACTS" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_CITY_ZIP" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_AFTER_HANAHA_ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_ADDRESS_SEQ_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_ADDRESS_NAME" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_SHIRUT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_SHEKEL_PRICE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_SHEKEL_HANACHA_CLIENT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_SACH_ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_MAIN_CUST_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_KAV" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_AFTER_HANAHA_CLIENT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="BL_NLFR_REPORT" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="LIST_G_PAYING_CUST_NO" maxOccurs="1" minOccurs="0"/>
+				<dm:DMProviderInfo>
+					<FileName xmlns="">C:\1Marina\Bezeq\503\bl_nlfr_report_new.xml</FileName>
+					<ChunkSize xmlns="">1024</ChunkSize>
+					<CodePage xmlns="">1255</CodePage>
+				</dm:DMProviderInfo>
+			</ElementType>
+			<ElementType xmlns="" name="ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ASMACHTA_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ADIFUT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ACHUZ_HANACHA_BLLING" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+		</Schema>
+	</srctree>
+	<Values>
+		<TestValues/>
+		<ConstantValues/>
+	</Values>
+	<sinktree>
+		<Schema name="G_PAYING_CUST_NO" b:BizTalkServerEditorTool_Version="1.0" b:root_reference="G_PAYING_CUST_NO" b:standard="XML" xmlns="urn:schemas-microsoft-com:xml-data" xmlns:b="urn:schemas-microsoft-com:BizTalkServer" xmlns:d="urn:schemas-microsoft-com:datatypes" xmlns:dm="urn:schemas-data-mall-com">
+			<b:SelectionFields/>
+			<ElementType xmlns="" name="TOT_AMOU" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="TOTAL_PRICE_DOLAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="SUM_TOTAL_PRICE_HANACHA" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="REASON" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="PAYING_CUST_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+				<dm:CatalogInfo dm:category="2"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_TERM_CODE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_TERM_CODE" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_LINE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_LINE" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_INVOICE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_INVOICE" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_HANAHOT" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_HANAHOT" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LIST_G_ATAR" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="G_ATAR" maxOccurs="*" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="LINE_ID" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="INVOICE_YEAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+				<dm:CatalogInfo dm:category="3"/>
+			</ElementType>
+			<ElementType xmlns="" name="INVOICE_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="G_TERM_CODE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="CURRENCY_CODE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TOTAL_PRICE_DOLAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_SHIRUT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_SHEKEL_PRICE" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="CURRENCY_XML" content="textOnly" model="closed">
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="MON" content="textOnly" model="closed">
+				<b:RecordInfo/>
+				<dm:CatalogInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="G_PAYING_CUST_NO" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="PAYING_CUST_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CUST_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="INVOICE_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="INVOICE_YEAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_HANAHOT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_INVOICE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_MAIN_CUST_NO" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_CONTACTS" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_KTOVET_POB" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_CITY_ZIP" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_ADDRESS_NAME" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CS_CLIENT_SHUM" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CS_CLIENT_HANAHA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_AFTER_HANAHA_CLIENT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CURRENCY_XML" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="MON" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_LINE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="LINE_ID" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="LIST_G_TERM_CODE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_KAV" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_LINE_TYPE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_DESTINATION" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_PORT_SPEED" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_ORIGIN" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_INVOICE" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="REASON" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="TOT_AMOU" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_HANAHOT" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="ACHUZ_HANACHA_BLLING" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="SUM_TOTAL_PRICE_HANACHA" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CURR_CLIENT" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_SHEKEL_HANACHA_CLIENT" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="G_ATAR" content="eltOnly" model="closed">
+				<b:RecordInfo/>
+				<element xmlns="" type="LIST_G_LINE" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CF_ATAR" maxOccurs="1" minOccurs="0"/>
+				<element xmlns="" type="CP_AFTER_HANAHA_ATAR" maxOccurs="1" minOccurs="0"/>
+			</ElementType>
+			<ElementType xmlns="" name="CUST_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+				<dm:CatalogInfo dm:category="1"/>
+			</ElementType>
+			<ElementType xmlns="" name="CURR_CLIENT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CURRENCY_CODE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CS_CLIENT_SHUM" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CS_CLIENT_HANAHA" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_PORT_SPEED" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_ORIGIN" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_LINE_TYPE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_KTOVET_POB" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_DESTINATION" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_CONTACTS" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_CITY_ZIP" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_AFTER_HANAHA_ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CP_ADDRESS_NAME" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_SHIRUT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_SHEKEL_PRICE" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_SHEKEL_HANACHA_CLIENT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_MAIN_CUST_NO" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_KAV" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_ATAR" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="CF_AFTER_HANAHA_CLIENT" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+			<ElementType xmlns="" name="ACHUZ_HANACHA_BLLING" content="textOnly" model="closed">
+				<b:FieldInfo/>
+			</ElementType>
+		</Schema>
+	</sinktree>
+	<links>
+		<link linkid="1" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/PAYING_CUST_NO" linkto="/G_PAYING_CUST_NO/PAYING_CUST_NO"/>
+		<link linkid="2" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CUST_NO" linkto="/G_PAYING_CUST_NO/CUST_NO"/>
+		<link linkid="3" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/INVOICE_YEAR" linkto="/G_PAYING_CUST_NO/INVOICE_YEAR"/>
+		<link linkid="4" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CF_MAIN_CUST_NO" linkto="/G_PAYING_CUST_NO/CF_MAIN_CUST_NO"/>
+		<link linkid="5" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CP_KTOVET_POB" linkto="/G_PAYING_CUST_NO/CP_KTOVET_POB"/>
+		<link linkid="6" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CP_CITY_ZIP" linkto="/G_PAYING_CUST_NO/CP_CITY_ZIP"/>
+		<link linkid="7" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CP_ADDRESS_NAME" linkto="/G_PAYING_CUST_NO/CP_ADDRESS_NAME"/>
+		<link linkid="8" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CS_CLIENT_SHUM" linkto="/G_PAYING_CUST_NO/CS_CLIENT_SHUM"/>
+		<link linkid="9" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CS_CLIENT_HANAHA" linkto="/G_PAYING_CUST_NO/CS_CLIENT_HANAHA"/>
+		<link linkid="10" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CP_CURRENCY_XML" linkto="/G_PAYING_CUST_NO/CURRENCY_XML"/>
+		<link linkid="11" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CP_CONTACTS" linkto="/G_PAYING_CUST_NO/CP_CONTACTS"/>
+		<link linkid="12" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR"/>
+		<link linkid="13" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR"/>
+		<link linkid="14" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/CF_ATAR" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/CF_ATAR"/>
+		<link linkid="15" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/CP_AFTER_HANAHA_ATAR" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/CP_AFTER_HANAHA_ATAR"/>
+		<link linkid="16" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE"/>
+		<link linkid="17" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE"/>
+		<link linkid="18" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LINE_ID" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LINE_ID"/>
+		<link linkid="19" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE"/>
+		<link linkid="20" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE"/>
+		<link linkid="21" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/CURRENCY_CODE" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/CURRENCY_CODE"/>
+		<link linkid="22" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CP_LINE_TYPE" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CP_LINE_TYPE"/>
+		<link linkid="23" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CP_DESTINATION" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CP_DESTINATION"/>
+		<link linkid="24" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CP_PORT_SPEED" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CP_PORT_SPEED"/>
+		<link linkid="25" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CP_ORIGIN" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CP_ORIGIN"/>
+		<link linkid="26" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_HANAHOT" linkto="/G_PAYING_CUST_NO/LIST_G_HANAHOT"/>
+		<link linkid="27" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT" linkto="/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT"/>
+		<link linkid="28" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT/ACHUZ_HANACHA_BLLING" linkto="/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT/ACHUZ_HANACHA_BLLING"/>
+		<link linkid="29" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT/SUM_TOTAL_PRICE_HANACHA" linkto="/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT/SUM_TOTAL_PRICE_HANACHA"/>
+		<link linkid="30" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT/CURR_CLIENT" linkto="/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT/CURR_CLIENT"/>
+		<link linkid="31" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT/CF_SHEKEL_HANACHA_CLIENT" linkto="/G_PAYING_CUST_NO/LIST_G_HANAHOT/G_HANAHOT/CF_SHEKEL_HANACHA_CLIENT"/>
+		<link linkid="32" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_INVOICE" linkto="/G_PAYING_CUST_NO/LIST_G_INVOICE"/>
+		<link linkid="33" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_INVOICE/G_INVOICE" linkto="/G_PAYING_CUST_NO/LIST_G_INVOICE/G_INVOICE"/>
+		<link linkid="34" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_INVOICE/G_INVOICE/REASON" linkto="/G_PAYING_CUST_NO/LIST_G_INVOICE/G_INVOICE/REASON"/>
+		<link linkid="35" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_INVOICE/G_INVOICE/TOT_AMOU" linkto="/G_PAYING_CUST_NO/LIST_G_INVOICE/G_INVOICE/TOT_AMOU"/>
+		<link linkid="36" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CP_MONTH_XML" linkto="1"/>
+		<link linkid="37" linkfrom="1" linkto="/G_PAYING_CUST_NO/MON"/>
+		<link linkid="38" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO" linkto="/G_PAYING_CUST_NO"/>
+		<link linkid="39" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/INVOICE_NO" linkto="0"/>
+		<link linkid="40" linkfrom="0" linkto="/G_PAYING_CUST_NO/INVOICE_NO"/>
+		<link linkid="41" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CF_AFTER_HANAHA_CLIENT" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/TOTAL_PRICE_DOLAR"/>
+		<link linkid="42" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_INVOICE/G_INVOICE/ORD" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/CF_SHIRUT"/>
+		<link linkid="43" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_HANAHA_LINE" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/CF_SHEKEL_PRICE"/>
+		<link linkid="44" linkfrom="0" linkto="/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/CF_KAV"/>
+		<link linkid="45" linkfrom="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/CURRENCY_CODE" linkto="0"/>
+	</links>
+	<functions>
+		<function functionid="0" xcell="6390" ycell="960" funcfuncid="8D6FC4403C6A40E18DA329C56D5B6DA1" funcversion="" isscripter="yes" script="function convertDate(param1, param2)    
+convertDate=param2 &amp; &quot;_&quot; &amp; param1
+end function">
+			<inputparams>
+				<param type="link" value="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/INVOICE_NO"/>
+				<param type="link" value="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/CURRENCY_CODE"/>
+			</inputparams>
+		</function>
+		<function functionid="1" xcell="6390" ycell="3825" funcfuncid="8C30D8CD1B3B42CFB889CBA023D0E881" funcversion="" isscripter="yes" script="function fncmonth(Par1)  
+fncmonth = Par1
+end function">
+			<inputparams>
+				<param type="link" value="/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO/CP_MONTH_XML"/>
+			</inputparams>
+		</function>
+	</functions>
+	<CompiledXSL>
+		<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:var="urn:var" xmlns:user="urn:user" version="1.0">
+			<xsl:output method="xml" indent="yes" omit-xml-declaration="yes"/>
+			<xsl:template match="/">
+				<xsl:apply-templates select="ServiceData/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO"/>
+			</xsl:template>
+			<xsl:template match="ServiceData/BL_NLFR_REPORT/LIST_G_PAYING_CUST_NO/G_PAYING_CUST_NO">
+				<G_PAYING_CUST_NO>
+					<!--Connection from Source Node "G_PAYING_CUST_NO" to Destination Node "G_PAYING_CUST_NO"-->
+					<xsl:value-of select="./text()"/>
+					<xsl:for-each select="PAYING_CUST_NO">
+						<PAYING_CUST_NO>
+							<!--Connection from Source Node "PAYING_CUST_NO" to Destination Node "PAYING_CUST_NO"-->
+							<xsl:value-of select="./text()"/>
+						</PAYING_CUST_NO>
+					</xsl:for-each>
+					<xsl:for-each select="CUST_NO">
+						<CUST_NO>
+							<!--Connection from Source Node "CUST_NO" to Destination Node "CUST_NO"-->
+							<xsl:value-of select="./text()"/>
+						</CUST_NO>
+					</xsl:for-each>
+					<xsl:for-each select="INVOICE_NO">
+						<INVOICE_NO>
+							<xsl:variable name="var:v1" select="user:convertDate(string(./text()), string(ancestor::*[1]/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/CURRENCY_CODE/text()))"/>
+							<xsl:value-of select="$var:v1"/>
+						</INVOICE_NO>
+					</xsl:for-each>
+					<xsl:for-each select="INVOICE_YEAR">
+						<INVOICE_YEAR>
+							<!--Connection from Source Node "INVOICE_YEAR" to Destination Node "INVOICE_YEAR"-->
+							<xsl:value-of select="./text()"/>
+						</INVOICE_YEAR>
+					</xsl:for-each>
+					<xsl:for-each select="LIST_G_ATAR">
+						<LIST_G_ATAR>
+							<!--Connection from Source Node "LIST_G_ATAR" to Destination Node "LIST_G_ATAR"-->
+							<xsl:value-of select="./text()"/>
+							<xsl:for-each select="G_ATAR">
+								<G_ATAR>
+									<!--Connection from Source Node "G_ATAR" to Destination Node "G_ATAR"-->
+									<xsl:value-of select="./text()"/>
+									<xsl:for-each select="LIST_G_LINE">
+										<LIST_G_LINE>
+											<!--Connection from Source Node "LIST_G_LINE" to Destination Node "LIST_G_LINE"-->
+											<xsl:value-of select="./text()"/>
+											<xsl:for-each select="G_LINE">
+												<G_LINE>
+													<!--Connection from Source Node "G_LINE" to Destination Node "G_LINE"-->
+													<xsl:value-of select="./text()"/>
+													<xsl:for-each select="LINE_ID">
+														<LINE_ID>
+															<!--Connection from Source Node "LINE_ID" to Destination Node "LINE_ID"-->
+															<xsl:value-of select="./text()"/>
+														</LINE_ID>
+													</xsl:for-each>
+													<xsl:for-each select="LIST_G_TERM_CODE">
+														<LIST_G_TERM_CODE>
+															<!--Connection from Source Node "LIST_G_TERM_CODE" to Destination Node "LIST_G_TERM_CODE"-->
+															<xsl:value-of select="./text()"/>
+															<xsl:for-each select="G_TERM_CODE">
+																<G_TERM_CODE>
+																	<!--Connection from Source Node "G_TERM_CODE" to Destination Node "G_TERM_CODE"-->
+																	<xsl:value-of select="./text()"/>
+																	<xsl:for-each select="CURRENCY_CODE">
+																		<CURRENCY_CODE>
+																			<!--Connection from Source Node "CURRENCY_CODE" to Destination Node "CURRENCY_CODE"-->
+																			<xsl:value-of select="./text()"/>
+																		</CURRENCY_CODE>
+																	</xsl:for-each>
+																	<xsl:for-each select="ancestor::*[6]/CF_AFTER_HANAHA_CLIENT">
+																		<TOTAL_PRICE_DOLAR>
+																			<!--Connection from Source Node "CF_AFTER_HANAHA_CLIENT" to Destination Node "TOTAL_PRICE_DOLAR"-->
+																			<xsl:value-of select="./text()"/>
+																		</TOTAL_PRICE_DOLAR>
+																	</xsl:for-each>
+																	<xsl:for-each select="ancestor::*[6]/LIST_G_INVOICE/LIST_G_INVOICE">
+																		<CF_SHIRUT>
+																			<!--Connection from Source Node "ORD" to Destination Node "CF_SHIRUT"-->
+																			<xsl:value-of select="./text()"/>
+																		</CF_SHIRUT>
+																	</xsl:for-each>
+																	<xsl:for-each select="ancestor::*[2]/LIST_G_HANAHA_LINE">
+																		<CF_SHEKEL_PRICE>
+																			<!--Connection from Source Node "LIST_G_HANAHA_LINE" to Destination Node "CF_SHEKEL_PRICE"-->
+																			<xsl:value-of select="./text()"/>
+																		</CF_SHEKEL_PRICE>
+																	</xsl:for-each>
+																</G_TERM_CODE>
+															</xsl:for-each>
+														</LIST_G_TERM_CODE>
+													</xsl:for-each>
+													<xsl:for-each select="ancestor::*[4]/INVOICE_NO">
+														<CF_KAV>
+															<xsl:variable name="var:v2" select="user:convertDate(string(./text()), string(ancestor::*[6]/LIST_G_ATAR/G_ATAR/LIST_G_LINE/G_LINE/LIST_G_TERM_CODE/G_TERM_CODE/CURRENCY_CODE/text()))"/>
+															<xsl:value-of select="$var:v2"/>
+														</CF_KAV>
+													</xsl:for-each>
+													<xsl:for-each select="CP_LINE_TYPE">
+														<CP_LINE_TYPE>
+															<!--Connection from Source Node "CP_LINE_TYPE" to Destination Node "CP_LINE_TYPE"-->
+															<xsl:value-of select="./text()"/>
+														</CP_LINE_TYPE>
+													</xsl:for-each>
+													<xsl:for-each select="CP_DESTINATION">
+														<CP_DESTINATION>
+															<!--Connection from Source Node "CP_DESTINATION" to Destination Node "CP_DESTINATION"-->
+															<xsl:value-of select="./text()"/>
+														</CP_DESTINATION>
+													</xsl:for-each>
+													<xsl:for-each select="CP_PORT_SPEED">
+														<CP_PORT_SPEED>
+															<!--Connection from Source Node "CP_PORT_SPEED" to Destination Node "CP_PORT_SPEED"-->
+															<xsl:value-of select="./text()"/>
+														</CP_PORT_SPEED>
+													</xsl:for-each>
+													<xsl:for-each select="CP_ORIGIN">
+														<CP_ORIGIN>
+															<!--Connection from Source Node "CP_ORIGIN" to Destination Node "CP_ORIGIN"-->
+															<xsl:value-of select="./text()"/>
+														</CP_ORIGIN>
+													</xsl:for-each>
+												</G_LINE>
+											</xsl:for-each>
+										</LIST_G_LINE>
+									</xsl:for-each>
+									<xsl:for-each select="CF_ATAR">
+										<CF_ATAR>
+											<!--Connection from Source Node "CF_ATAR" to Destination Node "CF_ATAR"-->
+											<xsl:value-of select="./text()"/>
+										</CF_ATAR>
+									</xsl:for-each>
+									<xsl:for-each select="CP_AFTER_HANAHA_ATAR">
+										<CP_AFTER_HANAHA_ATAR>
+											<!--Connection from Source Node "CP_AFTER_HANAHA_ATAR" to Destination Node "CP_AFTER_HANAHA_ATAR"-->
+											<xsl:value-of select="./text()"/>
+										</CP_AFTER_HANAHA_ATAR>
+									</xsl:for-each>
+								</G_ATAR>
+							</xsl:for-each>
+						</LIST_G_ATAR>
+					</xsl:for-each>
+					<xsl:for-each select="LIST_G_HANAHOT">
+						<LIST_G_HANAHOT>
+							<!--Connection from Source Node "LIST_G_HANAHOT" to Destination Node "LIST_G_HANAHOT"-->
+							<xsl:value-of select="./text()"/>
+							<xsl:for-each select="G_HANAHOT">
+								<G_HANAHOT>
+									<!--Connection from Source Node "G_HANAHOT" to Destination Node "G_HANAHOT"-->
+									<xsl:value-of select="./text()"/>
+									<xsl:for-each select="ACHUZ_HANACHA_BLLING">
+										<ACHUZ_HANACHA_BLLING>
+											<!--Connection from Source Node "ACHUZ_HANACHA_BLLING" to Destination Node "ACHUZ_HANACHA_BLLING"-->
+											<xsl:value-of select="./text()"/>
+										</ACHUZ_HANACHA_BLLING>
+									</xsl:for-each>
+									<xsl:for-each select="SUM_TOTAL_PRICE_HANACHA">
+										<SUM_TOTAL_PRICE_HANACHA>
+											<!--Connection from Source Node "SUM_TOTAL_PRICE_HANACHA" to Destination Node "SUM_TOTAL_PRICE_HANACHA"-->
+											<xsl:value-of select="./text()"/>
+										</SUM_TOTAL_PRICE_HANACHA>
+									</xsl:for-each>
+									<xsl:for-each select="CURR_CLIENT">
+										<CURR_CLIENT>
+											<!--Connection from Source Node "CURR_CLIENT" to Destination Node "CURR_CLIENT"-->
+											<xsl:value-of select="./text()"/>
+										</CURR_CLIENT>
+									</xsl:for-each>
+									<xsl:for-each select="CF_SHEKEL_HANACHA_CLIENT">
+										<CF_SHEKEL_HANACHA_CLIENT>
+											<!--Connection from Source Node "CF_SHEKEL_HANACHA_CLIENT" to Destination Node "CF_SHEKEL_HANACHA_CLIENT"-->
+											<xsl:value-of select="./text()"/>
+										</CF_SHEKEL_HANACHA_CLIENT>
+									</xsl:for-each>
+								</G_HANAHOT>
+							</xsl:for-each>
+						</LIST_G_HANAHOT>
+					</xsl:for-each>
+					<xsl:for-each select="LIST_G_INVOICE">
+						<LIST_G_INVOICE>
+							<!--Connection from Source Node "LIST_G_INVOICE" to Destination Node "LIST_G_INVOICE"-->
+							<xsl:value-of select="./text()"/>
+							<xsl:for-each select="G_INVOICE">
+								<G_INVOICE>
+									<!--Connection from Source Node "G_INVOICE" to Destination Node "G_INVOICE"-->
+									<xsl:value-of select="./text()"/>
+									<xsl:for-each select="REASON">
+										<REASON>
+											<!--Connection from Source Node "REASON" to Destination Node "REASON"-->
+											<xsl:value-of select="./text()"/>
+										</REASON>
+									</xsl:for-each>
+									<xsl:for-each select="TOT_AMOU">
+										<TOT_AMOU>
+											<!--Connection from Source Node "TOT_AMOU" to Destination Node "TOT_AMOU"-->
+											<xsl:value-of select="./text()"/>
+										</TOT_AMOU>
+									</xsl:for-each>
+								</G_INVOICE>
+							</xsl:for-each>
+						</LIST_G_INVOICE>
+					</xsl:for-each>
+					<xsl:for-each select="CF_MAIN_CUST_NO">
+						<CF_MAIN_CUST_NO>
+							<!--Connection from Source Node "CF_MAIN_CUST_NO" to Destination Node "CF_MAIN_CUST_NO"-->
+							<xsl:value-of select="./text()"/>
+						</CF_MAIN_CUST_NO>
+					</xsl:for-each>
+					<xsl:for-each select="CP_CONTACTS">
+						<CP_CONTACTS>
+							<!--Connection from Source Node "CP_CONTACTS" to Destination Node "CP_CONTACTS"-->
+							<xsl:value-of select="./text()"/>
+						</CP_CONTACTS>
+					</xsl:for-each>
+					<xsl:for-each select="CP_KTOVET_POB">
+						<CP_KTOVET_POB>
+							<!--Connection from Source Node "CP_KTOVET_POB" to Destination Node "CP_KTOVET_POB"-->
+							<xsl:value-of select="./text()"/>
+						</CP_KTOVET_POB>
+					</xsl:for-each>
+					<xsl:for-each select="CP_CITY_ZIP">
+						<CP_CITY_ZIP>
+							<!--Connection from Source Node "CP_CITY_ZIP" to Destination Node "CP_CITY_ZIP"-->
+							<xsl:value-of select="./text()"/>
+						</CP_CITY_ZIP>
+					</xsl:for-each>
+					<xsl:for-each select="CP_ADDRESS_NAME">
+						<CP_ADDRESS_NAME>
+							<!--Connection from Source Node "CP_ADDRESS_NAME" to Destination Node "CP_ADDRESS_NAME"-->
+							<xsl:value-of select="./text()"/>
+						</CP_ADDRESS_NAME>
+					</xsl:for-each>
+					<xsl:for-each select="CS_CLIENT_SHUM">
+						<CS_CLIENT_SHUM>
+							<!--Connection from Source Node "CS_CLIENT_SHUM" to Destination Node "CS_CLIENT_SHUM"-->
+							<xsl:value-of select="./text()"/>
+						</CS_CLIENT_SHUM>
+					</xsl:for-each>
+					<xsl:for-each select="CS_CLIENT_HANAHA">
+						<CS_CLIENT_HANAHA>
+							<!--Connection from Source Node "CS_CLIENT_HANAHA" to Destination Node "CS_CLIENT_HANAHA"-->
+							<xsl:value-of select="./text()"/>
+						</CS_CLIENT_HANAHA>
+					</xsl:for-each>
+					<xsl:for-each select="CP_CURRENCY_XML">
+						<CURRENCY_XML>
+							<!--Connection from Source Node "CP_CURRENCY_XML" to Destination Node "CURRENCY_XML"-->
+							<xsl:value-of select="./text()"/>
+						</CURRENCY_XML>
+					</xsl:for-each>
+					<xsl:for-each select="CP_MONTH_XML">
+						<MON>
+							<xsl:variable name="var:v3" select="user:fncmonth(string(./text()))"/>
+							<xsl:value-of select="$var:v3"/>
+						</MON>
+					</xsl:for-each>
+				</G_PAYING_CUST_NO>
+			</xsl:template>
+			<msxsl:script language="VBScript" implements-prefix="user">
+				<![CDATA[function convertDate(param1, param2)    
+convertDate=param2 & "_" & param1
+end function
+
+function fncmonth(Par1)  
+fncmonth = Par1
+end function
+]]>
+			</msxsl:script>
+		</xsl:stylesheet>
+	</CompiledXSL>
+</mapsource>

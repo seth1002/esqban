@@ -1,0 +1,1 @@
+.\WaveIn\Debug\WaveIn.exe | .\distortion\Debug\distortion.exe | .\waveout\Debug\WaveOut.exe

@@ -1,0 +1,1 @@
+.\WaveIn\Debug\WaveIn.exe | .\echo\Debug\echo.exe | .\waveout\Debug\WaveOut.exe

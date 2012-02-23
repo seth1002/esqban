@@ -1,0 +1,396 @@
+# depslib dependency file v1.0
+1242979372 source:/home/sqba/Projects/viewstl/main.cpp
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+
+1227098116 /usr/include/GL/glut.h
+	"freeglut_std.h"
+
+1227098116 /usr/include/GL/freeglut_std.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1241576024 /usr/include/GL/gl.h
+	"gl_mangle.h"
+	<stdlib.h>
+	<windows.h>
+	<GL/mesa_wgl.h>
+	<GL/glext.h>
+
+1241576024 /usr/include/GL/gl_mangle.h
+
+1239261476 /usr/include/stdlib.h
+	<features.h>
+	<stddef.h>
+	<bits/waitflags.h>
+	<bits/waitstatus.h>
+	<xlocale.h>
+	<sys/types.h>
+	<alloca.h>
+	<bits/stdlib.h>
+	<bits/stdlib-ldbl.h>
+
+1239261438 /usr/include/features.h
+	<sys/cdefs.h>
+	<gnu/stubs.h>
+
+1239261496 /usr/include/sys/cdefs.h
+	<features.h>
+	<bits/wordsize.h>
+
+1239261477 /usr/include/bits/wordsize.h
+
+1239261438 /usr/include/gnu/stubs.h
+	<bits/wordsize.h>
+	<gnu/stubs-32.h>
+	<gnu/stubs-64.h>
+
+1239261541 /usr/include/gnu/stubs-64.h
+
+1239261492 /usr/include/bits/waitflags.h
+
+1239261492 /usr/include/bits/waitstatus.h
+	<endian.h>
+
+1239261483 /usr/include/endian.h
+	<features.h>
+	<bits/endian.h>
+	<bits/byteswap.h>
+
+1239261483 /usr/include/bits/endian.h
+
+1239261483 /usr/include/bits/byteswap.h
+	<bits/wordsize.h>
+
+1239261442 /usr/include/xlocale.h
+
+1239261492 /usr/include/sys/types.h
+	<features.h>
+	<bits/types.h>
+	<time.h>
+	<stddef.h>
+	<endian.h>
+	<sys/select.h>
+	<sys/sysmacros.h>
+	<bits/pthreadtypes.h>
+
+1239261492 /usr/include/bits/types.h
+	<features.h>
+	<bits/wordsize.h>
+	<bits/typesizes.h>
+
+1239261492 /usr/include/bits/typesizes.h
+
+1239261488 /usr/include/time.h
+	<features.h>
+	<stddef.h>
+	<bits/time.h>
+	<bits/types.h>
+	<bits/types.h>
+	<bits/types.h>
+	<bits/types.h>
+	<bits/types.h>
+	<xlocale.h>
+
+1239261488 /usr/include/bits/time.h
+	<bits/types.h>
+	<bits/types.h>
+
+1239261497 /usr/include/sys/select.h
+	<features.h>
+	<bits/types.h>
+	<bits/select.h>
+	<bits/sigset.h>
+	<time.h>
+	<bits/time.h>
+
+1239261497 /usr/include/bits/select.h
+
+1239261475 /usr/include/bits/sigset.h
+
+1239261492 /usr/include/sys/sysmacros.h
+	<features.h>
+
+1239261492 /usr/include/bits/pthreadtypes.h
+	<bits/wordsize.h>
+
+1239261477 /usr/include/alloca.h
+	<features.h>
+	<stddef.h>
+
+1239261477 /usr/include/bits/stdlib.h
+
+1239261477 /usr/include/bits/stdlib-ldbl.h
+
+1241576024 /usr/include/GL/glext.h
+	<windows.h>
+	<stddef.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1239261477 /usr/include/inttypes.h
+	<features.h>
+	<stdint.h>
+	<stddef.h>
+
+1239261477 /usr/include/stdint.h
+	<features.h>
+	<bits/wchar.h>
+	<bits/wordsize.h>
+
+1239261484 /usr/include/bits/wchar.h
+
+1241601972 /usr/include/GL/glu.h
+	"glu_mangle.h"
+	<GL/gl.h>
+
+1241601972 /usr/include/GL/glu_mangle.h
+
+1242980306 source:/home/sqba/Projects/viewstl/viewstl.cpp
+	<string.h>
+	<stdlib.h>
+	<vector>
+	"solid.h"
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdio.h>
+	<time.h>
+	<math.h>
+
+1239261483 /usr/include/string.h
+	<features.h>
+	<stddef.h>
+	<xlocale.h>
+	<bits/string.h>
+	<bits/string2.h>
+	<bits/string3.h>
+
+1239261483 /usr/include/bits/string.h
+
+1239261483 /usr/include/bits/string2.h
+	<endian.h>
+	<bits/types.h>
+	<stdlib.h>
+
+1239261483 /usr/include/bits/string3.h
+
+1242863395 /home/sqba/Projects/viewstl/solid.h
+	<stdio.h>
+	<vector>
+
+1239261480 /usr/include/stdio.h
+	<features.h>
+	<stddef.h>
+	<bits/types.h>
+	<libio.h>
+	<stdarg.h>
+	<bits/stdio_lim.h>
+	<bits/sys_errlist.h>
+	<getopt.h>
+	<bits/stdio.h>
+	<bits/stdio2.h>
+	<bits/stdio-ldbl.h>
+
+1239261480 /usr/include/libio.h
+	<_G_config.h>
+	<stdarg.h>
+	<sys/cdefs.h>
+	<bits/stdio-lock.h>
+	<shlib-compat.h>
+	<bits/libio-ldbl.h>
+
+1239261480 /usr/include/_G_config.h
+	<bits/types.h>
+	<stddef.h>
+	<wchar.h>
+	<gconv.h>
+
+1239261484 /usr/include/wchar.h
+	<features.h>
+	<stdio.h>
+	<stdarg.h>
+	<bits/wchar.h>
+	<stddef.h>
+	<wctype.h>
+	<xlocale.h>
+	<xlocale.h>
+	<xlocale.h>
+	<wctype.h>
+	<bits/wchar2.h>
+	<bits/wchar-ldbl.h>
+
+1239261501 /usr/include/wctype.h
+	<features.h>
+	<bits/types.h>
+	<wchar.h>
+	<endian.h>
+	<xlocale.h>
+
+1239261484 /usr/include/bits/wchar2.h
+
+1239261484 /usr/include/bits/wchar-ldbl.h
+
+1239261440 /usr/include/gconv.h
+	<features.h>
+	<wchar.h>
+	<stddef.h>
+
+1239261480 /usr/include/bits/stdio-lock.h
+	<bits/libc-lock.h>
+	<lowlevellock.h>
+
+1239261438 /usr/include/bits/libc-lock.h
+	<pthread.h>
+	<stddef.h>
+	<lowlevellock.h>
+	<tls.h>
+	<pthread-functions.h>
+	<bp-sym.h>
+
+1239261509 /usr/include/pthread.h
+	<features.h>
+	<endian.h>
+	<sched.h>
+	<time.h>
+	<signal.h>
+	<bits/pthreadtypes.h>
+	<bits/setjmp.h>
+	<bits/wordsize.h>
+
+1239261492 /usr/include/sched.h
+	<features.h>
+	<bits/types.h>
+	<stddef.h>
+	<time.h>
+	<bits/sched.h>
+
+1239261492 /usr/include/bits/sched.h
+
+1239261475 /usr/include/signal.h
+	<features.h>
+	<bits/sigset.h>
+	<bits/types.h>
+	<bits/signum.h>
+	<time.h>
+	<bits/siginfo.h>
+	<bits/sigaction.h>
+	<bits/sigcontext.h>
+	<stddef.h>
+	<bits/sigstack.h>
+	<sys/ucontext.h>
+	<bits/pthreadtypes.h>
+	<bits/sigthread.h>
+
+1239261475 /usr/include/bits/signum.h
+
+1239261475 /usr/include/bits/siginfo.h
+	<bits/wordsize.h>
+
+1239261475 /usr/include/bits/sigaction.h
+
+1239261475 /usr/include/bits/sigcontext.h
+	<bits/wordsize.h>
+
+1239261475 /usr/include/bits/sigstack.h
+
+1239261477 /usr/include/sys/ucontext.h
+	<features.h>
+	<signal.h>
+	<bits/wordsize.h>
+	<bits/sigcontext.h>
+
+1239261475 /usr/include/bits/sigthread.h
+
+1239261475 /usr/include/bits/setjmp.h
+	<bits/wordsize.h>
+
+1239261480 /usr/include/bits/libio-ldbl.h
+
+1239261478 /usr/include/bits/stdio_lim.h
+
+1239261480 /usr/include/bits/sys_errlist.h
+
+1239261492 /usr/include/getopt.h
+	<ctype.h>
+
+1239261466 /usr/include/ctype.h
+	<features.h>
+	<bits/types.h>
+	<endian.h>
+	<xlocale.h>
+
+1239261480 /usr/include/bits/stdio.h
+
+1239261480 /usr/include/bits/stdio2.h
+
+1239261480 /usr/include/bits/stdio-ldbl.h
+
+1239261472 /usr/include/math.h
+	<features.h>
+	<bits/huge_val.h>
+	<bits/huge_valf.h>
+	<bits/huge_vall.h>
+	<bits/inf.h>
+	<bits/nan.h>
+	<bits/mathdef.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls.h>
+	<bits/mathinline.h>
+
+1239261472 /usr/include/bits/huge_val.h
+	<endian.h>
+
+1239261472 /usr/include/bits/huge_valf.h
+
+1239261472 /usr/include/bits/huge_vall.h
+
+1239261472 /usr/include/bits/inf.h
+
+1239261472 /usr/include/bits/nan.h
+	<endian.h>
+
+1239261472 /usr/include/bits/mathdef.h
+	<bits/wordsize.h>
+
+1239261472 /usr/include/bits/mathcalls.h
+
+1239261472 /usr/include/bits/mathinline.h
+
+1242980058 source:/home/sqba/Projects/viewstl/solid.cpp
+	"solid.h"
+	<string.h>
+	<math.h>
+	<stdio.h>
+
+1250869515 source:/home/sqba/projects/viewstl/solid.cpp
+	"solid.h"
+	<string.h>
+	<math.h>
+	<stdio.h>
+
+1250405340 /home/sqba/projects/viewstl/solid.h
+	<stdio.h>
+	<vector>
+
+1239261799 /usr/include/gnu/stubs-32.h
+
+1250869432 source:/home/sqba/projects/viewstl/viewstl.cpp
+	<string.h>
+	<stdlib.h>
+	<vector>
+	"solid.h"
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdio.h>
+	<time.h>
+	<math.h>
+

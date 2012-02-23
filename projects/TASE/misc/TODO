@@ -1,0 +1,27 @@
+
+daily updates
+
+make all item fields strings and then convert them in the pipeline
+add pipeline item that multiplies fields (0.01 or thousands)
+
+use csv too sped up the process
+
+convert session date to datetime
+make sessionid a key
+make category a key
+
+
+
+integrate google news ie. 'TASE:plx'
+
+
+
+Start scraper from gui
+http://www.linuxquestions.org/questions/programming-9/python-how-do-you-capture-stdout-stream-from-external-program-612998/
+http://docs.python.org/library/popen2.html
+http://docs.python.org/library/subprocess.html
+
+Get info from the Profile page
+Calculate NCAV
+
+

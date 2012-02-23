@@ -1,0 +1,30 @@
+#easy_install
+sudo apt-get install python-setuptools
+
+#matplotlib
+#sudo easy_install matplotlib
+sudo apt-get build-dep python-matplotlib
+
+#mysql
+sudo apt-get install python-mysqldb
+
+#scrappy
+
+#gtk
+sudo apt-get install gtk
+sudo apt-get install python-gtk2
+
+#xls2csv
+sudo apt-get install xls2csv
+
+#text
+#sudo easy_install stripogram
+#sudo easy_install webstemmer
+sudo easy_install html2text
+#sudo easy_install beautifulsoup
+#sudo apt-get install lynx
+
+
+sudo apt-get install pv
+
+

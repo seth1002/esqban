@@ -1,0 +1,1 @@
+.\WaveIn\Debug\WaveIn.exe | .\VoiceRem\Debug\VoiceRem.exe | .\waveout\Debug\WaveOut.exe

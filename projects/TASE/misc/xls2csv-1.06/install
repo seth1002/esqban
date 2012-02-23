@@ -1,0 +1,17 @@
+sudo perl -MCPAN -e 'shell'
+
+
+install CPAN
+reload CPAN
+install YAML
+install Locale::Recode
+install Unicode::Map
+install Spreadsheet::ParseExcel
+install Spreadsheet::ParseExcel::FmtUnicode
+install Text::CSV_XS
+exit
+
+
+
+http://robertborkowski.com/techblog/convert-xls-to-csv-in-command-line.html
+

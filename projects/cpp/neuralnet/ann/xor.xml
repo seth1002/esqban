@@ -1,0 +1,45 @@
+<net m_Net.alpha='0.100000' m_Net.beta='0.300000'>
+ <LAYER0>
+  <NEURON0 weight='-0.903090' delta='0.000000'>
+  </NEURON0>
+  <NEURON1 weight='-0.717827' delta='0.000000'>
+  </NEURON1>
+  <NEURON2 weight='0.070228' delta='0.000000'>
+  </NEURON2>
+ </LAYER0>
+ <LAYER1>
+  <NEURON0 weight='15.484893' delta='0.000000'>
+   <CONNECTION0 weight='-10.275722'/>
+   <CONNECTION1 weight='-10.116498'/>
+   <CONNECTION2 weight='-11.730305'/>
+  </NEURON0>
+  <NEURON1 weight='-16.840549' delta='0.000013'>
+   <CONNECTION0 weight='7.060511'/>
+   <CONNECTION1 weight='6.365935'/>
+   <CONNECTION2 weight='5.987053'/>
+  </NEURON1>
+  <NEURON2 weight='-4.106273' delta='0.000000'>
+   <CONNECTION0 weight='8.872968'/>
+   <CONNECTION1 weight='9.906150'/>
+   <CONNECTION2 weight='9.438275'/>
+  </NEURON2>
+ </LAYER1>
+ <LAYER2>
+  <NEURON0 weight='-11.291393' delta='-0.000002'>
+   <CONNECTION0 weight='0.585235'/>
+   <CONNECTION1 weight='1.345039'/>
+   <CONNECTION2 weight='-0.437587'/>
+  </NEURON0>
+  <NEURON1 weight='26.819772' delta='-0.000011'>
+   <CONNECTION0 weight='-17.939162'/>
+   <CONNECTION1 weight='-18.724760'/>
+   <CONNECTION2 weight='-17.978242'/>
+  </NEURON1>
+ </LAYER2>
+ <LAYER3>
+  <NEURON0 weight='1.928629' delta='0.014167'>
+   <CONNECTION0 weight='-3.895638'/>
+   <CONNECTION1 weight='-3.858235'/>
+  </NEURON0>
+ </LAYER3>
+</net>

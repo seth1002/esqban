@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><title>Tip: Convert from HTML to XML with HTML Tidy</title><meta content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0) &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))" http-equiv="PICS-Label"/><link href="http://purl.org/DC/elements/1.0/" rel="schema.DC"/><link href="http://www.ibm.com/favicon.ico" rel="SHORTCUT ICON"/><meta content="dW Information/Raleigh/IBM" name="Owner"/><meta content="en-US" scheme="rfc1766" name="DC.Language"/><meta content="ZZ" name="IBM.Country"/><meta content="Public" name="Security"/><meta name="Abstract" content="This tip demonstrates how to convert HTML documents to XML (or more specifically, XHTML) with a simple, open source tool, HTML Tidy. This conversion is useful for webmasters who are migrating to XML. It can also help XML converts who have to interface with legacy HTML tools." /><meta name="Description" content="This tip demonstrates how to convert HTML documents to XML (or more specifically, XHTML) with a simple, open source tool, HTML Tidy. This conversion is useful for webmasters who are migrating to XML. It can also help XML converts who have to interface with legacy HTML tools." /><meta name="Keywords" content="tip, Benoit Marchal, Converting from HTML to XML with HTML Tidy, tttxca, tttwaca" /><meta name="DC.Date" scheme="iso8601" content="2003-09-18" /><meta name="Source" content="Based on v14 Template Generator, Template 14.0" /><meta name="DC.Rights" content="Copyright (c) 2003 by IBM Corporation" /> <meta name="Robots" content="index,follow" /><meta name="IBM.Effective" scheme="W3CDTF" content="2003-09-18" /><meta name="Last update" content="11052006vsuddaby@us.ibm.com" /><link href="//www.ibm.com/common/v14/table.css" media="screen,print" type="text/css" rel="stylesheet"/><script language="JavaScript" src="/developerworks/js/dwcss14.js" type="text/javascript"></script><link href="//www.ibm.com/common/v14/main.css" type="text/css" rel="stylesheet"/><link href="//www.ibm.com/common/v14/screen.css" media="all" type="text/css" rel="stylesheet"/><link href="//www.ibm.com/common/v14/print.css" media="print" type="text/css" rel="stylesheet"/><script language="JavaScript" src="//www.ibm.com/common/v14/detection.js" type="text/javascript"></script><script language="JavaScript" src="/developerworks/js/dropdown.js" type="text/javascript"></script><script language="JavaScript" src="/developerworks/email/grabtitle.js" type="text/javascript"></script><script language="JavaScript" src="/developerworks/email/emailfriend2.js" type="text/javascript"></script><script language="JavaScript" src="/developerworks/js/dwplugin.js" type="text/javascript"></script><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><script language="javascript" src="/developerworks/js/ajax1.js" type="text/javascript"></script><script language="javascript" src="/developerworks/js/searchcount.js" type="text/javascript"></script><!--END RESERVED FOR FUTURE USE INCLUDE FILES--><style type="text/css">
+code.section {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 11px}
+.boldcode {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 11px; font-weight: bold} .rboldcode {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 11px; font-weight: bold; color: #ff0000}
+.gboldcode {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 11px; font-weight: bold; color: #ff6600}
+.bboldcode {font-family: Andale Mono, Lucida  Console, Monaco, fixed, monospace; font-size: 11px; font-weight: bold; color: #3c5f84}
+</style><style type="text/css">
+.atitle { font-family:arial,sans-serif; font-size:18px; }
+</style><script language="JavaScript" type="text/javascript">var emailAbstract = "This tip demonstrates how to convert HTML documents to XML (or more specifically, XHTML) with a simple, open source tool, HTML Tidy. This conversion is useful for webmasters who are migrating to XML. It can also help XML converts who have to interface with legacy HTML tools."; </script></head><body><!--MASTHEAD_BEGIN--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="bbg" width="110"><a href="http://www.ibm.com/"><img alt="IBM&reg;" border="0" height="52" src="//www.ibm.com/i/v14/t/ibm-logo.gif" width="110"/></a></td>
+<td class="bbg"><img src="//www.ibm.com/i/c.gif" width="1" height="1" border="0" alt="" /></td>
+<td align="right"  class="mbbg" width="650">
+<table border="0" cellpadding="0" cellspacing="0" align="right" >
+<tr class="cty-tou">
+<td rowspan="2" width="17" class="upper-masthead-corner"><a href="#main"><img src="//www.ibm.com/i/c.gif" border="0" width="1" height="1" alt="Skip to main content"/></a></td>
+<td align="left">
+<table border="0" cellpadding="0" cellspacing="0" align="left">
+<tr>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="country">Country/region</b><span class="spacer">&nbsp;[</span><a class="ur-link" href="http://www.ibm.com/developerworks/country/">select</a><span class="spacer">]</span></td>
+<td width="29" class="upper-masthead-divider">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="left"><a class="ur-link" href="http://www.ibm.com/legal/">Terms of use</a></td>
+</tr>
+</table>
+</td>
+<td width="40">&nbsp;</td>
+</tr>
+<tr>
+<td class="cty-tou-border" height="1" colspan="2"><img src="//www.ibm.com/i/c.gif" alt="" height="1" width="1"/></td>
+</tr>
+<tr>
+<td colspan="3"><img alt="" height="8" src="//www.ibm.com/i/c.gif" width="1"/></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td align="center" colspan="2">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<form method="get" action="//www.ibm.com/developerworks/search/searchResults.jsp" id="form1" name="form1"><input type="hidden" name="searchType" value="1"/><input type="hidden" name="searchSite" value="dW"/>
+<td width="18"><label for="q"><img src="//www.ibm.com/i/c.gif" width="1" height="1" alt="Search in:"/></label></td>
+<td align="right"><select id="sq" name="searchScope" class="input-local" size="1">
+<label for="sq"><option value="dW">All of dW</option>
+<option value="dW">-----------------</option>
+<option value="aixunix">&nbsp;&nbsp;AIX and UNIX</option>
+<option value="eserver">&nbsp;&nbsp;eServer</option>
+<option value="db2">&nbsp;&nbsp;Information Mgmt</option>
+<option value="lotus">&nbsp;&nbsp;Lotus</option>
+<option value="rdd">&nbsp;&nbsp;Rational</option>
+<option value="tivoli">&nbsp;&nbsp;Tivoli</option>  
+<option value="WSDD">&nbsp;&nbsp;WebSphere</option>
+<option value="workplace">&nbsp;&nbsp;Workplace</option>
+<option value="dW">-----------------</option> 
+<option value="acZ">&nbsp;&nbsp;Autonomic computing</option>
+<option value="gridZ">&nbsp;&nbsp;Grid computing</option>
+<option value="javaZ">&nbsp;&nbsp;Java technology</option> 
+<option value="linuxZ">&nbsp;&nbsp;Linux</option> 
+<option value="opensrcZ">&nbsp;&nbsp;Open source</option>
+<option value="paZ">&nbsp;&nbsp;Power Architecture</option>
+<option value="webservZ">&nbsp;&nbsp;SOA &amp; Web services</option>
+<option value="webarchZ">&nbsp;&nbsp;Web architecture</option>  
+<option value="wirelessZ">&nbsp;&nbsp;Wireless</option> 
+<option value="xmlZ">&nbsp;&nbsp;XML</option>
+<option value="dW">-----------------</option>
+<option value="forums">&nbsp;&nbsp;dW forums</option> 
+<option value="dW">-----------------</option>
+<option value="aW">alphaWorks</option>
+<option value="dW">-----------------</option>
+<option value="all">All of IBM</option>
+</label></select></td>
+<td width="7" align="right"><label for="q"><img src="//www.ibm.com/i/c.gif" width="1" height="1" alt="Search for:"/></label>&nbsp;&nbsp;</td>
+<td align="right"><input class="input" id="q" maxlength="100" name="query" size="15" type="text" value=""/>
+</td>
+<td width="7">&nbsp;
+</td>
+<td width="90"><input alt="Search" name="Search" src="//www.ibm.com/i/v14/t/search.gif" type="image" value="Search" /></td>
+<!-- <td width="20">&nbsp;</td> -->
+</form>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="blbg" colspan="3">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/">Home</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/products/">Products</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/servicessolutions/">Services &amp; industry solutions</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/support/">Support &amp; downloads</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/account/">My IBM</a></td>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--
+<script src="//www.ibm.com/common/v14/pmh.js" language="JavaScript" type="text/javascript"></script>
+-->
+<!--MASTHEAD_END--><table id="v14-body-table" border="0" cellpadding="0" cellspacing="0" width="100%"><tr valign="top"><!--LEFTNAV_BEGIN--><td id="navigation" width="150"><table width="150" cellspacing="0" cellpadding="0" border="0"><tr><td class="left-nav-spacer"><a href="http://www.ibm.com/developerworks" class="left-nav-overview"> </a></td></tr></table><table width="150" cellspacing="0" cellpadding="0" border="0"><tr><td colspan="2" class="left-nav-overview"><a href="http://www.ibm.com/developerworks" class="left-nav-overview">developerWorks</a></td></tr></table><table width="150" cellspacing="0" cellpadding="0" border="0"><tr><td colspan="2" class="left-nav-highlight"><a href="#" class="left-nav">In this article:</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/cl-bullet.gif"/></td><td><a href="#N10063" class="left-nav-child">Tool of the trade</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/cl-bullet.gif"/></td><td><a href="#N10099" class="left-nav-child">Tidying up</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/cl-bullet.gif"/></td><td><a href="#N10130" class="left-nav-child">Further processing</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/cl-bullet.gif"/></td><td><a href="#N1015D" class="left-nav-child">Conclusion</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/cl-bullet.gif"/></td><td><a href="#resources" class="left-nav-child">Resources</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/cl-bullet.gif"/></td><td><a href="#author" class="left-nav-child">About the author</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/cl-bullet.gif"/></td><td><a href="#rate" class="left-nav-child">Rate this page</a></td></tr><tr class="left-nav-last"><td width="14"><img class="display-img" alt="" height="1" width="14" src="//www.ibm.com/i/c.gif"/></td><td width="136"><img class="display-img" alt="" height="19" width="136" src="//www.ibm.com/i/v14/t/left-nav-corner.gif"/></td></tr></table><br /><table width="150" cellspacing="0" cellpadding="0" border="0"><tr><td class="related" colspan="2"><b class="related">Related links</b></td></tr><tr class="rlinks"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/rl-bullet.gif"/></td><td><a class="rlinks" href="http://www.ibm.com/developerworks/views/xml/library.jsp">XML technical library</a></td></tr><tr class="rlinks"><td><img alt="" height="8" width="2" src="//www.ibm.com/i/v14/t/rl-bullet.gif"/></td><td><a class="rlinks" href="http://www.ibm.com/developerworks/views/web/library.jsp">Web architecture technical library</a></td></tr><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><!-- No content currently --><!--END RESERVED FOR FUTURE USE INCLUDE FILES--><tr><td width="14"><img class="display-img" alt="" height="1" width="14" src="//www.ibm.com/i/c.gif"/></td><td width="136"><img class="display-img" alt="" height="19" width="136" src="//www.ibm.com/i/c.gif"/></td></tr></table><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><!-- No content currently --><!--END RESERVED FOR FUTURE USE INCLUDE FILES--></td><!--LEFTNAV_END--><td width="100%"><table id="content-table" border="0" cellpadding="0" cellspacing="0" width="100%"><tr valign="top"><td width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><a name="main"><img border="0" alt="skip to main content" height="1" width="592" src="//www.ibm.com/i/c.gif"/></a></td></tr></table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr valign="top"><td height="18" width="10"><img alt="" height="18" width="10" src="//www.ibm.com/i/c.gif"/></td><td width="100%"><img alt="" height="6" width="1" src="//www.ibm.com/i/c.gif"/><br /><a href="http://www.ibm.com/developerworks/" class="bctl">developerWorks</a><span class="bct">  &gt;  </span><a class="bctl" href="http://www.ibm.com/developerworks/xml/">XML</a><span class="bct"> | </span><a href="http://www.ibm.com/developerworks/web/" class="bctl">Web architecture</a><span class="bct">  &gt;</span><img alt="" height="1" width="1" src="//www.ibm.com/i/c.gif"/><br /><h1>Tip: Convert from HTML to XML with HTML Tidy</h1><p id="subtitle"><em>Preserve legacy Web sites with this handy utility</em></p><img alt="" height="6" width="1" src="//www.ibm.com/i/c.gif" class="display-img"/></td><td class="no-print" width="192"><a href="http://www.ibm.com/developerworks/"><img alt="developerWorks" border="0" height="18" width="192" src="/developerworks/i/dw.gif"/></a></td></tr></table></td></tr></table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr valign="top"><td width="10"><img alt="" height="1" width="10" src="//www.ibm.com/i/c.gif"/></td><td width="100%"><table class="no-print" border="0" width="160" cellspacing="0" cellpadding="0" align="right"><tr><td width="10"><img alt="" height="1" width="10" src="//www.ibm.com/i/c.gif"/></td><td><table width="150" cellspacing="0" cellpadding="0" border="0"><tr><td class="v14-header-1-small">Document options</td></tr></table><table class="v14-gray-table-border" cellspacing="0" cellpadding="0" border="0"><tr><td class="no-padding" width="150"><table width="143" cellspacing="0" cellpadding="0" border="0"><script language="JavaScript" type="text/javascript">
+<!--
+document.write('<tr valign="top"><td width="8"><img src="//www.ibm.com/i/c.gif" width="8" height="1" alt=""/></td><td width="16"><img alt="Set printer orientation to landscape mode" height="16" src="//www.ibm.com/i/v14/icons/printer.gif" width="16" vspace="3" /></td><td width="122"><p><b><a class="smallplainlink" href="javascript:print()">Print this page</a></b></p></td></tr>');
+//-->
+</script>
+<noscript></noscript><script language="JavaScript" type="text/javascript">
+<!--
+document.write('<tr valign="top"><td width="8"><img src="//www.ibm.com/i/c.gif" width="8" height="1" alt=""/></td><td width="16"><img src="//www.ibm.com/i/v14/icons/em.gif" height="16" width="16" vspace="3" alt="Email this page" /></td><td width="122"><p><a class="smallplainlink" href="javascript:void newWindow()"><b>E-mail this page</b></a></p></td></tr>');
+//-->
+</script><noscript><tr valign="top"><td width="8"><img alt="" height="1" width="8" src="//www.ibm.com/i/c.gif"/></td><td width="16"><img alt="" width="16" height="16" src="//www.ibm.com/i/c.gif"/></td><td class="small" width="122"><p><span class="ast">Document options requiring JavaScript are not displayed</span></p></td></tr></noscript></table></td></tr></table><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><!-- 08/03/06 updated by jill -->
+<!-- 08/07/06 updated by gem to expand ampersand in url and change typo in tactic, should have been X in 105AGX01, not 105AGY01 -->
+
+<br /><table border="0" cellpadding="0" cellspacing="0" width="150"><tr><td class="v14-header-2-small">Free download:</td></tr></table><table border="0" cellpadding="0" cellspacing="0" class="v14-gray-table-border"><tr><td width="150" class="no-padding"><table border="0" cellpadding="0" cellspacing="0" width="143"><tr valign="top"><td width="8"><img src="//www.ibm.com/i/c.gif" width="8" height="1" alt=""/></td><td><img src="//www.ibm.com/i/v14/icons/fw_bold.gif" height="16" width="16" border="0" vspace="3" alt=""/></td><td width="125"><p><a href="http://www.ibm.com/developerworks/kickstart/webserver.html?S_TACT=105AGX01&amp;S_CMP=SIMPLEART" class="smallplainlink">Using Apache Tomcat but need to do more?</a>
+</p></td></tr></table></td></tr></table><!--END RESERVED FOR FUTURE USE INCLUDE FILES--><br /><table width="150" cellspacing="0" cellpadding="0" border="0"><tr><td class="v14-header-2-small">Rate this page</td></tr></table><table class="v14-gray-table-border" cellspacing="0" cellpadding="0" border="0"><tr><td class="no-padding" width="150"><table width="143" cellspacing="0" cellpadding="0" border="0"><tr valign="top"><td width="8"><img alt="" height="1" width="8" src="//www.ibm.com/i/c.gif"/></td><td><img alt="" vspace="3" border="0" width="16" height="16" src="//www.ibm.com/i/v14/icons/d_bold.gif"/></td><td width="125"><p><a href="#rate" class="smallplainlink"><b>Help us improve this content</b></a></p></td></tr></table></td></tr></table><br /></td></tr></table><p>Level: Introductory</p><p><a href="#author">Benoit Marchal</a> (<a href="mailto:bmarchal@pineapplesoft.com?subject=Tip: Convert from HTML to XML with HTML Tidy&amp;cc=dwxed@us.ibm.com">bmarchal@pineapplesoft.com</a>), Consultant, Pineapplesoft<br /></p><p> 18 Sep  2003</p><blockquote>This tip demonstrates how to convert HTML documents to XML (or more specifically, XHTML) with a simple, open source tool, HTML Tidy. This conversion is useful for webmasters who are migrating to XML. It can also help XML converts who have to interface with legacy HTML tools.</blockquote><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><script language="JavaScript" type="text/javascript">
+<!--
+if (document.referrer&&document.referrer!="") { 
+   // document.write(document.referrer);
+   var q = document.referrer;
+   var engine = q;
+   var isG = engine.search(/google\.com/i);
+   var searchTerms;
+   //var searchTermsForDisplay;
+   if (isG != -1) { 
+	   var i = q.search(/q=/);
+	   var q2 = q.substring(i+2);
+	   var j = q2.search(/&/);
+	   j = (j == -1)?q2.length:j;
+	   searchTerms = q.substring(i+2,i+2+j);
+	   if (searchTerms.length != 0) {
+	       searchQuery(searchTerms);
+	       document.write("<div id=\"contents\"></div>");
+	   }
+   } 
+}
+//-->
+</script><!--END RESERVED FOR FUTURE USE INCLUDE FILES-->
+			<p>One the challenges that webmasters face when converting from pure HTML to XML/XSL is the  preservation of their legacy Web sites. Because it would be too costly to dump the old site and start again from scratch, some sort of automated procedure that brings the HTML site to XML is required.</p>
+			<p>Even XML converts have to deal with HTML files: Many products have added an option for exporting HTML documents -- an option you might want to integrate into your Web site.</p>
+			<p>This tip discusses HTML Tidy, a powerful tool to help convert old HTML pages to newer standards, such as XML. Tidy is distributed as open source.</p>
+			<p><a name="N10063"><span class="atitle">Tool of the trade</span></a></p>
+			<p>The basic tool you can use to upgrade a site from HTML to XML is HTML Tidy. Originally developed by Dave Raggett and distributed under an open source license through the W3C Web site, HTML Tidy is now maintained by a group of volunteers at SourceForge. A Java-language version (aptly called JTidy) is also available (see <a href="#resources">Resources</a>). Last but not least, an API allows you to integrate HTML Tidy as a library in your applications.</p>
+			<p>HTML and XML are both markup languages derived from SGML, so they have a lot in common. Still, there are two major differences:</p>
+			<ul>
+				<li>XML syntax is far more restrictive; most importantly, in XML you must remember to close the tags.</li>
+				<li>HTML coding often has been relatively careless, so the files are rarely trouble-free to start with.</li>
+			</ul>
+			<p>Early Web browsers encouraged sloppiness among webmasters by being extraordinarily tolerant of errors. At the time, the goal of these browsers was to get as many people on board as possible and to encourage webmasters to publish documents. The strategy worked, and Web content grew exponentially.</p>
+			<p>Still, poor coding practices caused all kind of incompatibilities, and HTML Tidy was originally designed to address this. It rewrites HTML pages to be conformant with the latest W3C standards. In the process, it fixes many common errors such as unclosed tags.</p>
+			<p>Although HTML Tidy primarily works with HTML pages, it also supports XHTML, an XML vocabulary.</p>
+			<p>As an example, I will work with a photo gallery generated with Photoshop. You can use other HTML documents, but if you'd like to experiment with the same files I use, the gallery is also available for download in the <a href="#resources">Resources</a> section. Listing 1 is an excerpt from the gallery -- as you can see, it's plain HTML code.</p>
+			<br /><a name="listing1"><b>Listing 1. index.html (an excerpt)</b></a><br /><table bgcolor="#eeeeee" width="100%" cellpadding="5" cellspacing="0" border="1"><tr><td><pre><code class="section">&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;Journey to Windsor&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;TABLE&gt;
+  &lt;TR&gt;
+    &lt;TD width=15&gt;&lt;/TD&gt;
+    &lt;TD&gt;&lt;FONT size="3"face="Helvetica"&gt;
+      Journey to Windsor&lt;BR&gt;
+      Beno&amp;icirc;t Marchal&lt;BR&gt;
+      July 2003&lt;BR&gt;
+      &lt;BR&gt;
+      &lt;A href="mailto:bmarchal@pineapplesoft.com"&gt;
+         bmarchal@pineapplesoft.com&lt;/A&gt; 
+    &lt;/FONT&gt;&lt;/TD&gt;
+  &lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;CENTER&gt;&lt;TABLE border=3&gt;
+  &lt;TR&gt;&lt;TD&gt;
+    &lt;A href="pages/dscn0824.html"&gt;
+      &lt;IMG src="thumbnails/dscn0824.jpg" border="0" alt="dscn0824"&gt;
+    &lt;/A&gt;&lt;br&gt;
+    &lt;FONT size="3" face="Helvetica"&gt;
+    dscn0824.jpg&lt;br&gt;
+    A bright, red mailbox inside the castle. It seems oddly familiar
+    in an historic setting.&lt;br&gt;
+    Windsor Castle &lt;br&gt;
+    &amp;copy; 2003, Beno&amp;icirc;t Marchal
+    &lt;/FONT&gt;
+ &lt;/TD&gt;&lt;/TR&gt;
+&lt;/TABLE&gt;&lt;/CENTER&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</code></pre></td></tr></table><br />
+			
+			<br /><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td><img width="100%" src="//www.ibm.com/i/v14/rules/blue_rule.gif" height="1" alt=""/></td></tr></table><table class="no-print" cellspacing="0" cellpadding="0" align="right"><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tr><td valign="middle"><img width="16" src="//www.ibm.com/i/v14/icons/u_bold.gif" height="16" border="0" alt=""/><br /></td><td valign="top" align="right"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></table></td></tr></table><br /><br /><p><a name="N10099"><span class="atitle">Tidying up</span></a></p>
+			<p>Obviously, the first step is to download and install HTML Tidy (which you'll find in <a href="#resources">Resources</a>). HTML Tidy is available on most platforms, including Windows, Linux, and MacOS. The default executable is a command-line tool, but GUI versions are available for Windows and MacOS.</p>
+			<p>To run HTML Tidy, open a terminal and issue the following command:</p>
+			<table bgcolor="#eeeeee" width="100%" cellpadding="5" cellspacing="0" border="1"><tr><td><pre><code class="section">tidy -asxhtml -numeric &lt; index.html &gt; index.xml</code></pre></td></tr></table><br />
+			<p>That's it! HTML Tidy immediately converts index.html into index.xml. HTML Tidy will print messages that highlight issues with the original HTML document during the conversion. In most cases, you can safely ignore these messages.</p>
+			<p>HTML Tidy runs as a filter, so it expects standard input and it prints the result to the standard output. The redirection operators (<code>&lt;</code> and <code>&gt;</code>) allow you to work with files. By default, HTML Tidy produces a clean HTML page, but you can set two options to output XML, instead:</p>
+			<ul>
+				<li>
+					<code>-asxhtml</code> outputs XHTML documents instead of HTML.</li>
+				<li>
+					<code>-numeric</code> uses character entities instead of HTML entities. For example, <code>&amp;icirc;</code> is replaced with <code>î</code>.
+				</li>
+			</ul>
+			<table align="right" border="0" cellspacing="0" cellpadding="0" width="40%"><tr><td width="10"><img alt="" height="1" width="10" src="//www.ibm.com/i/c.gif"/></td><td><table border="1" cellspacing="0" cellpadding="5" width="100%"><tr><td bgcolor="#eeeeee">
+				<a name="N100D9"><b>XPaths and empty elements</b></a><br />
+				<p>You must be careful when processing XHTML documents with XSL. XHTML is primarily a formatting language and, unlike other XML vocabularies, it adds little structure to documents. To recover the structure, you have to analyze the document and carefully craft the appropriate XPaths. In this example, it was not immediately obvious how to separate the image title from its description: There's only a line break (<code>&lt;br/&gt;</code>) between them. Because the line break is an empty tag, it's not enough to select it to retrieve the text!  Ultimately,  I used the <code>preceding-sibling</code> axis to load the text before the empty tag.</p>
+			</td></tr></table></td></tr></table>
+			<p>The difference between XHTML and HTML might sound trivial (it's only an extra "X" after all) but it is important. XHTML is a version of HTML 4.01 that has been adapted to the XML syntax. The vocabulary is unchanged (XHTML uses the familiar <code>&lt;p&gt;</code>, <code>&lt;b&gt;</code>, and <code>&lt;a&gt;</code> tags, for example), but the syntax is XML, so it merges nicely in an XML workflow.</p>
+			<p>The main differences between HTML and XHTML are:</p>
+			<ol>
+				<li>XML elements must have opening and closing tags. HTML does not require the closing tag for many elements, such as <code>&lt;p&gt;</code> unless they are empty elements.</li>
+				<li>Empty elements follow the XML convention. For example, the line break is written as <code>&lt;br /&gt;</code> instead of <code>&lt;br&gt;</code>.</li>
+				<li>Attribute values are always quoted (for example, <code>&lt;a href="http://www.marchal.com"&gt;</code> instead of <code>&lt;a href=http://www.marchal.com&gt;</code>).</li>
+			</ol>
+			<p>Listing 2 is the file that HTML Tidy produces when Listing 1 is provided as input. As you can see, it is a valid XML document, and it takes surprisingly little work to produce it. </p>
+			<br /><a name="listing2"><b>Listing 2. index.xml (an excerpt)</b></a><br /><table bgcolor="#eeeeee" width="100%" cellpadding="5" cellspacing="0" border="1"><tr><td><pre><code class="section">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta name="generator" content=
+"HTML Tidy for Mac OS X (vers 1st June 2003), see www.w3.org" /&gt;
+&lt;title&gt;Journey to Windsor&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width="15"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size="3" face="Helvetica"&gt;Journey to Windsor&lt;br /&gt;
+Benoît Marchal&lt;br /&gt;
+July 2003&lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=
+"mailto:bmarchal@pineapplesoft.com"&gt;bmarchal@pineapplesoft.com&lt;/a&gt;&lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;center&gt;
+&lt;table border="3"&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="pages/dscn0824.html"&gt;&lt;img src=
+"thumbnails/dscn0824.jpg" border="0" alt="dscn0824" /&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;font size="3" face="Helvetica"&gt;dscn0824.jpg&lt;br /&gt;
+A bright, red mailbox inside the castle. It seems oddly familiar in
+an historic setting.&lt;br /&gt;
+Windsor Castle&lt;br /&gt;
+© 2003, Benoît Marchal&lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></td></tr></table><br />
+			
+			<p>What if you're not happy with the XHTML vocabulary? Read on.</p>
+			<br /><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td><img width="100%" src="//www.ibm.com/i/v14/rules/blue_rule.gif" height="1" alt=""/></td></tr></table><table class="no-print" cellspacing="0" cellpadding="0" align="right"><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tr><td valign="middle"><img width="16" src="//www.ibm.com/i/v14/icons/u_bold.gif" height="16" border="0" alt=""/><br /></td><td valign="top" align="right"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></table></td></tr></table><br /><br /><p><a name="N10130"><span class="atitle">Further processing</span></a></p>
+			<p>Because XHTML documents are valid XML documents, you can insert them into an XML workflow. More specifically, you can post-process them with regular XML tools (XSL, parsers, and the like).</p>
+			<p>Indeed, I am not very happy with the XHTML vocabulary for this application. Because it's a publishing vocabulary, XHTML has very little structure, and I prefer to maintain photo galleries through the ad hoc XML vocabulary shown in Listing 3 (originally introduced in my tip, <a href="http://www.ibm.com/developerworks/xml/library/x-tipdivbig/" target="_new">Divide and conquer large XML documents</a>). 
+To illustrate an XML workflow, I have written a small XSL stylesheet (see <a href="#listing4">Listing 4</a>) that retrieves the titles, file names, dates, and descriptions from the XHTML document.  The stylesheet generates a more structured version of the document that is easier to work with.</p>
+			<br /><a name="listing3"><b>Listing 3.
+    index-transform.xml (an excerpt)</b></a><br /><table bgcolor="#eeeeee" width="100%" cellpadding="5" cellspacing="0" border="1"><tr><td><pre><code class="section">&lt;?xml version="1.0" encoding="MacRoman"?&gt;
+&lt;gl:gallery xmlns:gl="http://ananas.org/2003/tips/gallery"&gt;
+&lt;gl:title&gt;Journey to Windsor&lt;/gl:title&gt;
+&lt;gl:photo&gt;
+&lt;gl:title&gt;Windsor Castle&lt;/gl:title&gt;
+&lt;gl:date&gt;July 2003&lt;/gl:date&gt;
+&lt;gl:image&gt;dscn0824.jpg&lt;/gl:image&gt;
+&lt;gl:description&gt;A bright, red mailbox inside the castle.
+  It seems oddly familiar in an historic setting.&lt;/gl:description&gt;
+&lt;/gl:photo&gt;
+&lt;/gl:gallery&gt;</code></pre></td></tr></table><br />
+			
+			<br /><a name="listing4"><b>Listing 4. cleanup.xsl</b></a><br /><table bgcolor="#eeeeee" width="100%" cellpadding="5" cellspacing="0" border="1"><tr><td><pre><code class="section">&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:gl="http://ananas.org/2003/tips/gallery"
+                xmlns:html="http://www.w3.org/1999/xhtml"
+                exclude-result-prefixes="html"&gt;
+
+&lt;xsl:output method="xml" indent="yes" encoding="MacRoman"/&gt;
+
+&lt;xsl:template match="html:html"&gt;
+  &lt;xsl:variable name="date"
+                select="html:body/html:table/html:tr/html:td[2]
+                        /html:font/html:br[3]
+                        /preceding-sibling::text()[1]"/&gt;
+  &lt;gl:gallery&gt;
+    &lt;gl:title&gt;
+      &lt;xsl:value-of select="html:head/html:title"/&gt;
+    &lt;/gl:title&gt;
+    &lt;xsl:for-each select="html:body/html:center/html:table
+                          /html:tr/html:td"&gt;
+      &lt;xsl:variable name="title"
+                    select="html:font/html:br[3]
+                            /preceding-sibling::text()[1]"/&gt;
+      &lt;xsl:variable name="image"
+                    select="html:font/html:br[1]
+                            /preceding-sibling::text()[1]"/&gt;
+      &lt;xsl:variable name="description"
+                    select="html:font/html:br[2]
+                            /preceding-sibling::text()[1]"/&gt;
+      &lt;gl:photo&gt;
+        &lt;gl:title&gt;&lt;xsl:value-of
+          select="normalize-space($title)"/&gt;&lt;/gl:title&gt;
+        &lt;gl:date&gt;&lt;xsl:value-of
+          select="normalize-space($date)"/&gt;&lt;/gl:date&gt;
+        &lt;gl:image&gt;&lt;xsl:value-of
+          select="normalize-space($image)"/&gt;&lt;/gl:image&gt;
+        &lt;gl:description&gt;&lt;xsl:value-of
+          select="normalize-space($description)"/&gt;&lt;/gl:description&gt;
+      &lt;/gl:photo&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/gl:gallery&gt;
+&lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</code></pre></td></tr></table><br />
+			
+			<br /><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td><img width="100%" src="//www.ibm.com/i/v14/rules/blue_rule.gif" height="1" alt=""/></td></tr></table><table class="no-print" cellspacing="0" cellpadding="0" align="right"><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tr><td valign="middle"><img width="16" src="//www.ibm.com/i/v14/icons/u_bold.gif" height="16" border="0" alt=""/><br /></td><td valign="top" align="right"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></table></td></tr></table><br /><br /><p><a name="N1015D"><span class="atitle">Conclusion</span></a></p>
+			<p>HTML Tidy is one of those neat little utilities that all webmasters should have in their toolbox. It is particularly helpful for XML/XSL webmasters because it can output XHTML. Any other vocabulary is only a stylesheet away.</p>
+		<br /><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td><img width="100%" src="//www.ibm.com/i/v14/rules/blue_rule.gif" height="1" alt=""/></td></tr></table><table class="no-print" cellspacing="0" cellpadding="0" align="right"><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tr><td valign="middle"><img width="16" src="//www.ibm.com/i/v14/icons/u_bold.gif" height="16" border="0" alt=""/><br /></td><td valign="top" align="right"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></table></td></tr></table><br /><br /><p><a name="resources"><span class="atitle">Resources</span></a></p>
+			<ul><li>Download the <a href="ftp://www6.software.ibm.com/software/developer/library/x-tiptidylistings2.2.zip">source code</a> used in this article, including the author's photo gallery.<br /><br /></li><li>Download <a href="http://tidy.sourceforge.net/">HTML Tidy</a> from
+        SourceForge. It runs on Windows, Linux, MacOS, and other platforms. Graphical interfaces and a library (useful for embedding in a workflow) are available on the same site. A Java-language version, <a href="http://jtidy.sourceforge.net/">JTidy</a>, is also available.<br /><br /></li><li>Visit <a href="http://www.w3.org/People/Raggett/tidy/">Dave Raggett's
+        Web site</a>, the original home of HTML Tidy, for a wealth of information.<br /><br /></li><li>Read <a href="http://www.ibm.com/developerworks/library/x-wxxm18/index.html">Fundamentals of Web publishing with XML</a> (<i>developerWorks</i>, July 2003) by Benoît Marchal for step-by-step instructions on Web publishing with XML and XSL.<br /><br /></li><li>Use stylesheets to publish online galleries with <a href="http://www.ibm.com/developerworks/xml/library/x-tipdivbig/">Divide and conquer large XML documents</a>  (<i>developerWorks</i>, June 2003), also by the author.<br /><br /></li><li>Learn more about XHTML on the W3C's <a href="http://www.w3.org/MarkUp/">HTML home page</a>.<br /><br /></li><li>For more insights into XHTML, read <a href="http://www.ibm.com/developerworks/web/library/wa-xhtml/">The Web's future: XHTML 2.0</a> (<i>developerWorks</i>, September 2002) by Nicolas Chase.<br /><br /></li><li>Find more XML resources on the <i>developerWorks </i>
+					<a href="http://www.ibm.com/developerworks/xml/">XML zone</a>. For a complete list of XML tips to date, check out the 
+<a href="http://www.ibm.com/developerworks/xml/library/x-tips.html">tips summary page</a>.<br /><br /></li><li>IBM's <a href="http://www-3.ibm.com/software/data/db2/">DB2</a> database provides not only relational database storage, but also XML-related tools such as the <a href="http://www-3.ibm.com/software/data/db2/extenders/xmlext/index.html">DB2 XML Extender </a>, which provides a bridge between XML and relational systems. Visit the <a href="http://www7b.software.ibm.com/dmdd/">DB2 Developer Domain</a> to learn more about DB2. <br /><br /></li><li>Find out how you can become an <a href="http://www-1.ibm.com/certify/certs/adcdxmlrt.shtml">IBM Certified Developer in XML and related technologies</a>.<br /></li></ul>
+		<br /><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td><img width="100%" src="//www.ibm.com/i/v14/rules/blue_rule.gif" height="1" alt=""/></td></tr></table><table class="no-print" cellspacing="0" cellpadding="0" align="right"><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tr><td valign="middle"><img width="16" src="//www.ibm.com/i/v14/icons/u_bold.gif" height="16" border="0" alt=""/><br /></td><td valign="top" align="right"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></table></td></tr></table><br /><br /><p><a name="author"><span class="atitle">About the author</span></a></p><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td colspan="3"><img alt="" width="100%" height="5" src="//www.ibm.com/i/c.gif"/></td></tr><tr align="left" valign="top"><td><p><img alt="" height="80" src="/developerworks/i/p-bmarchal.jpg" width="64" align="left"/></p></td><td><img alt="" width="4" height="5" src="//www.ibm.com/i/c.gif"/></td><td width="100%"><p>Benoit Marchal is a Belgian consultant. He is the author of  <a href="http://www.amazon.com/exec/obidos/tg/detail/-/0789725045/qid=1063048066/sr=8-2/ref=sr_8_2/002-2350985-1258406?v=glance&amp;s=books&amp;n=507846">
+					<i>XML by Example</i>
+				</a> and other XML books. Benoit is available to help you with XML projects. You can contact him at <a href="mailto:bmarchal@pineapplesoft.com">bmarchal@pineapplesoft.com</a> or through his personal site at <a href="http://www.marchal.com">marchal.com</a>.</p></td></tr></table><br /><br /><table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td><img width="100%" src="//www.ibm.com/i/v14/rules/blue_rule.gif" height="1" alt=""/></td></tr></table><table class="no-print" cellspacing="0" cellpadding="0" align="right"><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tr><td valign="middle"><img width="16" src="//www.ibm.com/i/v14/icons/u_bold.gif" height="16" border="0" alt=""/><br /></td><td valign="top" align="right"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></table></td></tr></table><br /><br /><p class="no-print"><span class="atitle"><a name="rate">Rate this page</a></span></p><span class="no-print"><form action="//www-128.ibm.com/developerworks/utils/RatingsHandler" method="post"><input value="Tip: Convert from HTML to XML with HTML Tidy" name="ArticleTitle" type="hidden"/><input value="XML, Web architecture" name="Zone" type="hidden"/><input value="http://www.ibm.com/developerworks/thankyou/feedback-thankyou.html" name="RedirectURL" type="hidden"/><input value="11840" name="ArticleID" type="hidden"/><input value="09182003" name="publish-date" type="hidden"/><input type="hidden" name="author1-email" value="bmarchal@pineapplesoft.com" /><input type="hidden" name="author1-email-cc" value="dwxed@us.ibm.com" /><script language="javascript" type="text/javascript">document.write('<input type="hidden" name="url" value="'+location.href+'">');</script><img width="100%" src="//www.ibm.com/i/v14/rules/gray_rule.gif" height="1" alt=""/><br /><table width="100%" class="v14-gray-table-border" cellspacing="0" cellpadding="0" border="0"><tr><td width="100%"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="3"><p>Please take a moment to complete this form to help us better serve you.</p></td></tr><tr valign="top"><td width="140"><img width="140" src="//www.ibm.com/i/c.gif" height="1" alt=""/><br /><p><label for="Goal">Did the information help you to achieve your goal?</label></p></td><td width="303"><img width="303" src="//www.ibm.com/i/c.gif" height="6" alt=""/><br /><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td><input value="Yes" id="Goal" name="Goal" type="radio"/>Yes</td><td><input value="No" id="Goal" name="Goal" type="radio"/>No</td><td><input value="Don't know" id="Goal" name="Goal" type="radio"/>Don't know</td></tr></table></td><td width="100%"> </td></tr><tr><td colspan="3"><img alt="" height="12" width="8" src="//www.ibm.com/i/c.gif"/></td></tr><tr valign="top"><td width="140"><img width="140" src="//www.ibm.com/i/c.gif" height="1" alt=""/><br /><p><label for="Comments">Please provide us with comments to help improve this page:</label></p></td><td width="303"><img width="303" src="//www.ibm.com/i/c.gif" height="6" alt=""/><br /><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td><textarea class="iform" cols="35" rows="5" wrap="virtual" id="Comments" name="Comments"> </textarea></td></tr></table></td><td width="100%"> </td></tr><tr><td colspan="3"><img alt="" height="12" width="8" src="//www.ibm.com/i/c.gif"/></td></tr><tr valign="top"><td width="140"><img width="140" src="//www.ibm.com/i/c.gif" height="1" alt=""/><br /><p><label for="Rating">How useful is the information?
+<br />
+(1 = Not at all,
+<br />
+5 = Extremely useful)</label></p></td><td width="303"><img width="303" src="//www.ibm.com/i/c.gif" height="6" alt=""/><br /><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td><input value="1" id="Rating" name="Rating" type="radio"/>1</td><td><input value="2" id="Rating" name="Rating" type="radio"/>2</td><td><input value="3" id="Rating" name="Rating" type="radio"/>3</td><td><input value="4" id="Rating" name="Rating" type="radio"/>4</td><td><input value="5" id="Rating" name="Rating" type="radio"/>5</td></tr></table></td><td width="100%"> </td></tr></table></td></tr></table><table class="v14-gray-table-border" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="3"><img alt="" height="8" width="8" src="//www.ibm.com/i/c.gif"/></td></tr><tr><td width="8"><img alt="" height="1" width="8" src="//www.ibm.com/i/c.gif"/></td><td colspan="3"><input alt="Submit" height="21" width="120" border="0" src="//www.ibm.com/i/v14/buttons/submit.gif" type="image"/></td></tr><tr><td colspan="3"><img alt="" height="8" width="8" src="//www.ibm.com/i/c.gif"/></td></tr></table></form><br /></span><span class="no-print"><table cellspacing="0" cellpadding="0" align="right"><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tr><td valign="middle"><img width="16" src="//www.ibm.com/i/v14/icons/u_bold.gif" height="16" border="0" alt=""/><br /></td><td valign="top" align="right"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></table></td></tr></table><br /><br /></span></td><td width="10"><img alt="" height="1" width="10" src="//www.ibm.com/i/c.gif"/></td></tr></table></td></tr></table><!--FOOTER_BEGIN--><br /><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="19" class="bbg"><table cellspacing="0" cellpadding="0" border="0"><tr><td><span class="spacer">    </span><a href="http://www.ibm.com/ibm/" class="mainlink">About IBM</a></td><td width="27" class="footer-divider">    </td><td><a href="http://www.ibm.com/privacy/" class="mainlink">Privacy</a></td><td width="27" class="footer-divider">    </td><td><a href="http://www.ibm.com/contact/" class="mainlink">Contact</a></td></tr></table></td></tr></table><script language="JavaScript1.2" type="text/javascript" src="//www.ibm.com/common/stats/stats.js"></script><noscript><img border="0" alt="" height="1" width="1" src="//stats.www.ibm.com/rc/images/uc.GIF?R=noscript"/></noscript><!--FOOTER_END--><!--XSLT stylesheet used to transform this file:  dw-document-html-5.3.xsl--></body></html>

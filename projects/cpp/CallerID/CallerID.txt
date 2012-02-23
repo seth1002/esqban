@@ -1,0 +1,22 @@
++VCID=n Controls Caller ID feature?+VCID=0 Caller ID disabled
++VCID=1 Caller ID enabled with formatted information
++VCID=2 Caller ID enabled with unformatted information
++++ Escapes to online-command mode
+
+
+
+at +vcid=2
+MESG = 801601083039323831353336020A30313132343334373139
+2
+
+
+
+at +vcid=1
+DATE = 0928
+TIME = 1608
+NMBR = 0112434719
+2
+
+
+801601083039323831353336020A30313132343334373139
+         0 9 2 8 1     6     0 1 1 2 4 3 4 7 1 9 ?

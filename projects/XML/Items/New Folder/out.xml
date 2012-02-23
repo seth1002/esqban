@@ -1,0 +1,17 @@
+    <html>
+    <head>
+      <title>Items</title>
+    </head>
+    <body>
+      <table border="1" cellpadding="10" width="80%">
+        <tr align="center">
+          <th>./text()</th><th>@name</th><th>@value</th>
+        </tr>
+          <tr align="center">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      </table>
+    </body>
+    </html>

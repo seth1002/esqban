@@ -1,0 +1,18 @@
+#! /bin/sh
+
+#mkdir ./$USER
+#rsync -avh --delete /home/$USER/ ./$USER
+
+#mkdir ./workspace
+#rsync -avh /home/$USER/workspace/ ./workspace
+
+
+for DIR in `ls`; do
+  #tar -czvf /backups/$DIR_$DATE.tgz $DIR
+  echo Syncing $DIR
+  #rsync -avh /home/$USER/$DIR/ ./$DIR
+  rsync --verbose --progress --stats --compress --recursive --times --perms --links --delete /home/$USER/$DIR/ ./$DIR
+done
+
+
+

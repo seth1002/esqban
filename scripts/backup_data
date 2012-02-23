@@ -1,0 +1,21 @@
+#! /bin/sh
+
+#mkdir ./$USER
+#rsync -avh --delete /home/$USER/ ./$USER
+
+mkdir ./Projects
+rsync -avh /home/$USER/Projects/ ./Projects
+
+mkdir ./config
+rsync -avh /home/$USER/config/ ./config
+
+mkdir ./gmail
+rsync -avh /home/$USER/gmail/ ./gmail
+
+mkdir ./sqba
+rsync -avh /home/$USER/sqba/ ./sqba
+
+mkdir ./workspace
+rsync -avh /home/$USER/workspace/ ./workspace
+
+
