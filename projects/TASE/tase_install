@@ -2,9 +2,7 @@ sudo apt-get install xls2csv
 
 sudo apt-get install python-scrapy
 
-apt-get install html2text
-
-# install xls2csv
+sudo apt-get install html2text
 
 sudo apt-get install python-html2text
 

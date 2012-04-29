@@ -40,7 +40,7 @@ class BaseDB(object):
         self.dbpool = adbapi.ConnectionPool('MySQLdb',
                 db=settings['DATABASE_SCHEMA'],
                 user=settings['DATABASE_USER'],
-                passwd=settings['DATABASE_PASSWORD'],
+                #passwd=settings['DATABASE_PASSWORD'],
                 cursorclass=MySQLdb.cursors.DictCursor,
                 charset='utf8',
                 use_unicode=True
