@@ -32,7 +32,7 @@ class CompanyView(gtk.ScrolledWindow):
         self.add_column('Buy date', col_buy_date)
         self.add_column('Buy price', col_buy_price)
 
-        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, passwd=dbconn.DB_PASSWORD, db=dbconn.DB_SCHEMA)
+        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, db=dbconn.DB_SCHEMA)
         
         self.load()
 

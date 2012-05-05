@@ -24,7 +24,7 @@ class KeywordView(gtk.ScrolledWindow):
         self.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
         self.add(self.tree)
 
-        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, passwd=dbconn.DB_PASSWORD, db=dbconn.DB_SCHEMA)
+        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, db=dbconn.DB_SCHEMA)
 
     def row_activated(self, treeview, path, column):
         pass

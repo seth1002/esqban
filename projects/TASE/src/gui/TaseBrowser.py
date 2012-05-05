@@ -28,7 +28,7 @@ class TaseBrowser(gtk.Window):
         self.set_title('TASE')
         self.set_border_width(8)
 
-        self.db = MySQLdb.connect(host="localhost", user="sqba", passwd="12345", db="tase")
+        self.db = MySQLdb.connect(host="localhost", user="sqba", db="tase")
         
         self.main_view = MainView(self.select_symbol)
         self.add(self.main_view)

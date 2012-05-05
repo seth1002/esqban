@@ -1,4 +1,5 @@
-sudo apt-get install xls2csv
+#sudo apt-get install xls2csv
+sudo apt-get install catdoc
 
 sudo apt-get install python-scrapy
 

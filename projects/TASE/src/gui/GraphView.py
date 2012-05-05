@@ -78,7 +78,7 @@ class GraphView(gtk.VPaned):
         
         self.set_position(500)
 
-        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, passwd=dbconn.DB_PASSWORD, db=dbconn.DB_SCHEMA)
+        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, db=dbconn.DB_SCHEMA)
 
     def clear(self):
         self.price_graph.clear()
