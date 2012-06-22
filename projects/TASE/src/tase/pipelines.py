@@ -53,7 +53,7 @@ class BaseDB(object):
 
 class MarketDataPipeline(BaseDB):
 
-    def process_item(self, spider, item):
+    def process_item(self, item, spider):
         # run db query in thread pool
         query = self.dbpool.runInteraction(self._conditional_insert, item)
         query.addErrback(self.handle_error)
