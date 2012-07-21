@@ -73,6 +73,8 @@
 		<SCRIPT LANGUAGE="JavaScript">
 		function run() {
 			canvas.width = canvas.width; // reset
+            //world.CleanBodyList();
+            world = createWorld();
 			var code = document.getElementById('code').value;
 			eval(code);
 		}
