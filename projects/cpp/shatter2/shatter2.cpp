@@ -295,7 +295,7 @@ void SetEditText(int ID, char *szBuffer)
 void GetEditText(int ID, char *szBuffer)
 {
 	//strset(szBuffer, '\0');
-	HWND hWnd = GetControl(ID_WTEXT).hwnd;
+	HWND hWnd = GetControl(ID).hwnd;
 	int l = SendMessage (hWnd, EM_LINELENGTH, 0, 0) ;
 	int n = SendMessage (hWnd, WM_GETTEXT , l+1, (LPARAM) szBuffer) ;
 }
@@ -304,7 +304,7 @@ DWORD GetEditDouble(int ID)
 {
 	//strset(szBuffer, '\0');
 	TCHAR szBuffer[20];
-	HWND hWnd = GetControl(ID_WTEXT).hwnd;
+	HWND hWnd = GetControl(ID).hwnd;
 	int l = SendMessage (hWnd, EM_LINELENGTH, 0, 0) ;
 	int n = SendMessage (hWnd, WM_GETTEXT , l+1, (LPARAM) szBuffer) ;
 	return atol(szBuffer);
@@ -571,7 +571,9 @@ void FillListBox (HWND hwndList)
 					"WM_SYSCHAR",				WM_SYSCHAR,
 					"WM_SYSDEADCHAR",			WM_SYSDEADCHAR,
 					"WM_SYSKEYDOWN",			WM_SYSKEYDOWN,
-					"WM_SYSKEYUP",				WM_SYSKEYUP
+					"WM_SYSKEYUP",				WM_SYSKEYUP,
+					"WM_CLOSE",					WM_CLOSE,
+					"WM_SYSCOMMAND",			WM_SYSCOMMAND
 				};
 
 	for(int i=0; i<sizeof(msgs)/sizeof(wmsg); i++) {
