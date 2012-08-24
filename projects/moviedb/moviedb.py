@@ -16,10 +16,8 @@ import MySQLdb
 
 from os.path import basename
 
-
-
-
-rootdir = sys.argv[1]
+from imdb import IMDb
+ia = IMDb()
 
 
 
@@ -59,7 +57,8 @@ con = MySQLdb.connect(host='localhost', db='imdb') #user, passwd
 
 def find_movie(name):
     try:
-        str_query = "SELECT * FROM movies WHERE name like \"%" + name + "%\";"
+        #str_query = "SELECT * FROM movies WHERE name like \"%" + name + "%\";"
+        str_query = "SELECT * FROM movies WHERE name like \"" + name + "\";"
         #print str_query
         #con.query(str_query)
         #result = con.use_result()
@@ -72,7 +71,9 @@ def find_movie(name):
             print "* Found " + name
             #print row
         else:
-            print "- " + name + " not found"
+            print "- " + name + " not found, searching online"
+            for movie in ia.search_movie(name):
+                print movie['title']
         cur.close()
 
     #except _mysql.Error, e:
@@ -94,9 +95,13 @@ def process_folder(path):
             #with open(os.path.join(folder, filename), 'r') as src:
             #    #dest.write(src.read())
 
+
+#rootdir = sys.argv[1]
+#process_folder(rootdir)
+
+
 path = "/media/Video2"
-process_folder(rootdir)
-#process_folder(path)
+process_folder(path)
 
 
 if con:
