@@ -3,6 +3,8 @@ function drawWorld(world, context) {
 		drawJoint(j, context);
 	}
 	for (var b = world.m_bodyList; b; b = b.m_next) {
+        //b.ApplyForce(1,0);
+        // b.SetGravityScale(-1);
 		for (var s = b.GetShapeList(); s != null; s = s.GetNext()) {
 			drawShape(s, context);
 		}
