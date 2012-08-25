@@ -52,30 +52,11 @@ def print_info(filename):
     #for data in metadata:
     #    print data.key
 
-
 #con = _mysql.connect(host='localhost', db='imdb') #user, passwd
 con = MySQLdb.connect(host='localhost', db='imdb') #user, passwd
 
-def find_movie(name, full_path):
+def find_movie_in_db(name):
     found = False
-
-    name = name.replace('.', " ")
-    name = name.replace(r'DvDrip-aXXo', " ")
-
-    #\[(.*?)\]      \((.*?)\)      \{(.*?)\}
-    name = re.sub(r'\[(.*?)\]', "", name)
-    name = re.sub(r'\((.*?)\)', "", name)
-    name = re.sub(r'\{(.*?)\}', "", name)
-    name = re.sub(r'^The', "", name)
-
-    #s = re.sub('-', '', s)
-    name = name.replace(r'-', ":")
-    #s = name.split('-', 2)
-    #if len(s) > 1:
-    #    name = s[0]
-    
-    print name
-
     try:
         str_query = "SELECT * FROM movies WHERE name like \"%" + name + "%\";"
         #str_query = "SELECT * FROM movies WHERE name like \"" + name + "\";"
@@ -91,8 +72,8 @@ def find_movie(name, full_path):
             print "* Found " + name
             found = True
             #print row
-        else:
-            print "- " + full_path + " not found"
+#        else:
+#            print "- " + full_path + " not found"
 #            print "- " + name + " not found, searching online"
 #            results = ia.search_movie(name)
 #            for movie in results:
@@ -104,8 +85,44 @@ def find_movie(name, full_path):
         print str_query
         print "Error %d: %s" % (e.args[0], e.args[1])
         #sys.exit(1)
-
     return found
+
+def process_name(name):
+    #[\d.]*\d+
+    name = re.sub(r'^[\d.]*\d+\.', "", name)
+
+    #name = name.replace('.', " ")
+    name = name.replace(r'DvDrip-aXXo', " ")
+
+    #\[(.*?)\]      \((.*?)\)      \{(.*?)\}
+    name = re.sub(r'\[(.*?)\]', "", name)
+    name = re.sub(r'\((.*?)\)', "", name)
+    name = re.sub(r'\{(.*?)\}', "", name)
+    name = re.sub(r'^The', "", name)
+
+    #s = re.sub('-', '', s)
+    name = name.replace(r'-', ":")
+    #s = name.split('-', 2)
+    #if len(s) > 1:
+    #    name = s[0]
+
+    name = name.strip()
+
+    #print name
+
+    return name
+
+
+def find_movie(name, full_path):
+
+    name = process_name(name)
+
+    result = find_movie_in_db(name)
+
+    if not result:
+        print "- " + full_path + " not found"
+
+    return result
 
 
 def process_folder(path):
