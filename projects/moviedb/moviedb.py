@@ -55,52 +55,34 @@ def print_info(filename):
 #con = _mysql.connect(host='localhost', db='imdb') #user, passwd
 con = MySQLdb.connect(host='localhost', db='imdb') #user, passwd
 
-def find_movie_in_db(name):
-    found = False
+def find_movie(name):
+    found = True
+    str_query = "SELECT * FROM movies WHERE name like \"%" + name + "%\" ORDER BY rank DESC;"
     try:
-        str_query = "SELECT * FROM movies WHERE name like \"%" + name + "%\";"
-        #str_query = "SELECT * FROM movies WHERE name like \"" + name + "\";"
-        #print str_query
-        #con.query(str_query)
-        #result = con.use_result()
         cur = con.cursor()
         cur.execute(str_query)
-        
-        #print result.fetch_row()
         row = cur.fetchone ()
-        if row is not None:
-            print "* Found " + name
-            found = True
-            #print row
-#        else:
-#            print "- " + full_path + " not found"
-#            print "- " + name + " not found, searching online"
-#            results = ia.search_movie(name)
-#            for movie in results:
-#                print movie#['title']
+        if row is None:
+            found = False
         cur.close()
-
-    #except _mysql.Error, e:
     except MySQLdb.Error, e:
         print str_query
         print "Error %d: %s" % (e.args[0], e.args[1])
-        #sys.exit(1)
     return found
 
+
 def process_name(name):
-    #[\d.]*\d+
     name = re.sub(r'^[\d.]*\d+\.', "", name)
 
-    #name = name.replace('.', " ")
     name = name.replace(r'DvDrip-aXXo', " ")
 
-    #\[(.*?)\]      \((.*?)\)      \{(.*?)\}
     name = re.sub(r'\[(.*?)\]', "", name)
     name = re.sub(r'\((.*?)\)', "", name)
     name = re.sub(r'\{(.*?)\}', "", name)
     name = re.sub(r'^The', "", name)
 
-    #s = re.sub('-', '', s)
+    name = re.sub(r'\'', "\'\'", name)
+
     name = name.replace(r'-', ":")
     #s = name.split('-', 2)
     #if len(s) > 1:
@@ -113,18 +95,6 @@ def process_name(name):
     return name
 
 
-def find_movie(name, full_path):
-
-    name = process_name(name)
-
-    result = find_movie_in_db(name)
-
-    if not result:
-        print "- " + full_path + " not found"
-
-    return result
-
-
 def process_folder(path):
     counter_found = 0
     counter_not_found = 0
@@ -133,10 +103,15 @@ def process_folder(path):
         for filename in files:
             if filename.lower().endswith(".avi") or filename.lower().endswith(".mkv") or filename.lower().endswith(".mp4"):
                 full_path = os.path.join(folder, filename)
-                if( find_movie( os.path.splitext(filename)[0], full_path ) ):
+                name = os.path.splitext(filename)[0]
+                name = process_name( name )
+                if( find_movie( name ) ):
                     counter_found += 1
+#                    print "* Found " + name
                 else:
                     counter_not_found += 1
+#                    print "- " + full_path + " not found"
+                    print "- '" + name + "' not found"
                 #print filename
                 #print_info(os.path.join(folder, filename))
             #with open(os.path.join(folder, filename), 'r') as src:
@@ -149,7 +124,7 @@ def process_folder(path):
 #process_folder(rootdir)
 
 
-path = "/media/Video2"
+path = "/media/Video2/Directors"
 process_folder(path)
 
 
