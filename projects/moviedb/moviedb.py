@@ -2,6 +2,7 @@
 
 import os
 import sys
+import re
 
 from hachoir_core.error import HachoirError
 from hachoir_core.cmd_line import unicodeFilename
@@ -55,10 +56,29 @@ def print_info(filename):
 #con = _mysql.connect(host='localhost', db='imdb') #user, passwd
 con = MySQLdb.connect(host='localhost', db='imdb') #user, passwd
 
-def find_movie(name):
+def find_movie(name, full_path):
+    found = False
+
+    name = name.replace('.', " ")
+    name = name.replace(r'DvDrip-aXXo', " ")
+
+    #\[(.*?)\]      \((.*?)\)      \{(.*?)\}
+    name = re.sub(r'\[(.*?)\]', "", name)
+    name = re.sub(r'\((.*?)\)', "", name)
+    name = re.sub(r'\{(.*?)\}', "", name)
+    name = re.sub(r'^The', "", name)
+
+    #s = re.sub('-', '', s)
+    name = name.replace(r'-', ":")
+    #s = name.split('-', 2)
+    #if len(s) > 1:
+    #    name = s[0]
+    
+    print name
+
     try:
-        #str_query = "SELECT * FROM movies WHERE name like \"%" + name + "%\";"
-        str_query = "SELECT * FROM movies WHERE name like \"" + name + "\";"
+        str_query = "SELECT * FROM movies WHERE name like \"%" + name + "%\";"
+        #str_query = "SELECT * FROM movies WHERE name like \"" + name + "\";"
         #print str_query
         #con.query(str_query)
         #result = con.use_result()
@@ -69,11 +89,14 @@ def find_movie(name):
         row = cur.fetchone ()
         if row is not None:
             print "* Found " + name
+            found = True
             #print row
         else:
-            print "- " + name + " not found, searching online"
-            for movie in ia.search_movie(name):
-                print movie['title']
+            print "- " + full_path + " not found"
+#            print "- " + name + " not found, searching online"
+#            results = ia.search_movie(name)
+#            for movie in results:
+#                print movie#['title']
         cur.close()
 
     #except _mysql.Error, e:
@@ -82,18 +105,27 @@ def find_movie(name):
         print "Error %d: %s" % (e.args[0], e.args[1])
         #sys.exit(1)
 
+    return found
 
 
 def process_folder(path):
+    counter_found = 0
+    counter_not_found = 0
 #    with open(os.path.join(folder,'python-outfile.txt'), 'w') as dest:
     for folder, subs, files in os.walk(path):
         for filename in files:
-            if filename.lower().endswith(".avi"):
-                find_movie( os.path.splitext(filename)[0] )
+            if filename.lower().endswith(".avi") or filename.lower().endswith(".mkv") or filename.lower().endswith(".mp4"):
+                full_path = os.path.join(folder, filename)
+                if( find_movie( os.path.splitext(filename)[0], full_path ) ):
+                    counter_found += 1
+                else:
+                    counter_not_found += 1
                 #print filename
                 #print_info(os.path.join(folder, filename))
             #with open(os.path.join(folder, filename), 'r') as src:
             #    #dest.write(src.read())
+    print "Found: " + str(counter_found)
+    print "Not found: " + str(counter_not_found)
 
 
 #rootdir = sys.argv[1]
