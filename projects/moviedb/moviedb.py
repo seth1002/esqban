@@ -79,11 +79,13 @@ def process_name(name):
     name = re.sub(r'\[(.*?)\]', "", name)
     name = re.sub(r'\((.*?)\)', "", name)
     name = re.sub(r'\{(.*?)\}', "", name)
-    name = re.sub(r'^The', "", name)
+    name = re.sub(r'^The ', "", name)
+    name = re.sub(r'^A ', "", name)
 
-    name = re.sub(r'\'', "\'\'", name)
+    #name = re.sub(r'\'', "\'\'", name)
+    name = re.sub(r'\'', "%", name)
 
-    name = name.replace(r'-', ":")
+    #name = name.replace(r'-', ":")
     #s = name.split('-', 2)
     #if len(s) > 1:
     #    name = s[0]
@@ -110,8 +112,8 @@ def process_folder(path):
 #                    print "* Found " + name
                 else:
                     counter_not_found += 1
-#                    print "- " + full_path + " not found"
-                    print "- '" + name + "' not found"
+                    print "- " + full_path + " not found"
+#                    print "- '" + name + "' not found"
                 #print filename
                 #print_info(os.path.join(folder, filename))
             #with open(os.path.join(folder, filename), 'r') as src:
