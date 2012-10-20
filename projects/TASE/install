@@ -10,7 +10,7 @@ sudo apt-get build-dep python-matplotlib
 #mysql
 sudo apt-get install python-mysqldb
 
-#scrappy
+#scrapy
 
 #gtk
 sudo apt-get install gtk
@@ -27,5 +27,5 @@ sudo easy_install html2text
 #sudo easy_install beautifulsoup
 #sudo apt-get install lynx
 
-
+easy_install twisted
 
