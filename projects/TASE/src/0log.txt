@@ -263,3 +263,11 @@ Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp
 Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000682409
 Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000682409
 Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000682409
+Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000766016
+Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000766016
+Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000766016
+Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000766016
+Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000766016
+Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000766016
+Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000766016
+Error reading content on page http://www.globes.co.il/serveen/globes/docview.asp?did=1000766016

@@ -1,9 +1,11 @@
 CHANGES.txt
+PKG-INFO
 README.txt
 bootstrap.py
 buildout.cfg
 setup.cfg
 setup.py
+dist/topia.termextract-1.1.0-py2.7.egg
 src/topia/__init__.py
 src/topia.termextract.egg-info/PKG-INFO
 src/topia.termextract.egg-info/SOURCES.txt

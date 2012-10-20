@@ -1,4 +1,4 @@
-load data local infile '/home/sqba/Projects/TASE/src/db/yazig.csv' 
+load data local infile '/home/sqba/TASE/src/db/yazig.csv' 
 into table tase.currency 
 fields terminated by ',' OPTIONALLY ENCLOSED BY '"'
 lines terminated by '\n'

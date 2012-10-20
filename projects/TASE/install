@@ -1,6 +1,8 @@
 #easy_install
 sudo apt-get install python-setuptools
 
+cpan> install K/KE/KEN/xls2csv-1.06.tar.gz
+
 #matplotlib
 #sudo easy_install matplotlib
 sudo apt-get build-dep python-matplotlib
