@@ -58,6 +58,8 @@ class BondSpider(HistorySpider):
 		('trans', tase.common.to_int)
 	)
 
+	history_url = "http://www.tase.co.il/TASEEng/General/BONDs/bondsHistoryData.htm?bondType=4&subDataType=5&companyID={companyID}&shareID={shareID}&intPeriod={period}&intFrequency1=0&IsYield=False&IsDollar=False"
+
 	# Main companies list, with paging
 	def parse_bond_list(self, response):
 		hxs = HtmlXPathSelector(response)

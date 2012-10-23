@@ -44,6 +44,7 @@ class FundSpider(HistorySpider):
 
 	list_url = 'http://www.tase.co.il/TASE/SearchJSFiles/BuildCmb_6_1.js'
 	main_url = "http://www.tase.co.il/TASEEng/General/trustfund/fundmaindata.htm?FundID={fundID}"
+	history_url = "http://www.tase.co.il/TASEEng/General/trustfund/fundHistory.htm?Action=&FundID={shareID}"
 
 	def parse_fund_search(self, response):
 		return Request(self.list_url, callback=self.parse_fund_list)
