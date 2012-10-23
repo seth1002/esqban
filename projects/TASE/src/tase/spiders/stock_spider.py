@@ -91,6 +91,8 @@ class StockSpider(HistorySpider):
 		'Equity-Assets Ratio' : ('equity_assets_ratio', tase.common.to_float),
 		'Return on Equity' : ('return_on_equity', tase.common.to_float)
 	}
+	
+	details_url = "http://www.tase.co.il/TASEEng/General/Company/companyDetails.htm?subDataType=0&companyID={companyID}&shareID={shareID}"
 
 	# Main companies list, with paging
 	def parse_company_list(self, response):
