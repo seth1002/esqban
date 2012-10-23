@@ -216,7 +216,7 @@ class TaseSpider(CrawlSpider):
 			header.append(('trustee_fee', to_float))
 		return header
     
-    def get_base_url(hxs)
+    def get_base_url(hxs):
         base_url = hxs.select('//base/@href')
         o = urlparse(base_url)
         o.params=''
