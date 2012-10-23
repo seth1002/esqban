@@ -222,7 +222,9 @@ class TaseSpider(CrawlSpider):
 		o.params=''
 		o.query=''
 		o.fragment=''
-		return urlparse.urlunparse(o)
+		res = urlparse.urlunparse(o)
+		self.log2("get_base_url: " + res)
+		return res
 
 	def get_history_data(self, response):
 		self.log2("get_history_data: " + response.url)
