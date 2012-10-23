@@ -165,11 +165,11 @@ class TaseSpider(CrawlSpider):
 		else:
 			url = ''
 			if item['category'] == category_comp:
-				url = "http://www.tase.co.il/TASEEng/General/Company/companyHistoryData.htm?subDataType=0&companyID={companyID}&shareID={shareID}&intPeriod={period}&intFrequency1=0&IsYield=False&IsDollar=False"
+				url = "http://www.tase.co.il/TASE/Templates/Company/CompanyHistory.aspx?subDataType=0&companyID={companyID}&shareID={shareID}&intPeriod={period}&intFrequency1=0&IsYield=False&IsDollar=False"
 			if item['category'] == category_bond:
-				url = "http://www.tase.co.il/TASEEng/General/BONDs/bondsHistoryData.htm?bondType=4&subDataType=5&companyID={companyID}&shareID={shareID}&intPeriod={period}&intFrequency1=0&IsYield=False&IsDollar=False"
+				url = "http://www.tase.co.il/TASE/Templates/Bonds/BondsHistory.aspx?bondType=4&subDataType=5&companyID={companyID}&shareID={shareID}&intPeriod={period}&intFrequency1=0&IsYield=False&IsDollar=False"
 			if item['category'] == category_fund:
-				url = "http://www.tase.co.il/TASEEng/General/trustfund/fundHistory.htm?Action=&FundID={shareID}"
+				url = "http://www.tase.co.il/TASE/Templates/TrustFund/FundHistory.aspx?Action=&FundID={shareID}"
 			url = url.format(shareID=item['ShareID'], companyID=item['CompanyID'], period=HISTORY_PERIOD)
 			self.log(url)
 			return Request(url, callback=self.get_history_data, meta={'item': item})
