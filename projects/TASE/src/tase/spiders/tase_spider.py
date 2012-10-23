@@ -240,7 +240,7 @@ class TaseSpider(CrawlSpider):
 		for i in range(20):
 			name = "HistoryData1$CBDailyDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
-        base_url = self.get_base_url(hxs)
+		base_url = self.get_base_url(hxs)
 		req = FormRequest.from_response(response, url=base_url, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'item': item})
 		self.log( req )
 		return req
