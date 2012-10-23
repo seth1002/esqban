@@ -223,7 +223,7 @@ class TaseSpider(CrawlSpider):
 		o.query=''
 		o.fragment=''
 		res = urlparse.urlunparse(o)
-		self.log2("get_base_url: " + res)
+		self.log("get_base_url: " + res, level=log.DEBUG)
 		return res
 
 	def get_history_data(self, response):
@@ -243,7 +243,7 @@ class TaseSpider(CrawlSpider):
 			name = "HistoryData1$CBDailyDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
 		base_url = self.get_base_url(hxs)
-		response.replace(url=base_url)
+		response.replace(url_base_url)
 		req = FormRequest.from_response(response, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'item': item})
 		self.log( req )
 		return req
