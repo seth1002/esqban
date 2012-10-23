@@ -215,6 +215,14 @@ class TaseSpider(CrawlSpider):
 			header.append(('asset_value', to_int))
 			header.append(('trustee_fee', to_float))
 		return header
+    
+    def get_base_url(hxs)
+        base_url = hxs.select('//base/@href')
+        o = urlparse(base_url)
+        o.params=''
+        o.query=''
+        o.fragment=''
+        return urlparse.urlunparse(o)
 	
 	def get_history_data(self, response):
 		self.log2("get_history_data: " + response.url)
@@ -232,7 +240,8 @@ class TaseSpider(CrawlSpider):
 		for i in range(20):
 			name = "HistoryData1$CBDailyDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
-		req = FormRequest.from_response(response, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'item': item})
+        base_url = get_base_url(hxs)
+		req = FormRequest.from_response(response, url=base_url, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'item': item})
 		self.log( req )
 		return req;
 
