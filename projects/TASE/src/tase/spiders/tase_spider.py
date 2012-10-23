@@ -216,13 +216,13 @@ class TaseSpider(CrawlSpider):
 			header.append(('trustee_fee', to_float))
 		return header
 
-    def get_base_url(self, hxs):
+	def get_base_url(self, hxs):
 		base_url = hxs.select('//base/@href')
-        o = urlparse(base_url)
-        o.params=''
-        o.query=''
-        o.fragment=''
-        return urlparse.urlunparse(o)
+		o = urlparse(base_url)
+		o.params=''
+		o.query=''
+		o.fragment=''
+		return urlparse.urlunparse(o)
 
 	def get_history_data(self, response):
 		self.log2("get_history_data: " + response.url)
@@ -243,7 +243,7 @@ class TaseSpider(CrawlSpider):
         base_url = self.get_base_url(hxs)
 		req = FormRequest.from_response(response, url=base_url, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'item': item})
 		self.log( req )
-		return req;
+		return req
 
 	def parse_history_data(self, response):
 		self.log2("parse_history_data: " + response.url)
