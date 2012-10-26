@@ -11,6 +11,7 @@ from scrapy.http import Request
 from scrapy.http import FormRequest
 from scrapy.conf import settings
 #from scrapy.shell import inspect_response
+from scrapy import log
 
 from tase.items import TaseItem
 
@@ -217,16 +218,13 @@ class TaseSpider(CrawlSpider):
 		return header
 
 	def get_base_url(self, hxs):
-		base_url = hxs.select('//base/@href')
-		o = urlparse(base_url)
-		o.params=''
-		o.query=''
-		o.fragment=''
-		res = urlparse.urlunparse(o)
-		self.log2("get_base_url: " + res)
+		base_url = hxs.select('//base/@href')[0].extract()
+		res = urlunparse(o)
+#		log.msg("get_base_url: " + res, level=log.WARNING)
 		return res
 
 	def get_history_data(self, response):
+		inspect_response(response)
 		self.log2("get_history_data: " + response.url)
 		#self.log2("get_history_data " + response.body)
 		item = response.request.meta['item'] 
@@ -243,7 +241,7 @@ class TaseSpider(CrawlSpider):
 			name = "HistoryData1$CBDailyDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
 		base_url = self.get_base_url(hxs)
-		response.replace(url=base_url)
+		response = response.replace(url=base_url)
 		req = FormRequest.from_response(response, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'item': item})
 		self.log( req )
 		return req

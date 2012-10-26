@@ -66,6 +66,7 @@ class MarketSpider(CrawlSpider):
 	
 	def get_market_history_data(self, response):
 		self.log("get_history_data: " + response.url)
+		#inspect_response(response)
 		hxs = HtmlXPathSelector(response)
 		market = response.request.meta['market']
 		viewstate = hxs.select('//input[@name="__VIEWSTATE"]/@value').extract()[0]

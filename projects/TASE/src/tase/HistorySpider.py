@@ -7,6 +7,12 @@ from scrapy.http import Request
 from scrapy.http import FormRequest
 from scrapy.conf import settings
 
+import urllib
+from urlparse import urlparse, urlunparse
+#from urlparse import parse_qs
+#from urlparse import urljoin
+#from scrapy import log
+
 from tase.items import TaseItem
 
 PROCESS_HISTORY = settings.getbool('PROCESS_HISTORY', False)
@@ -24,6 +30,12 @@ class HistorySpider(CrawlSpider):
             url = self.history_url.format(shareID=item['ShareID'], companyID=item['CompanyID'], period=HISTORY_PERIOD)
             return Request(url, callback=self.get_history_data, meta={'item': item})
     
+    def get_base_url(self, hxs):
+        base_url = hxs.select('//base/@href')[0].extract()
+        res = urlunparse(o)
+#        log.msg("get_base_url: " + res, level=log.WARNING)
+        return res
+
     def get_history_data(self, response):
         item = response.request.meta['item'] 
         hxs = HtmlXPathSelector(response)
@@ -38,6 +50,8 @@ class HistorySpider(CrawlSpider):
         for i in range(20):
             name = "HistoryData1$CBDailyDFiledsList${index}".format(index=i)
             fd[name] = 'on'
+        base_url = self.get_base_url(hxs)
+        response = response.replace(url=base_url)
         req = FormRequest.from_response(response, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'item': item})
         self.log( req )
         return req;
