@@ -219,6 +219,7 @@ class TaseSpider(CrawlSpider):
 
 	def get_base_url(self, hxs):
 		base_url = hxs.select('//base/@href')[0].extract()
+		o = urlparse(base_url)
 		res = urlunparse(o)
 #		log.msg("get_base_url: " + res, level=log.WARNING)
 		return res
