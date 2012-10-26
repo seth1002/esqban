@@ -9,7 +9,7 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from scrapy.http import Request
 from scrapy.http import FormRequest
-#from scrapy.conf import settings
+from scrapy.conf import settings
 #from scrapy.shell import inspect_response
 from scrapy import log
 from tase.items import WeatherItem
