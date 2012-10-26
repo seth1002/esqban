@@ -38,7 +38,7 @@ class MarketSpider(CrawlSpider):
 	)
 
 	def parse_markets(self, response):
-		self.log("parse_markets: " + response.url)
+#		self.log("parse_markets: " + response.url)
 		hxs = HtmlXPathSelector(response)
 		links = hxs.select("//a[@class='IndexesLink1']/@href")
 		for link in links:
