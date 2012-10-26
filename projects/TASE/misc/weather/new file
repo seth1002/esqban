@@ -1,4 +1,0 @@
-http://www.wunderground.com/history/airport/LLBG/2005/1/1/CustomHistory.html?dayend=2&monthend=1&yearend=2006
-
-thead - year
-.//*[@id='obsTable']/tr/td[3]
