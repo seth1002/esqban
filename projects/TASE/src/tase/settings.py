@@ -9,7 +9,7 @@ SPIDER_MODULES = ['tase.spiders']
 NEWSPIDER_MODULE = 'tase.spiders'
 DEFAULT_ITEM_CLASS = 'scrapy.item.Item'
 #USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
-USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4'
 
 
 #CONCURRENT_ITEMS = 1 #Default: 100
@@ -20,12 +20,13 @@ USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Ge
 MEMUSAGE_ENABLED = True
 MEMUSAGE_LIMIT_MB = 500
 
-#DOWNLOAD_DELAY = 1
-#RANDOMIZE_DOWNLOAD_DELAY = True
+DOWNLOAD_DELAY = 1
+RANDOMIZE_DOWNLOAD_DELAY = True
 
-#LOG_FILE = 'scrapy.log'
+LOG_FILE = 'tase.log'
 LOG_STDOUT = True
 #LOG_LEVEL = 'WARNING'
+LOG_LEVEL = 'ERROR'
 
 DATABASE_SCHEMA = 'tase'
 DATABASE_USER = 'tase'
