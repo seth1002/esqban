@@ -1,6 +1,6 @@
 #/bin/sh
 
-cd /home/sqba/workspace/TASE/src
+cd src
 
 ./run.sh
 
