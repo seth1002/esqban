@@ -3,7 +3,7 @@
 #import tase
 
 BOT_NAME = 'tase'
-BOT_VERSION = '1.0'
+#BOT_VERSION = '1.0'
 
 SPIDER_MODULES = ['tase.spiders']
 NEWSPIDER_MODULE = 'tase.spiders'
