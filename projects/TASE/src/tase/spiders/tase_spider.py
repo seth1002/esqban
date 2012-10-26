@@ -225,8 +225,8 @@ class TaseSpider(CrawlSpider):
 		return res
 
 	def get_history_data(self, response):
-		inspect_response(response)
-		self.log2("get_history_data: " + response.url)
+#		inspect_response(response)
+#		self.log2("get_history_data: " + response.url)
 		#self.log2("get_history_data " + response.body)
 		item = response.request.meta['item'] 
 		hxs = HtmlXPathSelector(response)

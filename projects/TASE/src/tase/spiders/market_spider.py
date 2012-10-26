@@ -10,6 +10,8 @@ from scrapy.http import FormRequest
 from scrapy.conf import settings
 #from scrapy.shell import inspect_response
 
+from urlparse import urlparse, urlunparse
+
 from tase.items import MarketItem
 import tase.common
 
@@ -63,9 +65,16 @@ class MarketSpider(CrawlSpider):
 				url = urllib.unquote(m.group(1))
 				full_url = 'http://www.' + self.allowed_domains[0] + url
 				yield Request(full_url, callback=self.get_market_history_data, meta={'market': market})
-	
+
+	def get_base_url(self, hxs):
+		base_url = hxs.select('//base/@href')[0].extract()
+		o = urlparse(base_url)
+		res = urlunparse(o)
+#		log.msg("get_base_url: " + res, level=log.WARNING)
+		return res
+
 	def get_market_history_data(self, response):
-		self.log("get_history_data: " + response.url)
+#		self.log("get_history_data: " + response.url)
 		#inspect_response(response)
 		hxs = HtmlXPathSelector(response)
 		market = response.request.meta['market']
@@ -83,6 +92,8 @@ class MarketSpider(CrawlSpider):
 		for i in range(2):
 			name = "HistoryData1$CBInnerDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
+		base_url = self.get_base_url(hxs)
+		response = response.replace(url=base_url)
 		req = FormRequest.from_response(response, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'market': market})
 		self.log( req )
 		return req;
