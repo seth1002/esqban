@@ -16,6 +16,7 @@ import MySQLdb
 
 from MainView import MainView
 import CompanyView
+import dbconn
 
 
 class TaseBrowser(gtk.Window):
@@ -28,7 +29,7 @@ class TaseBrowser(gtk.Window):
         self.set_title('TASE')
         self.set_border_width(8)
 
-        self.db = MySQLdb.connect(host="localhost", user="sqba", db="tase")
+        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, passwd=dbconn.DB_PASSWORD, db=dbconn.DB_SCHEMA)
         
         self.main_view = MainView(self.select_symbol)
         self.add(self.main_view)

@@ -36,7 +36,7 @@ class InfoView(gtk.ScrolledWindow):
         treeselection.set_mode(gtk.SELECTION_SINGLE)
         self.add(self.tree)
 
-        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, db=dbconn.DB_SCHEMA)
+        self.db = MySQLdb.connect(host=dbconn.DB_HOST, user=dbconn.DB_USERNAME, passwd=dbconn.DB_PASSWORD, db=dbconn.DB_SCHEMA)
 
     def load(self, symbol, date=None):
         cursor = self.db.cursor()
