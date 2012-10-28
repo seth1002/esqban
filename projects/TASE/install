@@ -34,6 +34,8 @@ sudo apt-get install gtk
 sudo apt-get install python-gtk2
 sudo apt-get install gtk2-engines-pixbuf
 sudo apt-get install python-matplotlib
+
+sudo apt-get install python-mysqldb
 #sudo apt-get build-dep python-matplotlib
 
 
@@ -52,7 +54,6 @@ sudo apt-get install python-matplotlib
 
 
 sudo apt-get install python2.7-dev
-sudo apt-get install python-mysqldb
 
 
 cd termextract/topia.termextract-1.1.0
