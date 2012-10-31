@@ -28,7 +28,6 @@ def normalize_number(s):
     return s
 
 def to_float(s):
-    s = get_string(s)
     s = normalize_number(s)
     try:
         return float(s)
@@ -36,7 +35,6 @@ def to_float(s):
         return 0
 
 def to_int(s):
-    s = get_string(s)
     s = normalize_number(s)
     try:
         return int(s)
@@ -45,7 +43,6 @@ def to_int(s):
 
 def to_long(s):
     s = get_string(s)
-    s = normalize_number(s)
     try:
         return long(s)
     except ValueError:
