@@ -282,8 +282,8 @@ class MySQLStorePipeline(BaseDB):
         # all this block run on it's own thread
         tx.execute("select * from companies where symbol = %s", item['symbol'])
         result = tx.fetchone()
-        if result is None:
-            try:
+        try:
+		    if result is None:
                 tx.execute(\
                     "insert into companies (sessionid, category, symbol, name, sector, subsector, url, tase_url) "
                     "values (%s, %s, %s, %s, %s, %s, %s, %s)",
@@ -298,8 +298,22 @@ class MySQLStorePipeline(BaseDB):
                     item['tase_url']
                     )
                 )
-            except MySQLdb.IntegrityError, e:
-                print 'SQL integrity error: %s' % e
+            else:
+                tx.execute(\
+                    "UPDATE companies SET sessionid=%s, category=%s, name=%s, sector=%s, subsector=%s, url%s, tase_url=%s WHERE symbol=%s",
+                    (
+                    global_time,
+                    item['category'],
+                    item['name'],
+                    item['sector'],
+                    item['subsector'],
+                    item['url'],
+                    item['tase_url'],
+                    item['symbol']
+                    )
+                )
+        except MySQLdb.IntegrityError, e:
+            print 'SQL integrity error: %s' % e
             
         if PROCESS_HISTORY is False:
             return
