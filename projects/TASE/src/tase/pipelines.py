@@ -283,7 +283,7 @@ class MySQLStorePipeline(BaseDB):
         tx.execute("select * from companies where symbol = %s", item['symbol'])
         result = tx.fetchone()
         try:
-		    if result is None:
+            if result is None:
                 tx.execute(\
                     "insert into companies (sessionid, category, symbol, name, sector, subsector, url, tase_url) "
                     "values (%s, %s, %s, %s, %s, %s, %s, %s)",
