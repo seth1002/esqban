@@ -42,7 +42,7 @@ def to_int(s):
         return 0
 
 def to_long(s):
-    s = get_string(s)
+    s = normalize_number(s)
     try:
         return long(s)
     except ValueError:
