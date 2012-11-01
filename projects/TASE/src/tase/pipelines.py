@@ -300,7 +300,7 @@ class MySQLStorePipeline(BaseDB):
                 )
             else:
                 tx.execute(\
-                    "UPDATE companies SET sessionid=%s, category=%s, name=%s, sector=%s, subsector=%s, url%s, tase_url=%s WHERE symbol=%s",
+                    "UPDATE companies SET sessionid=%s, category=%s, name=%s, sector=%s, subsector=%s, url%s, tase_url=%s WHERE symbol='%s'",
                     (
                     global_time,
                     item['category'],
