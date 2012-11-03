@@ -128,7 +128,7 @@ def process_folder(path):
 #process_folder(rootdir)
 
 
-path = "/media/Video2"
+path = "/media/Video2/common"
 process_folder(path)
 
 
