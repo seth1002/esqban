@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Google Maps JavaScript API v3 Example: Marker Simple</title>
+    <link href="default.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script>
+	function initialize() {
+        var myLatlng = new google.maps.LatLng(40.0,10.0);
+        var mapOptions = {
+          zoom: 4,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+		var self = this;
+		$.getJSON( 'marinas.json', function(data) { 
+			$.each( data.markers, function(i, marker) {
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(marker.latitude, marker.longitude),
+					map: map,
+					title: marker.name
+				});
+			});
+		});
+	}
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas"></div>
+  </body>
+</html>
