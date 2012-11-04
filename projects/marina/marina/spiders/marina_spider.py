@@ -20,7 +20,7 @@ class MarinaSpider(BaseSpider):
 
 		marina = MarinaItem()
 
-		tmp = hxs.select('//h2/text()')
+		tmp = hxs.select("//div[@id='mainform']/*/*/*/h2/text()")
 		if len(tmp) > 0:
 			marina["name"] = tmp[0].extract().strip()
 		tmp = hxs.select('//tr/td[contains(., "Latitude")]/following-sibling::td/text()')
