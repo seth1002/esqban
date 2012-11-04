@@ -11,4 +11,8 @@ class MarinaItem(Item):
     latitude = Field()
     longitude = Field()
     site = Field()
+    phone = Field()
+    fax = Field()
+    email = Field()
+    #address = Field()
     pass
