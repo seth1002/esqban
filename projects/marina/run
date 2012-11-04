@@ -1,0 +1,3 @@
+#/bin/sh
+
+scrapy crawl marinas --set FEED_URI=items.json --set FEED_FORMAT=json

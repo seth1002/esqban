@@ -10,4 +10,5 @@ class MarinaItem(Item):
     name = Field()
     latitude = Field()
     longitude = Field()
+    site = Field()
     pass
