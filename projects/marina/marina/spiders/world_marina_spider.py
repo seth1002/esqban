@@ -5,8 +5,12 @@ import urlparse
 
 from marina.items import MarinaItem
 
-def ConvertDMSToDD(days, minutes, seconds, direction):
-	dd = days + minutes/60 + seconds/(60*60);
+import re
+#import geolucidate.parser
+
+
+def ConvertDMSToDD(minutes, seconds, direction):
+	dd = minutes/60 + seconds/(60*60);
 
 	if direction == "S" or direction == "W":
 		dd = dd * -1;
@@ -14,9 +18,21 @@ def ConvertDMSToDD(days, minutes, seconds, direction):
 	return dd
 
 def ParseDMS(strinput):
-	parts = strinput.split('/[^\d\w]+/')
-	lat = ConvertDMSToDD(parts[0], parts[1], parts[2], parts[3])
-	lng = ConvertDMSToDD(parts[4], parts[5], parts[6], parts[7])
+	#S 22 58.123 W 021 53.2
+	#([SN])\s(\d+)\s(\d+(?:\.\d+)?)\s([EW])\s(\d+)\s(\d+(?:\.\d*)?)
+
+	#22 58.123 S 021 53.2 W
+	#(\d+)\s(\d+(?:\.\d+)?)\s([SN])\s(\d+)\s(\d+(?:\.\d*)?)\s([EW])
+
+	regex_str=r"(\d+).*\s(\d+(?:\.\d+)?)\'\s*([SN])\s*(\d+).*\s(\d+(?:\.\d+)?)\'\s*([EW])"
+
+	#parts = strinput.split('/[^\d\w]+/')
+	#lat = ConvertDMSToDD(parts[0], parts[1], parts[2], parts[3])
+	#lng = ConvertDMSToDD(parts[4], parts[5], parts[6], parts[7])
+	prog = re.compile(regex_str)
+	result = prog.match(strinput)
+	lat = ConvertDMSToDD(result.group(1), result.group(2), result.group(3))
+	lng = ConvertDMSToDD(result.group(4), result.group(5), result.group(6))
 	return lat, lng
 
 class MarinaSpider(BaseSpider):
@@ -35,7 +51,7 @@ class MarinaSpider(BaseSpider):
 
 		marina = MarinaItem()
 
-		latlong = tmp[0].extract().strip()
+		latlong = tmp[0].extract().strip().replace(u'\u02da', "deg")
 		lat, lng = ParseDMS(latlong)
 		marina["latitude"] = lat
 		marina["longitude"] = lng
