@@ -19,6 +19,6 @@ http://portfocus.com/index.html
 http://www.portbooker.com/
 http://www.portbooker.com/xmlMapa.php?hl=en&mode=puerto&ids=565,567,572,585,587,588,613,614,1012,10115,566,568,569,571,562,563,564,615,846,10222&latMax=44.6061127451739&latMin=43.421008829947255&lngMax=9.7943115234375&lngMin=7.7618408203125&latCentro=44.01652134387754&lngCentro=8.778076171875&idioma=en
 http://www.portbooker.com/xmlMapa.php?hl=en&mode=puerto&latMax=44.6061127451739&latMin=43.421008829947255&lngMax=9.7943115234375&lngMin=7.7618408203125&latCentro=44.01652134387754&lngCentro=8.778076171875&idioma=en
-http://www.portbooker.com/xmlMapa.php?hl=en&mode=puerto&latMax=90&latMin=0&lngMax=90&lngMin=0
+http://www.portbooker.com/xmlMapa.php?hl=en&mode=puerto&latMin=-90&latMax=90&lngMin=0&lngMax=360
 -----------------------------
 
