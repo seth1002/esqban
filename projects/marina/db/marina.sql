@@ -37,3 +37,12 @@ CREATE TABLE `marinas` (
 	UNIQUE (`name`),
 	KEY `idx_name` (`name`) USING BTREE
 ) engine=innodb default charset=utf8;
+
+CREATE OR REPLACE
+VIEW vwMarinas
+AS
+SELECT m.name, m.latitude, m.longitude, t.name AS type, c.name AS country, r.name AS region
+FROM marinas AS m
+INNER JOIN marina_types t on t.id = m.type
+INNER JOIN regions r on r.id = m.region
+INNER JOIN countries c on c.id = r.country;
