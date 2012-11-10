@@ -1,0 +1,29 @@
+application: new-project-template
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /default\.css
+  static_files: default.css
+  upload: default\.css
+
+- url: /
+  static_files: marinas.html
+  upload: marinas\.html
+
+- url: /marinas\.json
+  static_files: marinas.json
+  upload: marinas\.json
+
+- url: /get_markers.*
+  script: get_markers.app
+
+libraries:
+- name: webapp2
+  version: "2.5.1"
