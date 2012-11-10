@@ -9,24 +9,46 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script>
 	function initialize() {
-        var myLatlng = new google.maps.LatLng(40.0,10.0);
-        var mapOptions = {
-          zoom: 4,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+		var markersArray = [];
+		
+		var myLatlng = new google.maps.LatLng(40.0,10.0);
+		var mapOptions = {
+		  zoom: 4,
+		  center: myLatlng,
+		  mapTypeId: google.maps.MapTypeId.SATELLITE
+		}
+		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-		var self = this;
-		$.getJSON( 'marinas.json', function(data) { 
-			$.each( data.markers, function(i, marker) {
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(marker.latitude, marker.longitude),
-					map: map,
-					title: marker.name
+		function clear_markers() {
+			for (var i = 0; i < markersArray.length; i++ ) {
+				markersArray[i].setMap(null);
+			}
+			markersArray = []
+  		}
+
+		function load_markers() {
+			var self = this;
+			$.getJSON( 'marinas.json', function(data) { 
+				$.each( data.markers, function(i, marker) {
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(marker.latitude, marker.longitude),
+						map: map,
+						title: marker.name
+					});
+					markersArray.push(marker);
 				});
 			});
-		});
+		}
+
+		function showMarkers() {
+			var bounds = map.getBounds();
+			//alert(bounds);
+			clear_markers();
+			load_markers();
+		}
+		google.maps.event.addListener(map, 'idle', showMarkers);
+	
+	
 	}
     </script>
   </head>
