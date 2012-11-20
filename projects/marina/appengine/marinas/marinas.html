@@ -35,9 +35,33 @@
 			var b = northEast.lng();
 			var c = southWest.lat();
 			var d = southWest.lng();
-			var url = 'markers?a=' + a + "&b=" + b + "&c=" + c + "&d=" + d;
+			var markers_url = 'markers?a=' + a + "&b=" + b + "&c=" + c + "&d=" + d;
   
-  			$.getJSON( url, function(data) { 
+			function load_json(data) {
+				console.log("load_json");
+				$.each( data.markers, function(i, marker) {
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(marker.latitude, marker.longitude),
+						map: map,
+						title: marker.name
+					});
+					markersArray.push(marker);
+				});
+			}
+			
+			function json_error(e) {
+				console.log("json_error: " + e);
+			}
+  
+			$.ajax({
+				url: markers_url,
+				dataType: 'json',
+				success: load_json,
+				error: json_error
+			});
+/*
+  			$.getJSON( markers_url, function(data) { 
+				console.log("getJSON");
 				$.each( data.markers, function(i, marker) {
 					var marker = new google.maps.Marker({
 						position: new google.maps.LatLng(marker.latitude, marker.longitude),
@@ -47,6 +71,7 @@
 					markersArray.push(marker);
 				});
 			});
+*/
 		}
 
 		function showMarkers() {

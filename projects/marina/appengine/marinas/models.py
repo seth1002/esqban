@@ -7,6 +7,7 @@ class Marina(db.Model):
 	name = db.StringProperty()
 	latitude = db.FloatProperty()
 	longitude = db.FloatProperty()
+	#point = db.GeoPtProperty()
 	marina_type = db.IntegerProperty()
 
 class MarinaLoader(bulkload.Loader):

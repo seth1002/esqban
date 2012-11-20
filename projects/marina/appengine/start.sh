@@ -1,5 +1,6 @@
 #/bin/sh
 
+#/home/sqba/apps/google_appengine/dev_appserver.py --clear_datastore marinas/
 /home/sqba/apps/google_appengine/dev_appserver.py marinas/
 
 #appcfg.py upload_data --config_file=marinas/loader.py --filename=marinas.csv --kind=Marina --url=http://localhost:8080/_ah/remote_api marinas

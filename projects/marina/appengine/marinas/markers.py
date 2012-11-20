@@ -1,17 +1,41 @@
 import os
 import webapp2
 from google.appengine.ext.webapp.util import run_wsgi_app
-import models
+from models import Marina
+from google.appengine.ext import db
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
-		#ret = {"markers":{
-		##"record": {"name": "bob", ...}
-		#	{"latitude": "33.972499847412", "site": "Theharboratarchstone.com", "longitude": "-118.452003479"},
-		#}
-		path = os.path.join(os.path.split(__file__)[0], 'marinas.json')
+		self.get_from_db()
+		
+	def get_from_file(self):
+		path = os.path.join(os.path.split(__file__)[0], 'marinas2.json')
 		ret = file(path,'r').read()
 		self.response.write( ret )
+
+	def get_from_db(self):
+		a = self.request.get('a')
+		b = self.request.get('b')
+		c = self.request.get('c')
+		d = self.request.get('d')
+		self.response.headers['Content-Type'] = 'application/json'
+		self.response.out.write('{"markers":[\n')
+#		marinas = db.GqlQuery("SELECT *  FROM Marina WHERE latitude < " + str(a) + " AND latitude > " + str(c) + " AND longitude < " + str(b) + " AND longitude > " + str(d) + " LIMIT 100")
+		marinas = db.GqlQuery("SELECT *  FROM Marina WHERE longitude < " + str(b) + " AND longitude > " + str(d))
+#		marinas = Marina.all()
+#		marinas.filter("latitude <", a)
+#		marinas.filter("latitude >", c)
+#		marinas.filter("longitude >", b)
+#		marinas.filter("longitude <", d)
+		start = True
+		for marina in marinas:
+			if start:
+				start = False
+			else:
+				self.response.out.write(",\n")
+			s = '{"latitude": "' + str(marina.latitude) + '", "name": "' + marina.name + '", "longitude": "' + str(marina.longitude) + '"}'
+			self.response.out.write(s)
+		self.response.out.write('\n]}')
 
 application = webapp2.WSGIApplication([('/markers', MainHandler)], debug=True)
 
