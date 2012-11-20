@@ -26,9 +26,18 @@
 			markersArray = []
   		}
 
-		function load_markers() {
+		function load_markers(bounds) {
 			var self = this;
-			$.getJSON( 'marinas.json', function(data) { 
+  
+			var southWest = bounds.getSouthWest();
+			var northEast = bounds.getNorthEast();
+			var a = northEast.lat();
+			var b = northEast.lng();
+			var c = southWest.lat();
+			var d = southWest.lng();
+			var url = 'markers?a=' + a + "&b=" + b + "&c=" + c + "&d=" + d;
+  
+  			$.getJSON( url, function(data) { 
 				$.each( data.markers, function(i, marker) {
 					var marker = new google.maps.Marker({
 						position: new google.maps.LatLng(marker.latitude, marker.longitude),
@@ -42,9 +51,9 @@
 
 		function showMarkers() {
 			var bounds = map.getBounds();
-			//alert(bounds);
+			console.log(bounds);
 			clear_markers();
-			load_markers();
+			load_markers(bounds);
 		}
 		google.maps.event.addListener(map, 'idle', showMarkers);
 	
