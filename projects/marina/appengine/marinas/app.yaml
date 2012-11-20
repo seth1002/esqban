@@ -6,10 +6,6 @@ api_version: 1
 threadsafe: no
 
 handlers:
-- url: /load
-  script: loader.py
-  login: admin
-
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
@@ -20,13 +16,14 @@ handlers:
 
 - url: /markers
   script: markers.py
-#  static_files: marinas.json
-#  upload: marinas\.json
 
 - url: /
   static_files: marinas.html
   upload: marinas\.html
- 
+
+builtins:
+- remote_api: on
+
 libraries:
 - name: webapp2
   version: "2.5.1"

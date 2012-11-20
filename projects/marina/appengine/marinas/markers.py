@@ -1,6 +1,7 @@
 import os
 import webapp2
 from google.appengine.ext.webapp.util import run_wsgi_app
+import models
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
