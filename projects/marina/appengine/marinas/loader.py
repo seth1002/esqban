@@ -1,15 +1,15 @@
-# appengine/loader.py
+#from google.appengine.ext import bulkload
+from google.appengine.tools import bulkloader
+from google.appengine.api import datastore_types
 
-from google.appengine.ext import bulkload
-
-class MarinaLoader(bulkload.Loader):
+class MarinaLoader(bulkloader.Loader):
 	def __init__(self):
-		fields = [
-			("name", str),
-			("quantity", int)
-		]
+		bulkloader.Loader.__init__(self, 'Marina',
+								[("name", str),
+								("latitude", float),
+								("longitude", float),
+								("marina_type", int)
+								])
 
-		bulkload.Loader.__init__(self, "Marinas", fields)
-
-if __name__ == "__main__":
-	bulkload.main(MarinaLoader())
+loaders = [AlbumLoader]
+    

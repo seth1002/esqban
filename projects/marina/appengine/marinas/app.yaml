@@ -17,12 +17,20 @@ handlers:
 - url: /markers
   script: markers.py
 
+- url: /remote_api
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+#  login: admin
+
+- url: /loadmarinas
+  script: models.py
+#  login: admin
+
 - url: /
   static_files: marinas.html
   upload: marinas\.html
 
-builtins:
-- remote_api: on
+#builtins:
+#- remote_api: on
 
 libraries:
 - name: webapp2
