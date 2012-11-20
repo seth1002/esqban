@@ -22,6 +22,10 @@ class MainHandler(webapp2.RequestHandler):
 		self.response.out.write('{"markers":[\n')
 #		marinas = db.GqlQuery("SELECT *  FROM Marina WHERE latitude < " + str(a) + " AND latitude > " + str(c) + " AND longitude < " + str(b) + " AND longitude > " + str(d) + " LIMIT 100")
 		marinas = db.GqlQuery("SELECT *  FROM Marina WHERE longitude < " + str(b) + " AND longitude > " + str(d))
+		keys = dict()
+		for marina in marinas:
+			keys[marina.key()] = 1
+		marinas = db.GqlQuery("SELECT *  FROM Marina WHERE latitude < " + str(a) + " AND latitude > " + str(c))
 #		marinas = Marina.all()
 #		marinas.filter("latitude <", a)
 #		marinas.filter("latitude >", c)
@@ -29,12 +33,13 @@ class MainHandler(webapp2.RequestHandler):
 #		marinas.filter("longitude <", d)
 		start = True
 		for marina in marinas:
-			if start:
-				start = False
-			else:
-				self.response.out.write(",\n")
-			s = '{"latitude": "' + str(marina.latitude) + '", "name": "' + marina.name + '", "longitude": "' + str(marina.longitude) + '"}'
-			self.response.out.write(s)
+			if marina.key() in keys:
+				if start:
+					start = False
+				else:
+					self.response.out.write(",\n")
+				s = '{"latitude": "' + str(marina.latitude) + '", "name": "' + marina.name + '", "longitude": "' + str(marina.longitude) + '"}'
+				self.response.out.write(s)
 		self.response.out.write('\n]}')
 
 application = webapp2.WSGIApplication([('/markers', MainHandler)], debug=True)
