@@ -14,7 +14,7 @@ import MySQLdb.cursors
 import MySQLdb
 
 
-conn = MySQLdb.connect(host='192.168.2.107',user='sqba', passwd='crl2688', db = "marinas")
+conn = MySQLdb.connect(host='192.168.2.105',user='sqba', passwd='crl2688', db = "marinas")
 
 
 def get_country_id(name):
@@ -25,8 +25,11 @@ def get_country_id(name):
 	if None != row:
 		country_id = row[0]
 	else:
-		cursor.execute('INSERT INTO countries(name) VALUES("' + name + '")')
-		country_id = cursor.lastrowid
+		try:
+			cursor.execute('INSERT INTO countries(name) VALUES("' + name + '")')
+			country_id = cursor.lastrowid
+		except MySQLdb.IntegrityError, e:
+			print 'SQL integrity error: %s' % e
 	return country_id
 
 def get_region_id(name, country):
@@ -38,8 +41,11 @@ def get_region_id(name, country):
 	if None != row:
 		region_id = row[0]
 	else:
-		cursor.execute('INSERT INTO regions(name, country) VALUES("' + name + '", ' + str(country_id) + ')')
-		region_id = cursor.lastrowid
+		try:
+			cursor.execute('INSERT INTO regions(name, country) VALUES("' + name + '", ' + str(country_id) + ')')
+			region_id = cursor.lastrowid
+		except MySQLdb.IntegrityError, e:
+			print 'SQL integrity error: %s' % e
 	return region_id
 
 def get_marina_type_id(name):
@@ -61,6 +67,8 @@ def import_into_mysql():
 	tree = xml.parse(urllib.urlopen('data/portbooker.xml'))
 	rootElement = tree.getroot()
 	cursor = conn.cursor()
+	records = 0
+	counter = 0
 	for a in rootElement.findall('marker'):
 		country = process_name(a.get('pais_nombre'))
 		region = process_name(a.get('zona_nombre'))
@@ -72,31 +80,14 @@ def import_into_mysql():
 		marina_type_id = get_marina_type_id(marina_type)
 		try:
 			cursor.execute('INSERT INTO marinas(name, region, type, latitude, longitude) VALUES("' + marina_name + '", ' + str(region_id) + ', ' + str(marina_type_id) + ', ' + str(marina_lat) + ', ' + str(marina_long) + ')')
+			records+=1
 		except MySQLdb.IntegrityError, e:
 			print 'SQL integrity error: %s' % e
+		counter+=1
 	conn.commit()
 	cursor.close()
+	print "Imported " + str(records) + " records of " + str(counter)
     
 
 
-#import_into_mysql()
-
-import MySQLdb
-
-class MySQLLoader(bulkloader.Loader):
-  def __init__(self, kind_name, query, converters):
-    self.query = query
-    bulkloader.Loader.__init__(kind_name, converters)
-
-  def initialize(self, filename, loader_opts):
-    self.connect_args = dict(urlparse.parse_qsl(loader_opts))
-
-  def generate_records(self, filename):
-    """Generates records from a MySQL database."""
-    db = MySQLdb.connect(self.connect_args)
-    cursor = db.cursor()
-    cursor.execute(self.query)
-    return iter(cursor.fetchone, None)
-    
-    
-    
+import_into_mysql()
