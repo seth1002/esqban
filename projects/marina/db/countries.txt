@@ -1,0 +1,72 @@
+79,Algeria
+74,Australia
+102,Bahrain
+106,Belgium
+127,British Indian Ocean Territory
+87,Brunei
+144,Bulgaria
+113,China
+141,Comoros
+76,Croatia
+95,Cyprus
+110,Denmark
+138,Djibouti
+98,Egypt
+123,Eritrea
+107,Estonia
+139,Fiji
+112,Finland
+73,France
+137,Georgia
+103,Germany
+77,Greece
+128,Hong Kong
+122,Iceland
+121,India
+131,Indonesia
+78,Israel
+94,Italy
+92,Japan
+136,Kenya
+117,Latvia
+97,Lebanon
+84,Libya
+118,Lithuania
+126,Macao
+142,Madagascar
+90,Malaysia
+135,Maldives
+89,Malta
+134,Mauritius
+129,Mayotte
+101,Monaco
+120,Montenegro
+140,Mozambique
+109,Netherlands
+114,New Zealand
+83,Norway
+108,Oman
+99,Papua New Guinea
+82,Philippines
+115,Poland
+130,Qatar
+133,Reunion
+116,Russia
+85,Saudi Arabia
+105,Seychelles
+75,Singapore
+91,Slovenia
+93,South Africa
+81,Spain
+124,Sudan
+119,Svalbard and Jan Mayen
+111,Sweden
+96,Syria
+132,Tanzania
+88,Thailand
+80,Tunisia
+86,Turkey
+100,United Arab Emirates
+104,United Kingdom
+143,Yemen
+125,Zambia

@@ -18,6 +18,10 @@ class MainHandler(webapp2.RequestHandler):
 		b = self.request.get('b')
 		c = self.request.get('c')
 		d = self.request.get('d')
+		if d > b:
+			tmp = b
+			b = d
+			d = tmp
 		self.response.headers['Content-Type'] = 'application/json'
 		self.response.out.write('{"markers":[\n')
 #		marinas = db.GqlQuery("SELECT *  FROM Marina WHERE latitude < " + str(a) + " AND latitude > " + str(c) + " AND longitude < " + str(b) + " AND longitude > " + str(d) + " LIMIT 100")

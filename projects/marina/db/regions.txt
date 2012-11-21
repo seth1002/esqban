@@ -1,0 +1,381 @@
+382,73,Languedoc-Roussillon
+383,74,Queensland
+384,74,New South Wales
+385,73,Provence-Alpes-Côte d\\'Azur
+386,75,Aik Hong and Aik Chiang Estate
+387,76,Sibensko-Kninska Zupanija
+388,74,Victoria
+389,77,Ionian Islands
+390,78,Northern District
+391,77,Epirus
+392,77,Peloponnese
+393,77,Attica
+394,79,Wilaya d' Annaba
+395,79,Wilaya de Skikda
+396,80,Gouvernorat de Jendouba
+397,81,Balearic Islands
+398,78,Haifa District
+399,78,Tel Aviv District
+400,78,Southern District
+401,80,Gouvernorat de Médenine
+402,80,Gouvernorat de Gabès
+403,77,Central Macedonia
+404,80,Gouvernorat de Sfax
+405,74,Western Australia
+406,80,Gouvernorat de Mahdia
+407,74,South Australia
+408,80,Gouvernorat de Monastir
+409,81,Valencian Community
+410,80,Gouvernorat de Sousse
+411,82,Tacloban City
+412,80,Gouvernorat de Nabeul
+413,83,Rogaland Fylke
+414,77,South Aegean
+415,77,Crete
+416,80,Gouvernorat de Tunis
+417,80,Gouvernorat de Ariana
+418,80,Gouvernorat de Bizerte
+419,80,Gouvernorat de Béja
+420,84,Baladiyat Tubruq
+421,84,Baladiyat Darnah
+422,85,Mintaqat Makkah
+423,84,Baladiyat Banghazi
+424,84,Baladiyat Ajdabiya
+425,84,Baladiyat Surt
+426,82,Province of Romblon
+427,84,Baladiyat Misratah
+428,84,Baladiyat al Khums
+429,84,Balad?yat ?ar?bulus
+430,77,West Greece
+431,86,Mugla Province
+432,84,Baladiyat an Nuqat al Khams
+433,79,Wilaya de Jijel
+434,79,Wilaya de Bejaïa
+435,79,Wilaya de Tizi Ouzou
+436,79,Wilaya de Boumerdes
+437,79,Wilaya d' Alger
+438,86,Istanbul
+439,79,Wilaya de Tipaza
+440,79,Wilaya de Aïn Defla
+441,79,Wilaya de Chlef
+442,79,Wilaya de Mostaganem
+443,87,Brunei and Muara District
+444,88,Changwat Chon Buri
+445,86,Canakkale Province
+446,89,Malta
+447,88,Changwat Rayong
+448,88,Changwat Trat
+449,86,Bal?kesir Province
+450,90,Negeri Pulau Pinang
+451,86,Kocaeli Province
+452,91,Obcina Izola-Isola
+453,86,Izmir
+454,90,State of Sarawak
+455,82,Province of Pangasinan
+456,92,Tokushima-ken
+457,76,Splitsko-Dalmatinska Zupanija
+458,93,Province of the Western Cape
+459,86,Antalya Province
+460,91,Obcina Piran-Pirano
+461,94,Calabria
+462,76,Istarska Zupanija
+463,90,Negeri Johor
+464,90,Negeri Pahang
+465,81,Catalonia
+466,94,Sardinia
+467,88,Changwat Chachoengsao
+468,94,Campania
+469,74,Tasmania
+470,86,Mersin Province
+471,95,Kyrenia District
+472,95,Paphos District
+473,95,Larnaca District
+474,96,Latakia
+475,96,Tartus
+476,97,Mohafazat Mont-Liban
+477,98,Muhafazat Bur Sa`id
+478,94,Sicily
+479,98,Muhafazat as Suways
+480,98,Alexandria Governorate
+481,76,Primorsko-Goranska Zupanija
+482,77,East Macedonia and Thrace
+483,94,Liguria
+484,77,Central Greece
+485,77,Thessaly
+486,90,Negeri Terengganu
+487,77,North Aegean
+488,94,Tuscany
+489,86,Northern Cyprus
+490,76,Licko-Senjska Zupanija
+491,99,Central Province
+492,94,Latium
+493,90,State of Sabah
+494,76,Zadarska Zupanija
+495,82,Province of Negros Oriental
+496,82,Province of Iloilo
+497,82,Province of Aklan
+498,82,Province of Palawan
+499,82,Cebu City
+500,100,Abu Dhabi
+501,88,Changwat Songkhla
+502,101,Commune de Monaco
+503,73,Corsica
+504,100,Ras al-Jaima
+505,94,Apulia
+506,94,Abruzzo
+507,102,Sitra
+508,94,Friuli
+509,103,Schleswig-Holstein
+510,82,Province of Surigao del Norte
+511,82,Chartered City of Cagayan de Oro
+512,82,Iligan City
+513,82,Dapitan City
+514,76,Dubrovacko-Neretvanska Zupanija
+515,94,Veneto
+516,94,Regione Emilia-Romagna
+517,104,England
+518,93,Province of KwaZulu-Natal
+519,105,Port Glaud
+520,93,Province of North-West
+521,106,Flanders
+522,106,Région de Bruxelles-Capitale
+523,107,Harjumaa
+524,107,Lääne-Virumaa
+525,107,Ida-Virumaa
+526,107,Läänemaa
+527,108,Mintaqat Masqat
+528,107,Hiiumaa
+529,107,Saaremaa
+530,107,Pärnumaa
+531,109,Provincie Zeeland
+532,109,South Holland
+533,109,North Brabant
+534,109,North Holland
+535,92,Ishikawa-ken
+536,105,Baie Sainte Anne
+537,73,Région Nord-Pas-de-Calais
+538,103,Mecklenburg-Vorpommern
+539,73,Haute-Normandie
+540,73,Picardie
+541,109,Provincie Utrecht
+542,109,Provincie Gelderland
+543,109,Provincie Flevoland
+544,73,Basse-Normandie
+545,109,Provincie Friesland
+546,109,Provincie Groningen
+547,109,Provincie Drenthe
+548,110,Capital Region of Denmark
+549,110,Region Zealand
+550,111,Västra Götalands Län
+551,92,Saga-ken
+552,111,Scania
+553,112,Åland
+554,112,Western Finland
+555,112,Southern Finland
+556,111,Blekinge Län
+557,111,Kalmar Län
+558,111,Gotlands Län
+559,111,Östergötlands Län
+560,111,Stockholms Län
+561,113,Jiangsu Sheng
+562,113,Zhejiang Sheng
+563,114,Auckland
+564,113,Fujian
+565,92,Nagasaki-ken
+566,113,Liaoning Province
+567,113,Hebei Sheng
+568,115,Pomeranian Voivodeship
+569,93,Province of Eastern Cape
+570,111,Gävleborgs Län
+571,111,Norrbottens Län
+572,111,Västernorrlands Län
+573,111,Uppsala Län
+574,111,Västerbottens Län
+575,116,Leningradskaya Oblast'
+576,116,Sankt-Peterburg
+577,115,West Pomeranian Voivodeship
+578,116,Kaliningradskaya Oblast'
+579,117,Ventspils
+580,118,Klaip?dos Apskritis
+581,117,Liepaja
+582,117,Liepajas Rajons
+583,117,Talsu Rajons
+584,117,Tukuma Rajons
+585,117,Jurmala
+586,117,Riga
+587,117,Limbazu Rajons
+588,105,English River
+589,73,Région Île-de-France
+590,73,Rhône-Alpes
+591,92,Niigata-ken
+592,92,Ehime
+593,94,The Marches
+594,98,Muhafazat al Bahr al Ahmar
+595,100,Dubayy
+596,105,Takamaka
+597,113,Hainan Province
+598,88,Changwat Phuket
+599,83,Østfold
+600,83,Akershus Fylke
+601,83,Oslo Fylke
+602,83,Buskerud Fylke
+603,83,Vestfold Fylke
+604,83,Telemark Fylke
+605,83,Aust-Agder Fylke
+606,83,Vest-Agder Fylke
+607,83,Hordaland Fylke
+608,83,Sogn og Fjordane Fylke
+609,83,Sør-Trøndelag Fylke
+610,83,Møre og Romsdal Fylke
+611,83,Nordland Fylke
+612,83,Troms Fylke
+613,83,Nord-Trøndelag Fylke
+614,83,Finnmark Fylke
+615,119,Svalbard and Jan Mayen
+616,105,Grand Anse Praslin
+617,120,Opstina Budva
+618,120,Opstina Bar
+619,120,Opstina Kotor
+620,120,Opstina Tivat
+621,94,Basilicate
+622,113,Guangdong Sheng
+623,92,Kyoto-fu
+624,92,Fukuoka-ken
+625,90,Negeri Sembilan
+626,110,Central Jutland
+627,86,Bursa
+628,116,Moscow
+629,90,Negeri Perlis\, Pauh
+630,103,Free and Hanseatic City of Hamburg
+631,121,Union Territory of Andaman and Nicobar Islands
+632,122,Capital Region
+633,123,Zoba Semenawi K'eyih Bahri
+634,103,Brandenburg
+635,124,Red Sea
+636,113,Shanghai Shi
+637,114,Wellington
+638,103,Free State of Bavaria
+639,125,Southern Province
+640,126,Concelho das Ilhas
+641,127,British Indian Ocean Territory
+642,82,Province of La Union
+643,128,A Shan
+644,129,Vahibéni
+645,126,Concelho de Macau
+646,74,Northern Territory
+647,112,Oulu
+648,90,Negeri Selangor
+649,116,Respublika Kareliya
+650,103,Berlín
+651,92,Hiroshima-ken
+652,103,Lower Saxony
+653,110,Region South Denmark
+654,88,Changwat Phangnga
+655,113,Shandong Sheng
+656,103,Baden-Württemberg
+657,92,Aichi-ken
+658,116,Krasnodarskiy Kray
+659,114,Chatham Islands
+660,103,Saxony
+661,114,Nelson
+662,130,Lusail
+663,131,Propinsi Bali
+664,90,Negeri Kedah
+665,132,Dar es Salaam Region
+666,133,Région Réunion
+667,134,Rivière du Rempart District
+668,92,Yamaguchi-ken
+669,135,Maale
+670,92,Hyogo-ken
+671,114,Whangarei
+672,136,Coast Province
+673,82,City of Manila
+674,103,North Rhine-Westphalia
+675,82,Province of Batangas
+676,131,Daerah Khusus Ibukota Jakarta Raya
+677,92,Osaka-fu
+678,92,Kumamoto-ken
+679,137,Abkhazia
+680,98,Muhafazat Matruh
+681,82,Province of Mindoro Oriental
+682,138,Ville de Djibouti
+683,121,State of Maharashtra
+684,114,Hawkes Bay
+685,82,Olongapo City
+686,85,Al Mintaqah ash Sharqiyah
+687,114,Bay of Plenty
+688,114,Marlborough
+689,92,Wakayama-ken
+690,132,Mtwara Region
+691,92,Hokkaido
+692,92,Kanagawa-ken
+693,113,Guangxi Zhuangzu Zizhiqu
+694,113,Anhui Sheng
+695,113,Jiangxi Sheng
+696,92,Toyama-ken
+697,92,Oita-ken
+698,82,Province of Masbate
+699,92,Kagoshima-ken
+700,92,Miyagi-ken
+701,92,Chiba-ken
+702,82,Puerto Princesa City
+703,92,Okinawa-ken
+704,90,Federal Territory of Labuan
+705,92,Iwate-ken
+706,113,Tianjin Shi
+707,116,Magadanskaya Oblast'
+708,132,Tanga Region
+709,132,Zanzibar Urban/West Region
+710,132,Pemba North Region
+711,132,Pemba South Region
+712,132,Zanzibar North Region
+713,132,Zanzibar Central/South Region
+714,132,Pwani Region
+715,98,Muhafazat Janub Sina
+716,139,Western Division
+717,116,Sakhalinskaya Oblast'
+718,132,Lindi Region
+719,140,Província de Cabo Delgado
+720,112,Eastern Finland
+721,140,Província de Nampula
+722,88,Changwat Satun
+723,92,Akita-ken
+724,116,Primorskiy Kray
+725,116,Murmansk Oblast
+726,74,Australian Capital Territory
+727,116,Khabarovsk Krai
+728,140,Cidade de Maputo
+729,140,Província de Zambézia
+730,140,Província de Sofala
+731,140,Província de Inhambane
+732,88,Changwat Trang
+733,112,Lapponia
+734,88,Changwat Krabi
+735,140,Maputo Province
+736,116,Rostovskaya Oblast'
+737,141,Grande Comore
+738,92,Fukushima-ken
+739,141,Mohéli
+740,92,Ibaraki-ken
+741,141,Anjouan
+742,142,Faritany d' Antsiranana
+743,142,Faritanin' i Mahajanga
+744,92,Yamagata-ken
+745,142,Faritanin' i Toliara
+746,108,Muhafazat Zufar
+747,121,State of Kerala
+748,121,State of Karnataka
+749,121,Goa
+750,92,Aomori-ken
+751,143,Muhafazat `Adan
+752,143,Muhafazat al Mahrah
+753,82,Province of Samar
+754,92,Miyazaki-ken
+755,134,Port Louis District
+756,105,Anse Royale
+757,90,Negeri Perak
+758,143,Muhafazat Hadramawt
+759,105,Anse Boileau
+760,144,Burgas
+761,144,Varna
+762,86,Aydin
