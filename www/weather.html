@@ -7,143 +7,80 @@
                 padding:0;
                 margin: 0;
             }
-            .row
-            {
-                width:  100%;
-                height: 50%;
-            }
-            .cell
-            {
-                width:    50%;
-                height:   100%;
-                overflow: scroll;
-                float:    right;
-            }
-            .skiron_img
-            {
-                margin-left: -20px;
-                margin-top:  -100px;
-            }
-            .cell_skiron
-            {
-                width:    680px;
-                height:   480px;
-                overflow: hidden;
-                float:    left;
-            }
-            .cell_meteorologica
-            {
-                width:    760x;
-                height:   576px;
-                overflow: hidden;
-                float:    left;
-            }
-            .cell_1
-            {
-                width:    845x;
-                height:   615px;
-                overflow: hidden;
-                float:    left;
-            }
-            .cell_2
-            {
-                width:    550x;
-                height:   512px;
-                overflow: hidden;
-                float:    left;
-            }
-        </style>
+		</style>
+		<link href="tabs.css" rel="stylesheet" type="text/css" />
         <title>Weather</title>
     </head>
     <body>
-        <div style="width:100%; height :100%;">
-            <div class="row">
-                <div class="cell_meteorologica">
-                    <a href="">
-                        <img src="http://www.meteorologica.info/FreeImages/euroisobar.jpg"/>
-                    </a>
-                </div>
-                <div class="cell_meteorologica">
-                    <a href="">
-                        <img src="http://www.meteorologica.info/FreeImages/Eurostreamlines.jpg"/>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="cell_1">
-                    <a href="">
-                        <img src="http://wolken.buienradar.nl/image.ashx?country=gr&type=slide&time=&index=1&sat=ir"/>
-                    </a>
-                </div>
-                <div class="cell_1">
-                    <a href="">
-                        <img src="http://cirrus.meteo.noa.gr/forecast/cltop-anim.gif"/>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="cell_2">
-                    <a href="http://cyprus-storms.webs.com/">
-                        <img src="http://world.meteox.com/onweer/loop_onweer.gif"/>
-                    </a>
-                </div>
-                <div class="cell_2">
-                    <a href="http://www.ims.gov.il/IMSEng/All_tahazit/SynopticMaps.htm">
-                        <img src="http://www.ims.gov.il/Ims/Pages/SynopticImage.aspx?LangID=2&Like=NOT"/>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="cell_skiron">
-                    <a href="http://forecast.uoa.gr/forecastnew.php">
-                        <img class="skiron_img" src="http://forecast.uoa.gr/LINKS/SKIRON/georain/024.gif"/>
-                    </a>
-                </div>
-                <div class="cell_skiron">
-                    <a href="http://forecast.uoa.gr/forecastnew.php">
-                        <img class="skiron_img" src="http://forecast.uoa.gr/LINKS/SKIRON/wind10m/024.gif"/>
-                    </a>
-                </div>
-            </div>        
-            <div class="row">
-                <div class="cell_skiron">
-                    <a href="http://pelagos.oc.phys.uoa.gr/page10.html">
-                        <img src="http://pelagos.oc.phys.uoa.gr/ww3_med/emed/wavec00.jpg"/>
-                    </a>
-                </div>
-                <div class="cell_skiron">
-                    <a href="http://www.windfinder.com/forecasts/wind_israel30.htm">
-                        <img src="http://www.windfinder.com/grafiken/forecasts/wind_israel30.png"/>
-                    </a>
-                </div>
-            </div>        
-            <div class="row">
-                <div class="cell">
-                    <iframe style="width:100%; height:100%;" src="http://isramar.ocean.org.il/isramar2009/wave_model/default.aspx?model=wam">
-                    </iframe>
-                </div>
-                <div class="cell">
-                    <a href="http://ows.public.sembach.af.mil/index.cfm?section=SFCAnal">
-                        <img src="http://ows.public.sembach.af.mil/wxdata/201211/22/ANALYSIS/EUROPE/010900Z_21OWS_EUROPE_ANALYSIS_SURFACE_00_SURFACE_SURFACE.GIF"/>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="cell">
-                    <iframe style="width:100%; height:100%;" src="http://www.windguru.cz/int/index.php?sc=308">
-                    </iframe>
-                </div>
-                <div class="cell">
-                    <iframe style="width:100%; height:100%;" src="http://www.weatheronline.co.uk/cgi-bin/expertcharts?LANG=en&MENU=0000000000&CONT=weas&MODELL=gfs&MODELLTYP=1&BASE=-&VAR=pslv&HH=156&ARCHIV=0&PANEL=0&ZOOM=0&PERIOD=">
-                    </iframe>
-                </div>
-            </div>
-            <div class="row">
-                <div class="cell">
-                    <iframe src="http://www.levyam.co.il/justthecamera.asp" width="346" height="250" allowtransparency="true" frameborder="0" style="border:0px; overflow:hidden">
-                    </iframe>
-                </div>
-            </div>
-        </div>​
+		<div id="Tabs" style="width:100%; height :100%;">
+			<ul>
+				<li id="li_tab1" onclick="tab('tab1')"><a>Meteorologica</a></li>
+				<li id="li_tab2" onclick="tab('tab2')"><a>Radar</a></li>
+				<li id="li_tab3" onclick="tab('tab3')"><a>Skiron</a></li>
+				<li id="li_tab4" onclick="tab('tab4')"><a>IMS</a></li>
+				<li id="li_tab5" onclick="tab('tab5')"><a>Wave & Wind</a></li>
+				<li id="li_tab6" onclick="tab('tab6')"><a>Wave</a></li>
+				<li id="li_tab7" onclick="tab('tab7')"><a>Wind</a></li>
+				<li id="li_tab8" onclick="tab('tab8')"><a>Webcam</a></li>
+			</ul>
+			<div id="Content_Area" style="width:100%; height :90%;">
+				<div id="tab1">
+					<img src="http://www.meteorologica.info/FreeImages/euroisobar.jpg"/>
+					<img src="http://www.meteorologica.info/FreeImages/Eurostreamlines.jpg"/>
+				</div>
+				<div id="tab2" style="display: none;">
+					<img src="http://wolken.buienradar.nl/image.ashx?country=gr&type=slide&time=&index=1&sat=ir"/>
+					<img src="http://cirrus.meteo.noa.gr/forecast/cltop-anim.gif"/>
+				</div>
+				<div id="tab3" style="display: none;">
+					<a href="http://forecast.uoa.gr/forecastnew.php">
+						<img src="http://forecast.uoa.gr/LINKS/SKIRON/georain/024.gif"/>
+					</a>
+					<a href="http://forecast.uoa.gr/forecastnew.php">
+						<img src="http://forecast.uoa.gr/LINKS/SKIRON/wind10m/024.gif"/>
+					</a>
+				</div>
+				<div id="tab5" style="display: none;">
+					<a href="http://pelagos.oc.phys.uoa.gr/page10.html">
+						<img src="http://pelagos.oc.phys.uoa.gr/ww3_med/emed/wavec00.jpg"/>
+					</a>
+					<a href="http://www.windfinder.com/forecasts/wind_israel30.htm">
+						<img src="http://www.windfinder.com/grafiken/forecasts/wind_israel30.png"/>
+					</a>
+				</div>
+				<div id="tab4" style="display: none;">
+					<a href="http://cyprus-storms.webs.com/">
+						<img src="http://world.meteox.com/onweer/loop_onweer.gif"/>
+					</a>
+					<a href="http://www.ims.gov.il/IMSEng/All_tahazit/SynopticMaps.htm">
+						<img src="http://www.ims.gov.il/Ims/Pages/SynopticImage.aspx?LangID=2&Like=NOT"/>
+					</a>
+				</div>
+				<div id="tab6" style="display: none;">
+					<iframe style="width:100%; height:100%;" src="http://isramar.ocean.org.il/isramar2009/wave_model/default.aspx?model=wam">
+					</iframe>
+				</div>
+				<div id="tab7" style="display: none;">
+					<iframe style="width:100%; height:100%;" src="http://www.windguru.cz/int/index.php?sc=308">
+					</iframe>
+				</div>
+				<div id="tab8" style="display: none;">
+					<iframe src="http://www.levyam.co.il/justthecamera.asp" width="346" height="250" allowtransparency="true" frameborder="0" style="border:0px; overflow:hidden">
+					</iframe>
+					<img src="http://wwlln.net/WWLLN_movies/Movie_of_Lightning_in_EurAfrica_BIG.gif"/>
+				</div>
+			</div>
+		</div>
     </body>
+	<script type="text/javascript">
+		function tab(tab) {
+			for(i=1; i<9; i++) {
+				document.getElementById('tab'+i).style.display = 'none';
+				document.getElementById('li_tab'+i).setAttribute('class', '');
+			}
+
+			document.getElementById(tab).style.display = 'block';
+			document.getElementById('li_'+tab).setAttribute('class', 'active');
+		}
+	</script>
 </html>
