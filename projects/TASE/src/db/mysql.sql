@@ -378,14 +378,14 @@ CREATE OR REPLACE
 VIEW company_financial_data
 AS select
 f.symbol,
+f.period,
 ROUND(p.closing_price,2) as price,
 f.current_assets as current_assets,
 f.current_liabilities as current_liabilities,
 ROUND(((p.market_cap)/(p.closing_price)), 0) as shares_outstanding
 from financial_statements f
 inner join company_prices p on p.symbol=f.symbol
-where p.date_ = (select max(date_) from company_prices)
-and f.period in ('March 2011', 'April 2011', 'June 2011');
+where p.date_ = (select max(date_) from company_prices);
 
 CREATE OR REPLACE
 VIEW ncav_data
@@ -414,7 +414,7 @@ ifnull(p.pagerank,0) as pagerank
 from companies c
 left outer join ncav n on n.symbol=c.symbol
 left outer join current_pagerank p on p.symbol=c.symbol
-left outer join financial_statements f on f.symbol=c.symbol and f.period='March 2011';
+left outer join financial_statements f on f.symbol=c.symbol and f.period='June 2012';
 
 create view profit
 as

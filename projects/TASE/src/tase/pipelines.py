@@ -38,6 +38,7 @@ class BaseDB(object):
 
     def __init__(self):
         self.dbpool = adbapi.ConnectionPool('MySQLdb',
+                host=settings['DATABASE_HOST'],
                 db=settings['DATABASE_SCHEMA'],
                 user=settings['DATABASE_USER'],
                 passwd=settings['DATABASE_PASSWORD'],

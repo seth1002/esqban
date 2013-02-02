@@ -43,8 +43,8 @@ class StockSpider(HistorySpider):
 
 	rules = (
 		Rule(SgmlLinkExtractor(allow=('MarketData\.htm',)), callback='parse_company_list'),
-		Rule(SgmlLinkExtractor(allow=('companyMainData\.htm',)), callback='parse_company'),
-		Rule(SgmlLinkExtractor(allow=('CompanyHistory\.aspx',)), callback='get_history_data'),
+		Rule(SgmlLinkExtractor(allow=('companyMainData\.aspx',)), callback='parse_company'),
+		Rule(SgmlLinkExtractor(allow=('companyhistorydata\.aspx',)), callback='get_history_data'),
 		Rule(SgmlLinkExtractor(allow=('companyDetails\.htm',)), callback='parse_company_details'),
 #		Rule(SgmlLinkExtractor(allow=('searchresults\.asp',)), callback='parse_company_news'),
 #		Rule(SgmlLinkExtractor(allow=('_page\d\.html',)), callback='parse_company_news'),
@@ -112,14 +112,26 @@ class StockSpider(HistorySpider):
 		item['tase_url'] = response.url
 		item['date_'] = ''
 		query = parse_qs(urlparse(response.url)[4]) # query
-		item['CompanyID'] = query['CompanyID'][0]
-		item['ShareID'] = query['ShareID'][0]
-		item['name'] = hxs.select("//td[@class='BigBlue']/text()").extract()[0]
+		try:
+			item['CompanyID'] = query['CompanyID'][0]
+		except KeyError:
+			item['CompanyID'] = query['FundID'][0]
+		try:
+			item['ShareID'] = query['ShareID'][0]
+		except KeyError:
+			item['ShareID'] = query['FundID'][0]
+		try:
+			item['name'] = hxs.select("//td[@class='BigBlue']/text()").extract()[0]
+		except IndexError:
+			item['name'] = ""
 		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
 		if len(lst) > 0:
 			item['symbol'] = lst[0]
 		else:
-			item['symbol'] = hxs.select("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
+			try:
+				item['symbol'] = hxs.select("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
+			except IndexError:
+				item['symbol'] = item['ShareID']
 		href = hxs.select('//tr[1]/td[1]/a[@target="_blank"]/@href').extract()
 		url = href[0]
 		o = urlparse(url)
@@ -127,9 +139,13 @@ class StockSpider(HistorySpider):
 			item['url'] = url
 		else:
 			item['url'] = ''
-		href = hxs.select("//tr/td[@class='subtitle']/text()").extract()
-		item['sector'] = tase.common.unescape(urllib.unquote(href[4].strip()))
-		item['subsector'] = tase.common.unescape(urllib.unquote(href[3].strip()))
+		try:
+			href = hxs.select("//tr/td[@class='subtitle']/text()").extract()
+			item['sector'] = tase.common.unescape(urllib.unquote(href[4].strip()))
+			item['subsector'] = tase.common.unescape(urllib.unquote(href[3].strip()))
+		except IndexError:
+			item['sector'] = ""
+			item['subsector'] = ""
 		if PROCESS_FINANCIAL_STATEMENTS:
 			yield self.get_company_details(item)
 		#url = "http://archive.globes.co.il/searchgl/%s" % item['symbol']

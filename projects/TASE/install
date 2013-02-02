@@ -1,3 +1,7 @@
+sudo apt-get install python-mysqldb
+sudo apt-get install python-matplotlib
+
+
 #easy_install
 sudo apt-get install python-setuptools
 
@@ -7,6 +11,7 @@ cpan> install K/KE/KEN/xls2csv-1.06.tar.gz
 sudo apt-get install python-mysqldb
 
 #scrapy
+sudo apt-get install python-dev
 sudo easy_install Scrapy
 
 #xls2csv
@@ -33,9 +38,7 @@ sudo pip install topia.termextract
 sudo apt-get install gtk
 sudo apt-get install python-gtk2
 sudo apt-get install gtk2-engines-pixbuf
-sudo apt-get install python-matplotlib
 
-sudo apt-get install python-mysqldb
 #sudo apt-get build-dep python-matplotlib
 
 
