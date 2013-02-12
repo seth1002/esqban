@@ -29,6 +29,7 @@ class FundSpider(HistorySpider):
 		Rule(SgmlLinkExtractor(allow=[r'BuildCmb_6_1.js']), callback='parse_fund_list'),
 		Rule(SgmlLinkExtractor(allow=('FundMainData\.htm',)), callback='parse_fund'),
 		Rule(SgmlLinkExtractor(allow=(r'MutualFunds',)), callback='parse_fund_search'),
+		Rule(SgmlLinkExtractor(allow=('fundHistory\.aspx',)), callback='get_history_data'),
 	)
 
 	header = (
@@ -42,9 +43,9 @@ class FundSpider(HistorySpider):
 		('trustee_fee', tase.common.to_float)
 	)
 
-	list_url = 'http://www.tase.co.il/TASE/SearchJSFiles/BuildCmb_6_1.js'
-	main_url = "http://www.tase.co.il/TASEEng/General/trustfund/fundmaindata.htm?FundID={fundID}"
-	history_url = "http://www.tase.co.il/TASEEng/General/trustfund/fundHistory.htm?Action=&FundID={shareID}"
+	list_url = 'http://www.tase.co.il/_layouts/Tase/Scripts/SearchJSFiles/BuildCmb_6_1.js'
+	main_url = "http://www.tase.co.il/eng/general/trustfund/pages/fundmaindata.aspx?FundID={fundID}"
+	history_url = "http://www.tase.co.il/Eng/General/trustfund/Pages/fundHistory.aspx?Action=&FundID={shareID}"
 
 	def parse_fund_search(self, response):
 		return Request(self.list_url, callback=self.parse_fund_list)

@@ -276,11 +276,17 @@ class FinancialStatementsPipeline(BaseDB):
             values.insert(0, global_time)
             names = ','.join(map(str, keys))
             vals = ", ".join(["%s"]*(len(items)+2))
+            tmp = " "
+            if len(keys) > 0:
+                tmp = ", "
+            sql_query = "insert into financial_statements (sessionid, symbol" + tmp + names + ") values (" + vals + ")"
+            #log.err('Full SQL statement: %s' % sql_query)
             try:
-                sql_query = "insert into financial_statements (sessionid, symbol, " + names + ") values (" + vals + ")"
                 tx.execute(sql_query, values)
             except MySQLdb.IntegrityError, e:
                 print 'SQL integrity error: %s' % e
+            #except MySQLdb.ProgrammingError, e:
+                #print 'Full SQL statement: %s' % sql_query
 
     def handle_error(self, e):
         log.err(e)

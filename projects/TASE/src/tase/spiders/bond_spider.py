@@ -30,14 +30,16 @@ class BondSpider(HistorySpider):
 	name = 'bonds'
 	allowed_domains = ['tase.co.il']
 	start_urls = [
-		'http://www.tase.co.il/TASEEng/MarketData/T-bills/',
-		'http://www.tase.co.il/TASEEng/MarketData/Bonds/GovernmentBonds/',
-		'http://www.tase.co.il/TASEEng/MarketData/Bonds/CorporateBonds/',
+		'http://www.tase.co.il/eng/marketdata/t-bills/Pages/ShortTermLoan.aspx',
+		'http://www.tase.co.il/eng/marketdata/bonds/governmentbonds/Pages/BondsGov.aspx',
+		'http://www.tase.co.il/eng/marketdata/bonds/corporatebonds/Pages/BondsByCuts.aspx',
 	]
 
 	rules = (
 		Rule(SgmlLinkExtractor(allow=(r'ErrorHandler.aspx',)), callback='process_error'),
-		Rule(SgmlLinkExtractor(allow=('CorporateBonds',)), callback='parse_bond_list'),
+		Rule(SgmlLinkExtractor(allow=('ShortTermLoan\.aspx',)), callback='parse_bond_list'),
+		Rule(SgmlLinkExtractor(allow=('BondsGov\.aspx',)), callback='parse_bond_list'),
+		Rule(SgmlLinkExtractor(allow=('BondsByCuts\.aspx',)), callback='parse_bond_list'),
 		Rule(SgmlLinkExtractor(allow=('BondsMainData\.htm',)), callback='parse_bond'),
 	)
 
