@@ -34,14 +34,14 @@ DATABASE_USER = 'tase'
 DATABASE_PASSWORD = '12345'
 
 PROCESS_HISTORY = True
-#HISTORY_PERIOD = 1 # Last Trading Day
-HISTORY_PERIOD = 2 # Last Month
+HISTORY_PERIOD = 1 # Last Trading Day
+#HISTORY_PERIOD = 2 # Last Month
 #HISTORY_PERIOD = 3 # 3 Months
 #HISTORY_PERIOD = 4 # 6 Months
 #HISTORY_PERIOD = 5 # 1 Year
 #HISTORY_PERIOD = 6 # 3 Years
 #HISTORY_PERIOD = 7	# 5 Years
-PROCESS_NEWS = True
+#PROCESS_NEWS = True
 PROCESS_NEWS_CONTENT = True
 PROCESS_NEWS_HISTORY = True
 PROCESS_FINANCIAL_STATEMENTS = True
@@ -52,6 +52,7 @@ CATEGORY_BOND = 'bond'
 CATEGORY_FUND = 'fund'
 
 ITEM_PIPELINES = (
+	'tase.pipelines.CleanupPipeline',
 	'tase.pipelines.SessionPipeline',
 	'tase.pipelines.MultiplierPipeline',
 	'tase.pipelines.MarketDataPipeline',
