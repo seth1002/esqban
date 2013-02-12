@@ -34,6 +34,24 @@ global_time = time.time()
 global_date = datetime.datetime.now()
 
 
+def clean_name(s):
+	#s = s.replace("\\r", "")
+	#s = s.replace("\\n", "")
+	#return s.strip()
+	return s.lstrip('\r\n').strip()
+
+class CleanupPipeline(object):
+
+    def process_item(self, item, spider):
+        if not isinstance(item, TaseItem):
+            return item
+        item['name'] = clean_name( item['name'] )
+        item['symbol'] = clean_name( item['symbol'] )
+        item['CompanyID'] = clean_name( item['CompanyID'] )
+        item['ShareID'] = clean_name( item['ShareID'] )
+        return item
+
+
 class BaseDB(object):
 
     def __init__(self):
