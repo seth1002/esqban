@@ -169,7 +169,7 @@ class StockSpider(HistorySpider):
 		return self.process_history(item)
 
 	def process_company_statement(self, hxs, index):
-		table = hxs.select('//table[@id="gridFinanceReport_DataGrid1"]')
+		table = hxs.select('//table[@id="ctl00_SPWebPartManager1_g_8e3d9f18_75c6_43cc_bc21_c3e7170427ca_ctl00_gridFinanceReport_DataGrid1"]')
 		rows = table.select('tr')#[@class != "gridHeader"]')
 		fs = FinancialStatement()
 		start = True
