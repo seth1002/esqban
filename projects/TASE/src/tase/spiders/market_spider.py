@@ -50,7 +50,7 @@ class MarketSpider(CrawlSpider):
 		self.log("parse_market: " + response.url)
 		hxs = HtmlXPathSelector(response)
 		market = MarketItem()
-		rows = hxs.select('//table[@id="gridShareByIndex_DataGrid1"]/tr')
+		rows = hxs.select('//table[@id="ctl00_SPWebPartManager1_g_24df47e6_1ef9_484c_8cef_5524d650e226_ctl00_gridShareByIndex_DataGrid1"]/tr')
 		market['symbols'] = []
 		row_index = 0
 		for row in rows:
