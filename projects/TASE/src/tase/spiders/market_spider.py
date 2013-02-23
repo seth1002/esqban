@@ -24,7 +24,7 @@ class MarketSpider(CrawlSpider):
 	start_urls = ['http://www.tase.co.il/TASEEng']
 
 	rules = (
-		Rule(SgmlLinkExtractor(allow=['homepage.htm']), callback='parse_markets'),
+		Rule(SgmlLinkExtractor(allow=['Homepage.aspx']), callback='parse_markets'),
 	)
 
 	header = (
