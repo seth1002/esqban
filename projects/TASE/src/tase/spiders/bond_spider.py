@@ -40,7 +40,7 @@ class BondSpider(HistorySpider):
 		Rule(SgmlLinkExtractor(allow=('ShortTermLoan\.aspx',)), callback='parse_bond_list'),
 		Rule(SgmlLinkExtractor(allow=('BondsGov\.aspx',)), callback='parse_bond_list'),
 		Rule(SgmlLinkExtractor(allow=('BondsByCuts\.aspx',)), callback='parse_bond_list'),
-		Rule(SgmlLinkExtractor(allow=('BondsMainData\.htm',)), callback='parse_bond'),
+		Rule(SgmlLinkExtractor(allow=('BondsMainData\.aspx',)), callback='parse_bond'),
 	)
 
 	header = (
