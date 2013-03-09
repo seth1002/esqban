@@ -22,7 +22,7 @@ class HistorySpider(CrawlSpider):
 
     history_url = ""
     header = ()
-
+    
     def process_history(self, item):
         if PROCESS_HISTORY is False:
             return item
@@ -45,13 +45,13 @@ class HistorySpider(CrawlSpider):
         viewstate = hxs.select('//input[@name="__VIEWSTATE"]/@value').extract()[0]
         fd = {
             '__VIEWSTATE':viewstate,
-            'ctl00$SPWebPartManager1$g_301c6a3d_c058_41d6_8169_6d26c5d97050$ctl00$HistoryData1$hiddenID':'0',
-            'ctl00$SPWebPartManager1$g_301c6a3d_c058_41d6_8169_6d26c5d97050$ctl00$HistoryData1$rbFrequency':'rbFrequency1',
-            'ctl00$SPWebPartManager1$g_301c6a3d_c058_41d6_8169_6d26c5d97050$ctl00$HistoryData1$RBCoordinatedList': 'AdjustmentRate',
+            'ctl00$SPWebPartManager1$' + self.get_control_id() + '$ctl00$HistoryData1$hiddenID':'0',
+            'ctl00$SPWebPartManager1$' + self.get_control_id() + '$ctl00$HistoryData1$rbFrequency':'rbFrequency1',
+            'ctl00$SPWebPartManager1$' + self.get_control_id() + '$ctl00$HistoryData1$RBCoordinatedList': 'AdjustmentRate',
         }
-        fd['ctl00$SPWebPartManager1$g_301c6a3d_c058_41d6_8169_6d26c5d97050$ctl00$HistoryData1$rbPeriod'] = "rbPeriod{period}".format(period=HISTORY_PERIOD)
+        fd['ctl00$SPWebPartManager1$' + self.get_control_id() + '$ctl00$HistoryData1$rbPeriod'] = "rbPeriod{period}".format(period=HISTORY_PERIOD)
         for i in range(20):
-            name = "ctl00$SPWebPartManager1$g_301c6a3d_c058_41d6_8169_6d26c5d97050$ctl00$HistoryData1$CBDailyDFiledsList${index}".format(index=i)
+            name = "ctl00$SPWebPartManager1$" + self.get_control_id() + "$ctl00$HistoryData1$CBDailyDFiledsList${index}".format(index=i)
             fd[name] = 'on'
         #base_url = self.get_base_url(response)
         #response = response.replace(url=base_url)
@@ -62,7 +62,7 @@ class HistorySpider(CrawlSpider):
     def parse_history_data(self, response):
         item = response.request.meta['item']
         hxs = HtmlXPathSelector(response)
-        table = hxs.select('//table[@id="ctl00_SPWebPartManager1_g_301c6a3d_c058_41d6_8169_6d26c5d97050_ctl00_HistoryData1_gridHistoryData_DataGrid1"]')
+        table = hxs.select('//table[@id="ctl00_SPWebPartManager1_' + self.get_control_id() + '_ctl00_HistoryData1_gridHistoryData_DataGrid1"]')
         rows = table.select('tr')#[@class != "gridHeader"]')
         row_index = 0
         for row in rows:

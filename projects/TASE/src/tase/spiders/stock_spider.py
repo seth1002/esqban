@@ -95,6 +95,9 @@ class StockSpider(HistorySpider):
 	details_url = "http://www.tase.co.il/TASEEng/General/Company/companyDetails.htm?subDataType=0&companyID={companyID}&shareID={shareID}"
 	history_url = "http://www.tase.co.il/TASEEng/General/Company/companyHistoryData.htm?subDataType=0&companyID={companyID}&shareID={shareID}&intPeriod={period}&intFrequency1=0&IsYield=False&IsDollar=False"
 
+	def get_control_id(self):
+		return "g_301c6a3d_c058_41d6_8169_6d26c5d97050"
+
 	# Main companies list, with paging
 	def parse_company_list(self, response):
 		hxs = HtmlXPathSelector(response)

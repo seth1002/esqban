@@ -47,6 +47,9 @@ class FundSpider(HistorySpider):
 	main_url = "http://www.tase.co.il/eng/general/trustfund/pages/fundmaindata.aspx?FundID={fundID}"
 	history_url = "http://www.tase.co.il/Eng/General/trustfund/Pages/fundHistory.aspx?Action=&FundID={shareID}"
 
+	def get_control_id(self):
+		return "g_9b9eefc7_71e4_4871_a4a2_0e3d43ef0416"
+
 	def parse_fund_search(self, response):
 		return Request(self.list_url, callback=self.parse_fund_list)
 
