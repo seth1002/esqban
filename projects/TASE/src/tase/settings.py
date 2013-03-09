@@ -9,8 +9,12 @@ SPIDER_MODULES = ['tase.spiders']
 NEWSPIDER_MODULE = 'tase.spiders'
 DEFAULT_ITEM_CLASS = 'scrapy.item.Item'
 #USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
-USER_AGENT = 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4'
+USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17'
 
+DEFAULT_REQUEST_HEADERS = {
+ 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+ 'Accept-Language': 'en-US,en;q=0.8,sr;q=0.6',
+}
 
 #CONCURRENT_ITEMS = 1 #Default: 100
 #CONCURRENT_REQUESTS_PER_DOMAIN = 1 #Default: 8
@@ -41,7 +45,7 @@ HISTORY_PERIOD = 1 # Last Trading Day
 #HISTORY_PERIOD = 5 # 1 Year
 #HISTORY_PERIOD = 6 # 3 Years
 #HISTORY_PERIOD = 7	# 5 Years
-#PROCESS_NEWS = True
+PROCESS_NEWS = False
 PROCESS_NEWS_CONTENT = True
 PROCESS_NEWS_HISTORY = True
 PROCESS_FINANCIAL_STATEMENTS = True

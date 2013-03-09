@@ -276,10 +276,10 @@ class FinancialStatementsPipeline(BaseDB):
             values.insert(0, global_time)
             names = ','.join(map(str, keys))
             vals = ", ".join(["%s"]*(len(items)+2))
-            tmp = " "
-            if len(keys) > 0:
-                tmp = ", "
-            sql_query = "insert into financial_statements (sessionid, symbol" + tmp + names + ") values (" + vals + ")"
+            #tmp = " "
+            #if len(keys) > 0:
+            #    tmp = ", "
+            sql_query = "insert into financial_statements (sessionid, symbol, " + names + ") values (" + vals + ")"
             #log.err('Full SQL statement: %s' % sql_query)
             try:
                 tx.execute(sql_query, values)

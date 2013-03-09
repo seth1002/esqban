@@ -21,10 +21,10 @@ HISTORY_PERIOD = settings.getint('HISTORY_PERIOD', 2)
 class MarketSpider(CrawlSpider):
 	name = 'markets'
 	allowed_domains = ['tase.co.il']
-	start_urls = ['http://www.tase.co.il/TASEEng']
+	start_urls = ['http://www.tase.co.il']
 
 	rules = (
-		Rule(SgmlLinkExtractor(allow=['Homepage.aspx']), callback='parse_markets'),
+		Rule(SgmlLinkExtractor(allow=['Homepage\.aspx']), callback='parse_markets'),
 	)
 
 	header = (
@@ -66,12 +66,12 @@ class MarketSpider(CrawlSpider):
 				full_url = 'http://www.' + self.allowed_domains[0] + url
 				yield Request(full_url, callback=self.get_market_history_data, meta={'market': market})
 
-	def get_base_url(self, hxs):
-		base_url = hxs.select('//base/@href')[0].extract()
-		o = urlparse(base_url)
-		res = urlunparse(o)
-#		log.msg("get_base_url: " + res, level=log.WARNING)
-		return res
+#	def get_base_url(self, hxs):
+#		base_url = hxs.select('//base/@href')[0].extract()
+#		o = urlparse(base_url)
+#		res = urlunparse(o)
+##		log.msg("get_base_url: " + res, level=log.WARNING)
+#		return res
 
 	def get_market_history_data(self, response):
 #		self.log("get_history_data: " + response.url)
@@ -81,19 +81,24 @@ class MarketSpider(CrawlSpider):
 		viewstate = hxs.select('//input[@name="__VIEWSTATE"]/@value').extract()[0]
 		fd = {
 			'__VIEWSTATE':viewstate,
-			'HistoryData1$hiddenID':'0',
-			'HistoryData1$rbFrequency':'rbFrequency1',
-			'HistoryData1$RBCoordinatedList': 'AdjustmentRate',
+			'ctl00$SPWebPartManager1$g_a97a61ce_3baf_4f18_b714_6cbcc326fa71$ctl00$HistoryData1$hiddenID':'0',
+			'ctl00$SPWebPartManager1$g_a97a61ce_3baf_4f18_b714_6cbcc326fa71$ctl00$HistoryData1$rbPeriod' : 'rbPeriod2',
+			'ctl00$SPWebPartManager1$g_a97a61ce_3baf_4f18_b714_6cbcc326fa71$ctl00$HistoryData1$RBExtraTypeList' : '2',
+			'ctl00$SPWebPartManager1$g_a97a61ce_3baf_4f18_b714_6cbcc326fa71$ctl00$HistoryData1$RBExtraPeriodList' : 'lastMONTH',
+			'ctl00$SPWebPartManager1$g_a97a61ce_3baf_4f18_b714_6cbcc326fa71$ctl00$HistoryData1$rbPeriodOTC' : 'rbPeriodOTC2',
+			'ctl00$SPWebPartManager1$g_b2f63986_2b4a_438d_b1b1_fb08c9e1c862$ctl00$HistoryData1$rbFrequency':'rbFrequency1',
+			#'ctl00$SPWebPartManager1$g_b2f63986_2b4a_438d_b1b1_fb08c9e1c862$ctl00$HistoryData1$RBCoordinatedList': 'AdjustmentRate',
+			'ctl00$SPWebPartManager1$g_a97a61ce_3baf_4f18_b714_6cbcc326fa71$ctl00$HistoryData1$rbExtraFrequency' : 'rbExtraMonth',
 		}
-		fd['HistoryData1$rbPeriod'] = "rbPeriod{period}".format(period=HISTORY_PERIOD)
-		for i in range(3):
-			name = "HistoryData1$CBDailyDFiledsList${index}".format(index=i)
+		fd['ctl00$SPWebPartManager1$g_b2f63986_2b4a_438d_b1b1_fb08c9e1c862$ctl00$HistoryData1$rbPeriod'] = "rbPeriod{period}".format(period=HISTORY_PERIOD)
+		for i in range(6):
+			name = "ctl00$SPWebPartManager1$g_b2f63986_2b4a_438d_b1b1_fb08c9e1c862$ctl00$HistoryData1$CBDailyDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
 		for i in range(2):
-			name = "HistoryData1$CBInnerDFiledsList${index}".format(index=i)
+			name = "ctl00$SPWebPartManager1$g_b2f63986_2b4a_438d_b1b1_fb08c9e1c862$ctl00$HistoryData1$CBInnerDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
-		base_url = self.get_base_url(hxs)
-		response = response.replace(url=base_url)
+		#base_url = self.get_base_url(hxs)
+		#response = response.replace(url=base_url)
 		req = FormRequest.from_response(response, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'market': market})
 		self.log( req )
 		return req;
