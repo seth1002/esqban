@@ -41,6 +41,7 @@ class BondSpider(HistorySpider):
 		Rule(SgmlLinkExtractor(allow=('BondsGov\.aspx',)), callback='parse_bond_list'),
 		Rule(SgmlLinkExtractor(allow=('BondsByCuts\.aspx',)), callback='parse_bond_list'),
 		Rule(SgmlLinkExtractor(allow=('BondsMainData\.aspx',)), callback='parse_bond'),
+		Rule(SgmlLinkExtractor(allow=('companyMainData\.aspx',)), callback='parse_bond'),
 	)
 
 	header = (
@@ -80,6 +81,8 @@ class BondSpider(HistorySpider):
 			if m:
 				url = urllib.unquote(m.group(1))
 				fd['__EVENTTARGET'] = url
+				#print self.start_urls[2]
+				#print fd
 				#yield FormRequest(self.start_urls[2], method='POST', formdata={'__EVENTTARGET': url, '__EVENTARGUMENT': ''})
 				yield FormRequest(self.start_urls[2], method='POST', formdata=fd)
 
@@ -88,20 +91,45 @@ class BondSpider(HistorySpider):
 		item = TaseItem()
 		item['category'] = category_bond
 		item['tase_url'] = response.url
+		item['date_'] = ''
 		query = parse_qs(urlparse(response.url)[4]) # query
-		item['CompanyID'] = query['CompanyID'][0]
-		item['ShareID'] = query['ShareID'][0]
-		item['name'] = hxs.select("//td[@class='BigTitleInner']/text()").extract()[0]
+		try:
+			item['CompanyID'] = query['CompanyID'][0]
+		except KeyError:
+			item['CompanyID'] = query['FundID'][0]
+		try:
+			item['ShareID'] = query['ShareID'][0]
+		except KeyError:
+			item['ShareID'] = query['FundID'][0]
+		try:
+			item['name'] = hxs.select("//td[@class='BigBlue']/text()").extract()[0]
+		except IndexError:
+			item['name'] = ""
 		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
 		if len(lst) > 0:
 			item['symbol'] = lst[0]
 		else:
-			item['symbol'] = hxs.select("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
-		item['url'] = ""
-		lst = hxs.select("//tr[@class='subtitleText']/following-sibling::tr[1]/td/table/tr/td[@class='subtitle']/text()").extract()
-		item['sector'] = tase.common.unescape(urllib.unquote(lst[0].strip()))
-		if len(lst) > 1:
-			item['subsector'] = tase.common.unescape(urllib.unquote(lst[1].strip()))
+			try:
+				item['symbol'] = hxs.select("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
+			except IndexError:
+				item['symbol'] = item['ShareID']
+		href = hxs.select('//tr[1]/td[1]/a[@target="_blank"]/@href').extract()
+		if len(href) > 0:
+			url = href[0]
+			o = urlparse(url)
+			if len(o.netloc) > 0:
+				item['url'] = url
+			else:
+				item['url'] = ''
 		else:
+			item['url'] = ''
+		try:
+			href = hxs.select("//tr/td[@class='subtitle']/text()").extract()
+			item['sector'] = tase.common.unescape(urllib.unquote(href[4].strip()))
+			item['subsector'] = tase.common.unescape(urllib.unquote(href[3].strip()))
+		except IndexError:
+			item['sector'] = ""
 			item['subsector'] = ""
-		return self.process_history(item)
+		#url = "http://archive.globes.co.il/searchgl/%s" % item['symbol']
+		url = "http://www.globes.co.il/serveen/globes/searchresults.asp?exact=%s" % item['symbol']
+		yield self.process_history(item)
