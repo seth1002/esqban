@@ -191,7 +191,8 @@ class StockSpider(HistorySpider):
 					if not self.header2.get(name) is None:
 						key = self.header2[name][0]
 						func = self.header2[name][1]
-						fs[key] = func(value)
+						val = func(value) # this seems to fix the long number problem
+						fs[key] = val
 		return fs
 
 	def parse_company_news(self, response):

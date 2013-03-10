@@ -285,6 +285,10 @@ class FinancialStatementsPipeline(BaseDB):
                 tx.execute(sql_query, values)
             except MySQLdb.IntegrityError, e:
                 print 'SQL integrity error: %s' % e
+            except MySQLdb.OperationalError, e:
+                print 'Full SQL statement: %s' % sql_query
+                log.err('Full SQL statement: %s' % sql_query)
+                log.err('Values: %s' % values)
             #except MySQLdb.ProgrammingError, e:
                 #print 'Full SQL statement: %s' % sql_query
 
