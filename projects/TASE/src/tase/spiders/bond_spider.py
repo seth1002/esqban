@@ -68,12 +68,20 @@ class BondSpider(HistorySpider):
 	# Main companies list, with paging
 	def parse_bond_list(self, response):
 		hxs = HtmlXPathSelector(response)
+		fd = dict()
+		inputs = hxs.select("//input[@type='hidden']")
+		for inpt in inputs:
+			name = tase.common.get_string(inpt.select("@name").extract())
+			value = tase.common.get_string(inpt.select("@value").extract())
+			fd[name] = value
 		links = hxs.select("//tr[@class='pagerText']/td/a")
 		for link in links:
 			m = re.search("javascript:__doPostBack\('(.*?)'", link.extract())
 			if m:
 				url = urllib.unquote(m.group(1))
-				yield FormRequest(self.start_urls[0], method='POST', formdata={'__EVENTTARGET': url, '__EVENTARGUMENT': ''})
+				fd['__EVENTTARGET'] = url
+				#yield FormRequest(self.start_urls[2], method='POST', formdata={'__EVENTTARGET': url, '__EVENTARGUMENT': ''})
+				yield FormRequest(self.start_urls[2], method='POST', formdata=fd)
 
 	def parse_bond(self, response):
 		hxs = HtmlXPathSelector(response)
