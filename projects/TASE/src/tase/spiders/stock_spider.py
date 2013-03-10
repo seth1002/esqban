@@ -42,7 +42,7 @@ class StockSpider(HistorySpider):
 	start_urls = ['http://www.tase.co.il/TASEEng/MarketData/Stocks/MarketData/']
 
 	rules = (
-		Rule(SgmlLinkExtractor(allow=('MarketData\.htm',)), callback='parse_company_list'),
+		Rule(SgmlLinkExtractor(allow=('MarketData\.aspx',)), callback='parse_company_list'),
 		Rule(SgmlLinkExtractor(allow=('companyMainData\.aspx',)), callback='parse_company'),
 		Rule(SgmlLinkExtractor(allow=('companyhistorydata\.aspx',)), callback='get_history_data'),
 		Rule(SgmlLinkExtractor(allow=('companyDetails\.htm',)), callback='parse_company_details'),
@@ -191,7 +191,8 @@ class StockSpider(HistorySpider):
 					if not self.header2.get(name) is None:
 						key = self.header2[name][0]
 						func = self.header2[name][1]
-						val = func(value) # this seems to fix the long number problem
+						val = func(value)
+						self.log('Value: %s' % val)
 						fs[key] = val
 		return fs
 
