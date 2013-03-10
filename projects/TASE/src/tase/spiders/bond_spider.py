@@ -86,6 +86,7 @@ class BondSpider(HistorySpider):
 				#yield FormRequest(self.start_urls[2], method='POST', formdata={'__EVENTTARGET': url, '__EVENTARGUMENT': ''})
 				yield FormRequest(self.start_urls[2], method='POST', formdata=fd)
 
+	# almost same as parse_company
 	def parse_bond(self, response):
 		hxs = HtmlXPathSelector(response)
 		item = TaseItem()
