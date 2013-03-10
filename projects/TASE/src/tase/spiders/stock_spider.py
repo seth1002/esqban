@@ -192,7 +192,7 @@ class StockSpider(HistorySpider):
 						key = self.header2[name][0]
 						func = self.header2[name][1]
 						val = func(value)
-						self.log('Value: %s' % val)
+						#self.log('Value: %s' % val)
 						fs[key] = val
 		return fs
 
