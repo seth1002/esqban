@@ -39,7 +39,7 @@ PROCESS_FINANCIAL_STATEMENTS = settings.getbool('PROCESS_FINANCIAL_STATEMENTS', 
 class StockSpider(HistorySpider):
 	name = 'stocks'
 	allowed_domains = ['tase.co.il', 'globes.co.il']
-	start_urls = ['http://www.tase.co.il/TASEEng/MarketData/Stocks/MarketData/']
+	start_urls = ['http://www.tase.co.il/eng/marketdata/stocks/marketdata/Pages/MarketData.aspx']
 
 	rules = (
 		Rule(SgmlLinkExtractor(allow=('MarketData\.aspx',)), callback='parse_company_list'),
@@ -92,8 +92,8 @@ class StockSpider(HistorySpider):
 		'Return on Equity' : ('return_on_equity', tase.common.to_float)
 	}
 
-	details_url = "http://www.tase.co.il/TASEEng/General/Company/companyDetails.htm?subDataType=0&companyID={companyID}&shareID={shareID}"
-	history_url = "http://www.tase.co.il/TASEEng/General/Company/companyHistoryData.htm?subDataType=0&companyID={companyID}&shareID={shareID}&intPeriod={period}&intFrequency1=0&IsYield=False&IsDollar=False"
+	details_url = "http://www.tase.co.il/Eng/General/Company/Pages/companyDetails.aspx?subDataType=0&companyID={companyID}&shareID={shareID}"
+	history_url = "http://www.tase.co.il/Eng/General/Company/Pages/companyHistoryData.aspx?subDataType=0&companyID={companyID}&shareID={shareID}&intPeriod={period}&intFrequency1=0&IsYield=False&IsDollar=False"
 
 	def get_control_id(self):
 		return "g_301c6a3d_c058_41d6_8169_6d26c5d97050"
@@ -101,12 +101,24 @@ class StockSpider(HistorySpider):
 	# Main companies list, with paging
 	def parse_company_list(self, response):
 		hxs = HtmlXPathSelector(response)
+		fd = dict()
+		inputs = hxs.select("//input[@type='hidden']")
+		for inpt in inputs:
+			name = tase.common.get_string(inpt.select("@name").extract())
+			value = tase.common.get_string(inpt.select("@value").extract())
+			fd[name] = value
+		#print fd
+		#req_digest = hxs.select("//input[@id='__REQUESTDIGEST']/@value").extract()
+		#ev_val = hxs.select("//input[@id='__EVENTVALIDATION']/@value").extract()
 		links = hxs.select("//tr[@class='pagerText']/td/a")
 		for link in links:
 			m = re.search("javascript:__doPostBack\('(.*?)'", link.extract())
 			if m:
 				url = urllib.unquote(m.group(1))
-				yield FormRequest(self.start_urls[0], method='POST', formdata={'__EVENTTARGET': url, '__EVENTARGUMENT': ''})
+				fd['__EVENTTARGET'] = url
+				#yield FormRequest(self.start_urls[0], method='POST', formdata={'__EVENTTARGET': url, '__EVENTARGUMENT': '', '__REQUESTDIGEST': req_digest, '__EVENTVALIDATION': ev_val})
+				#print "url: " + self.start_urls[0]
+				yield FormRequest(self.start_urls[0], method='POST', formdata=fd)
 
 	def parse_company(self, response):
 		hxs = HtmlXPathSelector(response)
