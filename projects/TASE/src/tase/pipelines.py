@@ -94,8 +94,7 @@ class MarketDataPipeline(BaseDB):
                 )
             except MySQLdb.IntegrityError, e:
                 #print 'SQL integrity error: %s' % e
-                #log.err('SQL integrity error: %s' % e)
-                pass
+                log.msg('SQL integrity error: %s' % e)
         market_name = item['name']
         for symbol in item['symbols']:
             try:
@@ -105,8 +104,7 @@ class MarketDataPipeline(BaseDB):
                 )
             except MySQLdb.IntegrityError, e:
                 #print 'SQL integrity error: %s' % e
-                #log.err('SQL integrity error: %s' % e)
-                pass
+                log.msg('SQL integrity error: %s' % e)
         try:
             tx.execute(\
                 "insert into market_data (sessionid, date_, name, base_price, opening_price, closing_price, high, low, market_cap) "
@@ -125,8 +123,7 @@ class MarketDataPipeline(BaseDB):
             )
         except MySQLdb.IntegrityError, e:
             #print 'SQL integrity error: %s' % e
-            #log.err('SQL integrity error: %s' % e)
-            pass
+            log.msg('SQL integrity error: %s' % e)
 
 
 class PageRankPipeline(BaseDB):
@@ -153,8 +150,7 @@ class PageRankPipeline(BaseDB):
                 pass
             except MySQLdb.IntegrityError, e:
                 #print 'SQL integrity error: %s' % e
-                #log.err('SQL integrity error: %s' % e)
-                pass
+                log.msg('SQL integrity error: %s' % e)
         return item
 
 
@@ -169,8 +165,7 @@ class SessionPipeline(BaseDB):
             self.conn.commit()
         except MySQLdb.IntegrityError, e:
             #print 'SQL integrity error: %s' % e
-            #log.err('SQL integrity error: %s' % e)
-            pass
+            log.msg('SQL integrity error: %s' % e)
 
     def process_item(self, item, spider):
         return item
@@ -262,8 +257,7 @@ class KeywordPipeline(BaseDB):
                     )
                 except MySQLdb.IntegrityError, e:
                     #print 'SQL integrity error: %s' % e
-                    #log.err('SQL integrity error: %s' % e)
-                    pass
+                    log.msg('SQL integrity error: %s' % e)
             self.conn.commit()
 
 
@@ -297,8 +291,7 @@ class FinancialStatementsPipeline(BaseDB):
                 tx.execute(sql_query, values)
             except MySQLdb.IntegrityError, e:
                 #print 'SQL integrity error: %s' % e
-                #log.err('SQL integrity error: %s' % e)
-                pass
+                log.msg('SQL integrity error: %s' % e)
             except MySQLdb.OperationalError, e:
                 #print 'Full SQL statement: %s' % sql_query
                 log.err('Full SQL statement: %s' % sql_query)
@@ -357,8 +350,7 @@ class MySQLStorePipeline(BaseDB):
                 )
         except MySQLdb.IntegrityError, e:
             #print 'SQL integrity error: %s' % e
-            #log.err('SQL integrity error: %s' % e)
-            pass
+            log.msg('SQL integrity error: %s' % e)
             
         if PROCESS_HISTORY is False:
             return
@@ -428,8 +420,7 @@ class MySQLStorePipeline(BaseDB):
                 )
         except MySQLdb.IntegrityError, e:
             #print 'SQL integrity error: %s' % e
-            #log.err('SQL integrity error: %s' % e)
-            pass
+            log.msg('SQL integrity error: %s' % e)
 
     def handle_error(self, e):
         log.err(e)
@@ -481,8 +472,7 @@ class NewsPipeline(BaseDB):
             )
         except MySQLdb.IntegrityError, e:
             #print 'SQL integrity error: %s' % e
-            #log.err('SQL integrity error: %s' % e)
-            pass
+            log.msg('SQL integrity error: %s' % e)
         self.conn.commit()
 
 
@@ -499,7 +489,6 @@ class WeatherPipeline(BaseDB):
             )
         except MySQLdb.IntegrityError, e:
             #print 'SQL integrity error: %s' % e
-            #log.err('SQL integrity error: %s' % e)
-            pass
+            log.msg('SQL integrity error: %s' % e)
         self.conn.commit()
 
