@@ -93,7 +93,9 @@ class MarketDataPipeline(BaseDB):
                     "values (%s, %s)", ( global_time, item['name'] )
                 )
             except MySQLdb.IntegrityError, e:
-                print 'SQL integrity error: %s' % e
+                #print 'SQL integrity error: %s' % e
+                #log.err('SQL integrity error: %s' % e)
+                pass
         market_name = item['name']
         for symbol in item['symbols']:
             try:
@@ -102,7 +104,9 @@ class MarketDataPipeline(BaseDB):
                     "values (%s, %s, %s)", ( global_time, market_name, symbol )
                 )
             except MySQLdb.IntegrityError, e:
-                print 'SQL integrity error: %s' % e
+                #print 'SQL integrity error: %s' % e
+                #log.err('SQL integrity error: %s' % e)
+                pass
         try:
             tx.execute(\
                 "insert into market_data (sessionid, date_, name, base_price, opening_price, closing_price, high, low, market_cap) "
@@ -120,7 +124,9 @@ class MarketDataPipeline(BaseDB):
                 )
             )
         except MySQLdb.IntegrityError, e:
-            print 'SQL integrity error: %s' % e
+            #print 'SQL integrity error: %s' % e
+            #log.err('SQL integrity error: %s' % e)
+            pass
 
 
 class PageRankPipeline(BaseDB):
@@ -146,7 +152,9 @@ class PageRankPipeline(BaseDB):
             except ValueError:
                 pass
             except MySQLdb.IntegrityError, e:
-                print 'SQL integrity error: %s' % e
+                #print 'SQL integrity error: %s' % e
+                #log.err('SQL integrity error: %s' % e)
+                pass
         return item
 
 
@@ -160,7 +168,9 @@ class SessionPipeline(BaseDB):
             )
             self.conn.commit()
         except MySQLdb.IntegrityError, e:
-            print 'SQL integrity error: %s' % e
+            #print 'SQL integrity error: %s' % e
+            #log.err('SQL integrity error: %s' % e)
+            pass
 
     def process_item(self, item, spider):
         return item
@@ -251,7 +261,9 @@ class KeywordPipeline(BaseDB):
                         ( global_time, item['symbol'], keyword_id, t[1], t[2] )
                     )
                 except MySQLdb.IntegrityError, e:
-                    print 'SQL integrity error: %s' % e
+                    #print 'SQL integrity error: %s' % e
+                    #log.err('SQL integrity error: %s' % e)
+                    pass
             self.conn.commit()
 
 
@@ -284,9 +296,11 @@ class FinancialStatementsPipeline(BaseDB):
             try:
                 tx.execute(sql_query, values)
             except MySQLdb.IntegrityError, e:
-                print 'SQL integrity error: %s' % e
+                #print 'SQL integrity error: %s' % e
+                #log.err('SQL integrity error: %s' % e)
+                pass
             except MySQLdb.OperationalError, e:
-                print 'Full SQL statement: %s' % sql_query
+                #print 'Full SQL statement: %s' % sql_query
                 log.err('Full SQL statement: %s' % sql_query)
                 log.err('Values: %s' % values)
             #except MySQLdb.ProgrammingError, e:
@@ -342,7 +356,9 @@ class MySQLStorePipeline(BaseDB):
                     )
                 )
         except MySQLdb.IntegrityError, e:
-            print 'SQL integrity error: %s' % e
+            #print 'SQL integrity error: %s' % e
+            #log.err('SQL integrity error: %s' % e)
+            pass
             
         if PROCESS_HISTORY is False:
             return
@@ -411,7 +427,9 @@ class MySQLStorePipeline(BaseDB):
                         )
                 )
         except MySQLdb.IntegrityError, e:
-            print 'SQL integrity error: %s' % e
+            #print 'SQL integrity error: %s' % e
+            #log.err('SQL integrity error: %s' % e)
+            pass
 
     def handle_error(self, e):
         log.err(e)
@@ -462,7 +480,9 @@ class NewsPipeline(BaseDB):
                 ( global_time, symbol, article_id )
             )
         except MySQLdb.IntegrityError, e:
-            print 'SQL integrity error: %s' % e
+            #print 'SQL integrity error: %s' % e
+            #log.err('SQL integrity error: %s' % e)
+            pass
         self.conn.commit()
 
 
@@ -478,6 +498,8 @@ class WeatherPipeline(BaseDB):
                 ( global_time, item["date_"], item["temp_high"], item["temp_avg"], item["temp_low"], item["dew_high"], item["dew_avg"], item["dew_low"], item["hum_high"], item["hum_avg"], item["hum_low"], item["pres_high"], item["pres_avg"], item["pres_low"], item["vis_high"], item["vis_avg"], item["vis_low"], item["wind_high"], item["wind_avg"], item["wind_low"], item["precip"], item["events"] )
             )
         except MySQLdb.IntegrityError, e:
-            print 'SQL integrity error: %s' % e
+            #print 'SQL integrity error: %s' % e
+            #log.err('SQL integrity error: %s' % e)
+            pass
         self.conn.commit()
 
