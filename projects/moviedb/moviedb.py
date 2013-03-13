@@ -4,72 +4,36 @@ import os
 import sys
 import re
 
-from hachoir_core.error import HachoirError
-from hachoir_core.cmd_line import unicodeFilename
-from hachoir_parser import createParser
-from hachoir_core.tools import makePrintable
-from hachoir_metadata import extractMetadata
-from hachoir_core.i18n import getTerminalCharset
 from sys import argv, stderr, exit
 
-#import _mysql
 import MySQLdb
 
 from os.path import basename
 
-from imdb import IMDb
-ia = IMDb()
-
-
-
-
-def print_info(filename):
-    filename, realname = unicodeFilename(filename), filename
-    parser = createParser(filename, realname)
-    if not parser:
-        print >>stderr, "Unable to parse file"
-        #exit(1)
-    try:
-        metadata = extractMetadata(parser)
-    except HachoirError, err:
-        print "Metadata extraction error: %s" % unicode(err)
-        metadata = None
-    if not metadata:
-        print "Unable to extract metadata"
-        #exit(1)
-
-    text = metadata.exportPlaintext()
-    charset = getTerminalCharset()
-    for line in text:
-        print makePrintable(line, charset)
-
-    print metadata.get('duration')
-    print metadata.get('width')
-    print metadata.get('height')
-    print metadata.get('frame_rate')
-    #print metadata.get('aspect_ratio')
-    #print metadata.get('aspect_ratio')
-    #for data in metadata:
-    #    print data.key
-
-#con = _mysql.connect(host='localhost', db='imdb') #user, passwd
-con = MySQLdb.connect(host='localhost', db='imdb') #user, passwd
+con = MySQLdb.connect(host='192.168.2.106', db='imdb', user='sqba', passwd='crl2688') #user, passwd
 
 def find_movie(name):
-    found = True
-    str_query = "SELECT * FROM movies WHERE name like \"%" + name + "%\" ORDER BY rank DESC;"
+    result = -1
+    str_query = "SELECT id FROM movies WHERE name like \"%" + name + "%\" ORDER BY rank DESC;"
     try:
         cur = con.cursor()
         cur.execute(str_query)
         row = cur.fetchone ()
-        if row is None:
-            found = False
+        if not row is None:
+			result = row[0]
         cur.close()
     except MySQLdb.Error, e:
         print str_query
         print "Error %d: %s" % (e.args[0], e.args[1])
-    return found
+    return result
 
+def insert_movie(movie_id, movie_path):
+	try:
+		cur = con.cursor()
+		cur.execute("insert into my_movies (id, path) values (%s, %s);",	(movie_id, movie_path) )
+		con.commit()
+	except MySQLdb.IntegrityError, e:
+		print 'SQL integrity error: %s' % e
 
 def process_name(name):
     name = re.sub(r'^[\d.]*\d+\.', "", name)
@@ -110,8 +74,10 @@ def process_folder(path):
                 name = os.path.splitext(filename)[0]
                 name = process_name( name )
                 count_total += 1
-                if( find_movie( name ) ):
+                movie_id = find_movie( name )
+                if( movie_id > -1 ):
                     counter_found += 1
+                    insert_movie( movie_id, full_path )
 #                    print "* Found " + name
                 else:
                     counter_not_found += 1
