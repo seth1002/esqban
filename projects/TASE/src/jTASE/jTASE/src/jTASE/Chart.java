@@ -1,53 +1,28 @@
 package jTASE;
 
-import javax.swing.JFrame;
-
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PiePlot3D;
-import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.data.general.PieDataset;
-import org.jfree.util.Rotation;
-//package jTASE.jfreechart.swing.pie;
-import org.jfree.data.category.CategoryDataset;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Dimension;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
+import javax.swing.JFrame;
+
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.CategoryDataset;
-import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
 
-public class Chart extends JFrame {
+
+public class Chart extends JFrame
+{
 
   private static final long serialVersionUID = 1L;
 
-  public Chart(String applicationTitle, String chartTitle, PieDataset _dataSet) {
-        super(applicationTitle);
-        // This will create the dataset 
-        PieDataset dataset = _dataSet;//createDataset();
-        // based on the dataset we create the chart
-        JFreeChart chart = createPieChart(dataset, chartTitle);
-        // we put the chart into a panel
-        ChartPanel chartPanel = new ChartPanel(chart);
-        // default size
-        chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
-        // add it to our application
-        setContentPane(chartPanel);
-
-    }
-
-  public Chart(String applicationTitle, String chartTitle, CategoryDataset _dataSet) {
+  public Chart(String applicationTitle, String chartTitle, CategoryDataset _dataSet)
+  {
         super(applicationTitle);
         // This will create the dataset 
         CategoryDataset dataset = _dataSet;//createDataset();
@@ -59,29 +34,6 @@ public class Chart extends JFrame {
         chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
         // add it to our application
         setContentPane(chartPanel);
-
-    }
-
-
-/**
-     * Creates a chart
-     */
-
-    private JFreeChart createPieChart(PieDataset dataset, String title) {
-        
-        JFreeChart chart = ChartFactory.createPieChart3D(
-        	title,          		// chart title
-            dataset,                // data
-            true,                   // include legend
-            true,
-            false);
-
-        PiePlot3D plot = (PiePlot3D) chart.getPlot();
-        plot.setStartAngle(290);
-        plot.setDirection(Rotation.CLOCKWISE);
-        plot.setForegroundAlpha(0.5f);
-        return chart;
-        
     }
 
 
