@@ -1,0 +1,24 @@
+package jTASE;
+
+public class Main
+{
+	
+	private static void test_mysql() throws Exception
+	{
+		Database db = new Database();
+		db.getData();
+	}
+	
+	private static void test_JFreeChart() throws Exception
+	{
+        Chart demo = new Chart("Comparison", "Which operating system are you using?");
+        demo.pack();
+        demo.setVisible(true);		
+	}
+
+	public static void main(String[] args) throws Exception
+	{
+		//test_mysql();
+		test_JFreeChart();
+	}
+}

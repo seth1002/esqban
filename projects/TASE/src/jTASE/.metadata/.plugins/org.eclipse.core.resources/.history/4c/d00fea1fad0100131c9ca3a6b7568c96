@@ -1,0 +1,9 @@
+package jTASE;
+
+public class Database
+{
+	private static final String strConnection = "jdbc:mysql://192.168.2.106:3306/tase";
+	private static final String strUsername = "sqba";
+	private static final String strPassword = "crl2688";
+
+}

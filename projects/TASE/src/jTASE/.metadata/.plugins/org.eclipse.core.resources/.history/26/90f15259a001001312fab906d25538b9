@@ -1,0 +1,24 @@
+package jTASE;
+
+import java.sql.Connection;
+
+import com.mysql.jdbc.PreparedStatement;
+
+public class Main
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection con = DriveManager.getConnection("jdbc:mysql://localhost:3306/tase", "sqba", "crl2688");
+		
+		PreparedStatement statement = con.prepareStatement("select * from last_session_entries");
+		
+		ResultSet result = statement.executeQuery();
+		
+		while(result.next())
+		}
+			
+		}
+	}
+}
