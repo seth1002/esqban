@@ -1,4 +1,5 @@
 <?php
+	//header('Content-Type: application/json');
 	print $_GET["callback"] . "(" . "[";
 	$user_name = "sqba";
 	$password = "crl2688";
@@ -14,7 +15,11 @@
 	$result = mysql_query($SQL);
 
 	while ( $db_field = mysql_fetch_assoc($result) ) {
-		print "[" . string($db_field['date_']) . ", " . string($db_field['closing_price']) . "],";
+		print "[";
+		print $db_field['date_'];
+		print ", "
+		print $db_field['closing_price']
+		print "],";
 	}
 print "]);";
 
