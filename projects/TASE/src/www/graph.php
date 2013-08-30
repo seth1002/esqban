@@ -10,7 +10,7 @@ $(function() {
 
 	var str_symbol = '<?php echo $_GET["symbol"]; ?>';
 	
-	var str_sql = "prices.php?symbol=" + str_symbol + "&callback=?"
+	var str_sql = "json.php?symbol=" + str_symbol + "&callback=?"
 
 	$.getJSON(str_sql, function(data) {
 		// Create the chart
