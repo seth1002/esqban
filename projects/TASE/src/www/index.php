@@ -11,7 +11,7 @@ if (mysqli_connect_errno($con))
   }
   else
   {
-  echo "Connected";
+  print "Connected";
   }
 
 mysqli_close($con);
