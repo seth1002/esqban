@@ -8,7 +8,7 @@
 		<script type="text/javascript">
 $(function() {
 
-	$.getJSON('prices.php?symbol=snfl&callback=?', function(data) {
+	$.getJSON("prices.php?symbol=" . _GET["symbol"] . "&callback=?", function(data) {
 		// Create the chart
 		$('#container').highcharts('StockChart', {
 			
