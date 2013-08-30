@@ -26,13 +26,13 @@ $(function() {
 			},
 			
 			series : [{
-				name : str_symbol,
+				name : str_symbol + ' Stock Price',
 				data : data,
 				type : 'area',
 				threshold : null,
 				tooltip: {
 					valueDecimals: 2
-				}
+				},
 				fillColor : {
 					linearGradient : {
 						x1: 0, 
