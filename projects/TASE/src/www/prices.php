@@ -11,7 +11,7 @@
 
 	if ($db_found) {
 
-	$SQL = "SELECT * FROM company_prices where symbol='" . $_GET["symbol"] . "'";
+	$SQL = "SELECT UNIX_TIMESTAMP(date), closing_price FROM company_prices where symbol='" . $_GET["symbol"] . "'";
 	$result = mysql_query($SQL);
 
 	$start = true;
@@ -22,7 +22,7 @@
 		else
 			$start = false;
 		print "[";
-		print strtotime($db_field['date_']);
+		print $db_field['date_'];
 		print ", ";
 		print $db_field['closing_price'];
 		print "]";
