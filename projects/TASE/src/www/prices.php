@@ -17,7 +17,7 @@
 	$start = true;
 	
 	while ( $db_field = mysql_fetch_assoc($result) ) {
-		if($start)
+		if(!$start)
 		{
 			print ",\n";
 			$start = false;
