@@ -16,6 +16,7 @@
 	while ( $db_field = mysql_fetch_assoc($result) ) {
 		print "[" . $db_field['_date'] . ", " + $db_field['closing_price'] . "],";
 	}
+print "]);";
 
 	mysql_close($db_handle);
 }
@@ -24,7 +25,6 @@ else {
 print "Database NOT Found ";
 mysql_close($db_handle);
 
-print "]);";
 
 }
 ?>
