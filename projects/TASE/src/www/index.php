@@ -27,5 +27,12 @@
 	}
 
 	mysql_close($db_handle);
+}
+else {
+
+print "Database NOT Found ";
+mysql_close($db_handle);
+
+}
 ?>
 </body></html>
