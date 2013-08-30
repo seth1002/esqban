@@ -8,7 +8,7 @@
 		<script type="text/javascript">
 $(function() {
 
-	var str_symbol = <?php echo $_GET["symbol"]; ?>;
+	var str_symbol = '<?php echo $_GET["symbol"]; ?>';
 	
 	var str_sql = "prices.php?symbol=" . str_symbol . "&callback=?"
 
