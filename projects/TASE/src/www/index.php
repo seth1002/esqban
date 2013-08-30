@@ -7,9 +7,8 @@
 		<script type="text/javascript" src="jquery.min.js"></script>
 		<script type="text/javascript">
 $(function() {
-<?php
-	print "var str_sql='prices.php?symbol=' . $_GET["symbol"] . '&callback=?'";
-?>
+
+	var str_sql = <?php echo "var str_sql='prices.php?symbol=' . $_GET["symbol"] . '&callback=?'"; ?>;
 
 	$.getJSON(str_sql, function(data) {
 		// Create the chart
