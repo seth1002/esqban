@@ -4,6 +4,7 @@
 <?php
 $con=mysqli_connect("localhost","sqba","crl2688","tase");
 
+echo "test";
 // Check connection
 if (mysqli_connect_errno($con))
   {
@@ -11,7 +12,7 @@ if (mysqli_connect_errno($con))
   }
   else
   {
-  print "Connected";
+  echo "Connected";
   }
 
 mysqli_close($con);
