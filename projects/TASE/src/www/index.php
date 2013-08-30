@@ -22,7 +22,7 @@ $(function() {
 			},
 
 			title : {
-				text : 'AAPL Stock Price'
+				text : str_symbol + ' Stock Price'
 			},
 			
 			series : [{
