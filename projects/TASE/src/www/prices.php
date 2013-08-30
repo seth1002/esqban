@@ -18,10 +18,9 @@
 	
 	while ( $db_field = mysql_fetch_assoc($result) ) {
 		if($start == false)
-		{
 			print ",\n";
+		else
 			$start = false;
-		}
 		print "[";
 		print strtotime($db_field['date_']);
 		print ", ";
