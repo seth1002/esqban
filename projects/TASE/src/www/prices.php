@@ -14,12 +14,19 @@
 	$SQL = "SELECT * FROM company_prices where symbol='" . $_GET["symbol"] . "'";
 	$result = mysql_query($SQL);
 
+	$start = true;
+	
 	while ( $db_field = mysql_fetch_assoc($result) ) {
+		if($start)
+		{
+			print ",\n";
+			$start = false;
+		}
 		print "[";
 		print $db_field['date_'];
 		print ", ";
 		print $db_field['closing_price'];
-		print "],";
+		print "]";
 	}
 print "]);";
 
