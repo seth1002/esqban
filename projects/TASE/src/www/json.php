@@ -23,7 +23,7 @@
 			$start = false;
 		print "[";
 		print $db_field['date_'];
-		print ", ";
+		print "000, ";
 		print $db_field['closing_price'];
 		print "]";
 	}
