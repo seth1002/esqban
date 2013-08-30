@@ -1,38 +1,47 @@
-<html><body><h1>TASE</h1>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highstock Example</title>
+
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript">
+$(function() {
 <?php
-	$user_name = "sqba";
-	$password = "crl2688";
-	$database = "tase";
-	$server = "localhost";
-
-	$db_handle = mysql_connect($server, $user_name, $password);
-	$db_found = mysql_select_db($database, $db_handle);
-
-	if ($db_found) {
-
-	$SQL = "SELECT * FROM portfolio_status";
-	$result = mysql_query($SQL);
-
-	while ( $db_field = mysql_fetch_assoc($result) ) {
-
-		print $db_field['ticker'] . " ";
-		print $db_field['buy_date'] . " ";
-		print $db_field['buy_price'] . " ";
-		print $db_field['quantity'] . " ";
-		print $db_field['buy_value'] . " ";
-		print $db_field['last_price'] . " ";
-		print $db_field['current_value'] . " ";
-		print $db_field['yield'] . "<BR>";
-
-	}
-
-	mysql_close($db_handle);
-}
-else {
-
-print "Database NOT Found ";
-mysql_close($db_handle);
-
-}
+	print "var str_sql='prices.php?symbol=' . $_GET["symbol"] . '&callback=?'";
 ?>
-</body></html>
+
+	$.getJSON(str_sql, function(data) {
+		// Create the chart
+		$('#container').highcharts('StockChart', {
+			
+
+			rangeSelector : {
+				selected : 1
+			},
+
+			title : {
+				text : 'AAPL Stock Price'
+			},
+			
+			series : [{
+				name : 'AAPL',
+				data : data,
+				tooltip: {
+					valueDecimals: 2
+				}
+			}]
+		});
+	});
+
+});
+
+		</script>
+	</head>
+	<body>
+<script src="highstock.js"></script>
+<script src="exporting.js"></script>
+
+<div id="container" style="height: 500px; min-width: 500px"></div>
+	</body>
+</html>
