@@ -14,7 +14,7 @@
 	$result = mysql_query($SQL);
 
 	while ( $db_field = mysql_fetch_assoc($result) ) {
-		print "[" . $db_field['_date'] . ", " + $db_field['closing_price'] . "],";
+		print "[" + $db_field['date_'] + ", " + $db_field['closing_price'] + "],";
 	}
 print "]);";
 
