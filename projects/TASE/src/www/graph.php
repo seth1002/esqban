@@ -26,7 +26,7 @@ $(function() {
 			},
 			
 			series : [{
-				name : 'AAPL',
+				name : str_symbol,
 				data : data,
 				tooltip: {
 					valueDecimals: 2
