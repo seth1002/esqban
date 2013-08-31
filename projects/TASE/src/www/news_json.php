@@ -15,7 +15,7 @@
 
 		$start = true;
 		
-		print "[";
+	print $_GET["callback"] . "(" . "[";
 		while ( $db_field = mysql_fetch_assoc($result) ) {
 			if($start == false)
 				print ",\n";
@@ -29,7 +29,7 @@
 			print str_replace("\"", "", $db_field['headline']);
 			print "\"}";
 		}
-		print "];";
+		print "]);";
 
 		mysql_close($db_handle);
 	} else {
