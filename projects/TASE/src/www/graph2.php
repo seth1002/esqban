@@ -53,8 +53,24 @@ $(function() {
 			}]
 		});
 	}
+	
+	var prices_data = "";
+	function load_news()
+	{
+		$.getJSON(query_news, function(data) {
+			alert("2");
+			create_chart(prices_data, data);
+		});
+	}
+	function load_prices()
+	{
+		$.getJSON(query_prices, function(data) {
+			alert("1");
+			prices_data = data;
+			load_news();
+		});
+	}
 
-	var news_json="";
 	$.getJSON(query_news, function(data) {
 		news_json = data;
 	}).success(function() {
