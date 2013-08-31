@@ -53,20 +53,23 @@ $(function() {
 			}]
 		});
 	}
-	
-	var prices_json = "";
-	function on_load_news(data)
-	{
-		console.log("on_load_news");
-		create_chart(prices_json, data);
-	}
-	function on_load_prices(data)
-	{
-		console.log("on_load_prices");
-		prices_json = data;
-		$.getJSON(query_news, on_load_news);
-	}
-	$.getJSON(query_prices, on_load_prices);
+
+	var iterator=0;
+	var prices_json="";
+	$.getJSON(query_prices, function(data) {
+		if(0==iterator)
+		{
+			prices_json = data;
+			iterator++;
+			$.getJSON(query_news, function(data) {
+				create_chart(prices_json, data);
+			});
+		}
+		else
+		{
+			create_chart(prices_json, data);
+		}
+	});
 
 });
 
