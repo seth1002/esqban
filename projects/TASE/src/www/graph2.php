@@ -57,10 +57,12 @@ $(function() {
 	var prices_json = "";
 	function on_load_news(data)
 	{
+		console.log("on_load_news");
 		create_chart(prices_json, data);
 	}
 	function on_load_prices(data)
 	{
+		console.log("on_load_prices");
 		prices_json = data;
 		$.getJSON(query_news, on_load_news);
 	}
