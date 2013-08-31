@@ -28,6 +28,7 @@ $(function() {
 			series : [{
 				name : str_symbol + ' Stock Price',
 				data : prices,
+				id : 'dataseries',
 				type : 'area',
 				threshold : null,
 				tooltip: {
