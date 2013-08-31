@@ -15,10 +15,10 @@ $(function() {
 	
 	var data1;
 
-	$.getJSON(str_query1, function(data) {
-		data1 = data;
+	$.getJSON(str_query2, function(data) {
+		data2 = data;
 	});
-	$.getJSON(str_query2, function(data2) {
+	$.getJSON(str_query1, function(data2) {
 		// Create the chart
 		$('#container').highcharts('StockChart', {
 			
@@ -33,7 +33,7 @@ $(function() {
 			
 			series : [{
 				name : str_symbol + ' Stock Price',
-				data : data1,
+				data : data,
 				type : 'area',
 				threshold : null,
 				tooltip: {
