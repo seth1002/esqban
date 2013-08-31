@@ -11,7 +11,7 @@
 
 	if ($db_found) {
 
-	$SQL = "select @rownum := @rownum + 1 AS row_num, UNIX_TIMESTAMP(n.date_)*1000 as date_, n.headline from company_news n, (SELECT @rownum := 0) r where n.symbol='" . $_GET["symbol"] . "'";
+	$SQL = "select UNIX_TIMESTAMP(n.date_)*1000 as date_, @rownum := @rownum + 1 AS row_num, n.headline from company_news n, (SELECT @rownum := 0) r where n.symbol='" . $_GET["symbol"] . "'";
 	$result = mysql_query($SQL);
 
 	$start = true;
