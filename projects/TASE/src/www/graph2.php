@@ -70,14 +70,7 @@ $(function() {
 			load_news();
 		});
 	}
-
-	$.getJSON(query_news, function(data) {
-		news_json = data;
-	}).success(function() {
-		$.getJSON(query_prices, function(data) {
-			create_chart(data, news_json);
-		});
-	});
+	load_prices();
 
 });
 
