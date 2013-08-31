@@ -54,22 +54,11 @@ $(function() {
 		});
 	}
 
-	var data_prices="";
-	var data_news="";
-	
-	$.getJSON(query_prices, function(data) {
-		alert("1");
-		if( isEmpty(data_news) )
-			data_prices = data;
-		else
-			create_chart(data, data_news);
-	});
 	$.getJSON(query_news, function(data) {
-		alert("2");
-		if( isEmpty(data_prices) )
-			data_news = data;
-		else
-			create_chart(data_prices, data);
+		var news_json = data;
+		$.getJSON(query_prices, function(data) {
+			create_chart(data, news_json);
+		});
 	});
 
 });
