@@ -10,8 +10,8 @@ $(function() {
 
 	var str_symbol = '<?php echo $_GET["symbol"]; ?>';
 	
-	var str_query1 = "json.php?symbol=" + str_symbol + "&callback=?"
-	var str_query2 = "news_json.php?symbol=" + str_symbol + "&callback=?"
+	var query_prices = "json.php?symbol=" + str_symbol + "&callback=?"
+	var query_news = "news_json.php?symbol=" + str_symbol + "&callback=?"
 	
 	
 	function create_chart(prices, news)
@@ -59,17 +59,17 @@ $(function() {
 	var data_prices="";
 	var data_news="";
 	
-	$.getJSON(str_query1, function(data) {
-		if(data_news != "")
-			create_chart(data, data_news);
-		else
+	$.getJSON(query_prices, function(data) {
+		if( isEmpty(data_news) )
 			data_prices = data;
-	});
-	$.getJSON(str_query2, function(data) {
-		if(data_prices != "")
-			create_chart(data_prices, data);
 		else
+			create_chart(data, data_news);
+	});
+	$.getJSON(query_news, function(data) {
+		if( isEmpty(data_prices) )
 			data_news = data;
+		else
+			create_chart(data_prices, data);
 	});
 
 });
