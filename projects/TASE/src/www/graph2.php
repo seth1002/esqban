@@ -17,8 +17,6 @@ $(function() {
 	function create_chart(prices, news)
 	{
 		$('#container').highcharts('StockChart', {
-			
-
 			rangeSelector : {
 				selected : 1
 			},
@@ -56,20 +54,10 @@ $(function() {
 		});
 	}
 
-	var data_prices="";
-	var data_news="";
-	
-	$.getJSON(query_prices, function(data) {
-		if( isEmpty(data_news) )
-			data_prices = data;
-		else
-			create_chart(data, data_news);
-	});
-	$.getJSON(query_news, function(data) {
-		if( isEmpty(data_prices) )
-			data_news = data;
-		else
-			create_chart(data_prices, data);
+	$.getJSON(query_prices, function(data1) {
+		$.getJSON(query_news, function(data2) {
+			create_chart(data1, data2);
+		});
 	});
 
 });
