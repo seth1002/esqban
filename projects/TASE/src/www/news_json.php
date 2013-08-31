@@ -22,9 +22,9 @@
 		else
 			$start = false;
 		print "[";
-		print $db_field['row_num'];
-		print ", ";
 		print $db_field['date_'];
+		print ", ";
+		print $db_field['row_num'];
 		print ", ";
 		print $db_field['headline'];
 		print "]";
