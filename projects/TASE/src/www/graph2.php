@@ -55,7 +55,9 @@ $(function() {
 	}
 
 	$.getJSON(query_prices, function(data1) {
+		alert("1");
 		$.getJSON(query_news, function(data2) {
+			alert("2");
 			create_chart(data1, data2);
 		});
 	});
