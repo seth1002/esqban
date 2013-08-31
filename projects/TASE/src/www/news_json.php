@@ -11,7 +11,7 @@
 
 	if ($db_found) {
 
-	$SQL = "SELECT UNIX_TIMESTAMP(date_)*1000 as date_, closing_price FROM company_prices where symbol='" . $_GET["symbol"] . "'";
+	$SQL = "select @rownum := @rownum + 1 AS index, n.date_, n.headline from company_news n, (SELECT @rownum := 0) r where n.symbol='" . $_GET["symbol"] . "'";
 	$result = mysql_query($SQL);
 
 	$start = true;
@@ -22,8 +22,9 @@
 		else
 			$start = false;
 		print "[";
+		print $db_field['index'];
 		print $db_field['date_'];
-		print $db_field['closing_price'];
+		print $db_field['headline'];
 		print "]";
 	}
 print "]);";
