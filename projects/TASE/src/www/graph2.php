@@ -10,8 +10,8 @@ $(function() {
 
 	var str_symbol = '<?php echo $_GET["symbol"]; ?>';
 	
-	var query_prices = "192.168.2.107/tase/json.php?symbol=" + str_symbol + "&callback=?"
-	var query_news = "192.168.2.107/tase/news_json.php?symbol=" + str_symbol + "&callback=?"
+	var query_prices = "json.php?symbol=" + str_symbol + "&callback=?"
+	var query_news = "news_json.php?symbol=" + str_symbol + "&callback=?"
 	
 	
 	function create_chart(prices, news)
