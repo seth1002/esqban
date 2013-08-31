@@ -15,7 +15,7 @@
 
 		$start = true;
 		
-		print $"[";
+		print "[";
 		while ( $db_field = mysql_fetch_assoc($result) ) {
 			if($start == false)
 				print ",\n";
