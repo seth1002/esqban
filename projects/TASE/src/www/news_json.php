@@ -11,7 +11,7 @@
 
 	if ($db_found) {
 
-	$SQL = "select @rownum := @rownum + 1 AS index, n.date_, n.headline from company_news n, (SELECT @rownum := 0) r where n.symbol='" . $_GET["symbol"] . "'";
+	$SQL = "select @rownum := @rownum + 1 AS row_num, n.date_, n.headline from company_news n, (SELECT @rownum := 0) r where n.symbol='" . $_GET["symbol"] . "'";
 	$result = mysql_query($SQL);
 
 	$start = true;
@@ -22,7 +22,7 @@
 		else
 			$start = false;
 		print "[";
-		print $db_field['index'];
+		print $db_field['row_num'];
 		print $db_field['date_'];
 		print $db_field['headline'];
 		print "]";
