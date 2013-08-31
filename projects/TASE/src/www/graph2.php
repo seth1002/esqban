@@ -54,23 +54,17 @@ $(function() {
 		});
 	}
 	
-	var prices_data = "";
-	function load_news()
+	var prices_json = "";
+	function on_load_news(data)
 	{
-		$.getJSON(query_news, function(data) {
-			alert("2");
-			create_chart(prices_data, data);
-		});
+		create_chart(prices_json, data);
 	}
-	function load_prices()
+	function on_load_prices(data)
 	{
-		$.getJSON(query_prices, function(data) {
-			alert("1");
-			prices_data = data;
-			load_news();
-		});
+		prices_json = data;
+		$.getJSON(query_news, on_load_news);
 	}
-	load_prices();
+	$.getJSON(query_prices, on_load_prices);
 
 });
 
