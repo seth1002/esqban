@@ -13,12 +13,12 @@ $(function() {
 	var str_query1 = "json.php?symbol=" + str_symbol + "&callback=?"
 	var str_query2 = "news_json.php?symbol=" + str_symbol + "&callback=?"
 	
-	var data1;
+	var data2;
 
 	$.getJSON(str_query2, function(data) {
 		data2 = data;
 	});
-	$.getJSON(str_query1, function(data2) {
+	$.getJSON(str_query1, function(data) {
 		// Create the chart
 		$('#container').highcharts('StockChart', {
 			
