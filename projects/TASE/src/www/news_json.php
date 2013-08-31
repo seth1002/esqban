@@ -25,9 +25,9 @@
 		print $db_field['date_'];
 		print ", ";
 		print $db_field['row_num'];
-		print ", ";
+		print ", \"";
 		print $db_field['headline'];
-		print "]";
+		print "\"]";
 	}
 print "]);";
 
