@@ -54,8 +54,10 @@ $(function() {
 		});
 	}
 
+	var news_json="";
 	$.getJSON(query_news, function(data) {
-		var news_json = data;
+		news_json = data;
+	}).success(function() {
 		$.getJSON(query_prices, function(data) {
 			create_chart(data, news_json);
 		});
