@@ -26,7 +26,8 @@
 		print ", ";
 		print $db_field['row_num'];
 		print ", \"";
-		print string($db_field['headline']).replace("\"","");
+		var str = string($db_field['headline']);
+		print str.replace("\"","");
 		print "\"]";
 	}
 print "]);";
