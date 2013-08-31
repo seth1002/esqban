@@ -14,7 +14,7 @@ $(function() {
 	var str_query2 = "news_json.php?symbol=" + str_symbol + "&callback=?"
 
 	$.getJSON(str_query1, function(data) {
-		$.getJSON(str_query2, function(data2) {
+		/*$.getJSON(str_query2, function(data2) {*/
 			// Create the chart
 			$('#container').highcharts('StockChart', {
 				
@@ -82,7 +82,7 @@ $(function() {
 					width : 16
 				}]
 			});
-		});
+		/*});*/
 	});
 
 });
