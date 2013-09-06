@@ -140,7 +140,7 @@ class StockSpider(HistorySpider):
 		except IndexError:
 			item['name'] = ""
 		try:
-			item['image_url'] = hxs.select("//td[@rowspan='4']/img/@href").extract()[0]
+			item['image_url'] = hxs.select("//td[@rowspan='4']/img/@src").extract()[0]
 		except IndexError:
 			item['image_url'] = ""
 		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
