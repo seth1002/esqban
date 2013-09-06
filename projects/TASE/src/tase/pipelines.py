@@ -504,7 +504,7 @@ class MyImagesPipeline(ImagesPipeline):
         if not isinstance(item, TaseItem):
             yield item
         else:
-			if len(item['image_url']) > 1:
+			if item['image_url'] and len(item['image_url']) > 1:
 				yield Request(item['image_url'])
 			else:
 				yield item
