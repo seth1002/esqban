@@ -139,6 +139,10 @@ class StockSpider(HistorySpider):
 			item['name'] = hxs.select("//td[@class='BigBlue']/text()").extract()[0]
 		except IndexError:
 			item['name'] = ""
+		try:
+			item['image_url'] = hxs.select("//td[@rowspan='4']/img/@href").extract()[0]
+		except IndexError:
+			item['image_url'] = ""
 		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
 		if len(lst) > 0:
 			item['symbol'] = lst[0]
