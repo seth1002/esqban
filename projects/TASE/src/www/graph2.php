@@ -16,7 +16,7 @@ $(function() {
 	
 	function create_chart(prices, news)
 	{
-		$('#container').highcharts('StockChart', {
+		$('#graph_container').highcharts('StockChart', {
 			rangeSelector : {
 				selected : 1
 			},
@@ -69,6 +69,6 @@ $(function() {
 <script src="highstock.js"></script>
 <script src="exporting.js"></script>
 
-<div id="container" style="height: 500px; min-width: 500px"></div>
+<div id="graph_container" style="height: 500px; min-width: 500px"></div>
 	</body>
 </html>
