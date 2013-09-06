@@ -51,9 +51,9 @@ class TaseItem(Item):
     CompanyID = Field()
     ShareID = Field()
 
-    image_url = Field()
-    image_path = Field()
-    
+    image_urls = Field()
+    images = Field()
+
     symbol = Field()
     name = Field()
     sector = Field()
