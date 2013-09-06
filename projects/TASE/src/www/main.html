@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="w2ui-1.2.min.css" />
-    <script src="jquery.min.js"></script>
-    <script type="text/javascript" src="w2ui-1.2.min.js"></script>
-
-	<script src="highstock.js"></script>
-	<script src="exporting.js"></script>
-</head>
 <body>
-	<div id="layout" style="width: 95%; height: 600px;"></div>
 
-	<div style="height: 20px;"></div>
+<div id="container" style="width:900px">
 
-	<span style="display: inline-block; width: 50px;"> Left: </span>
-	<input type="button" value="Set Content" onclick="w2ui['layout'].content('left', 'This is some content set manually')">
-	<input type="button" value="Load Content 1" onclick="w2ui['layout'].load('left', 'data/content1.html')">
-	<input type="button" value="Load Content 2" onclick="w2ui['layout'].load('left', 'data/content2.html')">
+<div id="header" style="background-color:#FFA500;">
+<h1 style="margin-bottom:0;">Main Title of Web Page</h1></div>
 
-	<div style="height: 10px;"></div>
+<div id="menu" style="background-color:#FFD700;height:800px;width:100px;float:left;">
+<b>Menu</b><br>
+HTML<br>
+CSS<br>
+JavaScript</div>
 
-	<span style="display: inline-block; width: 50px;"> Main: </span>
-	<input type="button" value="Set Content" onclick="w2ui['layout'].content('main', 'This is some content set manually')">
-	<input type="button" value="Load Content 1" onclick="w2ui['layout'].load('main', 'graph3.php?symbol=SNFL')">
-	<input type="button" value="Load Content 2" onclick="w2ui['layout'].load('main', 'graph3.php?symbol=NVMI')"></body>
-<script>
-var pstyle = 'border: 1px solid #dfdfdf; padding: 5px;';
-$('#layout').w2layout({
-	name: 'layout',
-	panels: [
-		{ type: 'top', size: 50, style: pstyle, content: 'top' },
-		{ type: 'left', size: 200, style: pstyle, content: 'left' },
-		{ type: 'main', style: pstyle, content: 'main' }
-	]
-});
+<div id="content" style="background-color:#EEEEEE;height:800px;width:800px;float:left;" src='graph3.php?symbol=SNFL'>
+</div>
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+Copyright © W3Schools.com</div>
+
+</div>
+
+<script type="text/javascript">
+onload=function(){
+var el=document.getElementById("content")
+el.innerHTML="<iframe src=\"graph2.php?symbol=SNFL"></iframe>"
+}
 </script>
+
+</body>
 </html>
