@@ -1,6 +1,5 @@
 <?php
-	//header('Content-Type: application/json');
-	print $_GET["callback"] . "(" . "[";
+	header('Content-Type: application/json');
 	$user_name = "sqba";
 	$password = "crl2688";
 	$database = "tase";
@@ -11,26 +10,17 @@
 
 	if ($db_found) {
 
-	$SQL = "SELECT name, symbol FROM companies";
+	$SQL = "SELECT name, symbol FROM companies WHERE name !=''";
 	$result = mysql_query($SQL);
 
+	print $_GET["callback"] . "(";
 	$start = true;
-	
+	$output = array();	
 	while ( $db_field = mysql_fetch_assoc($result) ) {
-		if($db_field['name'] != '')
-		{
-			if($start == false)
-				print ",\n";
-			else
-				$start = false;
-			print "[\"";
-			print str_replace("'", "", $db_field['name']);
-			print "\", \"";
-			print str_replace("'", "", $db_field['symbol']);
-			print "\"]";
-		}
+		$output[]=$db_field;
 	}
-print "]);";
+	print(json_encode($output));
+	print(")");
 
 	mysql_close($db_handle);
 }
