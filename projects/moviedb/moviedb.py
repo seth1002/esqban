@@ -20,7 +20,7 @@ def find_movie(name):
         cur.execute(str_query)
         row = cur.fetchone ()
         if not row is None:
-			result = row[0]
+                result = row[0]
         cur.close()
     except MySQLdb.Error, e:
         print str_query
