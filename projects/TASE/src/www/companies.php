@@ -26,7 +26,6 @@
 			print "['";
 			print str_replace("'", "", $db_field['name']);
 			print "', '";
-			print "graph2.php?symbol=";
 			print str_replace("'", "", $db_field['symbol']);
 			print "']";
 		}
