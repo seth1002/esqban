@@ -23,11 +23,11 @@
 				print ",\n";
 			else
 				$start = false;
-			print "['";
+			print "[";
 			print str_replace("'", "", $db_field['name']);
-			print "', '";
+			print ", ";
 			print str_replace("'", "", $db_field['symbol']);
-			print "']";
+			print "]";
 		}
 	}
 print "]);";
