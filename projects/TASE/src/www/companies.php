@@ -10,7 +10,7 @@
 
 	if ($db_found) {
 
-	$SQL = "SELECT name, symbol FROM companies WHERE name !=''";
+	$SQL = "SELECT name, symbol FROM companies WHERE name !='' ORDER BY name ASC";
 	$result = mysql_query($SQL);
 
 	print $_GET["callback"] . "(";
