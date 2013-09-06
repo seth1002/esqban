@@ -76,7 +76,7 @@ ITEM_PIPELINES = (
 	'tase.pipelines.NewsPipeline',
 	'tase.pipelines.WeatherPipeline',
 	'tase.pipelines.MySQLStorePipeline',
-	'tase.pipelines.ImagesPipeline'
+	'tase.pipelines.MyImagesPipeline'
 )
 
 
