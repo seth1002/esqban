@@ -354,7 +354,7 @@ class MySQLStorePipeline(BaseDB):
         try:
             if result is None:
                 tx.execute(\
-                    "insert into companies (sessionid, category, symbol, name, sector_int, subsector_int, url, tase_url) "
+                    "insert into companies (sessionid, category, symbol, name, sector, subsector, url, tase_url) "
                     "values (%s, %s, %s, %s, %s, %s, %s, %s)",
                     (
                     global_time,
@@ -369,7 +369,7 @@ class MySQLStorePipeline(BaseDB):
                 )
             else:
                 tx.execute(\
-                    "UPDATE companies SET sessionid=%s, category=%s, name=%s, sector_int=%s, subsector_int=%s, url=%s, tase_url=%s WHERE symbol=%s",
+                    "UPDATE companies SET sessionid=%s, category=%s, name=%s, sector=%s, subsector=%s, url=%s, tase_url=%s WHERE symbol=%s",
                     (
                     global_time,
                     item['category'],
