@@ -87,7 +87,6 @@ class TaseSpider(CrawlSpider):
 		item['category'] = category_comp
 		item['tase_url'] = response.url
 		item['date_'] = ''
-		item['image_url'] = hxs.select("//td[@rowspan='4']/img/@href").extract()[0]
 		query = parse_qs(urlparse(response.url)[4]) # query
 		item['CompanyID'] = query['CompanyID'][0]
 		item['ShareID'] = query['ShareID'][0]
