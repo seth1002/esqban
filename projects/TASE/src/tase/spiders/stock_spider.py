@@ -9,6 +9,8 @@ from scrapy.http import FormRequest
 from scrapy.conf import settings
 #from scrapy.shell import inspect_response
 
+from scrapy.utils.response import get_base_url
+
 from tase.HistorySpider import HistorySpider
 from tase.items import TaseItem
 from tase.items import FinancialStatement
