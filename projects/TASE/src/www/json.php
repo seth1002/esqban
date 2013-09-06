@@ -1,5 +1,5 @@
 <?php
-	//header('Content-Type: application/json');
+	header('Content-Type: application/json');
 	print $_GET["callback"] . "(" . "[";
 	$user_name = "sqba";
 	$password = "crl2688";
