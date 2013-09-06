@@ -510,5 +510,6 @@ class MyImagesPipeline(ImagesPipeline):
         image_paths = [x['path'] for ok, x in results if ok]
         if not image_paths:
             raise DropItem("Item contains no images")
-        item['image_path'] = image_paths[0]
+		base_path = settings.get('IMAGES_STORE')
+        item['image_path'] = os.path.join(base_path, image_paths[0])
         return item
