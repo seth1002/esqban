@@ -20,38 +20,45 @@ public class Chart extends JFrame
 {
 
   private static final long serialVersionUID = 1L;
+  private ChartPanel chartPanel;
 
   public Chart(String applicationTitle, String chartTitle, CategoryDataset _dataSet)
   {
         super(applicationTitle);
+        
         // This will create the dataset 
         CategoryDataset dataset = _dataSet;//createDataset();
+        
         // based on the dataset we create the chart
         JFreeChart chart = createCategoryChart(dataset, chartTitle);
+        
         // we put the chart into a panel
-        ChartPanel chartPanel = new ChartPanel(chart);
+        chartPanel = new ChartPanel(chart);
+        
         // default size
         chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
+  
         // add it to our application
-        setContentPane(chartPanel);
+        //setContentPane(chartPanel);
     }
+  
+  public ChartPanel getPanel()
+  {
+	  return chartPanel;
+  }
 
-
-/**
-     * Creates a chart
-     */
 
     private JFreeChart createCategoryChart(CategoryDataset dataset, String title) {
         
     	JFreeChart chart = ChartFactory.createLineChart(
-    			title,       // chart title
-                "Date",                    // domain axis label
-                "Value",                   // range axis label
-                dataset,                   // data
-                PlotOrientation.VERTICAL,  // orientation
-                true,                      // include legend
-                true,                      // tooltips
-                false                      // urls
+    			title,						// chart title
+                "Date",						// domain axis label
+                "Value",					// range axis label
+                dataset,					// data
+                PlotOrientation.VERTICAL,	// orientation
+                true,						// include legend
+                true,						// tooltips
+                false						// urls
             );
 
         chart.setBackgroundPaint(Color.white);
