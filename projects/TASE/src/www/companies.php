@@ -17,16 +17,19 @@
 	$start = true;
 	
 	while ( $db_field = mysql_fetch_assoc($result) ) {
-		if($start == false)
-			print ",\n";
-		else
-			$start = false;
-		print "['";
-		print str_replace("'", "", $db_field['name']);
-		print "', '";
-		print "graph2.php?symbol=";
-		print str_replace("'", "", $db_field['symbol']);
-		print "']";
+		if($db_field['name'] != '')
+		{
+			if($start == false)
+				print ",\n";
+			else
+				$start = false;
+			print "['";
+			print str_replace("'", "", $db_field['name']);
+			print "', '";
+			print "graph2.php?symbol=";
+			print str_replace("'", "", $db_field['symbol']);
+			print "']";
+		}
 	}
 print "]);";
 
