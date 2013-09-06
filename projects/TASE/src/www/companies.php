@@ -21,12 +21,12 @@
 			print ",\n";
 		else
 			$start = false;
-		print "[";
+		print "['";
 		print $db_field['name'];
-		print ", ";
+		print "', '";
 		print "graph2.php?symbol=";
 		print $db_field['symbol'];
-		print "]";
+		print "']";
 	}
 print "]);";
 
