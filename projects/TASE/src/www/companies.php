@@ -10,9 +10,17 @@
 
 	if ($db_found) {
 
-	$SQL = "SELECT name, symbol FROM companies WHERE name !='' ORDER BY name ASC";
-	$result = mysql_query($SQL);
+	$SQL = "SELECT name, symbol FROM companies WHERE name !=''";
 
+	if(array_key_exists("sector", $_GET))
+		$SQL .= " AND sector=" . $_GET["sector"];
+
+	if(array_key_exists("subsector", $_GET))
+		$SQL .= " AND subsector=" . $_GET["subsector"];
+
+	$SQL .= " ORDER BY name ASC";
+	$result = mysql_query($SQL);
+	
 	print $_GET["callback"] . "(";
 	$start = true;
 	$output = array();	
