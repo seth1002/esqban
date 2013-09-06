@@ -501,14 +501,10 @@ class WeatherPipeline(BaseDB):
 class MyImagesPipeline(ImagesPipeline):
 
     def get_media_requests(self, item, info):
-        if not isinstance(item, TaseItem):
-            yield item
-        else:
-			image_url = item['image_url']
-			if image_url:
-				yield Request(image_url)
-			else:
-				yield item
+        if isinstance(item, TaseItem):
+		image_url = item['image_url']
+		if image_url:
+			return Request(image_url)
 
     def item_completed(self, results, item, info):
         image_paths = [x['path'] for ok, x in results if ok]
