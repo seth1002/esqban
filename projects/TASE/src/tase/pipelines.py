@@ -2,6 +2,9 @@ from scrapy import log
 #from scrapy.exceptions import DropItem
 from twisted.enterprise import adbapi
 from scrapy.conf import settings
+from scrapy.contrib.pipeline.images import ImagesPipeline
+from scrapy.exceptions import DropItem
+from scrapy.http import Request
 
 import time
 import datetime
@@ -494,3 +497,15 @@ class WeatherPipeline(BaseDB):
             log.msg('SQL integrity error: %s' % e)
         self.conn.commit()
 
+
+class MyImagesPipeline(ImagesPipeline):
+
+    def get_media_requests(self, item, info):
+        yield Request(item['image_url'])
+
+    def item_completed(self, results, item, info):
+        image_paths = [x['path'] for ok, x in results if ok]
+        if not image_paths:
+            raise DropItem("Item contains no images")
+        item['image_path'] = image_paths[0]
+        return item

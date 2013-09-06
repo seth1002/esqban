@@ -50,6 +50,9 @@ class FinancialStatement(Item):
 class TaseItem(Item):
     CompanyID = Field()
     ShareID = Field()
+
+    image_url = Field()
+    image_path = Field()
     
     symbol = Field()
     name = Field()

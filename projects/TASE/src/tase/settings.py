@@ -55,6 +55,16 @@ CATEGORY_COMP = 'company' # rename some day to stock
 CATEGORY_BOND = 'bond'
 CATEGORY_FUND = 'fund'
 
+IMAGES_STORE = '/home/sqba/TASE/img'
+# 90 days of delay for image expiration
+IMAGES_EXPIRES = 90
+IMAGES_THUMBS = {
+	'small': (50, 50),
+	'big': (270, 270),
+}
+IMAGES_MIN_HEIGHT = 110
+IMAGES_MIN_WIDTH = 110
+
 ITEM_PIPELINES = (
 	'tase.pipelines.CleanupPipeline',
 	'tase.pipelines.SessionPipeline',
@@ -66,6 +76,7 @@ ITEM_PIPELINES = (
 	'tase.pipelines.NewsPipeline',
 	'tase.pipelines.WeatherPipeline',
 	'tase.pipelines.MySQLStorePipeline',
+	'tase.pipelines.ImagesPipeline'
 )
 
 
