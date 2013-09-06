@@ -504,7 +504,10 @@ class MyImagesPipeline(ImagesPipeline):
         if not isinstance(item, TaseItem):
             yield item
         else:
-            yield Request(item['image_url'])
+			if len(item['image_url']) > 1:
+				yield Request(item['image_url'])
+			else:
+				yield item
 
     def item_completed(self, results, item, info):
         image_paths = [x['path'] for ok, x in results if ok]
