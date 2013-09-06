@@ -11,10 +11,13 @@
 			<h1 style="margin-bottom:0;">Main Title of Web Page</h1>
 		</div>
 
-		<div id="menu" style="background-color:#FFFFFF;height:600px;width:200px;float:left;overflow:auto;">
+		<div id="sectors" style="background-color:#FFFFFF;height:600px;width:200px;float:left;overflow:auto;">
 		</div>
 
-		<div id="content" style="background-color:#FFFFFF;height:600px;width:800px;float:left;" src='graph3.php?symbol=SNFL'>
+		<div id="companies" style="background-color:#FFFFFF;height:600px;width:200px;float:left;overflow:auto;">
+		</div>
+
+		<div id="content" style="background-color:#FFFFFF;height:600px;width:600px;float:left;" src='graph3.php?symbol=SNFL'>
 		</div>
 
 		<div id="footer" style="background-color:#FFFFFF;clear:both;text-align:center;">
@@ -23,34 +26,32 @@
 	</div>
 
 <script type="text/javascript">
+function LoadSector(id)
+{
+	var url = "companies.php?sector=" + id + "&callback=?";
+	$.getJSON(url, function(data) {
+		$("#companies").text("");
+		$.each(data, function (i, fb) {
+			var a = "<a href='javascript:LoadSymbol(&quot;" + fb.symbol + "&quot;);'>" + fb.name + "</a><br>";
+			$("#companies").append(a);
+		});
+	});
+}
+
 function LoadSymbol(symbol)
 {
 	$("#header").html("<h1 style='margin-bottom:0;'>" + symbol + "</h1>");
 	$('#content').load("graph3.php?symbol=" + symbol);
 }
 
-$.getJSON('companies.php?callback=?', function(data) {
-	//alert(data);
-    //obj = JSON.parse(data);
-/*
-    var ul = $("<ul/>")
-        .attr("id",data.menu.id)
-        .addClass(data.menu.class);
-    $.each(data.menu.content.menuitem, function() {
-        var li = $("<li/>")
-            .appendTo(ul)
-            .addClass(this.liClass);
-        var a = $("<a/>")
-            .appendTo(li)
-    });
-*/
-    $.each(data, function (i, fb) {
-        //alert(fb.name);
-		var a = "<a href='javascript:LoadSymbol(&quot;" + fb.symbol + "&quot;);'>" + fb.name + "</a><br>";
-		//alert(a);
-		$("#menu").append(a);
-    });
+var url = "sectors.php?callback=?";
+$.getJSON(url, function(data) {
+	$.each(data, function (i, fb) {
+		var a = "<a href='javascript:LoadSector(&quot;" + fb.id + "&quot;);'>" + fb.name + "</a><br>";
+		$("#sectors").append(a);
+	});
 });
+
 </script>
 
 </body>
