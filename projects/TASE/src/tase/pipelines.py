@@ -502,8 +502,9 @@ class MyImagesPipeline(ImagesPipeline):
 
     def get_media_requests(self, item, info):
         if not isinstance(item, TaseItem):
-            return item
-        yield Request(item['image_url'])
+            yield item
+        else:
+            yield Request(item['image_url'])
 
     def item_completed(self, results, item, info):
         image_paths = [x['path'] for ok, x in results if ok]
