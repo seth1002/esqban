@@ -53,11 +53,14 @@ class TaseItem(Item):
 
     image_url = Field()
     image_path = Field()
+
+    sector = Field()
+    subsector = Field()
+    sector_int = Field()
+    subsector_int = Field()
     
     symbol = Field()
     name = Field()
-    sector = Field()
-    subsector = Field()
     capital = Field()
     marketcap = Field()
     url = Field()

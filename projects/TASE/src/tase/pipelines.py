@@ -307,6 +307,35 @@ class FinancialStatementsPipeline(BaseDB):
         log.err(e)
 
 
+class SectorPipeline(BaseDB):
+
+	def insert_new_sector(self, name):
+		try:
+			tx.execute(\
+				"insert into sectors (name) "
+				"values (%s)", ( name )
+			)
+			return self.conn.insert_id()
+		except MySQLdb.IntegrityError, e:
+			#print 'SQL integrity error: %s' % e
+			log.msg('SQL integrity error: %s' % e)
+			
+	def get_sector_id(self, name, sub=False):
+		name = item['subsector'] if sub else item['sector']
+        tx.execute("select id from sectors where name = %s", item['sector'])
+        result = tx.fetchone()
+        if result is None:
+			return insert_new_sector( item['sector'] )
+		else
+			return result['id']
+
+    def _conditional_insert(self, tx, item):
+        if not isinstance(item, MarketItem):
+            return item
+        item['sector_int'] = get_sector_id(name, false)
+        item['subsector_int'] = get_sector_id(name, true)
+
+
 class MySQLStorePipeline(BaseDB):
 
     def process_item(self, item, spider):
@@ -325,28 +354,28 @@ class MySQLStorePipeline(BaseDB):
         try:
             if result is None:
                 tx.execute(\
-                    "insert into companies (sessionid, category, symbol, name, sector, subsector, url, tase_url) "
+                    "insert into companies (sessionid, category, symbol, name, sector_int, subsector_int, url, tase_url) "
                     "values (%s, %s, %s, %s, %s, %s, %s, %s)",
                     (
                     global_time,
                     item['category'],
                     item['symbol'],
                     item['name'],
-                    item['sector'],
-                    item['subsector'],
+                    item['sector_int'],
+                    item['subsector_int'],
                     item['url'],
                     item['tase_url']
                     )
                 )
             else:
                 tx.execute(\
-                    "UPDATE companies SET sessionid=%s, category=%s, name=%s, sector=%s, subsector=%s, url=%s, tase_url=%s WHERE symbol=%s",
+                    "UPDATE companies SET sessionid=%s, category=%s, name=%s, sector_int=%s, subsector_int=%s, url=%s, tase_url=%s WHERE symbol=%s",
                     (
                     global_time,
                     item['category'],
                     item['name'],
-                    item['sector'],
-                    item['subsector'],
+                    item['sector_int'],
+                    item['subsector_int'],
                     item['url'],
                     item['tase_url'],
                     item['symbol']

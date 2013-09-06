@@ -6,6 +6,14 @@ CREATE TABLE `sessions` (
   KEY `idx_sessionid` (`sessionid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `sectors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  
 CREATE TABLE `companies` (
     `sessionid` int(11) NOT NULL COMMENT "unix timestamp",
     `category` varchar(8) NOT NULL,
@@ -13,6 +21,8 @@ CREATE TABLE `companies` (
     `name` varchar(50) NOT NULL,
     `sector` varchar(50),
     `subsector` varchar(50),
+    `sector_int` int(11),
+    `subsector_int` int(11),
     `url` text,
     `tase_url` text,
     PRIMARY KEY (`symbol`) USING BTREE
