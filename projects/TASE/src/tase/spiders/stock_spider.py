@@ -19,7 +19,7 @@ from tase.items import NewsArticle
 import urllib
 from urlparse import urlparse
 from urlparse import parse_qs
-#from urlparse import urljoin
+from urlparse import urljoin
 
 import tase.common
 
