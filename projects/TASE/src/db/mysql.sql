@@ -15,18 +15,16 @@ CREATE TABLE `sectors` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
   
 CREATE TABLE `companies` (
-    `sessionid` int(11) NOT NULL COMMENT "unix timestamp",
-    `category` varchar(8) NOT NULL,
-    `symbol` varchar(8) NOT NULL,
-    `name` varchar(50) NOT NULL,
-    `sector` varchar(50),
-    `subsector` varchar(50),
-    `sector_int` int(11),
-    `subsector_int` int(11),
-    `url` text,
-    `tase_url` text,
-    PRIMARY KEY (`symbol`) USING BTREE
-) engine=innodb default charset=utf8;
+  `sessionid` int(11) NOT NULL COMMENT 'unix timestamp',
+  `category` varchar(8) NOT NULL,
+  `symbol` varchar(8) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `sector` int(11) DEFAULT NULL,
+  `subsector` int(11) DEFAULT NULL,
+  `url` text,
+  `tase_url` text,
+  PRIMARY KEY (`symbol`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `financial_statements` (
   `sessionid` int(11) not null comment "unix timestamp",
