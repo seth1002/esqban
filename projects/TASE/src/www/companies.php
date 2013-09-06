@@ -22,10 +22,10 @@
 		else
 			$start = false;
 		print "['";
-		print $db_field['name'];
+		print str_replace("'", "", $db_field['name']);
 		print "', '";
 		print "graph2.php?symbol=";
-		print $db_field['symbol'];
+		print str_replace("'", "", $db_field['symbol']);
 		print "']";
 	}
 print "]);";
