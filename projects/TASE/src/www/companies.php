@@ -18,14 +18,15 @@
 	
 	while ( $db_field = mysql_fetch_assoc($result) ) {
 		if($start == false)
-			print "<br>";
+			print ",\n";
 		else
 			$start = false;
-		print "<a href='graph2.php?symbol=";
-		print $db_field['symbol'];
-		print "'>";
+		print "[";
 		print $db_field['name'];
-		print "</a>";
+		print ", ";
+		print "graph2.php?symbol=";
+		print $db_field['symbol'];
+		print "]";
 	}
 print "]);";
 
