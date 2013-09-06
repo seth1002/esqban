@@ -10,7 +10,7 @@
 
 	if ($db_found) {
 
-	$SQL = "SELECT name FROM sectors ORDER BY name ASC";
+	$SQL = "SELECT id, name FROM sectors ORDER BY name ASC";
 	$result = mysql_query($SQL);
 
 	print $_GET["callback"] . "(";
