@@ -169,6 +169,8 @@ class StockSpider(HistorySpider):
 		except IndexError:
 			item['sector'] = ""
 			item['subsector'] = ""
+		item['sector_int'] = 0
+		item['subsector_int'] = 0
 		if PROCESS_FINANCIAL_STATEMENTS:
 			yield self.get_company_details(item)
 		#url = "http://archive.globes.co.il/searchgl/%s" % item['symbol']

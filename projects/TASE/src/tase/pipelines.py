@@ -322,18 +322,18 @@ class SectorPipeline(BaseDB):
 			
 	def get_sector_id(self, name, sub=False):
 		name = item['subsector'] if sub else item['sector']
-        tx.execute("select id from sectors where name = %s", item['sector'])
-        result = tx.fetchone()
-        if result is None:
+        	tx.execute("select id from sectors where name = %s", item['sector'])
+        	result = tx.fetchone()
+        	if result is None:
 			return insert_new_sector( item['sector'] )
-		else
+		else:
 			return result['id']
 
-    def _conditional_insert(self, tx, item):
-        if not isinstance(item, MarketItem):
-            return item
-        item['sector_int'] = get_sector_id(name, false)
-        item['subsector_int'] = get_sector_id(name, true)
+	def _conditional_insert(self, tx, item):
+        	if isinstance(item, MarketItem):
+        		item['sector_int'] = get_sector_id(name, false)
+        		item['subsector_int'] = get_sector_id(name, true)
+        	return item
 
 
 class MySQLStorePipeline(BaseDB):
