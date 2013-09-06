@@ -144,7 +144,7 @@ class StockSpider(HistorySpider):
 		try:
 			base_url = get_base_url(response)
 			relative_url = hxs.select("//td[@rowspan='4']/img/@src").extract()[0]
-			item['image_url'] = urljoin_rfc(base_url, relative_url)
+			item['image_url'] = urljoin(base_url, relative_url)
 		except IndexError:
 			item['image_url'] = ""
 		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
