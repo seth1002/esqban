@@ -6,6 +6,7 @@ from scrapy.contrib.pipeline.images import ImagesPipeline
 from scrapy.exceptions import DropItem
 from scrapy.http import Request
 
+import os
 import time
 import datetime
 
