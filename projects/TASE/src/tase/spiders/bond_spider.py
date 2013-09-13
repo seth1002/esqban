@@ -106,6 +106,12 @@ class BondSpider(HistorySpider):
 			item['name'] = hxs.select("//td[@class='BigBlue']/text()").extract()[0]
 		except IndexError:
 			item['name'] = ""
+		try:
+			base_url = get_base_url(response)
+			relative_url = hxs.select("//td[@rowspan='4']/img/@src").extract()[0]
+			item['image_url'] = urljoin(base_url, relative_url)
+		except IndexError:
+			item['image_url'] = ""
 		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
 		if len(lst) > 0:
 			item['symbol'] = lst[0]

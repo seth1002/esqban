@@ -71,4 +71,10 @@ class FundSpider(HistorySpider):
 		item['sector'] = ""
 		item['subsector'] = ""
 		item['url'] = ""
+		try:
+			base_url = get_base_url(response)
+			relative_url = hxs.select("//td[@rowspan='4']/img/@src").extract()[0]
+			item['image_url'] = urljoin(base_url, relative_url)
+		except IndexError:
+			item['image_url'] = ""
 		return self.process_history(item)
