@@ -11,7 +11,6 @@
 	if ($db_found) {
 		$SQL = "SELECT name, latitude, longitude FROM marinas WHERE latitude < " . $_GET["a"] . " AND latitude > " . $_GET["b"] . " AND longitude < " . $_GET["c"] . " AND longitude > " . $_GET["d"] . " LIMIT 100")
 
-		$SQL .= " ORDER BY name ASC";
 		$result = mysql_query($SQL);
 		
 		print $_GET["callback"] . "(";
