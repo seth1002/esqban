@@ -73,6 +73,8 @@ class FundSpider(HistorySpider):
 		item['name'] = item['symbol']
 		item['sector'] = ""
 		item['subsector'] = ""
+		item['sector_int'] = 0
+		item['subsector_int'] = 0
 		item['url'] = ""
 		try:
 			base_url = get_base_url(response)

@@ -139,6 +139,8 @@ class BondSpider(HistorySpider):
 		except IndexError:
 			item['sector'] = ""
 			item['subsector'] = ""
+		item['sector_int'] = 0
+		item['subsector_int'] = 0
 		#url = "http://archive.globes.co.il/searchgl/%s" % item['symbol']
 		url = "http://www.globes.co.il/serveen/globes/searchresults.asp?exact=%s" % item['symbol']
 		yield self.process_history(item)
