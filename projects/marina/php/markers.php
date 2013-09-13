@@ -9,7 +9,7 @@
 	$db_found = mysql_select_db($database, $db_handle);
 
 	if ($db_found) {
-		$SQL = "SELECT name, latitude, longitude FROM marinas WHERE latitude < " . $_GET["a"] . " AND latitude > " . $_GET["b"] . " AND longitude < " . $_GET["c"] . " AND longitude > " . $_GET["d"] . " LIMIT 100";
+		$SQL = "SELECT name, latitude, longitude FROM marinas WHERE latitude < " . $_GET["a"] . " AND latitude > " . $_GET["b"] . " AND longitude < " . $_GET["c"] . " AND longitude > " . $_GET["d"] . " LIMIT 500";
 
 		$result = mysql_query($SQL);
 		
