@@ -13,6 +13,8 @@ from scrapy.conf import settings
 #from scrapy.shell import inspect_response
 from scrapy import log
 
+from scrapy.utils.response import get_base_url
+
 from tase.items import TaseItem
 
 import urllib
