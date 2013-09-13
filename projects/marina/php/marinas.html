@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Google Maps JavaScript API v3 Example: Marker Simple</title>
+    <link href="default.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script>
+	function initialize() {
+		var markersArray = [];
+		
+		var myLatlng = new google.maps.LatLng(40.0,10.0);
+		var mapOptions = {
+		  zoom: 4,
+		  center: myLatlng,
+		  mapTypeId: google.maps.MapTypeId.SATELLITE
+		}
+		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+		function clear_markers() {
+			for (var i = 0; i < markersArray.length; i++ ) {
+				markersArray[i].setMap(null);
+			}
+			markersArray = []
+  		}
+
+		function load_markers(bounds) {
+			var self = this;
+  
+			var southWest = bounds.getSouthWest();
+			var northEast = bounds.getNorthEast();
+			var a = northEast.lat();
+			var b = northEast.lng();
+			var c = southWest.lat();
+			var d = southWest.lng();
+			var markers_url = 'http://192.168.2.106/marinas/markers.php?a=' + a + "&b=" + b + "&c=" + c + "&d=" + d;
+  
+			$.getJSON(markers_url, function(data) {
+				$.each(data, function (i, marker) {
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(marker.latitude, marker.longitude),
+						map: map,
+						title: marker.name
+					});
+					markersArray.push(marker);
+				});
+			});
+		}
+
+		function showMarkers() {
+			var bounds = map.getBounds();
+			console.log(bounds);
+			clear_markers();
+			load_markers(bounds);
+		}
+		google.maps.event.addListener(map, 'idle', showMarkers);
+	
+	
+	}
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas"></div>
+  </body>
+</html>
