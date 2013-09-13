@@ -35,7 +35,7 @@
 			var b = northEast.lng();
 			var c = southWest.lat();
 			var d = southWest.lng();
-			var markers_url = 'http://192.168.2.106/marinas/markers.php?a=' + a + "&b=" + b + "&c=" + c + "&d=" + d;
+			var markers_url = 'markers.php?a=' + a + "&b=" + b + "&c=" + c + "&d=" + d + "&callback=?";
   
 			$.getJSON(markers_url, function(data) {
 				$.each(data, function (i, marker) {
