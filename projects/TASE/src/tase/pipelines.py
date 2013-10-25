@@ -330,9 +330,9 @@ class SectorPipeline(BaseDB):
 			return result['id']
 
 	def _conditional_insert(self, tx, item):
-        	if isinstance(item, MarketItem):
-        		item['sector'] = get_sector_id(name, false)
-        		item['subsector'] = get_sector_id(name, true)
+        	if isinstance(item, TaseItem):
+        		item['sector_int'] = get_sector_id(name, false)
+        		item['subsector_int'] = get_sector_id(name, true)
         	return item
 
 
