@@ -324,23 +324,23 @@ class SectorPipeline(BaseDB):
 		tx.execute("select id from sectors where name = %s", name)
 		result = tx.fetchone()
 		if result is None:
-			return insert_new_sector( name )
+			return insert_new_sector(tx, name)
 		else:
 			return result['id']
 
-    def process_item(self, item, spider):
-        if not isinstance(item, TaseItem):
-            return item
-        # run db query in thread pool
-        query = self.dbpool.runInteraction(self._conditional_insert, item)
-        query.addErrback(self.handle_error)
-        return item
+	def process_item(self, item, spider):
+		if not isinstance(item, TaseItem):
+			return item
+		# run db query in thread pool
+		query = self.dbpool.runInteraction(self._conditional_insert, item)
+		query.addErrback(self.handle_error)
+		return item
 
-    def _conditional_insert(self, tx, item):
-        	if isinstance(item, TaseItem):
-        		item['sector_int'] = self.get_sector_id(tx, item['sector'])
-        		item['subsector_int'] = self.get_sector_id(tx, item['subsector'])
-        	return item
+	def _conditional_insert(self, tx, item):
+		if isinstance(item, TaseItem):
+			item['sector_int'] = self.get_sector_id(tx, item['sector'])
+			item['subsector_int'] = self.get_sector_id(tx, item['subsector'])
+		return item
 
 
 class MySQLStorePipeline(BaseDB):
