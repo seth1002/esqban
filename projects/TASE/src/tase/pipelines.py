@@ -309,7 +309,7 @@ class FinancialStatementsPipeline(BaseDB):
 
 class SectorPipeline(BaseDB):
 
-	def insert_new_sector(self, name):
+	def insert_new_sector(self, tx, name):
 		try:
 			tx.execute(\
 				"insert into sectors (name) "
@@ -320,7 +320,7 @@ class SectorPipeline(BaseDB):
 			#print 'SQL integrity error: %s' % e
 			log.msg('SQL integrity error: %s' % e)
 			
-	def get_sector_id(self, name, sub=False):
+	def get_sector_id(self, tx, name):
 		tx.execute("select id from sectors where name = %s", name)
 		result = tx.fetchone()
 		if result is None:
@@ -328,10 +328,18 @@ class SectorPipeline(BaseDB):
 		else:
 			return result['id']
 
-	def process_item(self, item, spider):
+    def process_item(self, item, spider):
+        if not isinstance(item, TaseItem):
+            return item
+        # run db query in thread pool
+        query = self.dbpool.runInteraction(self._conditional_insert, item)
+        query.addErrback(self.handle_error)
+        return item
+
+    def _conditional_insert(self, tx, item):
         	if isinstance(item, TaseItem):
-        		item['sector_int'] = self.get_sector_id(item['sector'])
-        		item['subsector_int'] = self.get_sector_id(item['subsector'])
+        		item['sector_int'] = self.get_sector_id(tx, item['sector'])
+        		item['subsector_int'] = self.get_sector_id(tx, item['subsector'])
         	return item
 
 
