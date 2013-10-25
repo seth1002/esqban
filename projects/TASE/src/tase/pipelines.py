@@ -331,8 +331,8 @@ class SectorPipeline(BaseDB):
 
 	def process_item(self, item, spider):
         	if isinstance(item, TaseItem):
-        		item['sector_int'] = self.get_sector_id(name, false)
-        		item['subsector_int'] = self.get_sector_id(name, true)
+        		item['sector_int'] = self.get_sector_id(item['sector'], false)
+        		item['subsector_int'] = self.get_sector_id(item['subsector'], true)
         	return item
 
 
