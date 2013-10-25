@@ -329,7 +329,7 @@ class SectorPipeline(BaseDB):
 		else:
 			return result['id']
 
-	def _conditional_insert(self, tx, item):
+	def process_item(self, item, spider):
         	if isinstance(item, TaseItem):
         		item['sector_int'] = get_sector_id(name, false)
         		item['subsector_int'] = get_sector_id(name, true)
