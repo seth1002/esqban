@@ -342,6 +342,9 @@ class SectorPipeline(BaseDB):
 			item['subsector_int'] = self.get_sector_id(tx, item['subsector'])
 		return item
 
+	def handle_error(self, e):
+		log.err(e)
+
 
 class MySQLStorePipeline(BaseDB):
 
