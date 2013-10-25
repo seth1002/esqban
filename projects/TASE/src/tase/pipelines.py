@@ -321,18 +321,17 @@ class SectorPipeline(BaseDB):
 			log.msg('SQL integrity error: %s' % e)
 			
 	def get_sector_id(self, name, sub=False):
-		name = item['subsector'] if sub else item['sector']
-		tx.execute("select id from sectors where name = %s", item['sector'])
+		tx.execute("select id from sectors where name = %s", name)
 		result = tx.fetchone()
 		if result is None:
-			return insert_new_sector( item['sector'] )
+			return insert_new_sector( name )
 		else:
 			return result['id']
 
 	def process_item(self, item, spider):
         	if isinstance(item, TaseItem):
-        		item['sector_int'] = self.get_sector_id(item['sector'], False)
-        		item['subsector_int'] = self.get_sector_id(item['subsector'], True)
+        		item['sector_int'] = self.get_sector_id(item['sector'])
+        		item['subsector_int'] = self.get_sector_id(item['subsector'])
         	return item
 
 
