@@ -476,8 +476,6 @@ class NewsPipeline(BaseDB):
     def process_item(self, item, spider):
         if not isinstance(item, NewsArticle):
             return item
-        if item['category'] != category_comp:
-            return item
         symbol = item['symbol']
         #url_hash = hashlib.sha224(item['url']).hexdigest()
         url = item['url']
