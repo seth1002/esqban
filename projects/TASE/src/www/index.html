@@ -40,6 +40,18 @@ function LoadSector(id)
 	});
 }
 
+function LoadNCAV()
+{
+	var url = "ncav.php";
+	$.getJSON(url, function(data) {
+		$("#companies").text("");
+		$.each(data, function (i, fb) {
+			var a = "<a href='javascript:LoadSymbol(&quot;" + fb.symbol + "&quot;);'>" + fb.name + "</a><br>";
+			$("#companies").append(a);
+		});
+	});
+}
+
 function LoadSymbol(symbol)
 {
 	$("#header").html("<h1 style='margin-bottom:0;'>" + symbol + "</h1>");
@@ -53,6 +65,8 @@ $.getJSON(url, function(data) {
 		$("#sectors").append(a);
 	});
 });
+var a = "<a href='javascript:LoadNCAV();'>NCAV</a><br>";
+$("#sectors").append(a);
 
 </script>
 
