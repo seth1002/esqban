@@ -42,7 +42,7 @@ function LoadSector(id)
 
 function LoadNCAV()
 {
-	var url = "ncav.php";
+	var url = "ncav.php?callback=?";
 	$.getJSON(url, function(data) {
 		$("#companies").text("");
 		$.each(data, function (i, fb) {
