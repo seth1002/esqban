@@ -1,6 +1,4 @@
 <?php
-	//header('Content-Type: application/json');
-	print $_GET["callback"] . "(" . "[";
 	$user_name = "sqba";
 	$password = "crl2688";
 	$database = "tase";
@@ -17,7 +15,7 @@
 	while ( $db_field = mysql_fetch_assoc($result) ) {
 		print "<a href='";
 		print $db_field['url'];
-		print "'>URL</a>";
+		print "'>URL</a>\n";
 
 		print "<a href='";
 		print $db_field['tase_url'];
