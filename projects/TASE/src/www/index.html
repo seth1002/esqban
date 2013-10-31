@@ -46,7 +46,7 @@ function LoadNCAV()
 	$.getJSON(url, function(data) {
 		$("#companies").text("");
 		$.each(data, function (i, fb) {
-			var a = "<a href='javascript:LoadSymbol(&quot;" + fb.symbol + "&quot;);'>" + fb.name + "</a><br>";
+			var a = "<a href='javascript:LoadSymbol(&quot;" + fb.symbol + "&quot;);'>" + fb.name + "( " + fb.ncav + ")</a><br>";
 			$("#companies").append(a);
 		});
 	});
