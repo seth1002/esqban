@@ -16,6 +16,16 @@ $(function() {
 	
 	function create_chart(prices, news)
 	{
+		// set the allowed units for data grouping
+		var groupingUnits = [[
+			'week',                         // unit name
+			[1]                             // allowed multiples
+		], [
+			'month',
+			[1, 2, 3, 4, 6]
+		]];
+
+		// create the chart
 		$('#graph_container').highcharts('StockChart', {
 			rangeSelector : {
 				selected : 1
@@ -42,22 +52,16 @@ $(function() {
 		    }],
 
 			series : [{
+				id : 'dataseries',
 				type : 'candlestick',
 				name : str_symbol + ' Stock Price',
 				data : prices,
-				id : 'dataseries',
+		        dataGrouping: {
+					units: groupingUnits
+		        },
 				threshold : null,
 				tooltip: {
 					valueDecimals: 2
-				},
-				fillColor : {
-					linearGradient : {
-						x1: 0, 
-						y1: 0, 
-						x2: 0, 
-						y2: 1
-					},
-					stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
 				}
 			},
 			// volume
