@@ -9,7 +9,7 @@
 
 	if ($db_found) {
 
-	$SQL = "SELECT url, tase_url FROM companies where symbol='" . $_GET["symbol"] . "'";
+	$SQL = "SELECT * FROM companies where symbol='" . $_GET["symbol"] . "'";
 	$result = mysql_query($SQL);
 
 	while ( $db_field = mysql_fetch_assoc($result) ) {
