@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script src="highstock.js"></script>
+	<script src="exporting.js"></script>
+
+	<title>TASE</title>
+
+	<div id="container" style="width:1000px">
+
+		<div id="header" style="background-color:#FFFFFF;">
+			<h1 style="margin-bottom:0;">Main Title of Web Page</h1>
+		</div>
+
+		<div id="sectors" style="background-color:#FFFFFF;height:600px;width:200px;float:left;overflow:auto;">
+		</div>
+
+		<div id="companies" style="background-color:#FFFFFF;height:600px;width:200px;float:left;overflow:auto;">
+		</div>
+
+		<div id="graph" style="background-color:#FFFFFF;height:600px;width:600px;float:left;" src='graph3.php?symbol=SNFL'>
+		</div>
+
+		<div id="info" style="background-color:#FFFFFF;height:200px;width:600px;float:right;" src='info.php?symbol=SNFL'>
+		</div>
+
+		<div id="footer" style="background-color:#FFFFFF;clear:both;text-align:center;">
+		sqba
+		</div>
+	</div>
+
+<script type="text/javascript">
+function LoadSector(id)
+{
+	var url = "companies.php?sector=" + id + "&callback=?";
+	$.getJSON(url, function(data) {
+		$("#companies").text("");
+		$.each(data, function (i, fb) {
+			var a = "<a href='javascript:LoadSymbol(&quot;" + fb.symbol + "&quot;);'>" + fb.name + "</a><br>";
+			$("#companies").append(a);
+		});
+	});
+}
+
+function LoadNCAV()
+{
+	var url = "ncav.php?callback=?";
+	$.getJSON(url, function(data) {
+		$("#companies").text("");
+		$.each(data, function (i, fb) {
+			var a = "<a href='javascript:LoadSymbol(&quot;" + fb.symbol + "&quot;);'>" + fb.name + "( " + fb.NCAV + ")</a><br>";
+			$("#companies").append(a);
+		});
+	});
+}
+
+function LoadSymbol(symbol)
+{
+	$("#header").html("<h1 style='margin-bottom:0;'>" + symbol + "</h1>");
+	$('#graph').load("graph4.php?symbol=" + symbol);
+	$('#info').load("info.php?symbol=" + symbol);
+}
+
+var url = "sectors.php?callback=?";
+$.getJSON(url, function(data) {
+	$.each(data, function (i, fb) {
+		var a = "<a href='javascript:LoadSector(&quot;" + fb.id + "&quot;);'>" + fb.name + "</a><br>";
+		$("#sectors").append(a);
+	});
+	var a = "<a href='javascript:LoadNCAV();'>NCAV</a><br>";
+	$("#sectors").append(a);
+});
+
+</script>
+
+</body>
+</html>
