@@ -14,7 +14,7 @@ $(function() {
 	var query_news = "news_json.php?symbol=" + str_symbol + "&callback=?"
 	
 	
-	function create_chart(prices, news)
+	function create_chart(prices, volume, news)
 	{
 		// set the allowed units for data grouping
 		var groupingUnits = [[
@@ -88,7 +88,7 @@ $(function() {
 	$.getJSON(query_prices, function(prices) {
 		$.getJSON(query_volume, function(volume) {
 			$.getJSON(query_news, function(news) {
-				create_chart(prices, news);
+				create_chart(prices, volume, news);
 			});
 		});
 	});
