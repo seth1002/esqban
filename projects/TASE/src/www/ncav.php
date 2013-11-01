@@ -10,7 +10,7 @@
 
 	if ($db_found) {
 
-	$SQL = "SELECT symbol as name, symbol, ncav FROM ncav ORDER BY ncav DESC";
+	$SQL = "SELECT DISTINCT symbol as name, symbol, ncav FROM ncav ORDER BY ncav DESC";
 
 	$result = mysql_query($SQL);
 	
