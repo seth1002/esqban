@@ -10,7 +10,7 @@
 	$db_found = mysql_select_db($database, $db_handle);
 
 	if ($db_found) {
-		$SQL = "SELECT date_ as date, volume FROM all_prices WHERE symbol='" . $_GET["symbol"] . "'";
+		$SQL = "SELECT date_, volume FROM all_prices WHERE symbol='" . $_GET["symbol"] . "'";
 		$result = mysql_query($SQL);
 		$start = true;
 
