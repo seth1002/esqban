@@ -28,10 +28,12 @@
 		print "Subsector: ";
 		print $db_field['subsector'];
 
-		print "</br>";
-		print "<a href='";
-		print $db_field['url'];
-		print "'>URL</a>";
+		if (!empty($db_field['url'])) {
+			print "</br>";
+			print "<a href='";
+			print $db_field['url'];
+			print "'>URL</a>";
+		}
 
 		print "</br>";
 		print "<a href='";
