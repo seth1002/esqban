@@ -1,5 +1,6 @@
 <?php
 	header('Content-Type: application/json');
+	print $_GET["callback"] . "(" . "[";
 	$user_name = "sqba";
 	$password = "crl2688";
 	$database = "tase";
@@ -11,16 +12,20 @@
 	if ($db_found) {
 		$SQL = "SELECT date_ as date, volume FROM all_prices WHERE symbol='" . $_GET["symbol"] . "'";
 		$result = mysql_query($SQL);
-
-		print $_GET["callback"] . "(";
 		$start = true;
-		$output = array();	
-		while ( $db_field = mysql_fetch_assoc($result) ) {
-			$output[]=$db_field;
-		}
-		print(json_encode($output));
-		print(")");
 
+		while ( $db_field = mysql_fetch_assoc($result) ) {
+			if($start == false)
+				print ",\n";
+			else
+				$start = false;
+			print "[";
+			print $db_field['date_'];
+			print ", ";
+			print $db_field['volume'];
+			print "]";
+		}
+		print "]);";
 		mysql_close($db_handle);
 	} else {
 		print "Database NOT Found ";
