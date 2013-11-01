@@ -13,10 +13,27 @@
 	$result = mysql_query($SQL);
 
 	while ( $db_field = mysql_fetch_assoc($result) ) {
+		print "Name: ";
+		print $db_field['name'];
+
+		print "</br>";
+		print "Category: ";
+		print $db_field['category'];
+
+		print "</br>";
+		print "Sector: ";
+		print $db_field['sector'];
+
+		print "</br>";
+		print "Subsector: ";
+		print $db_field['subsector'];
+
+		print "</br>";
 		print "<a href='";
 		print $db_field['url'];
-		print "'>URL</a>\n";
+		print "'>URL</a>";
 
+		print "</br>";
 		print "<a href='";
 		print $db_field['tase_url'];
 		print "'>TASE URL</a>";
