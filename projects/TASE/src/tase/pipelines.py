@@ -324,7 +324,7 @@ class SectorPipeline(BaseDB):
 		tx.execute("select id from sectors where name = %s", name)
 		result = tx.fetchone()
 		if result is None:
-			return insert_new_sector(tx, name)
+			return self.insert_new_sector(tx, name)
 		else:
 			return result['id']
 
