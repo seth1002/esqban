@@ -34,6 +34,7 @@ class WeatherSpider(CrawlSpider):
 #		'http://www.wunderground.com/history/airport/LLBG/2010/1/1/CustomHistory.html?dayend=2&monthend=1&yearend=2011&req_city=NA&req_state=NA&req_statename=NA&MR=1',
 #		'http://www.wunderground.com/history/airport/LLBG/2012/1/1/CustomHistory.html?dayend=31&monthend=12&yearend=2012&req_city=NA&req_state=NA&req_statename=NA&MR=1',
 		'http://www.wunderground.com/history/airport/LLBG/2013/1/1/CustomHistory.html?dayend=31&monthend=12&yearend=2013&req_city=NA&req_state=NA&req_statename=NA&MR=1',
+		'http://www.wunderground.com/history/airport/LLBG/2014/1/1/CustomHistory.html?dayend=31&monthend=12&yearend=2014&req_city=NA&req_state=NA&req_statename=NA&MR=1',
 	]
 
 	rules = (
