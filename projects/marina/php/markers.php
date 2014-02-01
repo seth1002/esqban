@@ -1,7 +1,7 @@
 <?php
 	header('Content-Type: application/json');
-	$user_name = "sqba";
-	$password = "crl2688";
+	$user_name = "marina";
+	$password = "12345";
 	$database = "marinas";
 	$server = "localhost";
 
