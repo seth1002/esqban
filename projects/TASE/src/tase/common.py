@@ -49,7 +49,7 @@ def to_long(s):
         return 0
 
 def get_text(hxs, path):
-    l = hxs.select(path).extract()
+    l = hxs.xpath(path).extract()
     return get_string(l)
 
 def get_date(s):
