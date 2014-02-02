@@ -1,6 +1,7 @@
 from time import time, sleep
 from urllib2 import Request, urlopen, URLError, HTTPError
 import os, errno
+import datetime
 
 url = "http://195.188.87.186:8888/cam_4.jpg"
 #out_path = "D:\\filip\\roni"
@@ -8,12 +9,15 @@ out_path = os.getcwd() + "\\roni"
 timeout = 1 #second
 num_hours = 10
 
-os.makedirs(out_path)
+if not os.path.exists(out_path):
+    os.makedirs(out_path)
 
 image_index = 1
 def get_image():
     global image_index
-    file_name = out_path + "\\roni_%06d.jpg" % image_index
+    filename1 = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    file_name = out_path + "\\roni_" + filename1 + ".jpg"
+    #file_name = out_path + "\\roni_%06d.jpg" % image_index
     print file_name
     image_index += 1
     try:
