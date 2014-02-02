@@ -1,12 +1,14 @@
 from time import time, sleep
 from urllib2 import Request, urlopen, URLError, HTTPError
-import os
+import os, errno
 
 url = "http://195.188.87.186:8888/cam_4.jpg"
 #out_path = "D:\\filip\\roni"
 out_path = os.getcwd() + "\\roni"
 timeout = 1 #second
 num_hours = 10
+
+os.makedirs(out_path)
 
 image_index = 1
 def get_image():
