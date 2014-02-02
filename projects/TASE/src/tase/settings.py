@@ -27,10 +27,10 @@ MEMUSAGE_LIMIT_MB = 1000
 DOWNLOAD_DELAY = 1
 RANDOMIZE_DOWNLOAD_DELAY = True
 
-#LOG_FILE = 'tase.log'
+LOG_FILE = 'tase.log'
 LOG_STDOUT = True
 #LOG_LEVEL = 'WARNING'
-#LOG_LEVEL = 'ERROR'
+LOG_LEVEL = 'ERROR'
 
 DATABASE_HOST = '127.0.0.1'
 DATABASE_SCHEMA = 'tase'
@@ -48,14 +48,14 @@ HISTORY_PERIOD = 7	# 5 Years
 #PROCESS_NEWS = True
 PROCESS_NEWS_CONTENT = True
 PROCESS_NEWS_HISTORY = True
-#PROCESS_FINANCIAL_STATEMENTS = True
+PROCESS_FINANCIAL_STATEMENTS = True
 
 # for the database
 CATEGORY_COMP = 'company' # rename some day to stock
 CATEGORY_BOND = 'bond'
 CATEGORY_FUND = 'fund'
 
-IMAGES_STORE = '/home/sqba/TASE/img'
+IMAGES_STORE = '/home/sqba/Projects/TASE/img'
 # 90 days of delay for image expiration
 IMAGES_EXPIRES = 90
 IMAGES_THUMBS = {
@@ -65,19 +65,19 @@ IMAGES_THUMBS = {
 IMAGES_MIN_HEIGHT = 110
 IMAGES_MIN_WIDTH = 110
 
-ITEM_PIPELINES = (
-	'tase.pipelines.CleanupPipeline',
-	'tase.pipelines.SessionPipeline',
-	'tase.pipelines.MultiplierPipeline',
-	'tase.pipelines.MarketDataPipeline',
-#	'tase.pipelines.PageRankPipeline',
-#	'tase.pipelines.KeywordPipeline',
-	'tase.pipelines.FinancialStatementsPipeline',
-	'tase.pipelines.NewsPipeline',
-	'tase.pipelines.WeatherPipeline',
-	'tase.pipelines.MyImagesPipeline',
-	'tase.pipelines.SectorPipeline',
-	'tase.pipelines.MySQLStorePipeline'
-)
+ITEM_PIPELINES = {
+	'tase.pipelines.CleanupPipeline': 100,
+	'tase.pipelines.SessionPipeline': 200,
+	'tase.pipelines.MultiplierPipeline': 300,
+	'tase.pipelines.MarketDataPipeline': 400,
+#	'tase.pipelines.PageRankPipeline': 500,
+#	'tase.pipelines.KeywordPipeline': 600,
+	'tase.pipelines.FinancialStatementsPipeline': 700,
+	'tase.pipelines.NewsPipeline': 800,
+	'tase.pipelines.WeatherPipeline': 900,
+	'tase.pipelines.MyImagesPipeline': 1000,
+	'tase.pipelines.SectorPipeline': 1100,
+	'tase.pipelines.MySQLStorePipeline': 1200
+}
 
 

@@ -6,7 +6,7 @@ import datetime
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
 from scrapy.http import Request
 from scrapy.http import FormRequest
 from scrapy.conf import settings
@@ -73,8 +73,8 @@ class TaseSpider(CrawlSpider):
 	# Main companies list, with paging
 	def parse_company_list(self, response):
 		self.log2("parse_company_list: " + response.url)
-		hxs = HtmlXPathSelector(response)
-		links = hxs.select("//tr[@class='pagerText']/td/a")
+		sel = Selector(response)
+		links = sel.xpath("//tr[@class='pagerText']/td/a")
 		for link in links:
 			m = re.search("javascript:__doPostBack\('(.*?)'", link.extract())
 			if m:
@@ -84,7 +84,7 @@ class TaseSpider(CrawlSpider):
 	def parse_company(self, response):
 		self.log2("parse_company: " + response.url)
 		#inspect_response(response)
-		hxs = HtmlXPathSelector(response)
+		sel = Selector(response)
 		item = TaseItem()
 		item['category'] = category_comp
 		item['tase_url'] = response.url
@@ -92,26 +92,26 @@ class TaseSpider(CrawlSpider):
 		query = parse_qs(urlparse(response.url)[4]) # query
 		item['CompanyID'] = query['CompanyID'][0]
 		item['ShareID'] = query['ShareID'][0]
-		item['name'] = hxs.select("//td[@class='BigBlue']/text()").extract()[0]
+		item['name'] = sel.xpath("//td[@class='BigBlue']/text()").extract()[0]
 		try:
 			base_url = get_base_url(response)
-			relative_url = hxs.select("//td[@rowspan='4']/img/@src").extract()[0]
+			relative_url = sel.xpath("//td[@rowspan='4']/img/@src").extract()[0]
 			item['image_url'] = urljoin(base_url, relative_url)
 		except IndexError:
 			item['image_url'] = ""
-		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
+		lst = sel.xpath("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
 		if len(lst) > 0:
 			item['symbol'] = lst[0]
 		else:
-			item['symbol'] = hxs.select("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
-		href = hxs.select('//tr[1]/td[1]/a[@target="_blank"]/@href').extract()
+			item['symbol'] = sel.xpath("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
+		href = sel.xpath('//tr[1]/td[1]/a[@target="_blank"]/@href').extract()
 		url = href[0]
 		o = urlparse(url)
 		if len(o.netloc) > 0:
 			item['url'] = url
 		else:
 			item['url'] = ''
-		href = hxs.select("//tr/td[@class='subtitle']/text()").extract()
+		href = sel.xpath("//tr/td[@class='subtitle']/text()").extract()
 		item['sector'] = unescape(urllib.unquote(href[4].strip()))
 		item['subsector'] = unescape(urllib.unquote(href[3].strip()))
 		return self.process_history(item)
@@ -119,21 +119,21 @@ class TaseSpider(CrawlSpider):
 	def parse_bond(self, response):
 		self.log2("parse_bond: " + response.url)
 		#inspect_response(response)
-		hxs = HtmlXPathSelector(response)
+		sel = Selector(response)
 		item = TaseItem()
 		item['category'] = category_bond
 		item['tase_url'] = response.url
 		query = parse_qs(urlparse(response.url)[4]) # query
 		item['CompanyID'] = query['CompanyID'][0]
 		item['ShareID'] = query['ShareID'][0]
-		item['name'] = hxs.select("//td[@class='BigTitleInner']/text()").extract()[0]
-		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
+		item['name'] = sel.xpath("//td[@class='BigTitleInner']/text()").extract()[0]
+		lst = sel.xpath("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
 		if len(lst) > 0:
 			item['symbol'] = lst[0]
 		else:
-			item['symbol'] = hxs.select("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
+			item['symbol'] = sel.xpath("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
 		item['url'] = ""
-		lst = hxs.select("//tr[@class='subtitleText']/following-sibling::tr[1]/td/table/tr/td[@class='subtitle']/text()").extract()
+		lst = sel.xpath("//tr[@class='subtitleText']/following-sibling::tr[1]/td/table/tr/td[@class='subtitle']/text()").extract()
 		item['sector'] = unescape(urllib.unquote(lst[0].strip()))
 		if len(lst) > 1:
 			item['subsector'] = unescape(urllib.unquote(lst[1].strip()))
@@ -159,7 +159,7 @@ class TaseSpider(CrawlSpider):
 
 	def parse_fund(self, response):
 		self.log2("parse_fund: " + response.url)
-#		hxs = HtmlXPathSelector(response)
+#		sel = Selector(response)
 		item = response.request.meta['item']
 		item['tase_url'] = response.url
 		item['name'] = item['symbol']
@@ -225,8 +225,8 @@ class TaseSpider(CrawlSpider):
 			header.append(('trustee_fee', to_float))
 		return header
 
-	def get_base_url(self, hxs):
-		base_url = hxs.select('//base/@href')[0].extract()
+	def get_base_url(self, sel):
+		base_url = sel.xpath('//base/@href')[0].extract()
 		o = urlparse(base_url)
 		res = urlunparse(o)
 #		log.msg("get_base_url: " + res, level=log.WARNING)
@@ -237,8 +237,8 @@ class TaseSpider(CrawlSpider):
 #		self.log2("get_history_data: " + response.url)
 		#self.log2("get_history_data " + response.body)
 		item = response.request.meta['item'] 
-		hxs = HtmlXPathSelector(response)
-		viewstate = hxs.select('//input[@name="__VIEWSTATE"]/@value').extract()[0]
+		sel = Selector(response)
+		viewstate = sel.xpath('//input[@name="__VIEWSTATE"]/@value').extract()[0]
 		fd = {
 			'__VIEWSTATE':viewstate,
 			'HistoryData1$hiddenID':'0',
@@ -249,7 +249,7 @@ class TaseSpider(CrawlSpider):
 		for i in range(20):
 			name = "HistoryData1$CBDailyDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
-		base_url = self.get_base_url(hxs)
+		base_url = self.get_base_url(sel)
 		response = response.replace(url=base_url)
 		req = FormRequest.from_response(response, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'item': item})
 		self.log( req )
@@ -271,19 +271,19 @@ class TaseSpider(CrawlSpider):
 			#open(item['symbol'] + '.html', 'ab').write(response.body)
 			
 			self.log2('Processing history for ' + item['symbol'])
-			hxs = HtmlXPathSelector(response)
+			sel = Selector(response)
 	
 			header = self.get_header(item)
-			#columns = hxs.select('//table[@id="HistoryData1_gridHistoryData_DataGrid1"]/tr[@class="gridHeader"]/td[@class="titleGridReg"]//text()')
+			#columns = sel.xpath('//table[@id="HistoryData1_gridHistoryData_DataGrid1"]/tr[@class="gridHeader"]/td[@class="titleGridReg"]//text()')
 			#for col in columns:
 			#	header.append(col.extract())
 			
 #			items = []
-			table = hxs.select('//table[@id="HistoryData1_gridHistoryData_DataGrid1"]')
-			rows = table.select('tr')#[@class != "gridHeader"]')
+			table = sel.xpath('//table[@id="HistoryData1_gridHistoryData_DataGrid1"]')
+			rows = table.xpath('tr')#[@class != "gridHeader"]')
 			row_index = 0
 			for row in rows:
-				columns = row.select('td')
+				columns = row.xpath('td')
 				if len(header) <= len(columns) and row_index > 0:
 					item2 = TaseItem(item)
 					col_index = 0
@@ -291,7 +291,7 @@ class TaseSpider(CrawlSpider):
 						if col_index < len(header):
 							name = header[col_index][0]
 							func = header[col_index][1]
-							s = column.select('.//text()').extract()
+							s = column.xpath('.//text()').extract()
 							item2[name] = func(s)
 						col_index += 1
 					yield item2
@@ -382,8 +382,8 @@ def to_int(s):
 	except ValueError:
 		return 0
 
-def get_text(hxs, path):
-	l = hxs.select(path).extract()
+def get_text(sel, path):
+	l = sel.xpath(path).extract()
 	return get_string(l)
 
 def get_date(s):

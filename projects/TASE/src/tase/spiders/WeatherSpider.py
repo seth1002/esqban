@@ -6,7 +6,7 @@ import datetime
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
 from scrapy.http import Request
 from scrapy.http import FormRequest
 from scrapy.conf import settings
@@ -49,16 +49,16 @@ class WeatherSpider(CrawlSpider):
 #		self.log2("parse_year: " + response.url)
 		year = 0
 		month = ""
-		hxs = HtmlXPathSelector(response)
-		tables = hxs.select("//div[@id='observations_details']/table[@id='obsTable']/tbody")
+		sel = Selector(response)
+		tables = sel.xpath("//div[@id='observations_details']/table[@id='obsTable']/tbody")
 		for table in tables:
-			row = table.select("tr")
+			row = table.xpath("tr")
 			clas = tase.common.get_text(row, 'td/@class')
 			if len(clas) > 0:
 				year = tase.common.to_int(tase.common.get_text(table, "preceding-sibling::thead[1]/tr/th[1]/text()"))
 				month = tase.common.get_text(table, "tr/td[1]/text()")
 			else:
-				cols = row.select("td")
+				cols = row.xpath("td")
 				day = tase.common.to_int(tase.common.get_text(cols[0], 'a/text()'))
 #				log.msg(str(year) + " " + month + " " + str(day), level=log.WARNING)
 				item = WeatherItem()

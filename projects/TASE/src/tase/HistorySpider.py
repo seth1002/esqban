@@ -2,7 +2,7 @@
 
 from scrapy.contrib.spiders import CrawlSpider
 
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
 from scrapy.http import Request
 from scrapy.http import FormRequest
 from scrapy.conf import settings
@@ -31,9 +31,9 @@ class HistorySpider(CrawlSpider):
             return Request(url, callback=self.get_history_data, meta={'item': item})
     
     def get_base_url(self, response):
-        hxs = HtmlXPathSelector(response)
+        sel = Selector(response)
         base_url = response.url
-        #base_url = hxs.select('//base/@href')[0].extract()
+        #base_url = sel.xpath('//base/@href')[0].extract()
         o = urlparse(base_url)
         res = urlunparse(o)
 #        log.msg("get_base_url: " + res, level=log.WARNING)
@@ -41,8 +41,8 @@ class HistorySpider(CrawlSpider):
 
     def get_history_data(self, response):
         item = response.request.meta['item'] 
-        hxs = HtmlXPathSelector(response)
-        viewstate = hxs.select('//input[@name="__VIEWSTATE"]/@value').extract()[0]
+        sel = Selector(response)
+        viewstate = sel.xpath('//input[@name="__VIEWSTATE"]/@value').extract()[0]
         fd = {
             '__VIEWSTATE':viewstate,
             'ctl00$SPWebPartManager1$' + self.get_control_id() + '$ctl00$HistoryData1$hiddenID':'0',
@@ -61,12 +61,12 @@ class HistorySpider(CrawlSpider):
 
     def parse_history_data(self, response):
         item = response.request.meta['item']
-        hxs = HtmlXPathSelector(response)
-        table = hxs.select('//table[@id="ctl00_SPWebPartManager1_' + self.get_control_id() + '_ctl00_HistoryData1_gridHistoryData_DataGrid1"]')
-        rows = table.select('tr')#[@class != "gridHeader"]')
+        sel = Selector(response)
+        table = sel.xpath('//table[@id="ctl00_SPWebPartManager1_' + self.get_control_id() + '_ctl00_HistoryData1_gridHistoryData_DataGrid1"]')
+        rows = table.xpath('tr')#[@class != "gridHeader"]')
         row_index = 0
         for row in rows:
-            columns = row.select('td')
+            columns = row.xpath('td')
             if len(self.header) <= len(columns) and row_index > 0:
                 item2 = TaseItem(item)
                 col_index = 0
@@ -74,7 +74,7 @@ class HistorySpider(CrawlSpider):
                     if col_index < len(self.header):
                         name = self.header[col_index][0]
                         func = self.header[col_index][1]
-                        s = column.select('.//text()').extract()
+                        s = column.xpath('.//text()').extract()
                         item2[name] = func(s)
                     col_index += 1
                 yield item2

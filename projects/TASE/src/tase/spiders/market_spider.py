@@ -4,7 +4,7 @@ import urllib
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
 from scrapy.http import Request
 from scrapy.http import FormRequest
 from scrapy.conf import settings
@@ -39,8 +39,8 @@ class MarketSpider(CrawlSpider):
 
 	def parse_markets(self, response):
 #		self.log("parse_markets: " + response.url)
-		hxs = HtmlXPathSelector(response)
-		links = hxs.select("//a[@class='IndexesLink1']/@href")
+		sel = Selector(response)
+		links = sel.xpath("//a[@class='IndexesLink1']/@href")
 		for link in links:
 			url = urllib.unquote(link.extract())
 			full_url = 'http://www.' + self.allowed_domains[0] + url
@@ -48,9 +48,9 @@ class MarketSpider(CrawlSpider):
 
 	def parse_market(self, response):
 		self.log("parse_market: " + response.url)
-		hxs = HtmlXPathSelector(response)
+		sel = Selector(response)
 		market = MarketItem()
-		rows = hxs.select('//table[@id="ctl00_SPWebPartManager1_g_24df47e6_1ef9_484c_8cef_5524d650e226_ctl00_gridShareByIndex_DataGrid1"]/tr')
+		rows = sel.xpath('//table[@id="ctl00_SPWebPartManager1_g_24df47e6_1ef9_484c_8cef_5524d650e226_ctl00_gridShareByIndex_DataGrid1"]/tr')
 		market['symbols'] = []
 		row_index = 0
 		for row in rows:
@@ -58,7 +58,7 @@ class MarketSpider(CrawlSpider):
 				col = tase.common.get_text(row, 'td[2]/text()')
 				market['symbols'].append(col)
 			row_index += 1
-		links = hxs.select("//input[@class='RegularButton' and @value='Historical Prices']/@onclick")
+		links = sel.xpath("//input[@class='RegularButton' and @value='Historical Prices']/@onclick")
 		for link in links:
 			m = re.search("javascript:gotoUrl\('(.*?)'", link.extract())
 			if m:
@@ -66,8 +66,8 @@ class MarketSpider(CrawlSpider):
 				full_url = 'http://www.' + self.allowed_domains[0] + url
 				yield Request(full_url, callback=self.get_market_history_data, meta={'market': market})
 
-#	def get_base_url(self, hxs):
-#		base_url = hxs.select('//base/@href')[0].extract()
+#	def get_base_url(self, sel):
+#		base_url = sel.xpath('//base/@href')[0].extract()
 #		o = urlparse(base_url)
 #		res = urlunparse(o)
 ##		log.msg("get_base_url: " + res, level=log.WARNING)
@@ -76,9 +76,9 @@ class MarketSpider(CrawlSpider):
 	def get_market_history_data(self, response):
 #		self.log("get_history_data: " + response.url)
 		#inspect_response(response)
-		hxs = HtmlXPathSelector(response)
+		sel = Selector(response)
 		market = response.request.meta['market']
-		viewstate = hxs.select('//input[@name="__VIEWSTATE"]/@value').extract()[0]
+		viewstate = sel.xpath('//input[@name="__VIEWSTATE"]/@value').extract()[0]
 		fd = {
 			'__VIEWSTATE':viewstate,
 			'ctl00$SPWebPartManager1$g_a97a61ce_3baf_4f18_b714_6cbcc326fa71$ctl00$HistoryData1$hiddenID':'0',
@@ -97,7 +97,7 @@ class MarketSpider(CrawlSpider):
 		for i in range(2):
 			name = "ctl00$SPWebPartManager1$g_b2f63986_2b4a_438d_b1b1_fb08c9e1c862$ctl00$HistoryData1$CBInnerDFiledsList${index}".format(index=i)
 			fd[name] = 'on'
-		#base_url = self.get_base_url(hxs)
+		#base_url = self.get_base_url(sel)
 		#response = response.replace(url=base_url)
 		req = FormRequest.from_response(response, formdata=fd, formname='Form1', callback=self.parse_history_data, meta={'market': market})
 		self.log( req )
@@ -106,14 +106,14 @@ class MarketSpider(CrawlSpider):
 	def parse_history_data(self, response):
 		self.log("parse_history_data: " + response.url)
 		orig_market = response.request.meta['market']
-		hxs = HtmlXPathSelector(response)
-		symbol = tase.common.get_text(hxs, "//td[@class='BigTitleInner']/text()")
+		sel = Selector(response)
+		symbol = tase.common.get_text(sel, "//td[@class='BigTitleInner']/text()")
 		symbol = tase.common.unescape(symbol);
-		table = hxs.select('//table[@id="HistoryData1_gridHistoryData_DataGrid1"]')
-		rows = table.select('tr')#[@class != "gridHeader"]')
+		table = sel.xpath('//table[@id="HistoryData1_gridHistoryData_DataGrid1"]')
+		rows = table.xpath('tr')#[@class != "gridHeader"]')
 		row_index = 0
 		for row in rows:
-			columns = row.select('td')
+			columns = row.xpath('td')
 			if len(self.header) <= len(columns) and row_index > 0:
 				item = MarketItem(orig_market)
 				item['name'] = symbol
@@ -122,7 +122,7 @@ class MarketSpider(CrawlSpider):
 					if col_index < len(self.header):
 						name = self.header[col_index][0]
 						func = self.header[col_index][1]
-						s = column.select('.//text()').extract()
+						s = column.xpath('.//text()').extract()
 						item[name] = func(s)
 					col_index += 1
 				yield item

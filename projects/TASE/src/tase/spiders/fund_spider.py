@@ -3,7 +3,7 @@ import re
 from scrapy.contrib.spiders import Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
 from scrapy.http import Request
 #from scrapy.http import FormRequest
 from scrapy.conf import settings
@@ -67,7 +67,7 @@ class FundSpider(HistorySpider):
 			yield Request(url, callback=self.parse_fund, meta={'item': item})
 
 	def parse_fund(self, response):
-		hxs = HtmlXPathSelector(response)
+		sel = Selector(response)
 		item = response.request.meta['item']
 		item['tase_url'] = response.url
 		item['name'] = item['symbol']
@@ -78,7 +78,7 @@ class FundSpider(HistorySpider):
 		item['url'] = ""
 		try:
 			base_url = get_base_url(response)
-			relative_url = hxs.select("//td[@rowspan='4']/img/@src").extract()[0]
+			relative_url = sel.xpath("//td[@rowspan='4']/img/@src").extract()[0]
 			item['image_url'] = urljoin(base_url, relative_url)
 		except IndexError:
 			item['image_url'] = ""

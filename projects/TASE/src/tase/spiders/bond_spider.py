@@ -3,7 +3,7 @@ import re
 from scrapy.contrib.spiders import Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
 from scrapy.http import Request
 from scrapy.http import FormRequest
 from scrapy.conf import settings
@@ -70,14 +70,14 @@ class BondSpider(HistorySpider):
 
 	# Main companies list, with paging
 	def parse_bond_list(self, response):
-		hxs = HtmlXPathSelector(response)
+		sel = Selector(response)
 		fd = dict()
-		inputs = hxs.select("//input[@type='hidden']")
+		inputs = sel.xpath("//input[@type='hidden']")
 		for inpt in inputs:
-			name = tase.common.get_string(inpt.select("@name").extract())
-			value = tase.common.get_string(inpt.select("@value").extract())
+			name = tase.common.get_string(inpt.xpath("@name").extract())
+			value = tase.common.get_string(inpt.xpath("@value").extract())
 			fd[name] = value
-		links = hxs.select("//tr[@class='pagerText']/td/a")
+		links = sel.xpath("//tr[@class='pagerText']/td/a")
 		for link in links:
 			m = re.search("javascript:__doPostBack\('(.*?)'", link.extract())
 			if m:
@@ -90,7 +90,7 @@ class BondSpider(HistorySpider):
 
 	# almost same as parse_company
 	def parse_bond(self, response):
-		hxs = HtmlXPathSelector(response)
+		sel = Selector(response)
 		item = TaseItem()
 		item['category'] = category_bond
 		item['tase_url'] = response.url
@@ -105,24 +105,24 @@ class BondSpider(HistorySpider):
 		except KeyError:
 			item['ShareID'] = query['FundID'][0]
 		try:
-			item['name'] = hxs.select("//td[@class='BigBlue']/text()").extract()[0]
+			item['name'] = sel.xpath("//td[@class='BigBlue']/text()").extract()[0]
 		except IndexError:
 			item['name'] = ""
 		try:
 			base_url = get_base_url(response)
-			relative_url = hxs.select("//td[@rowspan='4']/img/@src").extract()[0]
+			relative_url = sel.xpath("//td[@rowspan='4']/img/@src").extract()[0]
 			item['image_url'] = urljoin(base_url, relative_url)
 		except IndexError:
 			item['image_url'] = ""
-		lst = hxs.select("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
+		lst = sel.xpath("//td[contains(child::text(), 'Symbol:')]/following-sibling::td[1]/table/tr/td[1]/text()").extract()
 		if len(lst) > 0:
 			item['symbol'] = lst[0]
 		else:
 			try:
-				item['symbol'] = hxs.select("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
+				item['symbol'] = sel.xpath("//td[contains(., 'Symbol:')]/following-sibling::td[1]/text()").extract()[0]
 			except IndexError:
 				item['symbol'] = item['ShareID']
-		href = hxs.select('//tr[1]/td[1]/a[@target="_blank"]/@href').extract()
+		href = sel.xpath('//tr[1]/td[1]/a[@target="_blank"]/@href').extract()
 		if len(href) > 0:
 			url = href[0]
 			o = urlparse(url)
@@ -133,7 +133,7 @@ class BondSpider(HistorySpider):
 		else:
 			item['url'] = ''
 		try:
-			href = hxs.select("//tr/td[@class='subtitle']/text()").extract()
+			href = sel.xpath("//tr/td[@class='subtitle']/text()").extract()
 			item['sector'] = tase.common.unescape(urllib.unquote(href[4].strip()))
 			item['subsector'] = tase.common.unescape(urllib.unquote(href[3].strip()))
 		except IndexError:
