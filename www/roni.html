@@ -1,0 +1,37 @@
+
+
+<html>
+    <head>
+    </head>
+    <body>
+	
+		<img id="cam_2" src="http://195.188.87.186:8888/cam_2.jpg"/>
+		<img id="cam_3" src="http://195.188.87.186:8888/cam_3.jpg"/>
+		<img id="cam_4" src="http://195.188.87.186:8888/cam_4.jpg"/>
+
+    </body>
+<script language="javascript" type = "text/javascript">
+function reload_image(image_name) {
+    // create new image obj
+    var image = new Image();
+
+    // replace the existing image once the new image has loaded
+    image.onload = function () {
+        document.images[image_name].src = image.src;
+    }
+
+    // set the source of the new image to trigger the load 
+    image.src = document.images[image_name].src;
+}
+function refresh() {
+	reload_image("cam_2")
+	reload_image("cam_3")
+	reload_image("cam_4")
+}
+
+window.onload=function(){
+    setInterval(function(){refresh()}, 100 ); 
+}
+</script>
+</html>
+
