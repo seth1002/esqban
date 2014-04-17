@@ -174,7 +174,7 @@ class StockSpider(HistorySpider):
 		if PROCESS_FINANCIAL_STATEMENTS:
 			yield self.get_company_details(item)
 		#url = "http://archive.globes.co.il/searchgl/%s" % item['symbol']
-		url = "http://www.globes.co.il/serveen/globes/searchresults.asp?exact=%s" % item['symbol']
+		url = "http://www.globes.co.il/en/searchajax.aspx?page=1&searchType=all&searchQuery=%s" % item['symbol']
 		if PROCESS_NEWS:
 			yield Request(url, callback=self.parse_company_news, meta={'item': item})
 		yield self.process_history(item)
@@ -223,14 +223,14 @@ class StockSpider(HistorySpider):
 		item = response.request.meta['item']
 		sel = Selector(response)
 		#links = sel.xpath("//tr[@class='RowPrint']")
-		links = sel.xpath("//div[@class='views_content']")
+		links = sel.xpath("//b[@class='searchElement']/a")
 		for link in links:
 			article = NewsArticle()
 			article['symbol'] = item['symbol']
 			a = link.xpath("a")
 			if len(a) == 0:
 				continue
-			article['url'] = 'http://www.globes.co.il' + tase.common.get_string(a.xpath("@href").extract())
+			article['url'] = tase.common.get_string(a.xpath("@href").extract())
 			#article['random_string'] = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(10))
 			#next = link.xpath("following-sibling::tr[*]/td[@class='SubHeader']/a")[0]
 			#summary1 = tase.common.get_string(next.xpath("text()").extract())
@@ -247,7 +247,7 @@ class StockSpider(HistorySpider):
 				return
 			article['summary'] = summary
 			try:
-				strdate = p[1].xpath("span/text()")[0].extract()
+				strdate = p[1].xpath("span[@class='date']/text()")[0].extract()
 				article['date_'] = tase.common.get_date2(strdate)
 				if PROCESS_NEWS_CONTENT:
 					yield Request(article['url'], callback=self.parse_company_news_content, dont_filter=True, meta={'article': article})
@@ -257,10 +257,10 @@ class StockSpider(HistorySpider):
 				self.log('Error reading date on page %s' % response.url)
 				tase.common.log2('Error reading date on page %s' % response.url)
 		if PROCESS_NEWS_HISTORY:
-			a = sel.xpath("//a[contains(., '>>')]")
+			a = sel.xpath("//a[@onclick='GetMoreResults()']")
 			if len(a) > 0:
 				href = tase.common.get_string(a[0].xpath("@href").extract())
-				url = 'http://www.globes.co.il' + href
+				url = "http://www.globes.co.il/en/searchajax.aspx?page=2&searchType=all&searchQuery=%s" % item['symbol']
 				yield Request(url, callback=self.parse_company_news, meta={'item': item})
 
 	def parse_company_news_content(self, response):
