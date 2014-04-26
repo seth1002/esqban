@@ -42,17 +42,17 @@ class NewsSpider(CrawlSpider):
 		)
 		
 	def get_start_urls():
-        dbpool = adbapi.ConnectionPool('MySQLdb',
-                host=settings['DATABASE_HOST'],
-                db=settings['DATABASE_SCHEMA'],
-                user=settings['DATABASE_USER'],
-                passwd=settings['DATABASE_PASSWORD'],
-                cursorclass=MySQLdb.cursors.DictCursor,
-                charset='utf8',
-                use_unicode=True
-            )
-        conn = dbpool.connect()
-        cur = conn.cursor()
+		dbpool = adbapi.ConnectionPool('MySQLdb',
+		        host=settings['DATABASE_HOST'],
+		        db=settings['DATABASE_SCHEMA'],
+		        user=settings['DATABASE_USER'],
+		        passwd=settings['DATABASE_PASSWORD'],
+		        cursorclass=MySQLdb.cursors.DictCursor,
+		        charset='utf8',
+		        use_unicode=True
+		    )
+		conn = dbpool.connect()
+		cur = conn.cursor()
 		rows = dbpool.runQuery('SELECT symbol FROM companies')
 		for row in rows:
 			strURL = "http://www.globes.co.il/en/searchajax.aspx?page=1&searchType=all&searchQuery=%s" % row[0]
