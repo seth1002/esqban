@@ -3,8 +3,8 @@ import csv
 import time
 import datetime
 
-from twisted.enterprise import adbapi
 from scrapy.conf import settings
+import MySQLdb.cursors
 
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
@@ -36,25 +36,23 @@ class NewsSpider(CrawlSpider):
 	
 	def __init__(self):
 		super(NewsSpider,self).__init__()
-		self.start_urls = get_start_urls()
+		self.start_urls = self.get_start_urls()
 		rules = (
 			Rule(SgmlLinkExtractor(allow=('CustomHistory\.html',)), callback='parse_year'),
 		)
 		
-	def get_start_urls():
-		dbpool = adbapi.ConnectionPool('MySQLdb',
+	def get_start_urls(self):
+		db = MySQLdb.connect(
 		        host=settings['DATABASE_HOST'],
 		        db=settings['DATABASE_SCHEMA'],
 		        user=settings['DATABASE_USER'],
 		        passwd=settings['DATABASE_PASSWORD'],
-		        cursorclass=MySQLdb.cursors.DictCursor,
 		        charset='utf8',
 		        use_unicode=True
 		    )
-		conn = dbpool.connect()
-		cur = conn.cursor()
-		rows = dbpool.runQuery('SELECT symbol FROM companies')
-		for row in rows:
+		cur = db.cursor()
+		cur.execute('SELECT symbol FROM companies WHERE category=%s', settings['CATEGORY_COMP'])
+		for row in cur.fetchall():
 			strURL = "http://www.globes.co.il/en/searchajax.aspx?page=1&searchType=all&searchQuery=%s" % row[0]
 			yield strURL
 	

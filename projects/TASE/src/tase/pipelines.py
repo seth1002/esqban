@@ -329,11 +329,10 @@ class SectorPipeline(BaseDB):
 			return result['id']
 
 	def process_item(self, item, spider):
-		if not isinstance(item, TaseItem):
-			return item
-		# run db query in thread pool
-		query = self.dbpool.runInteraction(self._conditional_insert, item)
-		query.addErrback(self.handle_error)
+		if isinstance(item, TaseItem):
+			# run db query in thread pool
+			query = self.dbpool.runInteraction(self._conditional_insert, item)
+			query.addErrback(self.handle_error)
 		return item
 
 	def _conditional_insert(self, tx, item):
@@ -349,11 +348,10 @@ class SectorPipeline(BaseDB):
 class MySQLStorePipeline(BaseDB):
 
     def process_item(self, item, spider):
-        if not isinstance(item, TaseItem):
-            return item
-        # run db query in thread pool
-        query = self.dbpool.runInteraction(self._conditional_insert, item)
-        query.addErrback(self.handle_error)
+        if isinstance(item, TaseItem):
+            # run db query in thread pool
+            query = self.dbpool.runInteraction(self._conditional_insert, item)
+            query.addErrback(self.handle_error)
         return item
 
     def _conditional_insert(self, tx, item):
@@ -517,6 +515,7 @@ class NewsPipeline(BaseDB):
             #print 'SQL integrity error: %s' % e
             log.msg('SQL integrity error: %s' % e)
         self.conn.commit()
+        return item
 
 
 class WeatherPipeline(BaseDB):
@@ -534,6 +533,7 @@ class WeatherPipeline(BaseDB):
             #print 'SQL integrity error: %s' % e
             log.msg('SQL integrity error: %s' % e)
         self.conn.commit()
+        return item
 
 
 class MyImagesPipeline(ImagesPipeline):
