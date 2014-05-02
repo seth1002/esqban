@@ -72,6 +72,11 @@ def get_date2(s):
     res = datetime.datetime.strptime(s, "%d %b %y")
     return res.isoformat()
 
+def get_date3(s):
+    s = get_string(s)
+    res = datetime.datetime.strptime(s, "%d/%m/%Y %H:%M")
+    return res.isoformat()
+
 def is_sequence(arg):
     return (not hasattr(arg, "strip") and
             hasattr(arg, "__getitem__") or

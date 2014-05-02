@@ -14,7 +14,6 @@ from scrapy.utils.response import get_base_url
 from tase.HistorySpider import HistorySpider
 from tase.items import TaseItem
 from tase.items import FinancialStatement
-from tase.items import NewsArticle
 
 import urllib
 from urlparse import urlparse
@@ -32,15 +31,12 @@ from html2text import html2text
 PROCESS_HISTORY = settings.getbool('PROCESS_HISTORY', False)
 HISTORY_PERIOD = settings.getint('HISTORY_PERIOD', 2) # 1 month
 category_comp = settings.get('CATEGORY_COMP')
-PROCESS_NEWS  = settings.getbool('PROCESS_NEWS', False)
-PROCESS_NEWS_HISTORY  = settings.getbool('PROCESS_NEWS_HISTORY', False)
-PROCESS_NEWS_CONTENT  = settings.getbool('PROCESS_NEWS_CONTENT', True)
 PROCESS_FINANCIAL_STATEMENTS = settings.getbool('PROCESS_FINANCIAL_STATEMENTS', False)
 
 
 class StockSpider(HistorySpider):
 	name = 'stocks'
-	allowed_domains = ['tase.co.il', 'globes.co.il']
+	allowed_domains = ['tase.co.il']
 	start_urls = ['http://www.tase.co.il/eng/marketdata/stocks/marketdata/Pages/MarketData.aspx']
 
 	rules = (
@@ -48,8 +44,6 @@ class StockSpider(HistorySpider):
 		Rule(SgmlLinkExtractor(allow=('companyMainData\.aspx',)), callback='parse_company'),
 		Rule(SgmlLinkExtractor(allow=('companyhistorydata\.aspx',)), callback='get_history_data'),
 		Rule(SgmlLinkExtractor(allow=('companyDetails\.htm',)), callback='parse_company_details'),
-#		Rule(SgmlLinkExtractor(allow=('searchresults\.asp',)), callback='parse_company_news'),
-#		Rule(SgmlLinkExtractor(allow=('_page\d\.html',)), callback='parse_company_news'),
 	)
 	
 	header = (
@@ -173,10 +167,6 @@ class StockSpider(HistorySpider):
 		item['subsector_int'] = 0
 		if PROCESS_FINANCIAL_STATEMENTS:
 			yield self.get_company_details(item)
-		#url = "http://archive.globes.co.il/searchgl/%s" % item['symbol']
-		url = "http://www.globes.co.il/en/searchajax.aspx?page=1&searchType=all&searchQuery=%s" % item['symbol']
-		if PROCESS_NEWS:
-			yield Request(url, callback=self.parse_company_news, meta={'item': item})
 		yield self.process_history(item)
 	
 	def get_company_details(self, item):
@@ -218,60 +208,3 @@ class StockSpider(HistorySpider):
 						fs[key] = val
 		return fs
 
-	def parse_company_news(self, response):
-		self.log(response.url)
-		item = response.request.meta['item']
-		sel = Selector(response)
-		#links = sel.xpath("//tr[@class='RowPrint']")
-		links = sel.xpath("//b[@class='searchElement']/a")
-		for link in links:
-			article = NewsArticle()
-			article['symbol'] = item['symbol']
-			a = link.xpath("a")
-			if len(a) == 0:
-				continue
-			article['url'] = tase.common.get_string(a.xpath("@href").extract())
-			#article['random_string'] = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(10))
-			#next = link.xpath("following-sibling::tr[*]/td[@class='SubHeader']/a")[0]
-			#summary1 = tase.common.get_string(next.xpath("text()").extract())
-			#next = link.xpath("following-sibling::tr[*]/td[@class='excerpt']/doc")[0]
-			#article['summary'] = summary1 + ' ' + html2text(tase.common.get_string(next.extract()))
-			#next = link.xpath("following-sibling::tr[*]/td[@class='DateIndex']/a")[0]
-			#strdate = next.xpath("text()").extract()
-			article['headline'] = tase.common.get_string(a.xpath('text()').extract())
-			p = link.xpath("p")
-			if len(p) < 2:
-				continue
-			summary = tase.common.get_string(p[0].xpath('text()').extract())
-			if len(summary) < 10:
-				return
-			article['summary'] = summary
-			try:
-				strdate = p[1].xpath("span[@class='date']/text()")[0].extract()
-				article['date_'] = tase.common.get_date2(strdate)
-				if PROCESS_NEWS_CONTENT:
-					yield Request(article['url'], callback=self.parse_company_news_content, dont_filter=True, meta={'article': article})
-				else:
-					yield article
-			except ValueError:
-				self.log('Error reading date on page %s' % response.url)
-				tase.common.log2('Error reading date on page %s' % response.url)
-		if PROCESS_NEWS_HISTORY:
-			a = sel.xpath("//a[@onclick='GetMoreResults()']")
-			if len(a) > 0:
-				href = tase.common.get_string(a[0].xpath("@href").extract())
-				url = "http://www.globes.co.il/en/searchajax.aspx?page=2&searchType=all&searchQuery=%s" % item['symbol']
-				yield Request(url, callback=self.parse_company_news, meta={'item': item})
-
-	def parse_company_news_content(self, response):
-		self.log(response.url)
-		article = response.request.meta['article']
-		sel = Selector(response)
-		try:
-			#content = html2text(tase.common.get_string(sel.xpath("//p[@id='content']").extract()))
-			content = html2text(tase.common.get_string(sel.xpath("//div[@id='EN_main_Content']").extract()))
-		except:
-			content = ''
-			tase.common.log2('Error reading content on page %s' % response.url)
-		article['content'] = content
-		return article
