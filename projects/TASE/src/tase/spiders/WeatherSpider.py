@@ -2,6 +2,7 @@ import re
 import csv
 import time
 import datetime
+from datetime import date
 
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
@@ -25,21 +26,19 @@ class WeatherSpider(CrawlSpider):
 	month_dict = {"Jan":1,"Feb":2,"Mar":3,"Apr":4, "May":5, "Jun":6, "Jul":7,"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12}
 	name = 'weather'
 	allowed_domains = ['wunderground.com']
-	start_urls = [
-#		'http://www.wunderground.com/history/airport/LLBG/2005/1/1/CustomHistory.html?dayend=2&monthend=1&yearend=2006&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-#		'http://www.wunderground.com/history/airport/LLBG/2006/1/1/CustomHistory.html?dayend=2&monthend=1&yearend=2007&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-#		'http://www.wunderground.com/history/airport/LLBG/2007/1/1/CustomHistory.html?dayend=2&monthend=1&yearend=2008&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-#		'http://www.wunderground.com/history/airport/LLBG/2008/1/1/CustomHistory.html?dayend=2&monthend=1&yearend=2009&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-#		'http://www.wunderground.com/history/airport/LLBG/2009/1/1/CustomHistory.html?dayend=2&monthend=1&yearend=2010&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-#		'http://www.wunderground.com/history/airport/LLBG/2010/1/1/CustomHistory.html?dayend=2&monthend=1&yearend=2011&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-#		'http://www.wunderground.com/history/airport/LLBG/2012/1/1/CustomHistory.html?dayend=31&monthend=12&yearend=2012&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-		'http://www.wunderground.com/history/airport/LLBG/2013/1/1/CustomHistory.html?dayend=31&monthend=12&yearend=2013&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-		'http://www.wunderground.com/history/airport/LLBG/2014/1/1/CustomHistory.html?dayend=31&monthend=12&yearend=2014&req_city=NA&req_state=NA&req_statename=NA&MR=1',
-	]
+	start_urls = []
 
 	rules = (
 		Rule(SgmlLinkExtractor(allow=('CustomHistory\.html',)), callback='parse_year'),
 	)
+
+	def __init__(self):
+		super(WeatherSpider,self).__init__()
+		self.start_urls = self.get_start_urls()
+		
+	def get_start_urls(self):
+		year = str(date.today().year)
+		yield 'http://www.wunderground.com/history/airport/LLBG/'+year+'/1/1/CustomHistory.html?dayend=31&monthend=12&yearend='+year+'&req_city=NA&req_state=NA&req_statename=NA&MR=1'
 	
 #	def __init__(self):
 #		self.headers = get_headers() 
@@ -63,26 +62,26 @@ class WeatherSpider(CrawlSpider):
 #				log.msg(str(year) + " " + month + " " + str(day), level=log.WARNING)
 				item = WeatherItem()
 				item["date_"] = datetime.date(year, self.month_dict[month], day)
-				item["temp_high"] = tase.common.to_int(tase.common.get_text(cols[1], 'text()'))
-				item["temp_avg"] = tase.common.to_int(tase.common.get_text(cols[2], 'text()'))
-				item["temp_low"] = tase.common.to_int(tase.common.get_text(cols[3], 'text()'))
-				item["dew_high"] = tase.common.to_int(tase.common.get_text(cols[4], 'text()'))
-				item["dew_avg"] = tase.common.to_int(tase.common.get_text(cols[5], 'text()'))
-				item["dew_low"] = tase.common.to_int(tase.common.get_text(cols[6], 'text()'))
-				item["hum_high"] = tase.common.to_int(tase.common.get_text(cols[7], 'text()'))
-				item["hum_avg"] = tase.common.to_int(tase.common.get_text(cols[8], 'text()'))
-				item["hum_low"] = tase.common.to_int(tase.common.get_text(cols[9], 'text()'))
-				item["pres_high"] = tase.common.to_int(tase.common.get_text(cols[10], 'text()'))
-				item["pres_avg"] = tase.common.to_int(tase.common.get_text(cols[11], 'text()'))
-				item["pres_low"] = tase.common.to_int(tase.common.get_text(cols[12], 'text()'))
-				item["vis_high"] = tase.common.to_int(tase.common.get_text(cols[13], 'text()'))
-				item["vis_avg"] = tase.common.to_int(tase.common.get_text(cols[14], 'text()'))
-				item["vis_low"] = tase.common.to_int(tase.common.get_text(cols[15], 'text()'))
-				item["wind_high"] = tase.common.to_int(tase.common.get_text(cols[16], 'text()'))
-				item["wind_avg"] = tase.common.to_int(tase.common.get_text(cols[17], 'text()'))
-				item["wind_low"] = tase.common.to_int(tase.common.get_text(cols[18], 'text()'))
-				item["precip"] = tase.common.to_float(tase.common.get_text(cols[19], 'text()'))
-				item["events"] = tase.common.get_text(cols[20], 'text()')
+				item["temp_high"] = tase.common.to_int(tase.common.get_text(cols[1], 'span/text()'))
+				item["temp_avg"] = tase.common.to_int(tase.common.get_text(cols[2], 'span/text()'))
+				item["temp_low"] = tase.common.to_int(tase.common.get_text(cols[3], 'span/text()'))
+				item["dew_high"] = tase.common.to_int(tase.common.get_text(cols[4], 'span/text()'))
+				item["dew_avg"] = tase.common.to_int(tase.common.get_text(cols[5], 'span/text()'))
+				item["dew_low"] = tase.common.to_int(tase.common.get_text(cols[6], 'span/text()'))
+				item["hum_high"] = tase.common.to_int(tase.common.get_text(cols[7], 'span/text()'))
+				item["hum_avg"] = tase.common.to_int(tase.common.get_text(cols[8], 'span/text()'))
+				item["hum_low"] = tase.common.to_int(tase.common.get_text(cols[9], 'span/text()'))
+				item["pres_high"] = tase.common.to_int(tase.common.get_text(cols[10], 'span/text()'))
+				item["pres_avg"] = tase.common.to_int(tase.common.get_text(cols[11], 'span/text()'))
+				item["pres_low"] = tase.common.to_int(tase.common.get_text(cols[12], 'span/text()'))
+				item["vis_high"] = tase.common.to_int(tase.common.get_text(cols[13], 'span/text()'))
+				item["vis_avg"] = tase.common.to_int(tase.common.get_text(cols[14], 'span/text()'))
+				item["vis_low"] = tase.common.to_int(tase.common.get_text(cols[15], 'span/text()'))
+				item["wind_high"] = tase.common.to_int(tase.common.get_text(cols[16], 'span/text()'))
+				item["wind_avg"] = tase.common.to_int(tase.common.get_text(cols[17], 'span/text()'))
+				item["wind_low"] = tase.common.to_int(tase.common.get_text(cols[18], 'span/text()'))
+				item["precip"] = tase.common.to_float(tase.common.get_text(cols[19], 'span/text()'))
+				item["events"] = tase.common.get_text(cols[20], 'span/text()')
 				yield item
 
 
