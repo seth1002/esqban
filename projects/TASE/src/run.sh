@@ -11,7 +11,7 @@ sh import_currency.sh
 ./scrapy-ctl.py crawl stocks
 ./scrapy-ctl.py crawl funds
 ./scrapy-ctl.py crawl bonds
-#./scrapy-ctl.py crawl news
+./scrapy-ctl.py crawl news
 
 #./scrapy-ctl.py crawl markets stocks bonds funds weather
 
