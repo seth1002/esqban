@@ -99,3 +99,6 @@ sudo apt-get install lynx
 #sudo apt-get install python-pip
 #pip install Scrapy
 
+#apt-get install libxml2-dev libxslt1-dev python-dev
+apt-get install python-lxml
+
