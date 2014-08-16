@@ -50,7 +50,8 @@ SELECT p.price FROM prices p inner join companies c on p.symbol=c.symbol where c
 SELECT * FROM portfolio_status where date_ = DATE(NOW())-2
 SELECT sum(diff) FROM portfolio_status where date_ = DATE(NOW())-2
 
-
+CREATE USER 'tase'@'localhost' IDENTIFIED BY '12345';
+GRANT ALL PRIVILEGES ON * . * TO 'tase'@'localhost';
 
 
 

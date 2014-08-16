@@ -1,5 +1,8 @@
 #/bin/sh
 
+rm yazig.csv
+rm yazigmizt.xls
+
 #wget -N 'http://www.bankisrael.gov.il/deptdata/mth/yazig.zip'
 wget -N 'http://www.boi.org.il/he/Markets/Documents/yazigmizt.xls'
 
@@ -15,8 +18,6 @@ xls2csv -x yazigmizt.xls -c yazig.csv
 mysql -utase -p12345 --local-infile tase < import_currency.sql
 
 #rm yazig.zip
-rm yazig.csv
-rm yazigmizt.xls
 
 
 

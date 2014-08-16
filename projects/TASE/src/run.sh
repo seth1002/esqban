@@ -4,7 +4,7 @@ rm tase.log
 
 sh import_currency.sh
 
-./scrapy-ctl.py crawl portfolio
+#./scrapy-ctl.py crawl portfolio
 
 #./scrapy-ctl.py crawl markets
 ./scrapy-ctl.py crawl weather
