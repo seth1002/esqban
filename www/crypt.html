@@ -55,23 +55,18 @@ A:HOVER, A:ACTIVE {
 		<script src="aes.js"></script>
 		<script src="pad-nopadding-min.js"></script>
 		<script type="text/javascript">
-			function padString(source) {
-				var paddingChar = ' ';
-				var size = 16;
-				var x = source.length % size;
-				var padLength = size - x;
-				
-				for (var i = 0; i < padLength; i++) source += paddingChar;
-				
-				return source;
-			}
 			var iv  = CryptoJS.enc.Hex.parse('fedcba9876543210');
 			function Decrypt(test)
 			{
-				var pass = document.getElementById("pass").value;
-				var encrypted = document.getElementById("enc").value;
-				var decrypted = CryptoJS.AES.decrypt(encrypted, pass, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7});
-				document.getElementById("msg").value = decrypted.toString(CryptoJS.enc.Utf8);
+				try {
+					document.getElementById("msg").value = "";
+					var pass = document.getElementById("pass").value;
+					var encrypted = document.getElementById("enc").value;
+					var decrypted = CryptoJS.AES.decrypt(encrypted, pass, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7});
+					document.getElementById("msg").value = decrypted.toString(CryptoJS.enc.Utf8);
+				} catch(err) {
+					document.getElementById("msg").value = err.message;
+				}
 			}
 			function Encrypt()
 			{
@@ -108,7 +103,7 @@ A:HOVER, A:ACTIVE {
 				downloadLink.click();
 			}
 		</script>
-		Pass: <textarea id="pass" cols="40"onkeyup="Encrypt()">Secret Passphrase</textarea><br>
+		Pass: <input id="pass" type="password" size="80" onkeyup="Encrypt()"></input><br>
 		Text: <textarea id="msg" cols="160" rows="20" onkeyup="Encrypt()">Message</textarea><br>
 		Data: <textarea id="enc" cols="160" rows="20" onkeyup="Decrypt()"/></textarea>
 		<button onclick="saveTextAsFile()">Download</button>
