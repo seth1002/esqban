@@ -1,0 +1,91 @@
+<html>
+	<head>
+	<style>
+	/* accessible green on black style sheet copyright Lois Wakeman, 2000 */
+
+BODY,  DIV, TD, P, LI {
+	color : #00FF80;
+	font : medium Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+TH {
+	color : #00FF80;
+	font : bold medium Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+H1 {
+	color : #00FF80;
+	font : bold larger Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+H2 {
+	color : #00FF80;
+	font : bold medium Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+H3 {
+	color : #00FF80;
+	font : bold small Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+TEXTAREA {
+	color : #00FF80;
+	font : bold small Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+A:LINK {
+	color : #FFFFFF;
+}
+
+A:VISITED {
+	color : #CCCCCC;
+}
+
+A:HOVER, A:ACTIVE {
+	color : #FF00FF;
+}</style>
+	</head>
+	<body>
+		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/pad-nopadding-min.js"></script>
+		<script type="text/javascript">
+			function padString(source) {
+				var paddingChar = ' ';
+				var size = 16;
+				var x = source.length % size;
+				var padLength = size - x;
+				
+				for (var i = 0; i < padLength; i++) source += paddingChar;
+				
+				return source;
+			}
+			var iv  = CryptoJS.enc.Hex.parse('fedcba9876543210');
+			function Decrypt(test)
+			{
+				var pass = document.getElementById("pass").value;
+				var encrypted = document.getElementById("enc").value;
+				var decrypted = CryptoJS.AES.decrypt(encrypted, pass, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7});
+				document.getElementById("msg").value = decrypted.toString(CryptoJS.enc.Utf8);
+			}
+			function Encrypt()
+			{
+				var pass = document.getElementById("pass").value;
+				var msg = document.getElementById("msg").value;
+				var encrypted = CryptoJS.AES.encrypt(msg, pass, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+				document.getElementById("enc").value = encrypted.toString();
+			}
+		</script>
+		Pass: <textarea id="pass" cols="40"onkeyup="Encrypt()">Secret Passphrase</textarea><br>
+		Text: <textarea id="msg" cols="160" rows="20" onkeyup="Encrypt()">Message</textarea><br>
+		Data: <textarea id="enc" cols="160" rows="20" onkeyup="Decrypt()"/></textarea>
+	</body>
+		<script type="text/javascript">
+			Encrypt();
+		</script>
+</html>
