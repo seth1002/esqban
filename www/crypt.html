@@ -40,7 +40,7 @@ TEXTAREA {
 	width: 95%
 }
 
-INPUT {
+.input {
 	width: 95%
 }
 
@@ -132,10 +132,10 @@ A:HOVER, A:ACTIVE {
 				reader.readAsText(input.files[0]);
 			}
 		</script>
-		Pass: <input id="pass" type="password" size="80" onkeyup="ChangePassword()"></input><br>
-		Text: <textarea id="msg" cols="160" rows="20" onkeyup="Encrypt()">Message</textarea><br>
-		Data: <textarea id="enc" cols="160" rows="20" onkeyup="Decrypt()"/></textarea>
-		<input type="file" onchange="loadfile(this)"/>
+		Pass:<br><input id="pass" type="password" class="input" size="80" onkeyup="ChangePassword()"></input><br>
+		Text:<br><textarea id="msg" class="input" cols="160" rows="20" onkeyup="Encrypt()">Message</textarea><br>
+		Data:<br><textarea id="enc" class="input" cols="160" rows="20" onkeyup="Decrypt()"/></textarea><br>
+		<input type="file" onchange="loadfile(this)"/><br>
 		<button onclick="saveTextAsFile()">Download</button>
 	</body>
 		<script type="text/javascript">
