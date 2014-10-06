@@ -63,7 +63,7 @@ A:HOVER, A:ACTIVE {
 		<script type="text/javascript">
 			var last_action = 0; // 0-encrypt, 1-decrypt
 			var iv  = CryptoJS.enc.Hex.parse('fedcba9876543210');
-			function Decrypt(test)
+			function Decrypt()
 			{
 				try {
 					document.getElementById("msg").value = "";
@@ -123,10 +123,19 @@ A:HOVER, A:ACTIVE {
 					break;
 				}
 			}
+			function loadfile(input){
+				var reader = new FileReader();
+				reader.onload = function(e){
+					document.getElementById('enc').value = e.target.result;
+					Decrypt();
+				}
+				reader.readAsText(input.files[0]);
+			}
 		</script>
 		Pass: <input id="pass" type="password" size="80" onkeyup="ChangePassword()"></input><br>
 		Text: <textarea id="msg" cols="160" rows="20" onkeyup="Encrypt()">Message</textarea><br>
 		Data: <textarea id="enc" cols="160" rows="20" onkeyup="Decrypt()"/></textarea>
+		<input type="file" onchange="loadfile(this)"/>
 		<button onclick="saveTextAsFile()">Download</button>
 	</body>
 		<script type="text/javascript">
