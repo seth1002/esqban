@@ -62,7 +62,8 @@ A:HOVER, A:ACTIVE {
 		<script src="pad-nopadding-min.js"></script>
 		<script type="text/javascript">
 			var last_action = 0; // 0-encrypt, 1-decrypt
-			var iv  = CryptoJS.enc.Hex.parse('fedcba9876543210');
+			//var iv  = CryptoJS.enc.Hex.parse('fedcba9876543210');
+			var iv  = CryptoJS.lib.WordArray.random(16);
 			function Decrypt()
 			{
 				try {
