@@ -1,0 +1,163 @@
+<html>
+	<head>
+	<style>
+	/* accessible green on black style sheet copyright Lois Wakeman, 2000 */
+
+BODY,  DIV, TD, P, LI {
+	color : #00FF80;
+	font : medium Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+TH {
+	color : #00FF80;
+	font : bold medium Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+H1 {
+	color : #00FF80;
+	font : bold larger Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+H2 {
+	color : #00FF80;
+	font : bold medium Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+H3 {
+	color : #00FF80;
+	font : bold small Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+}
+
+TEXTAREA {
+	color : #00FF80;
+	font : bold small Console, Verdana, Arial, Helvetica, sans-serif;
+	background : #000000;
+	width: 95%
+}
+
+.input {
+	width: 95%
+}
+
+A:LINK {
+	color : #FFFFFF;
+}
+
+A:VISITED {
+	color : #CCCCCC;
+}
+
+A:HOVER, A:ACTIVE {
+	color : #FF00FF;
+}
+</style>
+	</head>
+	<body>
+		<script src="aes.js"></script>
+		<script src="pad-nopadding-min.js"></script>
+		<script type="text/javascript">
+			var last_action = 0; // 0-encrypt, 1-decrypt
+			//var iv  = CryptoJS.enc.Hex.parse('fedcba9876543210');
+			var iv  = CryptoJS.lib.WordArray.random(16);
+			function Decrypt()
+			{
+				try {
+					document.getElementById("msg").value = "";
+					var pass = document.getElementById("pass").value;
+					var encrypted = document.getElementById("enc").value;
+					var decrypted = CryptoJS.AES.decrypt(encrypted, pass, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7});
+					document.getElementById("msg").value = decrypted.toString(CryptoJS.enc.Utf8);
+				} catch(err) {
+					document.getElementById("msg").value = err.message;
+				}
+				last_action = 1;
+			}
+			function Encrypt()
+			{
+				var pass = document.getElementById("pass").value;
+				var msg = document.getElementById("msg").value;
+				var encrypted = CryptoJS.AES.encrypt(msg, pass, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+				document.getElementById("enc").value = encrypted.toString();
+				last_action = 0
+			}
+			function saveTextAsFile()
+			{
+				var textToWrite = document.getElementById("enc").value;
+				var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+				var fileNameToSaveAs = "Encrypted.txt";
+
+				var downloadLink = document.createElement("a");
+				downloadLink.download = fileNameToSaveAs;
+				downloadLink.innerHTML = "Download File";
+				if (window.webkitURL != null)
+				{
+					// Chrome allows the link to be clicked
+					// without actually adding it to the DOM.
+					downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+				}
+				else
+				{
+					// Firefox requires the link to be added to the DOM
+					// before it can be clicked.
+					downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+					downloadLink.onclick = destroyClickedElement;
+					downloadLink.style.display = "none";
+					document.body.appendChild(downloadLink);
+				}
+
+				downloadLink.click();
+			}
+			function ChangePassword()
+			{
+				switch(last_action)
+				{
+				case 0:
+					Encrypt();
+					break;
+				case 1:
+					Decrypt();
+					break;
+				}
+			}
+			function loadfile(input){
+				var reader = new FileReader();
+				reader.onload = function(e){
+					document.getElementById('enc').value = e.target.result;
+					Decrypt();
+				}
+				reader.readAsText(input.files[0]);
+			}
+		</script>
+	<nav>
+		<a href='../index.html'>Archimedes</a>|
+		<a href='../tase/index.html'>TASE</a>|
+		<a href='../marina/index.html'>Marinas</a>|
+		<a href='http://sqba.dhis.org:8888/'>BitTorrent Sync</a>|
+		<a href='http://sqba.dhis.org:9091/'>Transmission</a>|
+		<!--a href='https://dhis.org/DHISWCP.ipo?context=dhis.website.wcp'>DHIS</a>|-->
+		<a href='../weather.html'>Weather</a>|
+		<a href='../marina.html'>Marina Tel Aviv</a>|
+		<!--a href='http://vozac-mali.googlecode.com/svn/trunk/car.htm'>Vozac Mali</a>|-->
+		<a href='https://sqba.dhis.org:4200/'>Shell In A Box</a>|
+		<a href='../phpsysinfo'>phpsysinfo</a>|
+		<a href='../phpmyadmin'>phpMyAdmin</a>|
+		<a href='../webcam.html'>webcam</a>
+		<a href='crypt/crypt.html'>Crypt</a>
+		<!--a href='temp.html'>Temperature</a>|-->
+		<!--a href='sys.html'>System</a>-->
+	</nav>
+		Pass:<br><input id="pass" type="password" class="input" size="80" onkeyup="ChangePassword()"></input><br>
+		Text:<br><textarea id="msg" class="input" cols="160" rows="20" onkeyup="Encrypt()">Message</textarea><br>
+		<input type="file" onchange="loadfile(this)"/><br>
+		Data:<br><textarea id="enc" class="input" cols="160" rows="20" onkeyup="Decrypt()"/></textarea><br>
+		<button onclick="saveTextAsFile()">Download</button>
+	</body>
+		<script type="text/javascript">
+			Encrypt();
+		</script>
+</html>
