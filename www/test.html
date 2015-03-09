@@ -2,13 +2,19 @@
 	<style type="text/css">
 .container{
     position:relative;
-    border:1px solid red;
-    height:50px;
+    border:1px solid black;
+	border-bottom-style: none;
+    height:70px;
 }
 .slider{
-    height:50px;
+    height:100%;
     width:20px;
-    background:green; 
+	border:2px solid gray;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+    background:blue; 
     position:absolute;
 }
 	</style>
@@ -28,7 +34,7 @@ $.fn.slider = function() {
 		var startX = 0;
 		var startL = 0;
 		var startW = 0;
-		var GRIP_SIZE = 8;
+		var GRIP_SIZE = 5;
 
 		$el.mousedown(function(ev) {
 			startX = ev.clientX;
@@ -105,7 +111,7 @@ $.fn.slider = function() {
 	</div>
 	<div>
 		<div class="container">
-			<div class="slider"/>
+			
 		</div>
 	</div>
 </html>
