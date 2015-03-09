@@ -1,0 +1,68 @@
+<html>
+	<style type="text/css">
+.container{
+    position:relative;
+    border:1px solid red;
+    height:50px;
+}
+.slider{
+    height:50px;
+    width:20px;
+    background:green; 
+    position:absolute;
+}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/JavaScript">
+$(function() {
+    $('.slider').slider();
+});
+
+$.fn.slider = function() {
+    return this.each(function() {
+        var $el = $(this);
+        //$el.css('top', 0);
+		$el.css('left', 0);
+        var dragging = false;
+		var resizing = false;
+        //var startY = 0;
+        //var startT = 0;
+		var startX = 0;
+		var startL = 0;
+        $el.mousedown(function(ev) {
+            dragging = true;
+            //startY = ev.clientY;
+			//startT = $el.css('top');
+			startX = ev.clientX;
+            startL = $el.css('left');
+        });
+        $(window).mousemove(function(ev) {
+            if (dragging) {
+                // calculate new top
+                //var newTop = parseInt(startT) + (ev.clientY - startY);
+
+				// calculate new left
+				var newLeft = parseInt(startL) + (ev.clientX - startX);
+                
+                //stay in parent
+                //var maxTop =  $el.parent().height()-$el.height();
+                //newTop = newTop<0?0:newTop>maxTop?maxTop:newTop;
+                //$el.css('top', newTop );
+				var maxLeft = $el.parent().width()-$el.width();
+				newLeft = newLeft<0?0:newLeft>maxLeft?maxLeft:newLeft;
+				$el.css('left', newLeft );
+            }
+        }).mouseup(function() {
+            dragging = false;
+        });
+    });
+}
+	</script>
+	<div><div class="container">
+		<div class="slider"/>
+		</div>
+	</div><br/>
+	<div class="container">
+		<div class="slider"/>
+	</div>
+</html>
