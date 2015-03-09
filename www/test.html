@@ -24,17 +24,30 @@ $.fn.slider = function() {
         //$el.css('top', 0);
 		$el.css('left', 0);
         var dragging = false;
-		var resizing = false;
+		var resizing_left = false;
+		var resizing_right = false;
         //var startY = 0;
         //var startT = 0;
 		var startX = 0;
 		var startL = 0;
         $el.mousedown(function(ev) {
-            dragging = true;
             //startY = ev.clientY;
 			//startT = $el.css('top');
 			startX = ev.clientX;
             startL = $el.css('left');
+			console.log("ev.clientX:" + ev.clientX);
+			var left = $el.offset().left;
+			var right = left + $el.width();
+			console.log("left:" + left);
+			console.log("right:" + right);
+			var GRIP_SIZE = 8;
+			if( Math.abs(ev.clientX - left) < GRIP_SIZE ) {
+				resizing_left = true;
+			} else if( Math.abs(ev.clientX - right) < GRIP_SIZE ) {
+				resizing_right = true;
+			} else {
+				dragging = true;
+			}
         });
         $(window).mousemove(function(ev) {
             if (dragging) {
@@ -51,9 +64,19 @@ $.fn.slider = function() {
 				var maxLeft = $el.parent().width()-$el.width();
 				newLeft = newLeft<0?0:newLeft>maxLeft?maxLeft:newLeft;
 				$el.css('left', newLeft );
-            }
+            } else if(resizing_left) {
+				console.log("resizing_left");
+				var newLeft = parseInt(startL) + (ev.clientX - startX) - 1;
+				$el.css('left', newLeft);
+				$el.width( $el.width() + 1);
+			} else if(resizing_right) {
+				console.log("resizing_right");
+				$el.width( $el.width() + 1);
+			}
         }).mouseup(function() {
             dragging = false;
+			resizing_left = false;
+			resizing_right = false;
         });
     });
 }
