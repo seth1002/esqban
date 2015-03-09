@@ -21,26 +21,21 @@ $(function() {
 $.fn.slider = function() {
     return this.each(function() {
         var $el = $(this);
-        //$el.css('top', 0);
 		$el.css('left', 0);
         var dragging = false;
 		var resizing_left = false;
 		var resizing_right = false;
-        //var startY = 0;
-        //var startT = 0;
 		var startX = 0;
 		var startL = 0;
-        $el.mousedown(function(ev) {
-            //startY = ev.clientY;
-			//startT = $el.css('top');
+		var startW = 0;
+		var GRIP_SIZE = 8;
+
+		$el.mousedown(function(ev) {
 			startX = ev.clientX;
             startL = $el.css('left');
-			console.log("ev.clientX:" + ev.clientX);
+			startW = $el.width();
 			var left = $el.offset().left;
 			var right = left + $el.width();
-			console.log("left:" + left);
-			console.log("right:" + right);
-			var GRIP_SIZE = 8;
 			if( Math.abs(ev.clientX - left) < GRIP_SIZE ) {
 				resizing_left = true;
 			} else if( Math.abs(ev.clientX - right) < GRIP_SIZE ) {
@@ -49,29 +44,26 @@ $.fn.slider = function() {
 				dragging = true;
 			}
         });
+
         $(window).mousemove(function(ev) {
             if (dragging) {
-                // calculate new top
-                //var newTop = parseInt(startT) + (ev.clientY - startY);
-
-				// calculate new left
 				var newLeft = parseInt(startL) + (ev.clientX - startX);
-                
-                //stay in parent
-                //var maxTop =  $el.parent().height()-$el.height();
-                //newTop = newTop<0?0:newTop>maxTop?maxTop:newTop;
-                //$el.css('top', newTop );
 				var maxLeft = $el.parent().width()-$el.width();
 				newLeft = newLeft<0?0:newLeft>maxLeft?maxLeft:newLeft;
 				$el.css('left', newLeft );
             } else if(resizing_left) {
-				console.log("resizing_left");
-				var newLeft = parseInt(startL) + (ev.clientX - startX) - 1;
-				$el.css('left', newLeft);
-				$el.width( $el.width() + 1);
+				//console.log("resizing_left");
+				var right = parseInt(startL) + startW;
+				var newLeft = parseInt(startL) + (ev.clientX - startX);
+				var newWidth = right - newLeft;
+				if(newWidth > (GRIP_SIZE*2)) {
+					$el.css('left', newLeft);
+					$el.width( newWidth );
+				}
 			} else if(resizing_right) {
-				console.log("resizing_right");
-				$el.width( $el.width() + 1);
+				//console.log("resizing_right");
+				var newRight = parseInt(startW) + (ev.clientX - startX);
+				$el.width( newRight );
 			}
         }).mouseup(function() {
             dragging = false;
@@ -81,11 +73,39 @@ $.fn.slider = function() {
     });
 }
 	</script>
-	<div><div class="container">
-		<div class="slider"/>
+	<div>
+		<div class="container">
+			<div class="slider"/>
 		</div>
-	</div><br/>
-	<div class="container">
-		<div class="slider"/>
+	</div>
+	<div>
+		<div class="container">
+			<div class="slider"/>
+		</div>
+	</div>
+	<div>
+		<div class="container">
+			<div class="slider"/>
+		</div>
+	</div>
+	<div>
+		<div class="container">
+			<div class="slider"/>
+		</div>
+	</div>
+	<div>
+		<div class="container">
+			<div class="slider"/>
+		</div>
+	</div>
+	<div>
+		<div class="container">
+			<div class="slider"/>
+		</div>
+	</div>
+	<div>
+		<div class="container">
+			<div class="slider"/>
+		</div>
 	</div>
 </html>
