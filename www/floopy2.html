@@ -1,0 +1,196 @@
+<html>
+	<style type="text/css">
+.track{
+    position:relative;
+    border:1px solid black;
+	border-bottom-style: none;
+    height:70px;
+}
+.region{
+    height:100%;
+    width:20px;
+	border:2px solid gray;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+    background:blue; 
+    position:absolute;
+}
+.selected {
+	background-color: #ECB;
+	border-color: #B98;
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/JavaScript">
+$(function() {
+    $('.region').region();
+});
+
+var $selected_object = undefined;
+
+jQuery(function($){
+	$('.region')
+		.click(function(){
+			$( this ).toggleClass("selected");
+		})
+});
+
+$.fn.region = function() {
+    return this.each(function() {
+        var $el = $(this);
+		var start = $el.attr("start") != undefined ? $el.attr("start") : 0;
+		$el.css('left', start);
+		//$el.css('left', 0);
+        dragging = false;
+		resizing_left = false;
+		resizing_right = false;
+		$el.startX = start;
+		$el.startL = start;
+		$el.startW = 0;
+		$el.selected = false;
+		var GRIP_SIZE = 5;
+		//console.log("start: " + start);
+
+		/*jQuery.fn.select = function(b) {
+			var $o = $(this) // It's your element
+			console.log("select object: " + $o.attr("id"));
+			$o.parent().children().each(function () {
+				$(this).select(false);
+			});
+			$o.css('background', b==true?'yellow':'blue');
+			$o.selected = b;
+		};*/
+
+		jQuery.fn.is_click_on_object = function(ev) {
+			var $o = $(this) // It's your element
+			var l = $o.offset().left;
+			var r = l + $o.width();
+			var result = ((ev.clientX >= l) && (ev.clientX < r));
+			//console.log("id: " + o.attr("id") + " selected = " + result);
+			//if(result)
+			//	$o.css('background', 'yellow');
+			return result;
+		};
+
+		jQuery.fn.extend({
+			drag: function (ev) {
+				var $o = $(this) // It's your element
+				console.log("dragging object: " + $o.attr("id"));
+				console.log("$o.startL: " + $o.startL);
+				var newLeft = parseInt($o.startL) + (ev.clientX - $o.startX);
+				var maxLeft = $o.parent().width()-$o.width();
+				newLeft = newLeft<0?0:newLeft>maxLeft?maxLeft:newLeft;
+				/*$el.parent().children().each(function () {
+					var l = $(this).offset().left;
+					var r = l + $el.width();
+					if((newLeft > l) && (newLeft < r))
+						newLeft = l - startW;
+					//console.log("id: " + $(this).attr("id"));
+				});*/
+				$o.css('left', newLeft );
+				$o.attr("start", newLeft);
+			}
+		});
+
+		jQuery.fn.extend({
+			resize: function (ev) {
+				var $o = $(this) // It's your element
+				console.log("resizing object: " + $o.attr("id"));
+				if(resizing_left) {
+					//console.log("resizing_left");
+					var right = parseInt($o.startL) + $o.startW;
+					var newLeft = parseInt($o.startL) + (ev.clientX - $o.startX);
+					var newWidth = right - newLeft;
+					if(newWidth > (GRIP_SIZE*2)) {
+						$o.css('left', newLeft);
+						$o.attr("start", newLeft);
+						$o.width( newWidth );
+					}
+				} else if(resizing_right) {
+					console.log("resizing_right");
+					var newRight = parseInt($o.startW) + (ev.clientX - $o.startX);
+					$o.width( newRight );
+				}
+			}
+		});
+		
+		$el.mousedown(function(ev) {
+			if ( $el.is('.selected') ) {
+			//if($el.is_click_on_object(ev)) {
+				$selected_object = $el;
+				//$selected_object.select(true);
+				console.log("$selected_object: " + $selected_object.attr("id"));
+				$el.startX = ev.clientX;
+				$el.startL = $el.css('left');
+				//console.log("startL: " + startL);
+				$el.startW = $el.width();
+				var left = $el.offset().left;
+				var right = left + $el.width();
+				if( Math.abs(ev.clientX - left) < GRIP_SIZE ) {
+					resizing_left = true;
+				} else if( Math.abs(ev.clientX - right) < GRIP_SIZE ) {
+					resizing_right = true;
+				} else {
+					dragging = true;
+				}
+			}
+        });
+
+        $(window).mousemove(function(ev) {
+			if($selected_object != undefined) {
+			    if (dragging)
+					$selected_object.drag(ev);
+				else if(resizing_left || resizing_right)
+					$selected_object.resize(ev);
+			}
+        }).mouseup(function() {
+            dragging = false;
+			resizing_left = false;
+			resizing_right = false;
+			if($selected_object != undefined) {
+				//$selected_object.select(false);
+				//$selected_object = undefined;
+			}
+        });
+    });
+}
+	</script>
+	<div>
+		<div class="track">
+			<div class="region" id="1" start="10"/>
+		</div>
+	</div>
+	<div>
+		<div class="track">
+			<div class="region" id="2" start="20"/>
+		</div>
+	</div>
+	<div>
+		<div class="track">
+			<div class="region" id="3"/>
+		</div>
+	</div>
+	<div>
+		<div class="track">
+			<div class="region" id="4" start="50"/>
+		</div>
+	</div>
+	<div>
+		<div class="track">
+			<div class="region" id="5"/>
+		</div>
+	</div>
+	<div>
+		<div class="track">
+			<div class="region" id="6"/>
+			<div class="region" id="7" start="100"/>
+		</div>
+	</div>
+	<div>
+		<div class="container">
+			
+		</div>
+	</div>
+</html>
