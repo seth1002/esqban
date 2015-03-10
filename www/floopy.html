@@ -1,12 +1,12 @@
 <html>
 	<style type="text/css">
-.container{
+.track{
     position:relative;
     border:1px solid black;
 	border-bottom-style: none;
     height:70px;
 }
-.slider{
+.region{
     height:100%;
     width:20px;
 	border:2px solid gray;
@@ -21,42 +21,66 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/JavaScript">
 $(function() {
-    $('.slider').slider();
+    $('.region').region();
 });
 
-$.fn.slider = function() {
+$.fn.region = function() {
     return this.each(function() {
         var $el = $(this);
-		$el.css('left', 0);
+		var start = $el.attr("start") != undefined ? $el.attr("start") : 0;
+		$el.css('left', start);
+		//$el.css('left', 0);
         var dragging = false;
 		var resizing_left = false;
 		var resizing_right = false;
-		var startX = 0;
-		var startL = 0;
+		var startX = start;
+		var startL = start;
 		var startW = 0;
 		var GRIP_SIZE = 5;
+		//console.log("start: " + start);
 
+		jQuery.fn.is_click_on_object = function(ev) {
+			var o = $(this[0]) // It's your element
+			var l = o.offset().left;
+			var r = l + o.width();
+			var result = ((ev.clientX >= l) && (ev.clientX < r));
+			//console.log("id: " + o.attr("id") + " selected = " + result);
+			return result;
+		};
+		
 		$el.mousedown(function(ev) {
-			startX = ev.clientX;
-            startL = $el.css('left');
-			startW = $el.width();
-			var left = $el.offset().left;
-			var right = left + $el.width();
-			if( Math.abs(ev.clientX - left) < GRIP_SIZE ) {
-				resizing_left = true;
-			} else if( Math.abs(ev.clientX - right) < GRIP_SIZE ) {
-				resizing_right = true;
-			} else {
-				dragging = true;
+			if($el.is_click_on_object(ev)) {
+				console.log("id: " + $(this).attr("id"));
+				startX = ev.clientX;
+				startL = $el.css('left');
+				//console.log("startL: " + startL);
+				startW = $el.width();
+				var left = $el.offset().left;
+				var right = left + $el.width();
+				if( Math.abs(ev.clientX - left) < GRIP_SIZE ) {
+					resizing_left = true;
+				} else if( Math.abs(ev.clientX - right) < GRIP_SIZE ) {
+					resizing_right = true;
+				} else {
+					dragging = true;
+				}
 			}
         });
 
         $(window).mousemove(function(ev) {
-            if (dragging) {
+           if (dragging) {
 				var newLeft = parseInt(startL) + (ev.clientX - startX);
 				var maxLeft = $el.parent().width()-$el.width();
 				newLeft = newLeft<0?0:newLeft>maxLeft?maxLeft:newLeft;
+				/*$el.parent().children().each(function () {
+					var l = $(this).offset().left;
+					var r = l + $el.width();
+					if((newLeft > l) && (newLeft < r))
+						newLeft = l - startW;
+					//console.log("id: " + $(this).attr("id"));
+				});*/
 				$el.css('left', newLeft );
+				$el.attr("start", newLeft);
             } else if(resizing_left) {
 				//console.log("resizing_left");
 				var right = parseInt(startL) + startW;
@@ -64,6 +88,7 @@ $.fn.slider = function() {
 				var newWidth = right - newLeft;
 				if(newWidth > (GRIP_SIZE*2)) {
 					$el.css('left', newLeft);
+					$el.attr("start", newLeft);
 					$el.width( newWidth );
 				}
 			} else if(resizing_right) {
@@ -80,33 +105,34 @@ $.fn.slider = function() {
 }
 	</script>
 	<div>
-		<div class="container">
-			<div class="slider"/>
+		<div class="track">
+			<div class="region" id="1" start="10"/>
 		</div>
 	</div>
 	<div>
-		<div class="container">
-			<div class="slider"/>
+		<div class="track">
+			<div class="region" id="2" start="20"/>
 		</div>
 	</div>
 	<div>
-		<div class="container">
-			<div class="slider"/>
+		<div class="track">
+			<div class="region" id="3"/>
 		</div>
 	</div>
 	<div>
-		<div class="container">
-			<div class="slider"/>
+		<div class="track">
+			<div class="region" id="4" start="50"/>
 		</div>
 	</div>
 	<div>
-		<div class="container">
-			<div class="slider"/>
+		<div class="track">
+			<div class="region" id="5"/>
 		</div>
 	</div>
 	<div>
-		<div class="container">
-			<div class="slider"/>
+		<div class="track">
+			<div class="region" id="6"/>
+			<div class="region" id="7" start="100"/>
 		</div>
 	</div>
 	<div>
