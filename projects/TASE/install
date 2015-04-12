@@ -1,10 +1,8 @@
-sudo apt-get install python-mysqldb
-sudo apt-get install python-matplotlib
-
-
 #easy_install
 sudo apt-get install python-setuptools
 
+#xls2csv
+sudo cpan
 cpan> install K/KE/KEN/xls2csv-1.06.tar.gz
 
 #mysql
@@ -14,91 +12,11 @@ sudo apt-get install python-mysqldb
 sudo apt-get install python-dev python-lxml
 sudo easy_install Scrapy
 
-#xls2csv
-sudo apt-get install xls2csv
-#sudo apt-get install xls2csv
-
 #text
-#sudo easy_install stripogram
-#sudo easy_install webstemmer
 sudo easy_install html2text
-#sudo easy_install beautifulsoup
-#sudo apt-get install lynx
 
 easy_install twisted
-
 
 # install topia.termextract
 sudo apt-get install python-pip
 sudo pip install topia.termextract
-
-
-
-#gtk
-sudo apt-get install gtk
-sudo apt-get install python-gtk2
-sudo apt-get install gtk2-engines-pixbuf
-
-#sudo apt-get build-dep python-matplotlib
-
-
-
-
-
-
-===================================================
-#sudo apt-get install catdoc
-#sudo apt-get install python-scrapy
-#sudo apt-get install html2text
-#sudo apt-get install python-html2text
-
-
-====================================================
-
-
-sudo apt-get install python2.7-dev
-
-
-cd termextract/topia.termextract-1.1.0
-sudo python setup.py install
-
-
-
-#apt-get --purge uninstall python-mysqldb && apt-get install python-mysqldb
-#sudo apt-get install mysql-connector-java
-#sudo apt-get install libmysql-java
-sudo apt-get install python-matplotlib
---sudo apt-get install xls2csv
-#make install
-#sudo make install
-#sudo make uninstall
-sudo apt-get install libole-storage-lite-perl
-sudo apt-get install libspreadsheet-parseexcel-perl
-sudo apt-get install libclass-csv-perl
-sudo apt-get install yaml
-sudo apt-get install yaml-mode
-sudo apt-get install libintl-perl 
-make install
-sudo make install
-sudo make install
-sudo python setup.py install
-sudo apt-get install python-setuptools
-python setup.py install
-sudo python setup.py install
-sudo easy_install stripogram
-sudo easy_install webstemmer
-sudo easy_install beautifulsoup
-sudo apt-get install python-html2text
-sudo apt-get install mdbtools mdb-export
-sudo apt-get install mdbtools
-sudo apt-get install youtube-dl
-sudo apt-get install lynx
-
-
-
-#sudo apt-get install python-pip
-#pip install Scrapy
-
-#apt-get install libxml2-dev libxslt1-dev python-dev
-apt-get install python-lxml
-
