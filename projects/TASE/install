@@ -11,7 +11,7 @@ cpan> install K/KE/KEN/xls2csv-1.06.tar.gz
 sudo apt-get install python-mysqldb
 
 #scrapy
-sudo apt-get install python-dev
+sudo apt-get install python-dev python-lxml
 sudo easy_install Scrapy
 
 #xls2csv
